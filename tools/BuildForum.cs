@@ -37,6 +37,8 @@ var boardByName = boards.ToDictionary(b => b.Category + "\t" + b.Name);
 var threads = new List<ThreadInfo>();
 var postPage = new Dictionary<long, (string Key, int Page)>();
 var lastAvatar = new Dictionary<string, (int Rank, DateTime When, string Avatar)>();
+var joined = new Dictionary<string, (DateTime Saved, DateTime First)>();
+var memberPosts = new Dictionary<string, int>();
 foreach (var line in ReadLines(threadsPath))
 {
     using var doc = JsonDocument.Parse(line);
@@ -64,6 +66,16 @@ foreach (var line in ReadLines(threadsPath))
         string member = MemberKey(t.Src, Str(p, "uid"), author);
         if (!lastAvatar.TryGetValue(member, out var known) || rank > known.Rank || (rank == known.Rank && d > known.When))
             lastAvatar[member] = (rank, d, Str(p, "av"));
+        // A member's join month: the forum's own "Registered" month where a saved page shows one, otherwise the
+        // month of their first post here. The forum showed "Jan 1970" for accounts with no join date; those count
+        // as unknown.
+        string reg = Str(p, "reg");
+        var saved = reg != "" ? DateTime.ParseExact(reg, "MMM yyyy", en) : DateTime.MaxValue;
+        if (saved.Year < 2000) saved = DateTime.MaxValue;
+        joined[member] = joined.TryGetValue(member, out var j)
+            ? (saved < j.Saved ? saved : j.Saved, d < j.First ? d : j.First) : (saved, d);
+        // Post counts are counted here: the saved pages' own counts are from whatever day each page was saved.
+        memberPosts[member] = memberPosts.GetValueOrDefault(member) + 1;
         i++;
     }
     threads.Add(t);
@@ -207,8 +219,17 @@ foreach (var line in ReadLines(threadsPath))
             if (p.TryGetProperty("gap", out var gap))
                 sb.Append($"<tr><td colspan=\"2\" class=\"gap\">{GapText(gap.GetInt32())}</td></tr>\n");
             string alt = i % 2 == 0 ? "alt2" : "alt1";
-            string author = Str(p, "a"), userTitle = Str(p, "ut"), reg = Str(p, "reg"), pc = Str(p, "pc");
-            string avatar = lastAvatar.TryGetValue(MemberKey(t.Src, Str(p, "uid"), author), out var la) ? la.Avatar : Str(p, "av");
+            string author = Str(p, "a"), userTitle = Str(p, "ut"), reg = Str(p, "reg");
+            string member = MemberKey(t.Src, Str(p, "uid"), author);
+            string pc = memberPosts[member].ToString(en);
+            string avatar = lastAvatar.TryGetValue(member, out var la) ? la.Avatar : Str(p, "av");
+            // One join month per member on all their posts; a saved month later than their first post here (accounts
+            // re-made after 2003, seen on pages saved later) gives way to the first post's month.
+            if (joined.TryGetValue(member, out var jn))
+            {
+                var firstMonth = new DateTime(jn.First.Year, jn.First.Month, 1);
+                reg = (jn.Saved <= firstMonth ? jn.Saved : firstMonth).ToString("MMM yyyy", en);
+            }
             if (avatar != "" && !File.Exists(Path.Combine(themeDir, "images", "avatars", avatar))) avatar = "";
             string anchor = p.TryGetProperty("pid", out var pid) ? $" id=\"post{pid.GetInt64()}\"" : "";
             var when = DateTime.Parse(Str(p, "d"), en);
@@ -444,7 +465,7 @@ string About()
         same item on <a href="https://auno.org/">auno.org</a>, which still uses the game's item numbers; it shows
         each item as it is today. Links to characters' pages on Funcom's site go to people.anarchy-online.com, which
         shows the characters that still exist.
-        Avatars are shown only for the standard race pictures; the archive's signatures, from later years, are left out.</li>
+        The archive's signatures, from later years, are left out.</li>
         </ul>
 
         <h3>Notes</h3>
@@ -452,6 +473,10 @@ string About()
         <li>The off-topic boards (Non-AO Related, and in 2003 Reet's Retreat) were read thread by thread: the ones
         about the game are here, on Non-AO Related; people's personal chatter is left out on purpose.</li>
         <li>Times are GMT, as the forum showed them in 2002.</li>
+        <li>Under each name, as on the forum: the member's avatar, the last one the saved pages show for them;
+        "Registered", the month they joined as the forum showed it, or the month of their first post here where no
+        saved page shows it; and "Posts", how many of their posts are in this archive. That is fewer than the forum
+        counted, since some boards and threads didn't survive.</li>
         <li>Funcom's archive put runs of underscores in front of many names ("_____________Garnock"); they're shown
         without, as the forum showed them.</li>
         </ul>
