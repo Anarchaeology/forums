@@ -655,7 +655,9 @@ string? Link(string href, DateTime? when, string host)
     // Character pages on Funcom's site live on as people.anarchy-online.com, where all servers are now dimension 5
     if (Rx.CharacterBio.Match(href) is { Success: true } bio)
     { Count("links: character pages (now people.anarchy-online.com)"); return $"https://people.anarchy-online.com/character/bio/d/5/name/{bio.Groups[1].Value}"; }
-    if (gallery.TryGetValue(LooseKey(href), out string? id)) { Count("links: pictures pointed at the gallery"); return "https://anarchaeology.github.io/#" + id; }
+    // GameSpy showed its pictures through a viewer page: asp/image.asp?/interviews/.../4.jpg is interviews/.../4.jpg
+    if (gallery.TryGetValue(LooseKey(href), out string? id) || gallery.TryGetValue(LooseKey(Rx.GameSpyViewer.Replace(href, "/")), out id))
+    { Count("links: pictures pointed at the gallery"); return "https://anarchaeology.github.io/#" + id; }
     if (pictureCopies.TryGetValue(LooseKey(href), out var copy))
     {
         if (copy.Ts == "") { Count("links: pictures never saved (plain text)"); return null; }
@@ -854,6 +856,7 @@ static class Rx
     // showthread.php?s=&threadid=N, ?t=N, ?N-Title (vBulletin 4), or a post: ?p=N / ?postid=N
     public static readonly Regex ThreadLink = new(@"(?:showthread|printthread|showpost)\.php\?(?:(?:[^#]*?[&;])?(?:threadid|t)=(\d+)|(\d+)(?=-|&|$|#)|(?:[^#]*?[&;])?p(?:ostid)?=\d+)", C | RegexOptions.IgnoreCase);
     public static readonly Regex ItemDb = new(@"^https?://(?:www\.)?(?:aodb\.info|aomainframe\.info|64\.106\.154\.149|v020u46eff\.maximumasp\.com|antiguardians\.org|(?:ao\.)?hackersquest\.(?:org|com)|auno\.org)\.?(?::\d+)?/(?:AODB/|ao/)?(?:showitem\.asp|search\.asp|itemdb\.php|show\.php3?|db\.php|aodb\.php)\?(?<query>[^#]*)", C | RegexOptions.IgnoreCase);
-    public static readonly Regex CharacterBio = new(@"^https?://(?:www\.|community\.|people\.)?anarchy-?online\.com\.?(?::\d+)?/character/bio/d/\d+/name/([^/?#""]+)", C | RegexOptions.IgnoreCase);
+    public static readonly Regex GameSpyViewer = new(@"/asp/image\.asp\?/", C | RegexOptions.IgnoreCase);
+    public static readonly Regex CharacterBio =new(@"^https?://(?:www\.|community\.|people\.)?anarchy-?online\.com\.?(?::\d+)?/character/bio/d/\d+/name/([^/?#""]+)", C | RegexOptions.IgnoreCase);
     public static readonly Regex PostParam = new(@"[?&;]p(?:ostid)?=(\d+)", C | RegexOptions.IgnoreCase);
 }
