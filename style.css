@@ -9,7 +9,7 @@ img { border: 0; }
 .left { text-align: left; }
 .page { width: 95%; margin: 10px auto; }
 table { border-collapse: separate; }
-.top { width: 100%; border-spacing: 0; background: url(images/menu_background.gif); }
+.top { width: 100%; border-spacing: 0; }
 .top td { padding: 0; }
 .top .toplinks { text-align: right; vertical-align: bottom; white-space: nowrap; padding: 0 6px 4px 0; }
 .content { padding: 10px; }
