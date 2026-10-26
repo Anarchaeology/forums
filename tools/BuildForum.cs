@@ -60,7 +60,11 @@ var accountByName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreC
 // ---- Pass 1: a summary of every thread, and which page each post lands on ----
 var threads = new List<ThreadInfo>();
 var postPage = new Dictionary<long, (string Key, int Page)>();
-var latest = new Dictionary<string, (int Rank, DateTime When, string Avatar, string Title, string Name)>();
+var latest = new Dictionary<string, (int Rank, DateTime When, string Title, string Name)>();
+var lastAvatar = new Dictionary<string, (int Rank, DateTime When, string Avatar)>();
+string avatarDir = Path.Combine(themeDir, "images", "avatars");
+var avatarFiles = Directory.EnumerateFiles(avatarDir, "*", SearchOption.AllDirectories)
+    .Select(f => Path.GetRelativePath(avatarDir, f).Replace('\\', '/')).ToHashSet();
 var joined = new Dictionary<string, (DateTime Saved, DateTime First)>();
 var memberPosts = new Dictionary<string, int>();
 var started = new Dictionary<string, List<ThreadInfo>>();
@@ -85,13 +89,18 @@ foreach (var line in ReadLines(threadsPath))
         if (i == 0) { t.Starter = author; t.First = d; t.Icon = p.TryGetProperty("ic", out var ic) ? ic.GetInt32() : 0; }
         if (d >= t.Last) { t.Last = d; t.LastAuthor = author; }
         if (!t.Key.StartsWith('l') && p.TryGetProperty("pid", out var pid)) postPage[pid.GetInt64()] = (t.Key, i / PostsPerPage + 1);
-        // A member's avatar is theirs, not the post's: the last one recorded goes on all their posts (and, with their
-        // last title and name, on their profile). Funcom's archive (saved 2025) shows each member's final avatar;
-        // otherwise the latest live-forum page decides.
+        // A member's avatar is theirs, not the post's: the last one recorded goes on all their posts and their profile.
+        // Funcom's archive (saved 2025) shows each member's final avatar; otherwise the latest live-forum page decides.
+        // A post showing no avatar (or one that wasn't saved) doesn't count: the archive is blank for some members
+        // who had one in 2001-2003. Their profile's title and name are the last ones recorded, the same way.
         int rank = t.Src == "archive" ? 2 : 1;
         string member = MemberKey(t.Src, Str(p, "uid"), author);
         if (!latest.TryGetValue(member, out var known) || rank > known.Rank || (rank == known.Rank && d > known.When))
-            latest[member] = (rank, d, Str(p, "av"), Str(p, "ut"), author);
+            latest[member] = (rank, d, Str(p, "ut"), author);
+        string av = Str(p, "av");
+        if (avatarFiles.Contains(av) &&
+            (!lastAvatar.TryGetValue(member, out var had) || rank > had.Rank || (rank == had.Rank && d > had.When)))
+            lastAvatar[member] = (rank, d, av);
         // Threads they started, for their profile; a thread whose first page wasn't saved has no known starter
         if (i == 0 && !p.TryGetProperty("gap", out _))
         {
@@ -435,9 +444,8 @@ string JoinMonth(string member)
     return (jn.Saved <= firstMonth ? jn.Saved : firstMonth).ToString("MMM yyyy", en);
 }
 
-// A member's last recorded avatar, when it's one of the forum's saved avatar pictures
-string Avatar(string member) =>
-    latest[member].Avatar is var a && a != "" && File.Exists(Path.Combine(themeDir, "images", "avatars", a)) ? a : "";
+// A member's last recorded avatar among the forum's saved avatar pictures
+string Avatar(string member) => lastAvatar.TryGetValue(member, out var a) ? a.Avatar : "";
 
 static string ThreadFile(string key, int page) => page <= 1 ? $"{key}.html" : $"{key}-{page}.html";
 
