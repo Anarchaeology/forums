@@ -35,8 +35,8 @@ date). The off-topic board is kept thread by thread: only threads marked "keep" 
 dotnet run BuildForum.cs -- "PATH\TO\threads.jsonl.gz" "PATH\TO\ao_forum_harvest\theme" .. --repo "https://github.com/Anarchaeology/forums"
 ```
 
-Writes `index.html`, `forum\`, `thread\`, `about.html`, `search.html`, `random.html`, `style.css`, `robots.txt` and `images\`
-into the repository root, and removes thread and board pages an earlier build made that this one doesn't.
+Writes `index.html`, `forum\`, `thread\`, `member\`, `about.html`, `search.html`, `random.html`, `style.css`, `robots.txt` and
+`images\` into the repository root, and removes thread, board and member pages an earlier build made that this one doesn't.
 
 ## 3. Search index
 

@@ -43,6 +43,8 @@ table { border-collapse: separate; }
 .posts .author { width: 175px; vertical-align: top; }
 .posts .body { vertical-align: top; }
 .posts .name { font-size: 13px; }
+.posts .name a { color: inherit; text-decoration: none; }
+.posts .name a:hover { text-decoration: underline; }
 .avatar { margin-top: 4px; }
 .userinfo { margin: 8px 0 0; }
 .posttitle { margin-bottom: 8px; }
@@ -58,6 +60,8 @@ table { border-collapse: separate; }
 .edited { margin: 12px 0 0; }
 .postfoot td { height: 16px; white-space: nowrap; }
 .postfoot img { vertical-align: middle; }
+.profile .label { width: 175px; white-space: nowrap; }
+.threads .forum { white-space: nowrap; }
 .gap { background: #333333; color: #fff; font-style: italic; }
 .tz { margin-top: 10px; }
 .footer { text-align: center; }

@@ -4,8 +4,9 @@
 //   index.html             the board list, in the 2002 categories, with each board's 2002 description
 //   forum/<board>.html     thread lists, latest activity first, 50 threads a page (<board>-2.html, ...)
 //   thread/<key>.html      threads, 20 posts a page (<key>-2.html, ...); launch-forum threads are l<id>
+//   member/<id>.html       each member's profile, with the threads they started (<id> is their forum number)
 //   about.html, style.css, robots.txt, images/ (the 2002 theme images, from THEMEFOLDER)
-// Pages left from an earlier build that this build no longer makes are removed (in forum/ and thread/ only).
+// Pages left from an earlier build that this build no longer makes are removed (in forum/, thread/ and member/ only).
 //
 // Needs the .NET 10 SDK. Run from this tools folder:
 //   dotnet run BuildForum.cs -- THREADS.jsonl.gz THEMEFOLDER SITEFOLDER [--repo URL]
@@ -17,6 +18,7 @@
 using System.Globalization;
 using System.IO.Compression;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -58,9 +60,10 @@ var accountByName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreC
 // ---- Pass 1: a summary of every thread, and which page each post lands on ----
 var threads = new List<ThreadInfo>();
 var postPage = new Dictionary<long, (string Key, int Page)>();
-var lastAvatar = new Dictionary<string, (int Rank, DateTime When, string Avatar)>();
+var latest = new Dictionary<string, (int Rank, DateTime When, string Avatar, string Title, string Name)>();
 var joined = new Dictionary<string, (DateTime Saved, DateTime First)>();
 var memberPosts = new Dictionary<string, int>();
+var started = new Dictionary<string, List<ThreadInfo>>();
 foreach (var line in ReadLines(threadsPath))
 {
     using var doc = JsonDocument.Parse(line);
@@ -82,12 +85,19 @@ foreach (var line in ReadLines(threadsPath))
         if (i == 0) { t.Starter = author; t.First = d; t.Icon = p.TryGetProperty("ic", out var ic) ? ic.GetInt32() : 0; }
         if (d >= t.Last) { t.Last = d; t.LastAuthor = author; }
         if (!t.Key.StartsWith('l') && p.TryGetProperty("pid", out var pid)) postPage[pid.GetInt64()] = (t.Key, i / PostsPerPage + 1);
-        // A member's avatar is theirs, not the post's: the last one recorded goes on all their posts. Funcom's
-        // archive (saved 2025) shows each member's final avatar; otherwise the latest live-forum page decides.
+        // A member's avatar is theirs, not the post's: the last one recorded goes on all their posts (and, with their
+        // last title and name, on their profile). Funcom's archive (saved 2025) shows each member's final avatar;
+        // otherwise the latest live-forum page decides.
         int rank = t.Src == "archive" ? 2 : 1;
         string member = MemberKey(t.Src, Str(p, "uid"), author);
-        if (!lastAvatar.TryGetValue(member, out var known) || rank > known.Rank || (rank == known.Rank && d > known.When))
-            lastAvatar[member] = (rank, d, Str(p, "av"));
+        if (!latest.TryGetValue(member, out var known) || rank > known.Rank || (rank == known.Rank && d > known.When))
+            latest[member] = (rank, d, Str(p, "av"), Str(p, "ut"), author);
+        // Threads they started, for their profile; a thread whose first page wasn't saved has no known starter
+        if (i == 0 && !p.TryGetProperty("gap", out _))
+        {
+            if (!started.TryGetValue(member, out var list)) started[member] = list = [];
+            list.Add(t);
+        }
         // A member's join month: the forum's own "Registered" month where a saved page shows one, otherwise the
         // month of their first post here. The forum showed "Jan 1970" for accounts with no join date; those count
         // as unknown.
@@ -241,21 +251,12 @@ foreach (var line in ReadLines(threadsPath))
             if (p.TryGetProperty("gap", out var gap))
                 sb.Append($"<tr><td colspan=\"2\" class=\"gap\">{GapText(gap.GetInt32())}</td></tr>\n");
             string alt = i % 2 == 0 ? "alt2" : "alt1";
-            string author = Str(p, "a"), userTitle = Str(p, "ut"), reg = Str(p, "reg");
+            string author = Str(p, "a"), userTitle = Str(p, "ut");
             string member = MemberKey(t.Src, Str(p, "uid"), author);
-            string pc = memberPosts[member].ToString(en);
-            string avatar = lastAvatar.TryGetValue(member, out var la) ? la.Avatar : Str(p, "av");
-            // One join month per member on all their posts; a saved month later than their first post here (accounts
-            // re-made after 2003, seen on pages saved later) gives way to the first post's month.
-            if (joined.TryGetValue(member, out var jn))
-            {
-                var firstMonth = new DateTime(jn.First.Year, jn.First.Month, 1);
-                reg = (jn.Saved <= firstMonth ? jn.Saved : firstMonth).ToString("MMM yyyy", en);
-            }
-            if (avatar != "" && !File.Exists(Path.Combine(themeDir, "images", "avatars", avatar))) avatar = "";
+            string reg = JoinMonth(member), pc = memberPosts[member].ToString(en), avatar = Avatar(member);
             string anchor = p.TryGetProperty("pid", out var pid) ? $" id=\"post{pid.GetInt64()}\"" : "";
             var when = DateTime.Parse(Str(p, "d"), en);
-            sb.Append($"<tr class=\"post\"{anchor}><td class=\"{alt} author\"><b class=\"name\">{Enc(author)}</b>")
+            sb.Append($"<tr class=\"post\"{anchor}><td class=\"{alt} author\"><b class=\"name\"><a href=\"../member/{MemberFile(member)}\">{Enc(author)}</a></b>")
               .Append(userTitle != "" ? $"<br><span class=\"small usertitle\">{Enc(userTitle)}</span>" : "")
               .Append(avatar != "" ? $"<br><img class=\"avatar\" src=\"../images/avatars/{avatar}\" alt=\"\">" : "")
               .Append(reg != "" || pc != "" ? $"<p class=\"small userinfo\" data-pagefind-ignore>{(reg != "" ? $"Registered: {Enc(reg)}<br>" : "")}{(pc != "" ? $"Posts: {Enc(pc)}" : "")}</p>" : "")
@@ -272,7 +273,8 @@ foreach (var line in ReadLines(threadsPath))
             if (edit != "" && edit.Split('|') is [var by, var at])
                 sb.Append($"<p class=\"small edited\"><i>Last edited by {Enc(by)} on {LongDate(DateTime.Parse(at, en))} at {DateTime.Parse(at, en):HH:mm}</i></p>");
             sb.Append($"</td></tr>\n<tr class=\"postfoot\" data-pagefind-ignore><td class=\"{alt} small date\"><img src=\"../images/posticon.gif\" alt=\"\"> {LongDate(when)} <span class=\"time\">{when:HH:mm}</span></td>")
-              .Append($"<td class=\"{alt} small right\">{(anchor != "" ? $"<a href=\"#post{pid.GetInt64()}\">#{i + 1}</a>" : $"#{i + 1}")}</td></tr>\n");
+              .Append($"<td class=\"{alt} small right\">")
+              .Append($"{(anchor != "" ? $"<a href=\"#post{pid.GetInt64()}\">#{i + 1}</a>" : $"#{i + 1}")}</td></tr>\n");
         }
         if (page == t.Pages)
         {
@@ -289,6 +291,40 @@ foreach (var line in ReadLines(threadsPath))
     }
 }
 Console.WriteLine($"{threadPages} thread pages, {boards.Sum(b => (b.Threads.Count + ThreadsPerPage - 1) / ThreadsPerPage)} thread-list pages");
+
+// Member profiles, opened by the name on each post: as the 2002 forum's profile page, with their posts in
+// this archive and the threads they started. They aren't in the search index.
+foreach (var (member, count) in memberPosts)
+{
+    var me = latest[member];
+    var sb = new StringBuilder();
+    sb.Append(Header("../", $"Anarchy Online Bulletin Board - Profile for {me.Name}",
+        $"<a href=\"../index.html\">Anarchy Online Bulletin Board</a> &gt; Profile for {Enc(me.Name)}", ""));
+    string avatar = Avatar(member);
+    sb.Append($"<table class=\"tborder profile\"><tr class=\"thead\"><td colspan=\"2\" class=\"left\">Profile for {Enc(me.Name)}</td></tr>\n")
+      .Append($"<tr><td class=\"alt1 left label\">Date Registered</td><td class=\"alt2 left\">{JoinMonth(member)}</td></tr>\n")
+      .Append(me.Title != "" ? $"<tr><td class=\"alt1 left label\">Status</td><td class=\"alt2 left\">{Enc(me.Title)}</td></tr>\n" : "")
+      .Append($"<tr><td class=\"alt1 left label\">Total Posts</td><td class=\"alt2 left\">{count}</td></tr>\n")
+      .Append(avatar != "" ? $"<tr><td class=\"alt1 left label\">Avatar</td><td class=\"alt2 left\"><img src=\"../images/avatars/{avatar}\" alt=\"\"></td></tr>\n" : "")
+      .Append("</table>\n<br>\n");
+    var mine = started.GetValueOrDefault(member) ?? [];
+    if (mine.Count == 0) sb.Append($"<p class=\"small\">No threads started by {Enc(me.Name)} were saved.</p>\n");
+    else
+    {
+        sb.Append($"<table class=\"tborder threads\"><tr class=\"thead\"><td colspan=\"2\" class=\"left\">Threads started by {Enc(me.Name)} ({mine.Count:N0})</td>")
+          .Append("<td class=\"starter\">Forum</td><td class=\"num\">Replies</td><td>Started</td></tr>\n");
+        foreach (var t in mine.OrderByDescending(t => t.First))
+            sb.Append($"<tr><td class=\"alt1 icon\"><img src=\"../images/{(t.Posts > 15 ? "hotfolder" : "folder")}.gif\" alt=\"\"></td>")
+              .Append($"<td class=\"alt2 left title\"><a href=\"../thread/{t.Key}.html\">{Enc(t.Title)}</a>")
+              .Append($"<br class=\"mobile\"><span class=\"mobile small\">{Enc(t.Board.Shown)}, {LongDate(t.First)}</span></td>")
+              .Append($"<td class=\"alt1 starter forum\"><a href=\"../forum/{t.Board.Slug}.html\">{Enc(t.Board.Shown)}</a></td><td class=\"alt2 num\">{t.Posts - 1:N0}</td>")
+              .Append($"<td class=\"alt1 lastpost\"><span class=\"small\">{LongDate(t.First)}</span></td></tr>\n");
+        sb.Append("</table>\n");
+    }
+    sb.Append(Footer("../"));
+    Write($"member/{MemberFile(member)}", sb.ToString());
+}
+Console.WriteLine($"{memberPosts.Count} member pages");
 
 // About this archive, and the search page (its index, pagefind/, is made after the build by Pagefind)
 Write("about.html", About());
@@ -323,7 +359,7 @@ Write("search.html", Header("", "Anarchy Online Bulletin Board - Search",
 
 // Remove pages from earlier builds that weren't written this time
 int removed = 0;
-foreach (string dir in new[] { "forum", "thread" })
+foreach (string dir in new[] { "forum", "thread", "member" })
 {
     string full = Path.Combine(siteDir, dir);
     if (!Directory.Exists(full)) continue;
@@ -375,6 +411,23 @@ static string SourceName(string src) => src switch
 // forum had its own accounts, and its printable pages give names only, so its members go by name.
 string MemberKey(string src, string uid, string author) =>
     src != "launch" && uid != "" ? uid : accountByName.TryGetValue(author, out var account) ? account : "name:" + author.ToLowerInvariant();
+
+// A member's profile page: their forum number, or for members known only by name, a short code made from the name
+static string MemberFile(string member) => (member.StartsWith("name:")
+    ? "n" + Convert.ToHexString(SHA1.HashData(Encoding.UTF8.GetBytes(member)))[..10].ToLowerInvariant() : member) + ".html";
+
+// One join month per member, on all their posts and their profile; a saved month later than their first post here
+// (accounts re-made after 2003, seen on pages saved later) gives way to the first post's month.
+string JoinMonth(string member)
+{
+    var jn = joined[member];
+    var firstMonth = new DateTime(jn.First.Year, jn.First.Month, 1);
+    return (jn.Saved <= firstMonth ? jn.Saved : firstMonth).ToString("MMM yyyy", en);
+}
+
+// A member's last recorded avatar, when it's one of the forum's saved avatar pictures
+string Avatar(string member) =>
+    latest[member].Avatar is var a && a != "" && File.Exists(Path.Combine(themeDir, "images", "avatars", a)) ? a : "";
 
 static string ThreadFile(string key, int page) => page <= 1 ? $"{key}.html" : $"{key}-{page}.html";
 
@@ -498,7 +551,8 @@ string About()
         <li>Under each name, as on the forum: the member's avatar, the last one the saved pages show for them;
         "Registered", the month they joined as the forum showed it, or the month of their first post here where no
         saved page shows it; and "Posts", how many of their posts are in this archive. That is fewer than the forum
-        counted, since some boards and threads didn't survive.</li>
+        counted, since some boards and threads didn't survive. Each name opens the member's profile, with the threads
+        they started.</li>
         <li>Funcom's archive put runs of underscores in front of many names ("_____________Garnock"); they're shown
         without, as the forum showed them.</li>
         </ul>
@@ -592,6 +646,8 @@ partial class Program
         .posts .author { width: 175px; vertical-align: top; }
         .posts .body { vertical-align: top; }
         .posts .name { font-size: 13px; }
+        .posts .name a { color: inherit; text-decoration: none; }
+        .posts .name a:hover { text-decoration: underline; }
         .avatar { margin-top: 4px; }
         .userinfo { margin: 8px 0 0; }
         .posttitle { margin-bottom: 8px; }
@@ -607,6 +663,8 @@ partial class Program
         .edited { margin: 12px 0 0; }
         .postfoot td { height: 16px; white-space: nowrap; }
         .postfoot img { vertical-align: middle; }
+        .profile .label { width: 175px; white-space: nowrap; }
+        .threads .forum { white-space: nowrap; }
         .gap { background: #333333; color: #fff; font-style: italic; }
         .tz { margin-top: 10px; }
         .footer { text-align: center; }
