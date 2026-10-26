@@ -46,11 +46,20 @@ foreach (var f in Tsv("data/board_map.tsv"))
 var launchGeneral = Tsv("data/launch_general_sort.tsv").ToDictionary(f => f[0], f => f[1] + "\t" + f[2]);
 foreach (var t in launchGeneral.Values) if (!boards.Contains(t)) { Console.Error.WriteLine($"launch_general_sort.tsv: unknown board {t}"); return 1; }
 
-// ---- Gallery pictures (for links to pictures the gallery has) ----
+// ---- Gallery pictures (for links to pictures the gallery has), matched by address, ignoring case ----
 var gallery = new Dictionary<string, string>();
 using (var doc = JsonDocument.Parse(File.ReadAllText(galleryJson)))
     foreach (var p in doc.RootElement.GetProperty("photos").EnumerateArray())
-        gallery.TryAdd(NormalUrl(p.GetProperty("u").GetString()!), p.GetProperty("id").GetString()!);
+        gallery.TryAdd(LooseKey(p.GetProperty("u").GetString()!), p.GetProperty("id").GetString()!);
+
+// ---- Pictures linked in posts that the Wayback Machine never saved, or saved (data\picture_copies.tsv) ----
+// A link to a picture with no saved copy would only reach the Wayback Machine's "not archived" page, so it becomes
+// plain text; a saved one links straight to its copy.
+// picture_copies.tsv is the check of October 2025; picture_copies_added.tsv covers pictures on pages added since.
+var pictureCopies = new Dictionary<string, (string Ts, string Url)>();
+foreach (string list in new[] { "data/picture_copies.tsv", "data/picture_copies_added.tsv" })
+    if (File.Exists(list))
+        foreach (var f in Tsv(list)) pictureCopies.TryAdd(LooseKey(f[0]), (f.Length > 1 ? f[1] : "", f.Length > 2 ? f[2] : ""));
 
 // ---- Pass 1: which threads and posts exist, so links between them can point at our pages ----
 string archiveDir = Path.Combine(harvest, "pages"), liveDir = Path.Combine(harvest, "live", "pages"), launchDir = Path.Combine(harvest, "launch", "pages");
@@ -607,7 +616,13 @@ string Image(string src, DateTime? when)
     src = WebUtility.HtmlDecode(src).Trim();
     if (Rx.Smilie.Match(src) is { Success: true } sm) return $"<img src=\"@img/smilies/{sm.Groups[1].Value.ToLowerInvariant()}.gif\" alt=\"\" class=\"smilie\">";
     if (!src.StartsWith("http", StringComparison.OrdinalIgnoreCase) || Rx.ForumHost.IsMatch(src)) return "";   // forum buttons and icons
-    if (gallery.TryGetValue(NormalUrl(src), out string? id)) { Count("links: pictures pointed at the gallery"); return $"<a href=\"https://anarchaeology.github.io/#{id}\">[picture]</a>"; }
+    if (gallery.TryGetValue(LooseKey(src), out string? id)) { Count("links: pictures pointed at the gallery"); return $"<a href=\"https://anarchaeology.github.io/#{id}\">[picture]</a>"; }
+    if (pictureCopies.TryGetValue(LooseKey(src), out var copy))
+    {
+        if (copy.Ts == "") { Count("links: pictures never saved (plain text)"); return "[picture not saved]"; }
+        Count("links: pictures, to their saved copy");
+        return $"<a href=\"{WebUtility.HtmlEncode($"https://web.archive.org/web/{copy.Ts}/{copy.Url}")}\">[picture]</a>";
+    }
     Count("links: pictures pointed at the Wayback Machine");
     return $"<a href=\"{WebUtility.HtmlEncode(Wayback(src, when))}\">[picture]</a>";
 }
@@ -640,7 +655,13 @@ string? Link(string href, DateTime? when, string host)
     // Character pages on Funcom's site live on as people.anarchy-online.com, where all servers are now dimension 5
     if (Rx.CharacterBio.Match(href) is { Success: true } bio)
     { Count("links: character pages (now people.anarchy-online.com)"); return $"https://people.anarchy-online.com/character/bio/d/5/name/{bio.Groups[1].Value}"; }
-    if (gallery.TryGetValue(NormalUrl(href), out string? id)) { Count("links: pictures pointed at the gallery"); return "https://anarchaeology.github.io/#" + id; }
+    if (gallery.TryGetValue(LooseKey(href), out string? id)) { Count("links: pictures pointed at the gallery"); return "https://anarchaeology.github.io/#" + id; }
+    if (pictureCopies.TryGetValue(LooseKey(href), out var copy))
+    {
+        if (copy.Ts == "") { Count("links: pictures never saved (plain text)"); return null; }
+        Count("links: pictures, to their saved copy");
+        return $"https://web.archive.org/web/{copy.Ts}/{copy.Url}";
+    }
     Count("links: other sites (Wayback)");
     return Wayback(href, when);
 }
@@ -666,10 +687,15 @@ static string? ItemLink(string url)
 static string Wayback(string url, DateTime? when) =>
     "https://web.archive.org/web/" + (when ?? new DateTime(2002, 1, 1)).ToString("yyyyMMdd", CultureInfo.InvariantCulture) + "/" + url;
 
-static string NormalUrl(string url)
+// An address without its scheme, "www." and port, decoded and in lower case, for matching the same picture
+// written different ways (Cloudeh's Big2.jpg linked as big2.jpg).
+static string LooseKey(string url)
 {
-    var m = Regex.Match(url.Trim(), @"^(?:[a-z]+://)?(?:www\.)?([^/:?#]+)(?::\d+)?(.*)$", RegexOptions.IgnoreCase);
-    return m.Success ? m.Groups[1].Value.ToLowerInvariant() + m.Groups[2].Value : url;
+    string k = Regex.Replace(url.Trim(), @"^[a-z]+://", "", RegexOptions.IgnoreCase);
+    k = Regex.Replace(k, @"^www\.", "", RegexOptions.IgnoreCase);
+    k = Regex.Replace(k, @"^([^/]+):\d+", "$1");
+    try { k = Uri.UnescapeDataString(k); } catch (UriFormatException) { }
+    return k.ToLowerInvariant();
 }
 
 // The forum's avatars were a fixed set: race pictures (nanomale.gif), numbered headshots (40100.jpg) and Leets
