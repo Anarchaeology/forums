@@ -142,7 +142,17 @@ File.WriteAllText(Path.Combine(siteDir, ".nojekyll"), "");
 // The board list
 {
     var sb = new StringBuilder();
-    sb.Append(Header("", "Anarchy Online Bulletin Board", "", ""));
+    // What a link to the archive shows when shared (Discord, Reddit, forums): a description and the gallery's logo
+    const string preview = "Funcom's official Anarchy Online forums from 2001 to 2003, rebuilt from the Wayback Machine the way they looked in 2002.";
+    sb.Append(Header("", "Anarchy Online Bulletin Board", "", "", $"""
+        <meta name="description" content="{preview}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Anarchy Online Bulletin Board archive, 2001-2003">
+        <meta property="og:description" content="{preview}">
+        <meta property="og:image" content="https://anarchaeology.github.io/logo.png">
+        <meta name="twitter:card" content="summary">
+
+        """));
     int totalThreads = threads.Count, totalPosts = threads.Sum(t => t.Posts);
     sb.Append($"""
         <table class="welcome"><tr><td colspan="2">
@@ -460,7 +470,7 @@ static IEnumerable<string> ReadLines(string path)
     while (reader.ReadLine() is { } line) if (line.Length > 0) yield return line;
 }
 
-static string Header(string root, string title, string nav, string badge) => $"""
+static string Header(string root, string title, string nav, string badge, string head = "") => $"""
     <!doctype html>
     <html lang="en">
     <head>
@@ -469,7 +479,7 @@ static string Header(string root, string title, string nav, string badge) => $""
     <title>{WebUtility.HtmlEncode(title)}</title>
     <link rel="stylesheet" href="{root}style.css">
     <link rel="icon" href="{root}images/vb_bullet.gif">
-    </head>
+    {head}</head>
     <body>
     <div class="page">
     <table class="top"><tr>
@@ -534,8 +544,9 @@ string About()
         boards.</li>
         <li>Pages here and there that the Wayback Machine never saved; threads say where.</li>
         <li>Replies written after 2003 to these threads are left out.</li>
-        <li>Pictures and sites. Posts link to the Wayback Machine's copy of each picture and site, as of the post's
-        date, or to the <a href="https://anarchaeology.github.io/">Anarchaeology</a> gallery when it has the picture.
+        <li>Pictures and sites. Pictures in posts link to the <a href="https://anarchaeology.github.io/">Anarchaeology</a>
+        gallery when it has them, or else to the Wayback Machine's saved copy; pictures it never saved are left as plain
+        text. Links to other sites go to the Wayback Machine as of the post's date, though it didn't save every page.
         Links to the item databases of the time (AODB, Anarchy Mainframe, antiguardians.org, HackersQuest) go to the
         same item on <a href="https://auno.org/">auno.org</a>, which still uses the game's item numbers; it shows
         each item as it is today. Links to characters' pages on Funcom's site go to people.anarchy-online.com, which
