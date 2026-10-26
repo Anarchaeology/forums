@@ -33,6 +33,28 @@ foreach (var f in File.ReadLines("data/boards.tsv").Where(l => l.Length > 0 && !
     boards.Add(new Board(f[0], f[1], f.Length > 2 ? f[2] : "", f.Length > 3 && f[3] != "" ? int.Parse(f[3]) : 0, f.Length > 5 ? f[5] : ""));
 var boardByName = boards.ToDictionary(b => b.Category + "\t" + b.Name);
 
+// ---- Members are their forum accounts. Posts that don't show one (the 2001 launch forum had its own accounts, and
+// some pages saved from the live forum leave the account out) go to the main forum's account with the same name; a
+// name used by two accounts goes to the one with more posts. ----
+var accountByName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+{
+    var postsByAccount = new Dictionary<(string Name, string Uid), int>();
+    foreach (var line in ReadLines(threadsPath))
+    {
+        using var doc = JsonDocument.Parse(line);
+        var r = doc.RootElement;
+        if (r.GetProperty("src").GetString() == "launch") continue;
+        foreach (var p in r.GetProperty("posts").EnumerateArray())
+            if (Str(p, "uid") is var uid && uid != "")
+            {
+                var k = (Str(p, "a").ToLowerInvariant(), uid);
+                postsByAccount[k] = postsByAccount.GetValueOrDefault(k) + 1;
+            }
+    }
+    foreach (var g in postsByAccount.GroupBy(kv => kv.Key.Name))
+        accountByName[g.Key] = g.MaxBy(kv => kv.Value).Key.Uid;
+}
+
 // ---- Pass 1: a summary of every thread, and which page each post lands on ----
 var threads = new List<ThreadInfo>();
 var postPage = new Dictionary<long, (string Key, int Page)>();
@@ -351,8 +373,8 @@ static string SourceName(string src) => src switch
 
 // Members by forum number (the archive and the live forum share them); by name when a page didn't say. The launch
 // forum had its own accounts, and its printable pages give names only, so its members go by name.
-static string MemberKey(string src, string uid, string author) =>
-    src == "launch" ? "launch:" + author : uid != "" ? uid : "name:" + author;
+string MemberKey(string src, string uid, string author) =>
+    src != "launch" && uid != "" ? uid : accountByName.TryGetValue(author, out var account) ? account : "name:" + author.ToLowerInvariant();
 
 static string ThreadFile(string key, int page) => page <= 1 ? $"{key}.html" : $"{key}-{page}.html";
 
