@@ -249,6 +249,18 @@ Console.WriteLine($"{threadPages} thread pages, {boards.Sum(b => (b.Threads.Coun
 
 // About this archive, and the search page (its index, pagefind/, is made after the build by Pagefind)
 Write("about.html", About());
+// The random button: a page that sends the reader to a random thread. The thread list is in the page itself, so
+// it costs nothing until someone clicks.
+Write("random.html", Header("", "Anarchy Online Bulletin Board - Random thread",
+    "<a href=\"index.html\">Anarchy Online Bulletin Board</a> &gt; Random thread", "") + $"""
+    <p id="random-note">Picking a random thread...</p>
+    <script>
+    const keys = "{string.Join(' ', threads.Select(t => t.Key))}".split(" ");
+    location.replace("thread/" + keys[Math.floor(Math.random() * keys.length)] + ".html");
+    </script>
+    <noscript><p>The random thread needs JavaScript. <a href="index.html">Back to the board list</a></p></noscript>
+
+    """ + Footer(""));
 Write("search.html", Header("", "Anarchy Online Bulletin Board - Search",
     "<a href=\"index.html\">Anarchy Online Bulletin Board</a> &gt; Search", "") + """
     <link href="pagefind/pagefind-ui.css" rel="stylesheet">
@@ -366,7 +378,7 @@ static string Header(string root, string title, string nav, string badge) => $""
     <div class="page">
     <table class="top"><tr>
     <td class="logo"><a href="{root}index.html"><img src="{root}images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
-    <td class="toplinks"><a href="{root}about.html"><img src="{root}images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="{root}search.html"><img src="{root}images/top_search.gif" alt="Search" title="Search"></a> <a href="{root}index.html"><img src="{root}images/top_home.gif" alt="Home" title="Home"></a></td>
+    <td class="toplinks"><a href="{root}about.html"><img src="{root}images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="{root}search.html"><img src="{root}images/top_search.gif" alt="Search" title="Search"></a> <a href="{root}index.html"><img src="{root}images/top_home.gif" alt="Home" title="Home"></a> <a href="{root}random.html"><img src="{root}images/top_random.png" alt="Random thread" title="Random thread"></a></td>
     </tr></table>
     <div class="content">
     {(nav != "" ? $"<div class=\"navbar\"><img src=\"{root}images/vb_bullet.gif\" alt=\"\"> <b>{nav}</b>{(badge != "" ? $" <span class=\"small badge\">{badge}</span>" : "")}</div>\n" : "")}
