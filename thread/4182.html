@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Funcom: How to implement a fair IP reclaim scheme</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-26.html">Game Mechanics</a> &gt; Funcom: How to implement a fair IP reclaim scheme</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (5): <b>[1]</b> <a href="4182-2.html">2</a> <a href="4182-3.html">3</a> <a href="4182-2.html">&raquo;</a> ... <a href="4182-5.html">Last &raquo;</a></span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="16438.html">Last Thread</a> &nbsp; <a href="15662.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Funcom: How to implement a fair IP reclaim scheme"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2001"></span></td><td>Thread</td></tr>
+<tr class="post" id="post251263"><td class="alt2 author"><b class="name">Snarf</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40132.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon4.gif" alt=""> <b>Funcom: How to implement a fair IP reclaim scheme</b></div><div class="message">Ok, Funcom says it's not possible.  Well it IS quite possible, it's just non-trivial.  Here's a solution that would work.<br>
+<br>
+- Create a machine that sits next to surgery clinics in stores. It's a &quot;brain washing&quot; machine.<br>
+<br>
+* Requirements to use machine:<br>
+Players must have no implants, armor, weapons, belts, or belt upgrades equipped.  In other words, they must be completely naked. A player receives a message to remove their equipment if they are not naked.<br>
+<br>
+A player may use this machine once every X hours of gameplay time, using the same scheme used in side-switching.  For argument sake, set X=100 hours.  The idea is to only allow this machine to be used infrequently.<br>
+<br>
+* Effect of the machine:<br>
+Upon clicking the machine, the player is then prompted to type /reset &quot;skill name&quot;. &quot;skill name&quot; is any valid AO skill; attributes (str,int) may not be reset.  AO calculates how much IP the player has put into that skill, and adds that to the total that player has.  The player's skill is then reset to its base level of 0 (excluding attribute modifers).<br>
+If skill name is &quot;navigation&quot;, the player's maps are wiped out.<br>
+If any other skill has secondary effects (such as the map example), those secondary effects can be disabled at this point too.  The server force-saves the character as soon as it gets a valid /reset command, reducing the possibility of exploits.<br>
+<br>
+The /reset command may be used once, and once only until the 100 hrs is up.  It becomes enabled upon clicking the machine, and becomes disabled upon use or upon x hours elapsing (100 above), whichever comes first.<br>
+<br>
+This type of scheme:<br>
+- removes secondary effects of skill resets<br>
+- places restrictions on frequency of use<br>
+- if implemented right, is exploit free<br>
+- allows players to regain lost IP *over time*<br>
+- allows funcom to nerf whatever they want without losing players<br>
+<br>
+Snarf</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 14th, 2001 <span class="time">19:29</span></td><td class="alt2 small right"><a href="#post251263">#1</a></td></tr>
+<tr class="post" id="post251266"><td class="alt1 author"><b class="name">Barakon</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Next to the surgery machines in shops is a very bad location if you are going to force people to stand there naked while using... <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 14th, 2001 <span class="time">19:34</span></td><td class="alt1 small right"><a href="#post251266">#2</a></td></tr>
+<tr class="post" id="post251267"><td class="alt2 author"><b class="name">Snarf</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40132.jpg" alt=""></td><td class="alt2 body"><div class="message">Well &quot;naked&quot; players are still clothed.  Even when you're wearing nothing you still get default clothed graphics.  <br>
+<br>
+Comment on the idea please :P</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 14th, 2001 <span class="time">19:35</span></td><td class="alt2 small right"><a href="#post251267">#3</a></td></tr>
+<tr class="post" id="post251309"><td class="alt1 author"><b class="name">Nikki.</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40142.jpg" alt=""></td><td class="alt1 body"><div class="message">your argument makes too much sense and Funcom lies anyways. So it doesnt matter if we discuss it or not. They have totally stopped responding to us. We put up tons of topics debate back and forth but still hardly any replies and nothing we can hope for.<br>
+<br>
+NEXT</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 14th, 2001 <span class="time">20:18</span></td><td class="alt1 small right"><a href="#post251309">#4</a></td></tr>
+<tr class="post" id="post251386"><td class="alt2 author"><b class="name">Snarf</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40132.jpg" alt=""></td><td class="alt2 body"><div class="message">( 0 . o )</div><p class="small edited"><i>Last edited by Snarf on December 14th, 2001 at 23:12</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 14th, 2001 <span class="time">21:51</span></td><td class="alt2 small right"><a href="#post251386">#5</a></td></tr>
+<tr class="post" id="post251398"><td class="alt1 author"><b class="name">Scorus</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="small posttitle"><b>Re: Funcom: How to implement a fair IP reclaim scheme</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Snarf </i><br>
+<b> AO calculates how much IP the player has put into that skill, and adds that to the total that player has.  </b>
+			
+		
+	<hr></blockquote>
+First, you consider discussion to be 'fun in bed'?<br>
+<br>
+Second, do you actually trust Funcom coding to accurately calculate the IP and give it back to you?<br>
+<br>
+Scorus</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 14th, 2001 <span class="time">22:03</span></td><td class="alt1 small right"><a href="#post251398">#6</a></td></tr>
+<tr class="post" id="post251414"><td class="alt2 author"><b class="name">Stitchings</b><br><span class="small usertitle">Leetas</span></td><td class="alt2 body"><div class="message">Interesting idea, would love to see it happen, but it won't unfortunately.  =/</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 14th, 2001 <span class="time">22:25</span></td><td class="alt2 small right"><a href="#post251414">#7</a></td></tr>
+<tr class="post" id="post251533"><td class="alt1 author"><b class="name">Kizzim</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="message">I like everyone else in this game have wasted IPs, its just life. However, too many bad things can happen if you allow IPs to be re-distributed. In the case of agents (which is a profession im experienced with, because i am one) ive sat here and utterly denied OET rifles, the reason being is i feel that normal Rifles will in the future get some love, second, that I refuse to dump ips into a dark blue skill that will be useless later on. All these agents who have taken the easy way to deal massive amounts of damage will later be able to wipe that slate clean and move back to normal rifles when they are fixed. I refuse to take it up the arse and wait patiently and have those who havent reap the rewards of taking the fast fix to everything. This is a easy game, only put IPs where you need them. Players who are lvl 50+ know which skills they are raising and which they arnt, if you havent figured it out by then, sorry. If you lower than lvl 50, reroll, its so easy to get lvl 50. In the time it takes a player to level from 50 to 70, any normal player can reach lvl 50 again.<br>
+<br>
+What I feel the main reason for this is what us old Asheron's Call players call 'flavor of the month characters'. Characters who find out whats doing the most damage and whats the most powerful way to do something this month and switch. All those players who put in IPs into pistols, then found out that vektors do more damage at the high level game want to switch. HELL NO. Funcom doesnt need to reallocate IPs they need to balance weapons in the game. Its natural that pistols will not do as much damage as assault rifles, but they are twice as fast. What funcom needs to do is just increase the miniumum damage of all weapons to something more reasonable.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 15th, 2001 <span class="time">02:20</span></td><td class="alt1 small right"><a href="#post251533">#8</a></td></tr>
+<tr class="post" id="post252650"><td class="alt2 author"><b class="name">Satherial</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="message">The only reasons I'm for an IP wipe is to let people get back their points for pistols (they're useless), for advs to get back their pts for multi-melee, and because it would (hopefully) force off pre-treatment nerf implants.<br>
+<br>
+*Edit*<br>
+<br>
+I agree that you shouldn't be able to wipe the slate clean. I don't see how it's fair that a low level soldier be able to spend IP into runspeed because he wants to be able to run away from mobs and then be able to clear that out later when he gets a yalmaha. That's just wrong. :P<br>
+<br>
+That's just an example since I was patient and didn't put a single point into runspeed knowing I would fly some day.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">06:08</span></td><td class="alt2 small right"><a href="#post252650">#9</a></td></tr>
+<tr class="post" id="post252715"><td class="alt1 author"><b class="name">Bloodseed</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40707.jpg" alt=""></td><td class="alt1 body"><div class="message">Wipe all the servers, fire everyone at funcom and give us all our money back!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">08:54</span></td><td class="alt1 small right"><a href="#post252715">#10</a></td></tr>
+<tr class="post" id="post252763"><td class="alt2 author"><b class="name">skybert</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt2 body"><div class="message">Actually, several people has reported loss of skillpoints they have invested IP in (and thus the IP)<br>
+<br>
+Rather than calculating what you have, it should calculate how much you SHOULD have. (i.e. exploited IP will disappear, and lost IP would reappear. THAT's what I call balance)<br>
+<br>
+<br>
+...and FunCom: Thanks for working out a way to do this.  If this really get done, I love you guys!<img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">10:32</span></td><td class="alt2 small right"><a href="#post252763">#11</a></td></tr>
+<tr class="post" id="post252854"><td class="alt1 author"><b class="name">Cosmik</b><br><span class="small usertitle">Community</span></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by NikkiDial </i><br>
+<b>your argument makes too much sense and Funcom lies anyways. So it doesnt matter if we discuss it or not. They have totally stopped responding to us. We put up tons of topics debate back and forth but still hardly any replies and nothing we can hope for.<br>
+<br>
+NEXT </b>
+			
+		
+	<hr></blockquote>
+Well, perhaps I should say that I haven't read this thread then, if I lie all the time (since when have I ever lied?)<br>
+<br>
+So....I haven't read this thread.<br>
+<br>
+Seriously though, we are <b>always</b> open to new ideas. That is the point of the articles - we <b>want</b> feedback and new ideas about the issues at hand. Gaute doesn't write those articles for his health, I can promise you that. <br>
+<br>
+Snarf, you have some good ideas there. There are some more good points and ideas brought up by others as well. I'm making this thread sticky and passing it onto the developers. I know this will be looked at closely.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">13:33</span></td><td class="alt1 small right"><a href="#post252854">#12</a></td></tr>
+<tr class="post" id="post252867"><td class="alt2 author"><b class="name">Anarchin</b><br><span class="small usertitle">The original and best</span><br><img class="avatar" src="../images/avatars/Leets_0003.jpg" alt=""></td><td class="alt2 body"><div class="message">And will you all please stop accusing Funcom of lieing! Come on...<br>
+<br>
+'nough said.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">13:55</span></td><td class="alt2 small right"><a href="#post252867">#13</a></td></tr>
+<tr class="post" id="post252896"><td class="alt1 author"><b class="name">Greystar</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/opifexmale.gif" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Cosmik </i><br>
+<b>There are some more good points and ideas brought up by others as well. I'm making this thread sticky and passing it onto the developers. I know this will be looked at closely. </b>
+			
+		
+	<hr></blockquote>
+Ok then I will repost my idea here too, it is practically the same as Snarf's, but maybe easier to implement and more comfortable in my view for players.<br>
+<br>
+Reimbursing IPs for a selected few i.e. a limited offer for a one time reimbursement of all skills like Gaute is thinking of, is in my view not the correct way either, this must be an option for everyone, and anytime, as changes to skills/weapons can happen anytime again, so it better ensures that every player has the option to change their skills again if that happens. At the same time it should not be an easy task to change skills, as then everyone will use the same uber items/weapons/armor the day they are introduced. So here again my idea about what might be viable:<br>
+<br>
+For each 10 minutes game time you can drop one skill point and the IP goes back into the pool. That's 6 skill points an hour. These available drop skill bonus points accumulate over time and could be visible besides the IP field. <br>
+<br>
+These 1 point each 10 minutes could be 15 or 20 minutes as well, just an example.<br>
+<br>
+You can only drop skills while no items are on your paperdoll.<br>
+Abilities, body dev, nano pool (and map navigation if it is too hard to implement) cannot be dropped.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">14:31</span></td><td class="alt1 small right"><a href="#post252896">#14</a></td></tr>
+<tr class="post" id="post252905"><td class="alt2 author"><b class="name">Mascot</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<b>And will you all please stop accusing Funcom of lieing! Come on... </b>
+			
+		
+	<hr></blockquote>
+13.2 patch notes &quot;container gnomes have been eradicated!&quot;. True, or false? False, yes? Lie then? Yes.<br>
+<br>
+Actually container gnomes have been eradicated twice (according to patch notes) but still somehow thrive in every inventory in AO.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">14:41</span></td><td class="alt2 small right"><a href="#post252905">#15</a></td></tr>
+<tr class="post" id="post252949"><td class="alt1 author"><b class="name">Dhurdahl</b><br><span class="small usertitle">Drunken Leet!!</span><br><img class="avatar" src="../images/avatars/Leets_0007.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon7.gif" alt=""> </div><div class="message">They actually were gone from 13.20 to 13.22. They were back in 13.23.<br>
+<br>
+They are fixed in 13.4 (latest on test), but with one bug: when opening second bag, then it WILL scramble.<br>
+<br>
+So... everything isn't black or white</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">15:35</span></td><td class="alt1 small right"><a href="#post252949">#16</a></td></tr>
+<tr class="post" id="post252954"><td class="alt2 author"><b class="name">Taelyn</b><br><span class="small usertitle">Leetas</span></td><td class="alt2 body"><div class="small posttitle"><b>IP wipes</b></div><div class="message">I see no reason why people shouldn't be allowed to &quot;reeducate&quot; themselves, but I'm really not in favor of the &quot;Wipe everything&quot; method.  That makes little sense.  Instead, some kind of system where you can only wipe some of your IPs seems much more balanced.  This IP wipe machine can depend on 3 things that I've seen.<br>
+<br>
+1)  Time<br>
+2)  Money<br>
+3)  Experience<br>
+<br>
+I am heavily against number 1 (unless used with 2 or 3 or if calculated in real world,  not game time).  If game time is used, people will connect with AO, then go learn to play the clarinet or whatever until they have been on enough to reset more IPs.  Real world time is a better solution, to some degree it keeps the &quot;flavor of the month&quot; kinda thing in check.<br>
+<br>
+Two and three seem to make more sense.  They should both depend on level.  The higher level you are, the more expensive it gets.  There are a variety of systems here.  You could pay per IP restored, you could get a set fee depending on your level to reset one skill, etc.  As for experience, you could pay similarly (per IP restored), possibly even dropping you down a level.<br>
+<br>
+Snarf's other points about having to be naked (and have no nano buffs running) is a well taken one.  Taken with other ideas to limit the rate at which IPs can be taken out of a character is a good idea.  Re-rolling is NOT FUN!  I don't play 20 hours a week, so I can't afford to remake a character.  If I find out that the L55 adventurer i worked so hard on is useless now, I'm not going to reroll again, I'm going to leave.<br>
+<br>
+Simply put, anything to make this game less tedious is GOOD.  GOOD not bad.  Don't inflict tedium on all of us just to punish a few exploiters.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">15:38</span></td><td class="alt2 small right"><a href="#post252954">#17</a></td></tr>
+<tr class="post" id="post252998"><td class="alt1 author"><b class="name">Mascot</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<b>They actually were gone from 13.20 to 13.22. They were back in 13.23</b>
+			
+		
+	<hr></blockquote>
+I'm talking about builds actually going to live, not test. And as far as live is concerned, FC have so far claimed to have fixed them. Twice. Third time's the charm.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">16:31</span></td><td class="alt1 small right"><a href="#post252998">#18</a></td></tr>
+<tr class="post" id="post253017"><td class="alt2 author"><b class="name">Ming</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/opifexmale.gif" alt=""></td><td class="alt2 body"><div class="message">I've posted almost the same idea as snarf's.<br>
+<br>
+<br>
+Basically yeah, a machine like the treatment machine that you can use once every 20 hours of logged in time that will allow the reallocation of the IP given at that title level. (i.e. 20,000 points for title level 3, 40,000 for title level 4)<br>
+<br>
+requirements:<br>
+<br>
+1) The player must be 100% naked. No items on the character view. No tools, no NCU's, belts, range-enhancers, insignia's, tatoos, nada. <br>
+<br>
+2) Only once per 20 hours of logged in time, and only once per level. Not title level, level. <br>
+<br>
+This way character's can't get that 200 rifle on at level 100, and then refuse ever to level again, while taking points out of rifle every 20 hours and putting them into something else. <br>
+<br>
+<br>
+1. Click on the machine, and game checks for equipped items, minimum title level, time since last attempt, and attempts per this level. (Similar code as mission terminals when you don't have two slots free)<br>
+<br>
+2. If ok, then a confirmation box appears. <br>
+(this is to avoid accidentally clicking it. I know, I know how often are naked people going to click this, BUT people would use this as an excuse to petition and try to make up for mistakes.)<br>
+<br>
+3. Player confirms.<br>
+<br>
+4. IP screen comes up with all IP's unlocked. You may pull points out of literally anything. Pulled points go back into the pool.<br>
+<br>
+- IP's pulled out of a skill cause the skill points within that skill to turn Yellow to indicate points were pulled from here. <br>
+<br>
+When you're done putting points where you want them, you hit accept. The game then asks, &quot;are you sure you wish to accept?&quot;<br>
+<br>
+5. Player confirms.<br>
+<br>
+6. The ability locks for a minimum of 20 hours and 1 level. You get a message saying, &quot;You have been re-educated.&quot;<br>
+<br>
+7. If a player tries again before the conditions are met they will get an error message. &quot;you are still traumatized from the last session.&quot;</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">17:02</span></td><td class="alt2 small right"><a href="#post253017">#19</a></td></tr>
+<tr class="post" id="post253351"><td class="alt1 author"><b class="name">Nikki.</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40142.jpg" alt=""></td><td class="alt1 body"><div class="message">Cosmik<br>
+My accusation came from the pillow incedent. We hadnt heard any word for over two weeks and then the pillow fiasco happens. <br>
+<br>
+Why does Funcom keep us in the dark until things blow up in their face? Sure there will be complainers no matter what you do. Keeping us in the dark is not the best thing though. We could have been warned an IP wipe was in the works. <br>
+<br>
+Of course I would have been happier with an IP earned back over time. This creates a more fair platform when changes come along and provide room to experiment with your character. Right now with the one time IP wipe all it will do is let all those people slap IP into a molded and predictable character. <br>
+<br>
+See if we had to pay for the IP back AND only get so much back each week then that allows us to go out on a limb and play around with our characters. This gives Funcom more room to experiment and tinker and assures we will go along more easier because it really wont hurt us so much. <br>
+<br>
+Always look for the path of least resistance. Not only for now but in the future. This will provide you with a better game and a happier customer. If a game must change so must you allow for our character. Otherwise you break our character and break our will to play. Thats the truth of the situation.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 17th, 2001 <span class="time">22:33</span></td><td class="alt1 small right"><a href="#post253351">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (5): <b>[1]</b> <a href="4182-2.html">2</a> <a href="4182-3.html">3</a> <a href="4182-2.html">&raquo;</a> ... <a href="4182-5.html">Last &raquo;</a></span></td><td class="right small"><a href="https://web.archive.org/web/20250529070128/https://forums-archive.anarchy-online.com/showthread.php?4182-Funcom-How-to-implement-a-fair-IP-reclaim-scheme">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

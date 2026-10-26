@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Make assist work outside of combat</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/suggestions-4.html">Suggestions</a> &gt; Make assist work outside of combat</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="125379.html">Last Thread</a> &nbsp; <a href="129868.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Make assist work outside of combat"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Suggestions"></span><span data-pagefind-filter="year:2003"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1368683"><td class="alt2 author"><b class="name">GLLC</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="small posttitle"><b>Make assist work outside of combat</b></div><div class="message">Pretty simple idea:<br>
+<br>
+Make /assist work when the target you're assisting isn't in combat.<br>
+<br>
+Reasons:<br>
+1.  This will let people assist non-fighting classes (lots of calmers don't attack, for instance) so that the calmer can pick targets from a pack of calmed mobs.<br>
+2.  It's handy for general targeting (assist me to get a buff target, assist me to invite the doc, etc).<br>
+3.  In PvP it lets people all stay on the same target or pre-select a target without having to start attacking.<br>
+4.  It's just generally handy, and there's no reason to restrict it that I can see.<br>
+<br>
+Anyway, thoughts?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 10th, 2003 <span class="time">00:00</span></td><td class="alt2 small right"><a href="#post1368683">#1</a></td></tr>
+<tr class="post" id="post1369102"><td class="alt1 author"><b class="name">Tech</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40693.jpg" alt=""></td><td class="alt1 body"><div class="message">This isn't as simple as you think. First, you would need an all new command. /assist switches to the player/mob <b>attacked</b>, not the one targeted. These two are often not the same. Second, I don't think the player/mob targeted is something the server knows about (and why should it). This is a thing for the client, and the server probably doesn't know about it until you tell it to do something with the target.<br>
+<br>
+So for this idea to be implemented, first a new command must be made and second (I guess) more data would have to be exchanged between the client and the server. And judging from the amout of lag in certain situations I think the data flow is high enough already<img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+Tech</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 10th, 2003 <span class="time">03:59</span></td><td class="alt1 small right"><a href="#post1369102">#2</a></td></tr>
+<tr class="post" id="post1369115"><td class="alt2 author"><b class="name">GLLC</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Techblast </i><br>
+<b>This isn't as simple as you think. First, you would need an all new command. /assist switches to the player/mob <b>attacked</b>, not the one targeted. These two are often not the same. Second, I don't think the player/mob targeted is something the server knows about (and why should it). This is a thing for the client, and the server probably doesn't know about it until you tell it to do something with the target.<br>
+<br>
+So for this idea to be implemented, first a new command must be made and second (I guess) more data would have to be exchanged between the client and the server. And judging from the amout of lag in certain situations I think the data flow is high enough already<img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+Tech </b>
+			
+		
+	<hr></blockquote>
+Assuming they keep assist working on %f instead of %t, it's pretty easy to have it default to %t when %f returns a null string.<br>
+<br>
+As far as dataflow, there's no change.  The client already has that information.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 10th, 2003 <span class="time">04:05</span></td><td class="alt2 small right"><a href="#post1369115">#3</a></td></tr>
+<tr class="post" id="post1369740"><td class="alt1 author"><b class="name">Tech</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40693.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by GLC </i><br>
+<b><br>
+<br>
+Assuming they keep assist working on %f instead of %t, it's pretty easy to have it default to %t when %f returns a null string.<br>
+<br>
+As far as dataflow, there's no change.  The client already has that information. </b>
+			
+		
+	<hr></blockquote>
+Ok, let's first assume this is possible (afterall we are making (educated(?)) guesses here). I would like to have commands unambigious: If I target Bob and type /assist I would like to be sure whether Bob is fighting Alice or if he just got her targeted (to heal, snare, use /org info on her or whatever). Or what if Bob is indeed fighting Alice, but I want to know if he got Chris or Roger targeted for the next heal. &quot;Smart&quot; combination of commands like that often cause more confusion than they help. So if it should happen to be implemented (as a feature like that would indeed be handy) I would like a new command for it.<br>
+<br>
+Now to the question if this is possible at all with the current networking code. You say that the client already got the information needed, and I wonder how you know that. The variables for macros you mentioned both give information about what <b>you</b> are doing. You cannot say %t-&gt;%f or %f(%t) or something like that to find out who your current target is fighting. Nor can you say %t-&gt;%t or %t(%t) to find out who your current target got targeted.<br>
+<br>
+My guess is that whenever someone starts an attack, the server sends a &quot;Yo! Bob just started to beat on Alice&quot; message to all clients in close enough proximity. Now this gives you the opportunity to target Bob and write /assist to get Alice targeted.<br>
+<br>
+Imagine how often the selected target changes opposed to fighting target. The doc may cycle through all team members several times a minute to see the correct health bar, the NT will cycle through lots of mobs to calm them all. An engineer will frequently change between his bot and the target to see if he needs to heal, etc. etc. And then imagine how bad this would be in a LCA battle with 50 people to get these updates from. If such information is indeed being communicated, that is a terrible waste of bandwith and processing power and I highly doubt it.<br>
+<br>
+And if the information would only be sendt when someone actually used the command, the delay would probably be too long for it to be useful. The message would then have to go from you, to the server, get processed there, forwarded to your target, get processed there and then go back again.<br>
+<br>
+Tech</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 10th, 2003 <span class="time">11:02</span></td><td class="alt1 small right"><a href="#post1369740">#4</a></td></tr>
+<tr class="post" id="post1371145"><td class="alt2 author"><b class="name">GLLC</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Techblast </i><br>
+<b><br>
+<br>
+Ok, let's first assume this is possible (afterall we are making (educated(?)) guesses here). I would like to have commands unambigious: If I target Bob and type /assist I would like to be sure whether Bob is fighting Alice or if he just got her targeted (to heal, snare, use /org info on her or whatever). Or what if Bob is indeed fighting Alice, but I want to know if he got Chris or Roger targeted for the next heal. &quot;Smart&quot; combination of commands like that often cause more confusion than they help. So if it should happen to be implemented (as a feature like that would indeed be handy) I would like a new command for it.<br>
+<br>
+Now to the question if this is possible at all with the current networking code. You say that the client already got the information needed, and I wonder how you know that. The variables for macros you mentioned both give information about what <b>you</b> are doing. You cannot say %t-&gt;%f or %f(%t) or something like that to find out who your current target is fighting. Nor can you say %t-&gt;%t or %t(%t) to find out who your current target got targeted.<br>
+<br>
+My guess is that whenever someone starts an attack, the server sends a &quot;Yo! Bob just started to beat on Alice&quot; message to all clients in close enough proximity. Now this gives you the opportunity to target Bob and write /assist to get Alice targeted.<br>
+<br>
+Imagine how often the selected target changes opposed to fighting target. The doc may cycle through all team members several times a minute to see the correct health bar, the NT will cycle through lots of mobs to calm them all. An engineer will frequently change between his bot and the target to see if he needs to heal, etc. etc. And then imagine how bad this would be in a LCA battle with 50 people to get these updates from. If such information is indeed being communicated, that is a terrible waste of bandwith and processing power and I highly doubt it.<br>
+<br>
+And if the information would only be sendt when someone actually used the command, the delay would probably be too long for it to be useful. The message would then have to go from you, to the server, get processed there, forwarded to your target, get processed there and then go back again.<br>
+<br>
+Tech </b>
+			
+		
+	<hr></blockquote>
+This isn't nearly as complicated as you're making it out to be.<br>
+<br>
+%t returns my target.  %f returns what I'm fighting.  /assist sets your target to whatever your CURRENT target's %f is.  It's not a matter of broadcasting targets to clients in the area or bandwith issues, trust me.  It's literally a code issue that checks for the existance of %f for a particular person and if it returns a null result then retruns %t.<br>
+<br>
+I guess what I can't figure out is why you think it's a bad idea beyond bandwidth (which is a ridiculous concern).  It might be a bit confusing, but no more confusing than anything else in a game where you can effectively have two targets at once.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 10th, 2003 <span class="time">22:33</span></td><td class="alt2 small right"><a href="#post1371145">#5</a></td></tr>
+<tr class="post" id="post1371369"><td class="alt1 author"><b class="name">Tech</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40693.jpg" alt=""></td><td class="alt1 body"><div class="message">First, either you are jumping to conclusions or you have some information about the internal mechanics that I don't. It looks like the latter since I cannot see a good reason for why it would be designed the way you say.<br>
+<br>
+The /assist command works instantly. That means the client got the information needed before you type it. <b>For a command like you suggested to be implemented, broadcasts would be needed</b>. Otherwise it would have a delay that I am sure you don't want. Then you say that bandwith is a redicilous concern. Have you ever been to a LCA battle? Have you ever noticed the lag? As long as this is a game supposed to work on everything from a fiber to a dialup modem, bandwith is a concern. And even if it was not, the issue of processing this amount of messages would be a concern (processing power is actually the limiting factor in a lot of cases where one would think it was bandwith).<br>
+<br>
+If this was my decision, I would not be able to defend such a large increase in resources for such a small feature. However it is not, so it might show up one day<img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+And to your last point, about confusion, I guess you have never been much involved in software design or testing. Because I can promise you that users want to know what a command does. They don't want to be unsure whether the command took path a or b. If they type /assist they want to know that they now infact got the fighting target targeted. What if your common &quot;Cut&quot; command in text editors had the added functionality that if no text was selected, the entire paragraph would be deleted, or the line, or perhaps the page. Having commands unambiguous is a Good Thing(tm).<br>
+<br>
+Not sure what else to say here, if you do have some knowledge of the inner workings of AO, please enlighten me. Otherwise, you should look at it from a realistic point of view. Not all features can implemented with the current state of technology. Not saying that this couldn't, but my reasoning leads me to the conclusion that the added usage of bandwith and processing power can't be justified<br>
+<br>
+Tech</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 11th, 2003 <span class="time">00:16</span></td><td class="alt1 small right"><a href="#post1371369">#6</a></td></tr>
+<tr class="post" id="post1371391"><td class="alt2 author"><b class="name">GLLC</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Techblast </i><br>
+<b>First, either you are jumping to conclusions or you have some information about the internal mechanics that I don't. It looks like the latter since I cannot see a good reason for why it would be designed the way you say.<br>
+<br>
+The /assist command works instantly. That means the client got the information needed before you type it. <b>For a command like you suggested to be implemented, broadcasts would be needed</b>. Otherwise it would have a delay that I am sure you don't want. Then you say that bandwith is a redicilous concern. Have you ever been to a LCA battle? Have you ever noticed the lag? As long as this is a game supposed to work on everything from a fiber to a dialup modem, bandwith is a concern. And even if it was not, the issue of processing this amount of messages would be a concern (processing power is actually the limiting factor in a lot of cases where one would think it was bandwith).<br>
+<br>
+If this was my decision, I would not be able to defend such a large increase in resources for such a small feature. However it is not, so it might show up one day<img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+And to your last point, about confusion, I guess you have never been much involved in software design or testing. Because I can promise you that users want to know what a command does. They don't want to be unsure whether the command took path a or b. If they type /assist they want to know that they now infact got the fighting target targeted. What if your common &quot;Cut&quot; command in text editors had the added functionality that if no text was selected, the entire paragraph would be deleted, or the line, or perhaps the page. Having commands unambiguous is a Good Thing(tm).<br>
+<br>
+Not sure what else to say here, if you do have some knowledge of the inner workings of AO, please enlighten me. Otherwise, you should look at it from a realistic point of view. Not all features can implemented with the current state of technology. Not saying that this couldn't, but my reasoning leads me to the conclusion that the added usage of bandwith and processing power can't be justified<br>
+<br>
+Tech </b>
+			
+		
+	<hr></blockquote>
+I develop games for a living, specifically as a QA and project manager and producer.<br>
+<br>
+There are lots of reasons why it's &quot;bad&quot; for a client to control information like targets, so any time you switch targets/open fire it has to be server validated, at least before any actual effects happen.  (You might go into an animation, but it's not going to have you start to do damage/shoot before it makes sure you have, say, line of sight, obviously.)<br>
+<br>
+We can assume that your client has a the information on targets you have access to via Tab/ctrl+Tab/etc (&quot;targets in your area&quot;) but even that has to be server validated every time you actually want to DO anything with one of those targets.  You'll notice that sometimes you can target someone at a tower battle but you get an empty health bar until the client updates their health.  So it's not appreciably more overhead than goes on now.  Maybe one more packet send/receive cycle, which isn't huge.<br>
+<br>
+My point, really, is that implementation concerns should be dealt with by the dev team.  Players should be more concerned with play balance, exploits, user friendiness, etc.  The fact that it might be confusing is a valid point, and one that people would have to address on their own.  (I don't think it's any more confusing than the auto targeting switches, but how many people use those?)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 11th, 2003 <span class="time">00:27</span></td><td class="alt2 small right"><a href="#post1371391">#7</a></td></tr>
+<tr class="post" id="post1372456"><td class="alt1 author"><b class="name">Zanthyna</b><br><span class="small usertitle">Speling Perfeshunal</span><br><img class="avatar" src="../images/avatars/Leets_0007.jpg" alt=""></td><td class="alt1 body"><div class="message">Well, I think it would be nice to have a /aid or something like that that targets your target's target (if that makes any sense).</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 11th, 2003 <span class="time">13:03</span></td><td class="alt1 small right"><a href="#post1372456">#8</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250531170931/https://forums-archive.anarchy-online.com/showthread.php?129800-Make-assist-work-outside-of-combat">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

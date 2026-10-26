@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - +=+= Suggestions for Performance Settings, Scripts to use, Etc.</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-13.html">Game Mechanics</a> &gt; +=+= Suggestions for Performance Settings, Scripts to use, Etc.</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="38112.html">Last Thread</a> &nbsp; <a href="38293.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:+=+= Suggestions for Performance Settings, Scripts to use, Etc."><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post561837"><td class="alt2 author"><b class="name">thresholdrpg</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40099.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>+=+= Suggestions for Performance Settings, Scripts to use, Etc.</b></div><div class="message">I remember reading some suggestions a long time ago for scripts to help people deal with slowdowns in cities.<br>
+<br>
+Someone had written up a guide that had examples scripts to do things like lower view distance in town, then reset it to longer outdoors, etc.<br>
+<br>
+What are some scripts you all have/use that help you tweak visual settings and improve performance?<br>
+<br>
+Also, what settings in the video/audio categories do you lower to improve performance, framerate, etc. without giving up too much quality.<br>
+<br>
+Thanks!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 14th, 2002 <span class="time">17:34</span></td><td class="alt2 small right"><a href="#post561837">#1</a></td></tr>
+<tr class="post" id="post562008"><td class="alt1 author"><b class="name">skybert</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt1 body"><div class="message">I've posted this before, but I forget the thread it's in (probably way down in the abyss where noone sees it, so I'll post it again.<br>
+<br>
+I did not write this document. I downloaded it a long time ago, and are only copy/pasting it here.<br>
+<br>
+And, yes. The link on the bottom id broken. The site has been down for a very long time.<br>
+<br>
+----------------------------------file begins------------------------<br>
+<br>
+As you may know, scripts in AO can only contain commands that can be entered into the chat window, <br>
+making the use of scripts limited. <br>
+However, if you are like me and keep changing the view distance and character view distance <br>
+when entering and exiting cities and other crowded areas, you can use these scripts.<br>
+<br>
+The two commands to use are:<br>
+/viewdist #<br>
+/chardist #<br>
+with # meaning a number from 0 to 100 (%).<br>
+Example scripts:<br>
+&quot;Low&quot;<br>
+----------------------------<br>
+/delay 1<br>
+/text View setting: Low<br>
+/viewdist 50<br>
+/chardist 5<br>
+----------------------------<br>
+&quot;Medium&quot;<br>
+----------------------------<br>
+/delay 1<br>
+/text View setting: Medium<br>
+/viewdist 70<br>
+/chardist 40<br>
+----------------------------<br>
+&quot;High&quot;<br>
+----------------------------<br>
+/delay 1<br>
+/text View setting: High<br>
+/viewdist 90<br>
+/chardist 100<br>
+----------------------------<br>
+To use these example scripts, just copy the text between the lines into a file with Notepad <br>
+and save it as some name. Remove the file extension .txt, and put the file in a folder <br>
+called &quot;scripts&quot; in your AO directory. <br>
+<br>
+The script can then be invoked in-game with:<br>
+/script &lt;ScriptName&gt;<br>
+<br>
+You probably want to make macros of the scripts too:<br>
+/macro &lt;MacroName&gt; /script &lt;ScriptName&gt;<br>
+<br>
+For example:<br>
+/macro ViewLow /script viewlow<br>
+<br>
+This will invoke the &quot;Low&quot; view setting script above (saved in a file called &quot;viewlow&quot;).<br>
+<br>
+<br>
+/Kraith (kraith@soulfire.org)<br>
+-----------------------------------------------------<br>
+Thanks to Crysallis (crysallis@igmproductions.com)<br>
+for the complete command list, available at:<br>
+<a href="https://web.archive.org/web/20020714/http://www.igmproductions.com/ao/texts/gencom.txt">http://www.igmproductions.com/ao/texts/gencom.txt</a></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 14th, 2002 <span class="time">20:43</span></td><td class="alt1 small right"><a href="#post562008">#2</a></td></tr>
+<tr class="post" id="post562234"><td class="alt2 author"><b class="name">thresholdrpg</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40099.jpg" alt=""></td><td class="alt2 body"><div class="message">Great post! Thank you VERY much.<br>
+<br>
+Can I ask what the /text setting does? <br>
+<br>
+Also, let me make sure the obvious meaning is correct:<br>
+<br>
+viewdist - how far ahead the &quot;world&quot; is rendered<br>
+<br>
+chardist - how far ahead player characters are rendered<br>
+<br>
+Also, are there any other performance tweaks you or anyone else recommends? Some things like ground detail and such boggled me. Is ground detail all that important? Perhaps that is a good place to trim things down a bit for a bump up in frame rate.<br>
+<br>
+Thanks!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 15th, 2002 <span class="time">00:55</span></td><td class="alt2 small right"><a href="#post562234">#3</a></td></tr>
+<tr class="post" id="post562614"><td class="alt1 author"><b class="name">Holmgehirr</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40678.jpg" alt=""></td><td class="alt1 body"><div class="message">excellent post Skybert. thank you.<br>
+<br>
+Why did you include a /delay 1 at the start of the script? <br>
+would be 1ms ... /scratch<br>
+<br>
+Thx in advance</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 15th, 2002 <span class="time">07:12</span></td><td class="alt1 small right"><a href="#post562614">#4</a></td></tr>
+<tr class="post" id="post562816"><td class="alt2 author"><b class="name">skybert</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt2 body"><div class="message">/text blablablablabla<br>
+will make the text show up on your screen only. It is ment for giving you info about what you just did.<br>
+<br>
+<br>
+About the /delay 1<br>
+I did not put it there.  It was like that when I downloaded the file. All I did, was to decide to not edit it. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+<br>
+<br>
+edit: answering a few more of the above questions....<br>
+<br>
+You are right about the chardist and viewdist rendering part.<br>
+Ground quality is one of the things you can safely reduce.<br>
+Other stuff is clouds and clientside wildlife.  <br>
+<br>
+Play around with the setings until you find one with satisfying quality/speed.  Take everything to minimum, and raise the ones you feel is more important until you notice lag becomes too much.</div><p class="small edited"><i>Last edited by Skybert on July 15th, 2002 at 10:05</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 15th, 2002 <span class="time">10:01</span></td><td class="alt2 small right"><a href="#post562816">#5</a></td></tr>
+<tr class="post" id="post563016"><td class="alt1 author"><b class="name">thresholdrpg</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40099.jpg" alt=""></td><td class="alt1 body"><div class="message">Thanks again! =)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 15th, 2002 <span class="time">12:20</span></td><td class="alt1 small right"><a href="#post563016">#6</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529052501/https://forums-archive.anarchy-online.com/showthread.php?38176-Suggestions-for-Performance-Settings-Scripts-to-use-Etc">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

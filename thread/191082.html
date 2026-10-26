@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - How AC&#39;s REALLY work</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics.html">Game Mechanics</a> &gt; How AC&#39;s REALLY work</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="193285.html">Last Thread</a> &nbsp; <a href="193754.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:How AC&#39;s REALLY work"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2003"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1858619"><td class="alt2 author"><b class="name">Crestfall</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40185.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: May 2002<br>Posts: 127</p></td><td class="alt2 body"><div class="small posttitle"><b>How AC&#39;s REALLY work</b></div><div class="message"><div>Most players seem to have a misconception of what the effect of AC's is. Generally people believe AC's will reduce 1 point of damage for each 10 points of AC your target has, on each hit. This is not correct, AC lowers you maximum hit by AC / 10 points, then a random number is generated between your <i>minimum damage</i> and <i>maximum damage - reduction from AC's</i>.<br>
+<br>
+Example: Let's say you hit between 0 and 1000 damage on a mob with 0 AC's, now let's raise his AC's to 2000, you will now hit between 0 and 800 damage. Your average hit went from 500 to 400. This means you will <i>averagely</i> do AC / 20 less damage, unlike AC / 10, which everyone seems to think.<br>
+<br>
+For nano based damage it works different though, first a random number is rolled between your minimum and maximum damage, then AC's reduce damage (and damage ofcourse can't go below your minimum damage).<br>
+<br>
+Same example for nano based attacks: Assume your nuke hits a 0 AC mob between 0 and 1000, average hit is 500. If we raise AC's to 2000 on that mob, you will always hit for 0 damage IF the random number that was generated was between 0 and 200, if the number was between 200 and 1000, you will hit for a random number between 0 and 800. So for the interval [0,200] you will always hit for 0, in the interval ]200,1000] you will hit for averagely 400. Our real average becomes: (0 * 200 + 400 * 800) / 1000 = 320.<br>
+<br>
+Basically for nano damage there's an increased chance to do minimum damage, unlike for weapons, because the AC reduction and random roll are done in a different order. Nano damage is more affected by AC's than weapon damage because of this.<br>
+<br>
+Now which weapons are better, weapons with high min damage/low max damage, or weapons with low min damage/high max damage ? (Assuming the sum of min and max damage is the same for both types from here on.) Both have an advantage over the other in different situations: IF your targets AC's are high enough to ALWAYS push your damage to minimum damage with the high minimum damage weapon, it will do better than the other. IF the AC's aren't high enough to make you do 100% minimum damage hits with the high minimum damage weapon, the high maximum damage weapon will do better because it will do higher crits. (Crits are based on your max damage with AC's reduced + crit modifier.)<br>
+<br>
+This might sound a bit confusing so I will give an example: Assume weapon A that does between 400 and 600 damage against 0 AC's. Weapon B does between 100 and 900 damage against 0 AC's. For both weapons average damage (500) is the same if we neglect critical hits. If we raise AC's to 2000, weapon A will hit between 400 and 400 damage, averagely 400, weapon B will hit between 100 and 700 damage, same average, 400. I conclude from 0-2000 AC's weapon B will do better damage because, and only because of the fact it will do higher critical hits. If we raise AC's above 2000, for example, 4000, weapon A will still hit between 400 and 400 damage, weapon B will hit between 100 and 500 damage, averagely 300. Weapon A now does better damage because it &quot;ignored&quot; part of the target's AC's (2000 out of 4000 AC's had no effect). (Technically weapon B could still do better than weapon A between 2000 and 5000 AC's with high crit chances, but I consider crits so rare we can neglect them once we go above 2000 AC's and weapon B starts ignoring part of the target's AC's.)<br>
+<br>
+Bottomline: High minimum damage weapons are only better if they ALWAYS hit for their minimum damage, meaning some of the target's AC's had no effect.<br>
+<br>
+Hellspinner for example has 201-443 as base damage, against AC's that are low enough to not always make you hit for minimum damage with this weapon, it will do the exact same average non-crit damage as a 1-645 weapon. Making the sum of min and max damage is a fast way to compare different weapons.<br>
+<br>
+I hope someone understood some of this gibberish <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 16th, 2003 <span class="time">14:10</span></td><td class="alt2 small right"><a href="#post1858619">#1</a></td></tr>
+<tr class="post" id="post1858765"><td class="alt1 author"><b class="name">Satans Twin</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/atrox.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Dec 2002<br>Posts: 62</p></td><td class="alt1 body"><div class="message"><div>you lost me at &quot;Most players seem....&quot;<br>
+:P<br>
+im trox soo its not my fault</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				Rimor<br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/krushhh">Krushhh</a>       ---<a href="https://web.archive.org/web/20031016/http://aodb.info/equipconfig.aspx?Pane=&amp;Neck=96354&amp;Head=157767&amp;Back=206976&amp;RightShoulder=209237&amp;Chest=220307&amp;ChestQL=204&amp;LeftShoulder=206013&amp;RightArm=203530&amp;Hands=203448&amp;LeftArm=203530&amp;RightWrist=84184&amp;RightWristQL=200&amp;Legs=203449&amp;LeftWrist=84178&amp;LeftWristQL=200&amp;RightFinger=226295&amp;Feet=203446&amp;LeftFinger=84146&amp;LeftFingerQL=200">Equip</a><br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/Shaolinburdy">Shaolinburdy</a> <br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/sgtcrash">Sgtcrash</a> <br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/reclaimbooth">Reclaimbooth</a> <br>
+<br>
+Atlantean<br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/Hongkongfui">Hongkongfui</a>
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 16th, 2003 <span class="time">14:45</span></td><td class="alt1 small right"><a href="#post1858765">#2</a></td></tr>
+<tr class="post" id="post1858782"><td class="alt2 author"><b class="name">Vaalena</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/223846.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2003<br>Posts: 350</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> </div><div class="message"><div>Actually it is a very good gibberish!<img src="../images/smilies/biggrin.gif" alt="" class="smilie"> <br>
+<br>
+Very well explained!</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 16th, 2003 <span class="time">14:48</span></td><td class="alt2 small right"><a href="#post1858782">#3</a></td></tr>
+<tr class="post" id="post1859124"><td class="alt1 author"><b class="name">Ubric</b><br><span class="small usertitle">Phear Leet</span><p class="small userinfo" data-pagefind-ignore>Registered: Jan 2002<br>Posts: 339</p></td><td class="alt1 body"><div class="message"><div>..... which is one of the reasons why nukes suck arse :P<br>
+<br>
+uhh</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 16th, 2003 <span class="time">16:08</span></td><td class="alt1 small right"><a href="#post1859124">#4</a></td></tr>
+<tr class="post" id="post1859387"><td class="alt2 author"><b class="name">Maimgara</b><br><span class="small usertitle">?</span><br><img class="avatar" src="../images/avatars/40164.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Aug 2002<br>Posts: 1,082</p></td><td class="alt2 body"><div class="message"><div>Nice teoretical explanation.<br>
+This is why FC desperaly tries to keep the few unknown game mechanics from our grasp <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				<a href="https://people.anarchy-online.com/character/bio/d/5/name/maimgara"><span style="color:white">Maimgara</span></a> <a href="https://web.archive.org/web/20031016/http://www.aodb.info/configreport.aspx?EquipSet=81&amp;ImplantSet=40&amp;PerkSet=58"><span style="color:white">|</span></a> - Supreme Creator, Shadow Ops - RK2<br>
+<span class="small">[Thedeacon]: As for the &quot;high level n00b&quot; part....Hey, I don't care if they level up....puts them in pvp range quicker. </span>
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 16th, 2003 <span class="time">17:49</span></td><td class="alt2 small right"><a href="#post1859387">#5</a></td></tr>
+<tr class="post" id="post1859917"><td class="alt1 author"><b class="name">Crysantimum</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40627.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jan 2003<br>Posts: 468</p></td><td class="alt1 body"><div class="message"><div><div>
+	<div>Quote:</div>
+	
+	
+		
+			
+				<i>Originally posted by Maimgara </i><br>
+<b>Nice teoretical explanation.<br>
+This is why FC desperaly tries to keep the few unknown game mechanics from our grasp <img src="../images/smilies/smile.gif" alt="" class="smilie"> </b>
+			
+		
+	
+	
+</div><br>
+<br>
+To Maimgara: Yes, not fun to have your pranks discovered I guess <img src="../images/smilies/smile.gif" alt="" class="smilie"> Just joking <img src="../images/smilies/smile.gif" alt="" class="smilie"> <br>
+<br>
+It was a nice explanation to me.</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 16th, 2003 <span class="time">21:05</span></td><td class="alt1 small right"><a href="#post1859917">#6</a></td></tr>
+<tr class="post" id="post1859994"><td class="alt2 author"><b class="name">Crysantimum</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40627.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jan 2003<br>Posts: 468</p></td><td class="alt2 body"><div class="message"><div>I find it kind of ironic that players are requested to give specific suggestions.<br>
+<br>
+Example: &quot;Here you got four unknowns equals 17 and the question is: Do you like them? Please be specific in your arguments.&quot;<br>
+<br>
+[edit: Typoqueen edit]</div></div><p class="small edited"><i>Last edited by Crysantimum on October 17th, 2003 at 17:28</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 16th, 2003 <span class="time">21:28</span></td><td class="alt2 small right"><a href="#post1859994">#7</a></td></tr>
+<tr class="post" id="post1870323"><td class="alt1 author"><b class="name">Incarnadine</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40652.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Sep 2003<br>Posts: 304</p></td><td class="alt1 body"><div class="message"><div><div>
+	<div>Quote:</div>
+	
+	
+		
+			
+				<i>Originally posted by Crysantimum </i><br>
+<b>Example: &quot;Here you got four unknowns equals 17 and the question is: Do you like them? Please be specific in your arguments.&quot;</b>
+			
+		
+	
+	
+</div><br>
+This had me in stitches, Crysantimum. :-)<br>
+<br>
+Anyone that succeeds in the above should of course immediately head to Stockholm for the Nobel Prize in Mathematics, if there is one. :-)</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				Whoever designed the Jobe luxury apartments, could I hire you please? :-)
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 20th, 2003 <span class="time">19:27</span></td><td class="alt1 small right"><a href="#post1870323">#8</a></td></tr>
+<tr class="post" id="post1870365"><td class="alt2 author"><b class="name">Viredan</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0009.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2002<br>Posts: 517</p></td><td class="alt2 body"><div class="message"><div><div>
+	<div>Quote:</div>
+	
+	
+		
+			
+				For nano based damage it works different though, first a random number is rolled between your minimum and maximum damage, then AC's reduce damage (and damage ofcourse can't go below your minimum damage
+			
+		
+	
+	
+</div><br>
+<br>
+Actually, that happens all the time.  I've seen nukes hit for way less then the minimum damage.</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				<span class="small"><br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/viredan">-=Viredan=-</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/khepakh">Khepakh</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/nyemme">Nyemme</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/zeramus">Zeramus</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/bastille">Bastille</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/moonglum">Moonglum</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/kirayna">Kirayna</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/navi">Navi</a>:<br>
+<br>
+<a href="https://web.archive.org/web/20031020/http://www.cyclophenia.com/">Free Metal Music!</a><br>
+<a href="https://web.archive.org/web/20031020/http://www.ao-journal.com/journal/journal.asp?charID=63">Ao Journal!</a><br>
+Playing on Test Too! as Shiva *General* of Nerf Us</span>
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 20th, 2003 <span class="time">19:39</span></td><td class="alt2 small right"><a href="#post1870365">#9</a></td></tr>
+<tr class="post" id="post1870580"><td class="alt1 author"><b class="name">Rahmorak</b><br><span class="small usertitle">NT Professional</span><br><img class="avatar" src="../images/avatars/40676.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Nov 2001<br>Posts: 2,072</p></td><td class="alt1 body"><div class="message"><div><div>
+	<div>Quote:</div>
+	
+	
+		
+			
+				<i>Originally posted by Viredan </i><br>
+<b>Actually, that happens all the time.  I've seen nukes hit for way less then the minimum damage. </b>
+			
+		
+	
+	
+</div><br>
+<br>
+Hmm, the only time I have seen nukes hit for less tham min/ dmg is against bosses with immunities, e.g. running CandyCane on a Mission boss with FireAC protection, you might get 7x540 + 1 x 380.  In this case the MOB in question typically has a Red shield surrounding him.<br>
+<br>
+That aside, the fact nukes hit so often for min. damage is ... annoying, my ranged weapon alts don't have anywhere near the same amount of min. dmg hits. <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				<span style="color:#99ccff"><span class="small"><br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/rahmorak">Rahmorak</a>, 209 Clan Solitus NT, d.o.b. Sept. 2002.  <a href="https://web.archive.org/web/20031020/http://www.ramorak.com/sl/nukes.asp?name=Rahmorak&amp;lvl=208&amp;mc=1400&amp;ni=1830&amp;deck=8&amp;ac=30000&amp;end=1.10&amp;aggdef=100&amp;sec=30&amp;pool=15000&amp;he=940&amp;ns=34.286&amp;crunch=28&amp;xcost=19&amp;eon=2000&amp;cn=0&amp;nsrc=0&amp;range=36&amp;xrange=20&amp;pg=1&amp;s1=&amp;s2=d&amp;det=b&amp;ndelta=100">Rahmo's Nuke table</a><br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/mavra">Mavra</a>, 60+ Adventurer.  D.o.B. March 2003. ex-Tower Twink.<br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/vhairi">Vhairi</a>, 116 Agent.  D.o.B. June 2001. Retired Dec 2001.<br>
+<br>
+<a href="https://web.archive.org/web/20031020/http://www.ramorak.com/sl/nukes.asp">How much damage are YOUR nukes doing?</a><br>
+<a href="https://web.archive.org/web/20031020/http://cerberus.kauler.com/">Clan Cerberus</a><br>
+</span></span>
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 20th, 2003 <span class="time">21:08</span></td><td class="alt1 small right"><a href="#post1870580">#10</a></td></tr>
+<tr class="post" id="post1872266"><td class="alt2 author"><b class="name">Crestfall</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40185.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: May 2002<br>Posts: 127</p></td><td class="alt2 body"><div class="message"><div><div>
+	<div>Quote:</div>
+	
+	
+		
+			
+				<i>Originally posted by Viredan </i><br>
+<b><br>
+<br>
+Actually, that happens all the time.  I've seen nukes hit for way less then the minimum damage. </b>
+			
+		
+	
+	
+</div><br>
+<br>
+That's caused by reflects shields, which doesn't affect how AC's work at all. Ofcourse you're going to hit a soldier with tms up for way less than your minimum damage.</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 21st, 2003 <span class="time">11:26</span></td><td class="alt2 small right"><a href="#post1872266">#11</a></td></tr>
+<tr class="post" id="post1872455"><td class="alt1 author"><b class="name">Trillian01</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40218.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2003<br>Posts: 705</p></td><td class="alt1 body"><div class="message"><div>my AC test involved removing my ql 200 flesh hood and getting 40 more in damage.. so i concluded that 100 AC is 10 less in damage.. and i'm sticking too it <img src="../images/smilies/tongue.gif" alt="" class="smilie"></div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				<span style="color:lightblue">Tricia</span> <a href="https://people.anarchy-online.com/character/bio/d/5/name/trillian01"><b><span style="color:lightblue">Trillian01</span></b></a> <span style="color:lightblue">McMillan</span><span class="small"> - </span><a href="https://web.archive.org/web/20031021/http://www.aodb.info/equipconfig.aspx?Pane=&amp;Neck=96357&amp;Head=203453&amp;Back=165203&amp;BackQL=200&amp;RightShoulder=225458&amp;Chest=165304&amp;LeftShoulder=225458&amp;RightArm=203450&amp;Hands=165306&amp;LeftArm=203450&amp;RightWrist=165422&amp;Legs=203454&amp;LeftWrist=165215&amp;RightFinger=226291&amp;Feet=203452&amp;LeftFinger=165483"><span style="color:white"><span class="small">Current Setup</span></span></a><br>
+<br>
+<span style="color:pink">Tricia</span> <a href="https://people.anarchy-online.com/character/bio/d/5/name/trillian05"><b><span style="color:pink">Trillian05</span></b></a> <span style="color:pink">McMillan</span><span class="small"> - </span><a href="https://web.archive.org/web/20031021/http://aodb.info/equipconfig.aspx?Pane=&amp;Neck=99723&amp;Head=168927&amp;Back=160652&amp;BackQL=200&amp;RightShoulder=209237&amp;Chest=217686&amp;ChestQL=160&amp;LeftShoulder=157955&amp;RightArm=217684&amp;RightArmQL=160&amp;Hands=217682&amp;HandsQL=160&amp;LeftArm=217684&amp;LeftArmQL=160&amp;Legs=217690&amp;LegsQL=160&amp;RightFinger=226191&amp;Feet=217688&amp;FeetQL=160&amp;LeftFinger=84146&amp;LeftFingerQL=200"><span style="color:white"><span class="small">Current Setup</span></span></a><br>
+<br>
+<span class="small"><span style="color:pink"><b>~{ </b></span><a href="https://people.anarchy-online.com/character/bio/d/5/name/trillian03"><span class="small">Trillian03</span></a><span class="small"> - Proud member of </span><a href="https://web.archive.org/web/20031021/http://www.anarchy-online.com/org/stats/d/1/name/2398209"><span class="small">First Order</span></a><span class="small"> - </span><a href="https://web.archive.org/web/20031021/http://aodb.info/equipconfig.aspx?Pane=&amp;Head=86441&amp;Back=164975&amp;BackQL=50&amp;Chest=208286&amp;ChestQL=50&amp;RightArm=208284&amp;RightArmQL=50&amp;Hands=208290&amp;HandsQL=50&amp;LeftArm=208284&amp;LeftArmQL=50&amp;Legs=208294&amp;LegsQL=50&amp;RightFinger=202717&amp;RightFingerQL=77&amp;Feet=208288&amp;FeetQL=50&amp;LeftFinger=204579"><span class="small">eqp</span></a><span style="color:pink"><b> }~</b></span></span><br>
+<br>
+<a href="https://web.archive.org/web/20031021/http://members.cox.net/jason.guidry/Trillian.JPG"><span class="small">&gt; Trillian &lt; - MrFili style <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></span></a>
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 21st, 2003 <span class="time">12:33</span></td><td class="alt1 small right"><a href="#post1872455">#12</a></td></tr>
+<tr class="post" id="post1873513"><td class="alt2 author"><b class="name">Viredan</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0009.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2002<br>Posts: 517</p></td><td class="alt2 body"><div class="message"><div>Ahh, that must be it.  I wasn't thinking about reflect shields, along with the AC.  *kicks the brain around* bad brain, bad!</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				<span class="small"><br>
+<a href="https://people.anarchy-online.com/character/bio/d/5/name/viredan">-=Viredan=-</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/khepakh">Khepakh</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/nyemme">Nyemme</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/zeramus">Zeramus</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/bastille">Bastille</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/moonglum">Moonglum</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/kirayna">Kirayna</a>:<a href="https://people.anarchy-online.com/character/bio/d/5/name/navi">Navi</a>:<br>
+<br>
+<a href="https://web.archive.org/web/20031021/http://www.cyclophenia.com/">Free Metal Music!</a><br>
+<a href="https://web.archive.org/web/20031021/http://www.ao-journal.com/journal/journal.asp?charID=63">Ao Journal!</a><br>
+Playing on Test Too! as Shiva *General* of Nerf Us</span>
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 21st, 2003 <span class="time">17:47</span></td><td class="alt2 small right"><a href="#post1873513">#13</a></td></tr>
+<tr class="post" id="post1876052"><td class="alt1 author"><b class="name">Crestfall</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40185.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: May 2002<br>Posts: 127</p></td><td class="alt1 body"><div class="message"><div><div>
+	<div>Quote:</div>
+	
+	
+		
+			
+				<i>Originally posted by Trillian01 </i><br>
+<b>my AC test involved removing my ql 200 flesh hood and getting 40 more in damage.. so i concluded that 100 AC is 10 less in damage.. and i'm sticking too it <img src="../images/smilies/tongue.gif" alt="" class="smilie"> </b>
+			
+		
+	
+	
+</div><br>
+<br>
+Well the whole purpose of this thread was to get that idea out of people's head, but ofcourse I can't force you to understand it <img src="../images/smilies/tongue.gif" alt="" class="smilie"> You were probably comparing critical hits, which are based on maximum damage, which is indeed reduced by AC / 10.</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 22nd, 2003 <span class="time">12:31</span></td><td class="alt1 small right"><a href="#post1876052">#14</a></td></tr>
+<tr class="post" id="post1879313"><td class="alt2 author"><b class="name">Darkbane</b><br><span class="small usertitle">Council of Testers</span><p class="small userinfo" data-pagefind-ignore>Registered: Jan 2002<br>Posts: 5,849</p></td><td class="alt2 body"><div class="message"><div>Intereting stuff... you really do learn something new every day in AO... even after all this time <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				Visit <a href="https://web.archive.org/web/20031023/http://www.anarchyonline.org">www.anarchyonline.org</a> for all your Testlive needs.<br>
+<br>
+<span class="small"><br>
+<b>The Wisdom of Jynne:</b> Sometimes you are the pigeon, and sometimes you are the statue.<br>
+</span>
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 23rd, 2003 <span class="time">11:35</span></td><td class="alt2 small right"><a href="#post1879313">#15</a></td></tr>
+<tr class="post" id="post1885245"><td class="alt1 author"><b class="name">Tzor</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/223940.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jan 2002<br>Posts: 305</p></td><td class="alt1 body"><div class="message"><div>Very good explanation. I've suspected this was how it worked but havent tested anything. Any nt will tell you that nukes almost always hit for minimum damage on higher level mobs though, with the occasional &quot;a little above minimum&quot; hit.<br>
+<br>
+Was quite surprised at the AC/20 effectiveness on normal hit, but your analysis is 100% true AFAIK. And this is indeed not widely known.<br>
+<br>
+In SL  though most mobs have insane AC, so mindamage is king there, and the ability to change damage type. So helllfury/frostbound reaper/nukes/pets/etc are really alot more effective. Most leveling in SL will be on hecklers, which have like 25k+ in most (or all?) ACs. FC has given us alot of 200+ mindamage weapons to compensate a little though.</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				Neophyte Carlos &quot;<a href="https://people.anarchy-online.com/character/bio/d/5/name/tzorcelan">Tzorcelan</a>&quot; Spencer<br>
+<br>
+WTS Pebble
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 25th, 2003 <span class="time">06:11</span></td><td class="alt1 small right"><a href="#post1885245">#16</a></td></tr>
+<tr class="post" id="post1885425"><td class="alt2 author"><b class="name">THEDEACON!</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40181.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Feb 2002<br>Posts: 2,446</p></td><td class="alt2 body"><div class="message"><div>Too much word.</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				Nanomage: The OTHER other white meat
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 25th, 2003 <span class="time">09:14</span></td><td class="alt2 small right"><a href="#post1885425">#17</a></td></tr>
+<tr class="post" id="post1892222"><td class="alt1 author"><b class="name">Tzor</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/223940.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jan 2002<br>Posts: 305</p></td><td class="alt1 body"><div class="message"><div>I did some numbercrunching on nukes vs guns and the effect of AC. Imagine a 0-9 nuke, against AC=0 it would hit like:<br>
+<br>
+[0,1, 2, 3, 4, 5, 6, 7, 8, 9]. 45/10= 4.5 avg. <br>
+<br>
+Against AC=10 it would be<br>
+[0, 0, 1, 2, 3, 4, 5, 6, 7, 8]. 36/10= 3.6 avg.<br>
+<br>
+And so on. <br>
+Compare this to a 0-9 weapon.<br>
+<div>
+	<div>Code:</div>
+	<pre><div><b>Average damage</b>
+AC	0-9 Nuke	0-9 Gun
+0	4.5		4.5
+10	3.6		4
+20	2.8		3.5
+30	2.1		3
+40	1.5		2.5
+50	1.0		2
+60	0.6		1.5
+70	0.3		1
+80	0.1		0.5
+90	0.0		0</div></pre>
+</div><br>
+Wish i could show you a graph but it shows that nukes indeed do suck vs AC.<br>
+<br>
+Edit: nicer layout</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				Neophyte Carlos &quot;<a href="https://people.anarchy-online.com/character/bio/d/5/name/tzorcelan">Tzorcelan</a>&quot; Spencer<br>
+<br>
+WTS Pebble
+			</div></div><p class="small edited"><i>Last edited by Tzor on November 10th, 2003 at 03:48</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2003 <span class="time">03:55</span></td><td class="alt1 small right"><a href="#post1892222">#18</a></td></tr>
+<tr class="post" id="post1893858"><td class="alt2 author"><b class="name">Chernish</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0004.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Sep 2002<br>Posts: 528</p></td><td class="alt2 body"><div class="message"><div>Just to make things clear about AC/10 and AC/20:<br>
+<br>
+You are all right!<br>
+<br>
+A reduction of damage by AC/10 will *always* result on an *average* damage reduction of AC/20<br>
+<br>
+Demonstration:<br>
+average(Min;Max- AC/10)<br>
+=Min/2+(Max-AC/10)/2<br>
+=(Min+Max)/2 - (AC/10)/2<br>
+=Average - AC/20<br>
+<br>
+Sorry, I couldn't resist.<br>
+<br>
+Anyway, thanks for the explanation. I always assumed that the weapon damage was acting as the nuke damage you describe.<br>
+<br>
+Cheers.</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				Concealment is bugged in PvM: hit sneak two times after you zone. Only then you will be able to sneak properly.<br>
+
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2003 <span class="time">15:37</span></td><td class="alt2 small right"><a href="#post1893858">#19</a></td></tr>
+<tr class="post" id="post1893870"><td class="alt1 author"><b class="name">Engelen</b><br><span class="small usertitle">Martial Artist Professional</span><br><img class="avatar" src="../images/avatars/40663.jpg" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Apr 2002<br>Posts: 2,257</p></td><td class="alt1 body"><div class="message"><div>I DONT UNDERSTAND IT!!!!!<img src="../images/smilies/frown.gif" alt="" class="smilie"><br>
+<br>
+*sniff* I suck so badly at numbers <img src="../images/smilies/frown.gif" alt="" class="smilie"><br>
+<br>
+So what you are uhm saying...is that if a mob hit me for 400 points of melee damage and I have 5000 Melee AC, and I increase it to 5020, the mob will hit me for 399?<br>
+<br>
+(Oh By the way, it uhm...seems like a good explanation <img src="../images/smilies/tongue.gif" alt="" class="smilie">)</div></div><div class="sig">__________________<br><div>
+				__________________<br>
+				<span style="color:silver"><i>&quot;Walking in your footsteps........&quot;</i></span><br>
+|<b> <a href="https://people.anarchy-online.com/character/bio/d/5/name/engelen">Engelen</a> - M.I.B(MA in Blue)</b>|<br>
+|<span class="small"> <a href="https://web.archive.org/web/20031028/http://www.anarchy-online.com/org/stats/d/2/name/714754">Elements of Destruction</a> | My <a href="213250.html"><b>MA Guide</b></a> | Other Alts: <a href="https://people.anarchy-online.com/character/bio/d/5/name/puffen">Puffen</a>/<a href="https://people.anarchy-online.com/character/bio/d/5/name/batgirl">Batgirl</a></span> |
+			</div></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2003 <span class="time">15:41</span></td><td class="alt1 small right"><a href="#post1893870">#20</a></td></tr>
+<tr><td colspan="2" class="gap">The last page of this thread wasn't saved.</td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20040908233223/http://forums.anarchy-online.com:80/showthread.php?s=&amp;threadid=191082">The saved copy</a> (saved by the Wayback Machine while the forum was live)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

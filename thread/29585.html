@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Do you want your Guild (ITEM) Bank?</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Community &gt; <a href="../forum/rubi-ka-1-organizations-10.html">Rubi-Ka 1 Organizations</a> &gt; Do you want your Guild (ITEM) Bank?</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="36061.html">Last Thread</a> &nbsp; <a href="35106.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Do you want your Guild (ITEM) Bank?"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Rubi-Ka 1 Organizations"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post490186"><td class="alt2 author"><b class="name">xyberviri</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Do you want your Guild (ITEM) Bank?</b></div><div class="message">Hello Im Xyberviri the Leader of the Omni-Tribunal.<br>
+<br>
+I recently installed the AO::Chat perl module on a Windows 98(heh yes it works and its ugly) Machine and have successfully work'd a Channel bot that can list items being held by my guilds members, Its currently in beta2.54(heh dont you love versions).<br>
+<br>
+in about 1 week ill be releasing the code for anyone to use/go off with. what you do with it i dont care but you will need some of the following to make my grand Gold1.0 work:<br>
+<br>
+Perl___5.6.1<br>
+MySql_3.23.49<br>
+Php___4.2.1<br>
+Ability to &quot;Make&quot; &amp; &quot;install&quot; perl modules along with the following:<br>
+AO::Chat;<br>
+DBI;<br>
+<br>
+Now Before anyone flames me at all, im doing this out of the kindness of my heart since no one else has released this info to my knowledge, also to my knowledge No one has Released how to unpack/pack the blob data which thanks to My general Onariz, this bot can store that data. <br>
+<br>
+Just letting some people know about it since not every one has the reasources to create a bot, now this bot also parses the XML data to get a member/access list of people that can use it, by default Applicants can not use it, except in the case of anarchy guilds since every one is a anarchist.<br>
+<br>
+Well thats it,  Just wanted to let some guild leaders know that some one is working on a solution.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 8th, 2002 <span class="time">00:35</span></td><td class="alt2 small right"><a href="#post490186">#1</a></td></tr>
+<tr class="post" id="post495662"><td class="alt1 author"><b class="name">Lobolefou</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40228.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Great work</b></div><div class="message">hello Xyberviri<br>
+<br>
+your bot is very interesting.<br>
+<br>
+I don't know how bot work so, can you explaint it a little more? (need to leave a char always in game?, ...)<br>
+<br>
+Greeting (and thank) for your work</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2002 <span class="time">13:55</span></td><td class="alt1 small right"><a href="#post495662">#2</a></td></tr>
+<tr class="post" id="post496599"><td class="alt2 author"><b class="name">xyberviri</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>Updates</b></div><div class="message">Well, Basically its a chat bot, like omni/neut/clanbot that stores what item a member wants to give away to the rest of the guild. It works thought private tells and if your running SqlDbase it on the web you can intergrate it into your &quot;members only&quot; section for your members to view the list of items while off line.<br>
+<br>
+now Keep in mind that I'm making this for windows 9X meaning that any person can run this bot from a pc that can Play AO.<br>
+<br>
+The bot is made up of(currently) 9 files, 1 Perl Script that handles the bots connecting to the chat server, 1 Php Script that handles updating the User Database/Access list, and 7 Ascii files that handles the preatty colors it uses. <br>
+<br>
+you can run a bat file that first runs the update script then the botscript which 'eventually' loggs into the chat server, just takes a couple of mins. yes you do have to make a extra char, but you dont need to join them or even level them once. you also must maintain a connection to the internet for this bot to work unless your sitting in the server farm room with the AO servers,which i highly doubt. <br>
+<br>
+Im releaseing this bot under GPL for anyone to do what ever you want with it, if you give me credit then that would be nice too.<br>
+<br>
+Features Currently working:<br>
+Adding item listings<br>
+removing item listings<br>
+adding watch terms<br>
+removing watch terms<br>
+requesting the items clickable link<br>
+Auto Updating Access list/members list<br>
+<br>
+Features im working on:<br>
+Access to bot restricted to members that are not applicants.<br>
+Adding the status of a person when getting item info(offline/online/lastonline)<br>
+Filtering out searchs to not show items that the person has them selfs added(this is kinda in)<br>
+A Whos online function<br>
+<br>
+<br>
+<br>
+There are currently 5 commands: <br>
+add - used to list a item to the bank<br>
+remove used to remove listing of the item from the bank<br>
+info - used to get the Blue clickable link that to view item stats<br>
+watch - used to add a term watch for certain key words in items posted<br>
+stopwatch - used to remove a term watch.<br>
+<br>
+They are formated like so:<br>
+<br>
+/tell &lt;botbankname&gt; add &lt;itemref&gt;<br>
+/tell &lt;botbankname&gt; remove &lt;item_id#&gt; <br>
+/tell &lt;botbankname&gt; info &lt;item_id#&gt;<br>
+/tell &lt;botbankname&gt; watch &lt;ql_low#&gt;-&lt;ql_high#&gt; &lt;term&gt;<br>
+/tell &lt;botbankname&gt; stopwatch &lt;watch_id#&gt;<br>
+<br>
+examples: <br>
+/tell botbank add &lt;True Katana Of the Loyal Samuri&gt;<br>
+/tell botbank remove 251<br>
+/tell botbank info 251<br>
+/tell botbank watch 1-200 Nano Armor<br>
+/tell botbank stopwatch 123<br>
+<br>
+<br>
+here are some clippings from my bots screen that might make this all understanable, NOTE this is what the bot sees:<br>
+
+	<blockquote>code:<hr><pre>&lt;Xyberviri&gt; : search 1-200 armor
+To &lt;Xyberviri&gt;: My DataBase contains the following(10(MAX) Total):
+  Battered Low-Tech Armor Sleeves QL 5 Held by &lt;censordforforums&gt; Item ID 346
+  Inferior Heated Plasteel Armor Gloves QL 7 Held by &lt;censordforforums&gt; Item ID 287
+  Battered Low-Tech Armor Shorts QL 8 Held by &lt;censordforforums&gt; Item ID 336
+  Battered Low-Tech Armor Boots QL 8 Held by &lt;censordforforums&gt; Item ID 347
+  Worn Metaplast Body Armor QL 14 Held by &lt;censordforforums&gt; Item ID 329
+  Recruit-Issue Omni-Pol Desert Armor Gloves QL 14 Held by &lt;censordforforums&gt; Item ID 3
+54
+  Worn Metaplast Armor Sleeves QL 15 Held by &lt;censordforforums&gt; Item ID 328
+  Recruit-Issue Omni-Pol Forest Armor Sleeves QL 15 Held by &lt;censordforforums&gt; Item ID
+359
+  Battered Low-Tech Armor Sleeves QL 16 Held by &lt;censordforforums&gt; Item ID 348
+  Battered Nomad Armor Gloves QL 16 Held by &lt;censordforforums&gt; Item ID 372</pre><hr></blockquote>
+
+	<blockquote>code:<hr><pre>&lt;Xyberviri&gt; : add Premium Rider Warblade
+To &lt;Xyberviri&gt;: Item added Premium Rider Warblade ID# 559</pre><hr></blockquote>
+
+	<blockquote>code:<hr><pre>&lt;Xyberviri&gt; : info 559
+To &lt;Xyberviri&gt;: Item: Premium Rider Warblade ID: 559 Holder: Xyberviri</pre><hr></blockquote>
+
+	<blockquote>code:<hr><pre>&lt;Xyberviri&gt; : remove 559
+To &lt;Xyberviri&gt;: Removing Item 559 from Guild bank</pre><hr></blockquote>
+
+	<blockquote>code:<hr><pre>&lt;Xyberviri&gt; : watch 1-200 nano armor
+To &lt;Xyberviri&gt;: Term nano armor added to watch list ID# 5 Remove this request with the &quot;stopwatch&quot; command.
+To &lt;Xyberviri&gt;: My DataBase contains the following(10(MAX) Total):
+  Basic Nano Armor Cloak Hood QL 79 Held by &lt;censordforforums&gt;  Item ID 234
+  Basic Nano Armor Cloak QL 82 Held by &lt;censordforforums&gt;  Item ID 228
+  Basic Nano Armor Cloak Hood QL 87 Held by &lt;censordforforums&gt;  Item ID 218
+  Basic Nano Armor Pants QL 90 Held by &lt;censordforforums&gt;  Item ID 230
+  Basic Nano Armor Boots QL 90 Held by &lt;censordforforums&gt;  Item ID 238
+  Augmented Nano Armor Boots QL 102 Held by &lt;censordforforums&gt;  Item ID 242
+  Augmented Nano Armor Cloak QL 108 Held by &lt;censordforforums&gt;  Item ID 227
+  Augmented Nano Armor Cloak Hood QL 108 Held by &lt;censordforforums&gt; Item ID 231
+  Augmented Nano Armor Pants QL 128 Held by &lt;censordforforums&gt;  Item ID 232
+  Augmented Nano Armor Helmet QL 128 Held by &lt;censordforforums&gt;  Item ID 233</pre><hr></blockquote>
+
+	<blockquote>code:<hr><pre>&lt;Xyberviri&gt; : stopwatch 5
+To &lt;Xyberviri&gt;: Removing request 5</pre><hr></blockquote>
+I hope this clears some thing up, but it probally doesnt ^.^</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2002 <span class="time">22:08</span></td><td class="alt2 small right"><a href="#post496599">#3</a></td></tr>
+<tr class="post" id="post496732"><td class="alt1 author"><b class="name">Shaeidar</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40716.jpg" alt=""></td><td class="alt1 body"><div class="message">Cool stuff Xyber, I look forward to evaluate this. Might even need some techsupport <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+One feature i would use is to list your own items and see their ids. Pretend i sold my shiny helmet and wants to remove it. <br>
+Or goofed around with my bags and dont know what i need to keep for mates and what i can sell.<br>
+<br>
+Anyway item bank is a feature the guild has requested and this seems like a good way to solve it.<br>
+<br>
+Note to Funcom, shouldnt this have been build into the game? Like a multiuser bank with guild reqs on it. For practical reasons 10-20 bank terms in a guild house should be sufficent.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2002 <span class="time">23:44</span></td><td class="alt1 small right"><a href="#post496732">#4</a></td></tr>
+<tr class="post" id="post496733"><td class="alt2 author"><b class="name">engelstein</b><br><span class="small usertitle">Old Timer</span><br><img class="avatar" src="../images/avatars/40666.jpg" alt=""></td><td class="alt2 body"><div class="message">Too bad that it's in Perl.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2002 <span class="time">23:45</span></td><td class="alt2 small right"><a href="#post496733">#5</a></td></tr>
+<tr class="post" id="post498361"><td class="alt1 author"><b class="name">solitaire</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon10.gif" alt=""> <b>Looks very interesting:)</b></div><div class="message">hope to get a closer look soon</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 12th, 2002 <span class="time">16:06</span></td><td class="alt1 small right"><a href="#post498361">#6</a></td></tr>
+<tr class="post" id="post507285"><td class="alt2 author"><b class="name">klax</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/223861.jpg" alt=""></td><td class="alt2 body"><div class="message">Ah... i remember this kind of bot. I ve seen it somewhere.... DAMN *smack head smack head* where was it again.. anyways its great.<br>
+To ad items. and search for items, at ql and stuff,<br>
+<br>
+didnt read the code but could you perhaps set in different areas like.<br>
+<br>
+I am looking for some armor. and then go on to the armor section and search for the ql of the one i want. then a list of comes up showing ONLY armors to that ql specified.<br>
+<br>
+and the same thing for melee wpns, range wpns, and so on... perhaps this takes alot of work, but its just an idea.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 17th, 2002 <span class="time">11:56</span></td><td class="alt2 small right"><a href="#post507285">#7</a></td></tr>
+<tr class="post" id="post508785"><td class="alt1 author"><b class="name">xyberviri</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt1 body"><div class="message">well,searching for armor and searching anything else is two diffrent things. See..... Armor auctually has the Word &quot;Armor&quot; in almost every piece, so say you wanted to find some nano armo you would search for &quot;Nano Armor&quot; or &quot;Tank Armor&quot; if im not mistaken even &quot;Augmented%Armor&quot; will pull up Nano Armor.<br>
+<br>
+The only problem with item bank bots is that you have to know what your looking for.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 17th, 2002 <span class="time">23:06</span></td><td class="alt1 small right"><a href="#post508785">#8</a></td></tr>
+<tr class="post" id="post510044"><td class="alt2 author"><b class="name">klax</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/223861.jpg" alt=""></td><td class="alt2 body"><div class="message">true true.. <br>
+<br>
+will there be anyone that will have such a bot for Omni and perhaps Neutral and perhaps Clan?<br>
+<br>
+Would be helpfull... To have a database that would help us all. But we could also go the normal way, checking shop after shop.<br>
+Perhaps the data base would be to big to handle =)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 18th, 2002 <span class="time">13:38</span></td><td class="alt2 small right"><a href="#post510044">#9</a></td></tr>
+<tr class="post" id="post538974"><td class="alt1 author"><b class="name">Elektrica</b><br><span class="small usertitle">Eleet</span></td><td class="alt1 body"><div class="message">Can anyone provide a copy of the AO::Chat perl modules?  Apparently it's no longer available and I wouldn't really want to figure out the protocol myself, I don't have the time to re-implement that sort of thing.  :P<br>
+<br>
+--<br>
+Ah looked like some bad DNS problems with hackersquest.org, I got a copy of what I needed now.</div><p class="small edited"><i>Last edited by Elektrica on July 2nd, 2002 at 20:09</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 2nd, 2002 <span class="time">19:51</span></td><td class="alt1 small right"><a href="#post538974">#10</a></td></tr>
+<tr class="post" id="post539641"><td class="alt2 author"><b class="name">xyberviri</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>btw</b></div><div class="message">Im still working on this bot but due to recent events on funcoms part it is hindering my work.<br>
+<br>
+<br>
+hers the module<br>
+<br>
+<a href="https://web.archive.org/web/20020703/http://www.xyberviri.net/AO-Chat-0.04.tar.gz">http://www.xyberviri.net/AO-Chat-0.04.tar.gz</a></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 3rd, 2002 <span class="time">03:36</span></td><td class="alt2 small right"><a href="#post539641">#11</a></td></tr>
+<tr class="post" id="post544845"><td class="alt1 author"><b class="name">Jhoanna</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/opifexfemale.gif" alt=""></td><td class="alt1 body"><div class="message">Wonder why FC hasnt umm... one of these ingame... I mean... leave the techy stuff for the very good playerbase... let them do all work... I wonder what in hell FC are doing...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 5th, 2002 <span class="time">13:50</span></td><td class="alt1 small right"><a href="#post544845">#12</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529112653/https://forums-archive.anarchy-online.com/showthread.php?29585-Do-you-want-your-Guild-(ITEM)-Bank">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

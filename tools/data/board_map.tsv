@@ -1,0 +1,97 @@
+# Where each source board's threads go in the archive, which uses the 2002 board list (boards.tsv).
+# source board <tab> 2002 category <tab> 2002 board
+#   archive threads: the board path in Funcom's archive (without "Forum > ")
+#   live: <name>    threads saved from the live forum, by the board name on the page (names that already are
+#                   2002 board names need no line)
+#   launch: <name>  threads from the 2001 launch forum; its General board is sorted thread by thread in
+#                   launch_general_sort.tsv
+# Archive boards that already are 2002 boards
+Archives > Old AO Forums > Funcom Official > Article Discussions	Funcom Official	Article Discussions
+Archives > Old AO Forums > Funcom Official > Official Polls	Funcom Official	Official Polls
+Archives > Old AO Forums > Future Anarchy > Next patch	Future Anarchy	Next patch
+Archives > Old AO Forums > Future Anarchy > Suggestions	Future Anarchy	Suggestions
+Archives > Old AO Forums > Future Anarchy > Booster and Expansion Packs	Future Anarchy	Booster and Expansion Packs
+Archives > Old AO Forums > Game-Play > Tradeskills	Game-Play	Tradeskills
+Archives > Old AO Forums > Game-Play > The World of Rubi-Ka	Game-Play	The World of Rubi-Ka
+Archives > Old AO Forums > Game-Play > PvP Conflict	Game-Play	PvP Conflict
+Archives > Old AO Forums > Game-Play > Game Mechanics	Game-Play	Game Mechanics
+Archives > Old AO Forums > Game-Play > Game-Play bugs	Game-Play	Game-Play bugs
+Archives > Old AO Forums > Game-Play > Notum Wars	Game-Play	Notum Wars
+Archives > Old AO Forums > Game-Play > Tarasque	Game-Play	Tarasque
+Archives > Old AO Forums > Community > Story Discussions	Community	Story Discussions
+Archives > Old AO Forums > Community > Organizations (Atlantean)	Community	Rubi-Ka 1 Organizations
+Archives > Old AO Forums > Community > Organizations (Rimor)	Community	Rubi-Ka 2 Organisations
+Archives > Old AO Forums > Off-topic > Social	Off-topic	Non-AO Related
+Announcements > Community Corner	Community	Community Corner
+# 2003 boards (and the 2002 threads Funcom later moved into them). In 2003 the Role-Playing board was split
+# into the two servers' Buzz boards; their 2001-2002 threads are Role-Playing's.
+Archives > Atlantean > Atlantean Buzz	Community	Role-Playing
+Archives > Rimor > Rimor Buzz	Community	Role-Playing
+Archives > Atlantean > Life on Atlantean	Community	Role-Playing
+Archives > Rimor > Life on Rimor	Community	Role-Playing
+Game Suggestions > Game Suggestions	Future Anarchy	Suggestions
+Announcements > Editor News	Funcom Official	Article Discussions
+Announcements > Testlive Announcements & Events	Test Server	Test Server Discussions
+Community forums > New Arrivals	Game-Play	Beginners' Corner
+Community forums > Knowledge Database	Game-Play	The World of Rubi-Ka
+Community forums > Tech Help	Tech	Other Technical Issues
+Community forums > Game Mechanics	Game-Play	Game Mechanics
+Community forums > Reet's Retreat	Off-topic	Non-AO Related
+Community forums > Profession Academies > Wilderness (Adventurer)	Professions	Adventurer
+Community forums > Profession Academies > Special Operations (Agent)	Professions	Agent
+Community forums > Profession Academies > Administration (Bureaucrat)	Professions	Bureaucrat
+Community forums > Profession Academies > Medical Lab (Doctor)	Professions	Doctor
+Community forums > Profession Academies > Notum Mines (Enforcer)	Professions	Enforcer
+Community forums > Profession Academies > Workshop (Engineer)	Professions	Engineer
+Community forums > Profession Academies > The Grid (Fixer)	Professions	Fixer
+Community forums > Profession Academies > Stronghold (Keeper)	Professions	Keeper
+Community forums > Profession Academies > Dojo (Martial Artist)	Professions	Martial Artist
+Community forums > Profession Academies > Sanctum (Meta-Physicist)	Professions	Meta-Physicist
+Community forums > Profession Academies > Science Lab (Nano Technician)	Professions	Nano-Technician
+Community forums > Profession Academies > Shadows (Shade)	Professions	Shade
+Community forums > Profession Academies > Boot Camp (Soldier)	Professions	Soldier
+Community forums > Profession Academies > Exchange (Trader)	Professions	Trader
+# Board names on pages saved from the live forum
+live: Atlantean Buzz	Community	Role-Playing
+live: Rimor Buzz	Community	Role-Playing
+live: The Buzz	Community	Role-Playing
+live: Life on Rubi-Ka	Community	Role-Playing
+live: Life on Atlantean	Community	Role-Playing
+live: Life on Rimor	Community	Role-Playing
+live: Atlantean Market	Game-Play	Rubi-Ka 1 Exchange
+live: Rimor Market	Game-Play	Rubi-Ka 2 Exchange
+live: New Arrivals	Game-Play	Beginners' Corner
+live: Knowledge Database	Game-Play	The World of Rubi-Ka
+live: Shadowlands Library	Game-Play	The World of Rubi-Ka
+live: Tech Help	Tech	Other Technical Issues
+live: Reet Retreat	Off-topic	Non-AO Related
+live: Reet's Retreat	Off-topic	Non-AO Related
+live: Social	Off-topic	Non-AO Related
+live: Game Suggestions	Future Anarchy	Suggestions
+live: Test Server	Test Server	Test Server Discussions
+live: 14.2 Patch Day Forum - Closed	Future Anarchy	Next patch
+live: 14.4 Patch Day Forum	Future Anarchy	Next patch
+live: 14.6 patch forum	Future Anarchy	Next patch
+live: Wilderness (Adventurer)	Professions	Adventurer
+live: Special Operations (Agent)	Professions	Agent
+live: Administration (Bureaucrat)	Professions	Bureaucrat
+live: Medical Lab (Doctor)	Professions	Doctor
+live: Notum Mines (Enforcer)	Professions	Enforcer
+live: Workshop (Engineer)	Professions	Engineer
+live: The Grid (Fixer)	Professions	Fixer
+live: Stronghold (Keeper)	Professions	Keeper
+live: Dojo (Martial Artist)	Professions	Martial Artist
+live: Sanctum (Meta-Physicist)	Professions	Meta-Physicist
+live: Science Lab (Nano Technician)	Professions	Nano-Technician
+live: Shadows (Shade)	Professions	Shade
+live: Boot Camp (Soldier)	Professions	Soldier
+live: Exchange (Trader)	Professions	Trader
+# 2001 launch forum boards
+launch: Funcom Official	Community	Community Corner
+launch: Announcements	Community	Community Corner
+launch: Gameplay	Game-Play	Game Mechanics
+launch: Technical	Tech	Other Technical Issues
+launch: Roleplaying	Community	Role-Playing
+launch: Guild Talk	Community	Rubi-Ka 1 Organizations
+launch: Polling booth	Community	Player Polls
+launch: Anarchy Test Server	Test Server	Test Server Discussions

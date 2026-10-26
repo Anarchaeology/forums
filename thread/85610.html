@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Network traffic compression</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/next-patch-3.html">Next patch</a> &gt; Network traffic compression</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="85772.html">Last Thread</a> &nbsp; <a href="80762.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Network traffic compression"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Next patch"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post989866"><td class="alt2 author"><b class="name">Tharyki</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40191.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Network traffic compression</b></div><div class="message">I've been thinking a long time about how to phrase my wishes on this post, to make it understandable both to the developers who need to work on it, and the players who suffer from the consequences of what I am about to describe. As a programmer and former (I got tired of it, OK?) tech support slave, I've long since learned the value of breaking down information into parts that even a monkey can understand. No insults intended towards either devs or players, of course.<br>
+<br>
+Now, as a player who is currently not able to get broadband connection (Not all of Norway has DSL connectivity yet) I am playing by an ISDN connection, and I suffer greatly from having only a 64 kbps connection (I can get 128 kbps, but in Norway there is no such thing as free Internet connections. The phone bill would be twice as high, and it's already huge). The reason for this is that the amount of data transmitted from the servers to my client is at times too vast for my connection to keep up. The result of this is lag, high ping, and frequent deaths.<br>
+<br>
+Let me give you an example... Camelot, Avalon. We're talking Tarasque raids here, of course. Imagine running from the safe 100 suppression gas area down into the PvP area. First, you run from the 100% area into the stairs that leave down. Then you go through a door into a four-way room, with morgan LeFay to the right. Then continuing straight ahead, you go through a door leading into a long passageway with two doors on the left, one leading towards Lord Ghasap's domain, and the other into a spiral stairs towards what is popularly known as the box room (Or just box).<br>
+<br>
+Going through that last door I mentioned, into the long hallway, is one of the most common LD causes on Rubi-Ka. Especially during PvP clashes in the dungeon. The cause? Well, let's say that at any given time, 50% of a person's Internet bandwith is used by AO to broadcast player data, player movement, player buffs, player emotes and chat channels. Then imagine that two rooms away from the hallway there are fourty players of the opposite faction waiting to defend the Tarasque pathway from invading players.<br>
+<br>
+What happens when you enter the hallway then is that the servers attack the client with information about 40 players, because two rooms away is the in-doors limit for map and visibility range. The client gets info about player names, guild names, avatar size, avatar armor, avatar buff effects, avatar movements and avatar emotes.<br>
+<br>
+Want me to tell you what happens when I run into that hallway in such a situation, on my ISDN connection?<br>
+<br>
+Try pouring 2 gallons of water into a funnel with a quarter-inch opening at the bottom, and you understand what it's like.<br>
+<br>
+The servers suddenly send my client so much information that all other network traffic gets stalled for a long time. I receive so much information that it sometimes takes over 30 seconds to get avatar info, avatar names and such for every new player that suddenly comes within range. And what happens during those 30 seconds? Easy to explain. More network traffic. While my client is waiting for information about what avatars X and Y look like, avatars X and Y move around a bit, cast a few buffs, they shout on the vicinity channel. And so do a lot of other people. I can get attacked a second after entering the hallway, and die five seconds later, but because the messages get queued up to my client, and the subsequent messages become lagged, I can run around, trying to fire off nukes or attack foes for a minute, while all the time, I am dead! Towards the end, I get ten &quot;You were killed by...&quot; messages, and respawn at my insure location.<br>
+<br>
+In other words, the amount of network traffic in such an occasion, and in many other situations, is way too heavy for many clients to handle.<br>
+<br>
+Take the old Tir grid area. A hundred people gathered in one 40x40 square. Or the old area around the Broken Shores Home bank. That one was bad. Real bad.<br>
+<br>
+Or an even better, and more up-to-date, example, the grid. While outdoors areas are separated into 40x40 squares and the client receives information about actions within a limited amount of squares, and indoors areas and missions are limited to two rooms away, the grid is like one big indoors room, thus allowing every client to receive information about every other player there. And the grid is always crowded more than your average 40x40 outdoors square. Movement, buff visuals, names etc. Of course, the grid has simplified graphics, so less information seem to be channeled, but the grid is still one of the laggiest places in the game. Try connection on ISDN and tab'ing through hostile players while moving. Lag city, here I am.<br>
+<br>
+My conclusion is quite simple... Network traffic either need to be reduced in quantity (Hey, programmers, ever heard about semphores? Use your imagination, folks!), or compressed on the server side to allow for less lag on the clients. Compressing data shouldn't be much of a problem if your servers are powerful enough, and compressing a few kB of data every second is nothing to any client computer above your minimum specs.<br>
+<br>
+Please, please, please try to look into this. And soon.<br>
+<br>
+Before we all go LD out of the game.<br>
+<br>
+-Tharyki</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 29th, 2002 <span class="time">19:26</span></td><td class="alt2 small right"><a href="#post989866">#1</a></td></tr>
+<tr class="post" id="post990105"><td class="alt1 author"><b class="name">locomdenom</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40257.jpg" alt=""></td><td class="alt1 body"><div class="message">You know, I used to play on a 56k, and went to Tara without any problems.<br>
+<br>
+Most likely, when this happens your hard drive starts to access like mad, right?<br>
+<br>
+It isn't network traffic that's lagging you, its probably diskdrive lag as your harddrive struggles to transfer all of the appropriate textures into video memory.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 29th, 2002 <span class="time">22:27</span></td><td class="alt1 small right"><a href="#post990105">#2</a></td></tr>
+<tr class="post" id="post991803"><td class="alt2 author"><b class="name">Resetgun</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon5.gif" alt=""> </div><div class="message">I think that they are already compressing data packets. When they turned compression on, it caused some problems for ClickSaver long time ago (this is now fixed because ClickSaver is doing packet listening different way). <br>
+<br>
+I don't know how many TCP/IP packets they are sending from server in second. But if it is true, that they send many packets in second, combining packets would be, most likely, most efficient way to send them (I think that I have seen some research papers from this). <br>
+<br>
+In the other hand, I have started to believe that their server architecture doesn't allow this - maybe they have seperated processes running for different task, without communication? If so, it would enourmous task to rewrite servers and that would mean many many many bugs...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 30th, 2002 <span class="time">18:17</span></td><td class="alt2 small right"><a href="#post991803">#3</a></td></tr>
+<tr class="post" id="post992694"><td class="alt1 author"><b class="name">Atremis</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/Leets_0009.jpg" alt=""></td><td class="alt1 body"><div class="message">The issues cited above are the prime reasons why Verant did EQ the way that they did.  Here is a quick explication.<br>
+<br>
+EQ, like AO, is divided into many different zones.  Each zone has its own texture bank which is used for skinning the various mobiles and such in the zone.  Lets take two zones, East Commons and Plane of Air.  In east commons, there are kobolds, orcs, human NPCs, griffons, and a few other odds and ends.  The texture file for that zone thus has everything needed to skin those mobiles (NPCs and monsters) and whatnot and nothing extra.  Plane of Air, on the other hand, has several unique mobiles (like djinns, drakes, and other wierd stuff).  PoA thus has a texture file that contains all it needs for said mobiles and architecture, and nothing more.  Each zone in the game follows this structure.  The game also has a global texture bank that contains all of the player textures (armor, weapons, races, etc) as well as textures needed for certain mobiles that are found in every zone.<br>
+<br>
+Continuing the example, mobiles in the PoA could never exist in Eastern Commons because the textures for those mobs only exist in the PoA bank.  A mobile from PoA loaded into Eastern Commons would look like a naked male human.  <br>
+<br>
+Verant has intentionally limited the number of textures in the global file because it reduces the number of textures that have to be loaded into video memory for any given zone.  It also means that the system is more restrictive in what can be done in terms of GM events and the variation of player models, as EQ uses quite a bit of palette swapping rather than new and unique texture sets.  <br>
+<br>
+Funcom apparently decided somewhere along the line that they wanted greater range of appearance for player and non-player characters.  This, unfortunately, came at the expense of smoother system performance.<br>
+<br>
+Hopefully this explains why things are as they are.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 31st, 2002 <span class="time">00:56</span></td><td class="alt1 small right"><a href="#post992694">#4</a></td></tr>
+<tr class="post" id="post993708"><td class="alt2 author"><b class="name">Daft</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40176.jpg" alt=""></td><td class="alt2 body"><div class="message">That does make sense, great explaination Atremis <img src="../images/smilies/biggrin.gif" alt="" class="smilie"> <br>
+<br>
+I've noticed since the NW patch, extreme loading times.  The first thing that comes to mind, after reading that, is even greater global texture data file size.<br>
+<br>
+I'm sure all the tower textures, and voice files are relevent to the global file.  This could indeed explain the increase in harddrive swapping and video lag.  <br>
+<br>
+My system was fine before the patch, but now I can't stand the studdering that occurs.<br>
+<br>
+If this is the problem, then Funcom really needs to look into ways of optimizing the resource manager (which apparently has already occured).  Myself I do not notice a difference, especially in large areas like NLC and trade.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 31st, 2002 <span class="time">14:03</span></td><td class="alt2 small right"><a href="#post993708">#5</a></td></tr>
+<tr class="post" id="post994044"><td class="alt1 author"><b class="name">Atremis</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/Leets_0009.jpg" alt=""></td><td class="alt1 body"><div class="message">It's probable that every texture AO uses is in one massive global file that has to be loaded for every zone.  Of course, I can't be certain but IMO it makes sense.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 31st, 2002 <span class="time">17:14</span></td><td class="alt1 small right"><a href="#post994044">#6</a></td></tr>
+<tr class="post" id="post994183"><td class="alt2 author"><b class="name">Tiran</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40277.jpg" alt=""></td><td class="alt2 body"><div class="message">The textures are loaded 'as needed'.  They're all one file, yes, but a given texture is only loaded if the game wants to skin something with it.<br>
+<br>
+EQ, remember, designed itself that way not for bandwidth reasons, but because it was written with the requirement that it must 'fit' into the texture memory of an 8 meg video card without texture swapping.   Remember them? &lt;grin&gt;</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 31st, 2002 <span class="time">18:36</span></td><td class="alt2 small right"><a href="#post994183">#7</a></td></tr>
+<tr class="post" id="post994401"><td class="alt1 author"><b class="name">Atremis</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/Leets_0009.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Tiran </i><br>
+<b>The textures are loaded 'as needed'.  They're all one file, yes, but a given texture is only loaded if the game wants to skin something with it.<br>
+<br>
+EQ, remember, designed itself that way not for bandwidth reasons, but because it was written with the requirement that it must 'fit' into the texture memory of an 8 meg video card without texture swapping.   Remember them? &lt;grin&gt; </b>
+			
+		
+	<hr></blockquote>
+Yes, I do remember.  And to EQ's detriment, it was a move that made the game look worse than cat s***.  Truthfully, though, I'd rather see less variation in AO's models than constant slowdown from texture swapping.  I've got a 64 meg video card, FFS (Radeon 8500).  The game should run better than it does.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 31st, 2002 <span class="time">20:39</span></td><td class="alt1 small right"><a href="#post994401">#8</a></td></tr>
+<tr class="post" id="post994665"><td class="alt2 author"><b class="name">Resetgun</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt2 body"><div class="message">All textures, meshes, items etc. are stored to one resource database (\cd_image\data\db\ResourceDatabase.dat) and it's size is currently 483 630 KB (!). Database is in<a href="https://web.archive.org/web/20021231/http://www.faircom.com/products/ctree/">C-Tree</a> format, which seems to be persistent tree data structure with transaction control. Textures and meshes are (most likely) loaded by on demand - when needed. There also seems to be smaller file (6MB) index file for database (so entire database is most likely not keeped in memory all time). <br>
+<br>
+Maybe FC is going to implement second database file for Shadowlands? Those models and textures seem to be pretty &quot;blue&quot; there <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+... and no! I don't want to see simpler models and textures! I want see more social clothes and more character models! ... so buy more memory and faster harddrive Atremis <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 31st, 2002 <span class="time">22:59</span></td><td class="alt2 small right"><a href="#post994665">#9</a></td></tr>
+<tr class="post" id="post996487"><td class="alt1 author"><b class="name">Thehorseman</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt1 body"><div class="message">Maybe the solution is for us all to run a 1 gig RAM-drive and load AO onto that for playing ;P</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 1st, 2003 <span class="time">23:54</span></td><td class="alt1 small right"><a href="#post996487">#10</a></td></tr>
+<tr class="post" id="post996860"><td class="alt2 author"><b class="name">svendor</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40186.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>AHHHHHHHHHHH!!!!</b></div><div class="message">So if i went out and got the best computer there is for gaming would there still be lag? I have been debating if i should by a new computer so if i did would there still be alot of lag and long zoning times in high populated areas for me?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 2nd, 2003 <span class="time">03:21</span></td><td class="alt2 small right"><a href="#post996860">#11</a></td></tr>
+<tr class="post" id="post997044"><td class="alt1 author"><b class="name">Erikomei</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40622.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon3.gif" alt=""> </div><div class="message">I say I do not care what the mobs look like or the buildings or the <br>
+ground , let me turn off those textures. and wow less lag</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 2nd, 2003 <span class="time">05:28</span></td><td class="alt1 small right"><a href="#post997044">#12</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250527111606/https://forums-archive.anarchy-online.com/showthread.php?85610-Network-traffic-compression">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

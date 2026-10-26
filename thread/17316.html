@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - How hard can it be?</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/next-patch-36.html">Next patch</a> &gt; How hard can it be?</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <b>[1]</b> <a href="17316-2.html">2</a> <a href="17316-3.html">3</a> <a href="17316-2.html">&raquo;</a> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="18438.html">Last Thread</a> &nbsp; <a href="18507.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:How hard can it be?"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Next patch"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post366973"><td class="alt2 author"><b class="name">Nietya</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40240.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>How hard can it be?</b></div><div class="message">You know, I don't know what Funcom's code looks like.  I don't.  But how damned hard can it be to use the Math.Random() function?  I mean, um, HELLO?<br>
+<br>
+You have a database.  It has items.  You have a field for each item stating various validities...<br>
+<br>
+mission_reward<br>
+mission_find<br>
+mission_return<br>
+mission_loot<br>
+<br>
+So when it generates your wee little mission, it runs the math.random() function (or whatever breed they're dealing with) and VOILA, it just iterates through the possible items and places the one with whatever value you generate.<br>
+<br>
+How hard can it be, really?<br>
+<br>
+How on EARTH can you patch the game, which is already working (as far as loot code was concerned), and all of a sudden BAM, you have 2395891859185 maps of Newland and Mort?  Do you not abstract out your game code?  How can adding items, locations, or anything, effect your loot code?  Why does the loot generation code take more than like 1 page tops ANYWAY?  At least the random generation and assignment aspects of it... perhaps it is that short, and is that fubar, who can say...<br>
+<br>
+Same thing with mission locations... Let's say there's 3000 different mission entrances in the game.  Take 1 Dev, sit him down in his cube, and say &quot;You're not going to be allowed to go home or use the restroom until you've flagged the various mission locations with QL's.&quot;  So the mission location object in the database now has the field<br>
+<br>
+QL<br>
+<br>
+Wow, tough concept, eh?  <img src="../images/smilies/wink.gif" alt="" class="smilie">  So you assign it a value, the max QL mission that can be assigned to that location.  Do a good old<br>
+<br>
+SELECT Mission_QL, Mission_loc<br>
+FROM Mission_database<br>
+WHERE QL&lt;=(value character does in slider);<br>
+<br>
+Dump that into an array, do a Math.Random(yourArray.length) or some such, and BAM... there's a mission location.  Would this mean you could get a mission in Tir city at level 150?  Yes, and that's cool.  We all miss those mission templates...<br>
+<br>
+My big point here is, I'm a business student, not a programmer, and I still can see that something has to be supremely profoundly SCREWED UP for things like random loot assignment and mission location spawning to go so out of wack...<br>
+<br>
+Any chance anyone else here, be you Funcom people or not, knows how on earth they've managed to break what should be about as complicated as a small concrete block??<br>
+<br>
+Oy...<br>
+<br>
+EDIT: I'd like to point out, in closing, that I really enjoy this game, and I love the direction it's going.  I just can't fathom the backwards steps I see it taking, having at least some SMALL experience with coding...</div><p class="small edited"><i>Last edited by Nietya on March 26th, 2002 at 00:29</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">00:17</span></td><td class="alt2 small right"><a href="#post366973">#1</a></td></tr>
+<tr class="post" id="post368169"><td class="alt1 author"><b class="name">griemdaall</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Re: How hard can it be?</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Nietya </i><br>
+<b>My big point here is, I'm a business student, not a programmer</b>
+			
+		
+	<hr></blockquote>
+Heheh, that's obvious. <img src="../images/smilies/smile.gif" alt="" class="smilie">  Someday when you get to manage programmers you can show them how all thier work is really simple, they love that. <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">19:03</span></td><td class="alt1 small right"><a href="#post368169">#2</a></td></tr>
+<tr class="post" id="post368286"><td class="alt2 author"><b class="name">Whiterrabbit</b><br><span class="small usertitle">ReelBigFish</span><br><img class="avatar" src="../images/avatars/40713.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>hehe &quot;team leaders&quot;</b></div><div class="message">dont you love em?<br>
+<br>
+i think what we have here is what is refered to as &quot;spaghetti code&quot; so changing one thing totally screws up another. but it is annyoing, and i would love to get a little look at the code...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">20:04</span></td><td class="alt2 small right"><a href="#post368286">#3</a></td></tr>
+<tr class="post" id="post368381"><td class="alt1 author"><b class="name">Nullifax</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message">I agree that it shouldn't be too tough.  All the items that never show up in missions seem to have a QL of &quot;Special&quot; or something like that that sets them apart.  There must be some very clear flags on stuff that should never show up in missions.  If there isn't, then shame on you, FC for not putting it there in the design phase to begin with.  Then again, I sometimes wonder if you guys actually did design before you sat down and started to code.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">20:58</span></td><td class="alt1 small right"><a href="#post368381">#4</a></td></tr>
+<tr class="post" id="post368490"><td class="alt2 author"><b class="name">griemdaall</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: hehe &quot;team leaders&quot;</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by ReelBigFish </i><br>
+<b>dont you love em?<br>
+<br>
+i think what we have here is what is refered to as &quot;spaghetti code&quot; so changing one thing totally screws up another. but it is annyoing, and i would love to get a little look at the code... </b>
+			
+		
+	<hr></blockquote>
+Yeah, definitely spaghetti code....  One more finger in the pot probably wouldn't help too much at this point though. Heh</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">21:47</span></td><td class="alt2 small right"><a href="#post368490">#5</a></td></tr>
+<tr class="post" id="post368493"><td class="alt1 author"><b class="name">griemdaall</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by PipBoy </i><br>
+<b>I agree that it shouldn't be too tough.  All the items that never show up in missions seem to have a QL of &quot;Special&quot; or something like that that sets them apart.  There must be some very clear flags on stuff that should never show up in missions.  If there isn't, then shame on you, FC for not putting it there in the design phase to begin with.  Then again, I sometimes wonder if you guys actually did design before you sat down and started to code. </b>
+			
+		
+	<hr></blockquote>
+When you work on a code project for 5 years or so, things tend to change from the original design.  I have yet to see a code team who didn't eventually deviate from design, sometimes with good results, sometimes with bad results.  Never quite works out the way they teach CS students in college. :)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">21:49</span></td><td class="alt1 small right"><a href="#post368493">#6</a></td></tr>
+<tr class="post" id="post368651"><td class="alt2 author"><b class="name">Nietya</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40240.jpg" alt=""></td><td class="alt2 body"><div class="message">For the record Griemdall, I used to be a CS major, but I got sick of all the anti-social freaks that were in there.  Not to mention the professor that had a massive mullet, insisted that his class be at 8 am, and looked like a demented full size treasure troll.<br>
+<br>
+Things always change, especially over 5 years like this project, but if you abstract it out from the outset, you don't run into the spaghetti factor, so to speak... at least, you don't run into it full speed like some sprinter into a brick wall...<br>
+<br>
+*shrug*</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">23:19</span></td><td class="alt2 small right"><a href="#post368651">#7</a></td></tr>
+<tr class="post" id="post368665"><td class="alt1 author"><b class="name">haniblecter</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/opifexmale.gif" alt=""></td><td class="alt1 body"><div class="message">My general belief is over 5 years of development and god knows HOW MANY programmers, that the code is so damn interdependant on wierd and unrelated areas that changing weapon damage on a Vektor could affect loot in dungeouns.<br>
+<br>
+Its a MASSIVE MMOG, it may have more lines of code then the space shuttle!<br>
+<br>
+or even the B-2 bomber!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">23:27</span></td><td class="alt1 small right"><a href="#post368665">#8</a></td></tr>
+<tr class="post" id="post368704"><td class="alt2 author"><b class="name">Nietya</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40240.jpg" alt=""></td><td class="alt2 body"><div class="message">...<br>
+If I were to take that hyperbole literally... *shudder*<br>
+<br>
+Documentation, documentation, documentation.  I've worked jobs coding where the code was well documented, and it was almost like sitting down at my own code... I've worked jobs where there was little to no documentation, and might as well have rewritten the whole thing myself...<br>
+<br>
+But regardless of how many different programmers worked on the game and how long it took, there's still no reason it should degenerate to this level... version control, if nothing else, should prevent massive gaping logical dependencies from taking place.<br>
+<br>
+Ew.<br>
+<br>
+I'm just glad I don't work as a coder at Funcom, that's for sure, because you KNOW the source they have right now has to be UGLY.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 26th, 2002 <span class="time">23:44</span></td><td class="alt2 small right"><a href="#post368704">#9</a></td></tr>
+<tr class="post" id="post368723"><td class="alt1 author"><b class="name">Bionitrous</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40100.jpg" alt=""></td><td class="alt1 body"><div class="message">I've got a feeling we're looking at a bowl of pasta as well.  I was gonna make a post regarding how much they packaged their game constructs such as 'character', 'monster', 'item', 'nano', 'weapon', etc. into well constructed objects but was afraid I already knew the answer.<br>
+<br>
+You can definately see glimpses of proper OO coding, however, notice that the icons for a particular nanoformula ghost out during execution/recharge in sync on both the quickbar and the big mess panel.  Obviously each is simply and interface to the same underlying object.<br>
+<br>
+However, too much seems to be hard-coded and inflexible to allow the game to progress at a proper rate.  Not to mention the slew of bugs that potentially are unleashed anytime you mess with any function that isn't properly encapsulated within it's associated object.<br>
+<br>
+Could you imagine how much money they could take out of the bloated economy if your Yalmaha 'object' had a field for AlphaShade and when equipped would simply render a tint over the existing skin?  If rare enough of a find, people would probably spend more than the ridiculous prices thay pay for Grid Armor discs simply to cruise around in a Candy Apple Red Yalm.<br>
+<br>
+Thing is, I'm afraid both the code and database structure can't handle much more than simple pointers to table entries that have to be hand-generated.<br>
+<br>
+Take a look at the Test Server Bugs forum.  I'd really like to know how setting yourself '/anon' in the Chat Client can make you float through the air.  Now, that's Truly mind-bogglling.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">00:02</span></td><td class="alt1 small right"><a href="#post368723">#10</a></td></tr>
+<tr class="post" id="post368796"><td class="alt2 author"><b class="name">Whiterrabbit</b><br><span class="small usertitle">ReelBigFish</span><br><img class="avatar" src="../images/avatars/40713.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Nietya </i><br>
+<b>For the record Griemdall, I used to be a CS major, but I got sick of all the anti-social freaks that were in there.  </b>
+			
+		
+	<hr></blockquote>
+I am NOT an anti social person! :P <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+their code must be a work of art (pop art that is) OOP taken to a new and highly entertaining level. you've got to ask yourself how hard it is to add a new atttribute to a class, like colour for the yalms... but, FC wont let us see the code, theres nothing we can do about it, except hope that one of the team leaders sudenly realises what tech-doc is.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">01:11</span></td><td class="alt2 small right"><a href="#post368796">#11</a></td></tr>
+<tr class="post" id="post368917"><td class="alt1 author"><b class="name">Divillian</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message">you know waaaaaaaaaaay back i heard that this game was actually written in VB. If it is..(which i doubt) then I want to know how they manage the picture sets...its very simple to manage in VB. You can set a control with a list of references for all the textures then in the game your client basically says hmm ok this char with body size = X fat = X breed = 012 Face = 011 HeadG= (item = 0975) etc etc etc... <br>
+<br>
+If it was VB they did it in they they did it very ineffieciantly. It seems the graphics have to be downloaded from the server in order to see them. If they made MORE (not all) of the graphics client side it would reduce lag like 500%. <br>
+ Id smack em with my boom stick for screwing something that simple up.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">04:06</span></td><td class="alt1 small right"><a href="#post368917">#12</a></td></tr>
+<tr class="post" id="post369360"><td class="alt2 author"><b class="name">Whiterrabbit</b><br><span class="small usertitle">ReelBigFish</span><br><img class="avatar" src="../images/avatars/40713.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>i thought</b></div><div class="message">it was written in C or Java (with various addaptions) but the interface may be VB, but not the game engine</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">14:09</span></td><td class="alt2 small right"><a href="#post369360">#13</a></td></tr>
+<tr class="post" id="post369702"><td class="alt1 author"><b class="name">griemdaall</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Nietya </i><br>
+<b>For the record Griemdall, I used to be a CS major, but I got sick of all the anti-social freaks that were in there.  Not to mention the professor that had a massive mullet, insisted that his class be at 8 am, and looked like a demented full size treasure troll.<br>
+<br>
+Things always change, especially over 5 years like this project, but if you abstract it out from the outset, you don't run into the spaghetti factor, so to speak... at least, you don't run into it full speed like some sprinter into a brick wall...<br>
+<br>
+*shrug* </b>
+			
+		
+	<hr></blockquote>
+I hear ya on the CS folks.  I didn't go to college much myself.  Got lucky and went straight into the biz, and haven't needed it yet.  Of course, most of the folks I work with are mulleted as you have stated. :)  Mullets for me are ethnically impossible, so I won't be able to conform no matter how immersed I become in the 'dark side'. :)<br>
+<br>
+As to the code stuff, I was speaking specifically of the small amount of experience I have with game industry folks.  Although most of the big shops employ only the most educated and experienced folks they can get, Funcom is a little smaller and leaner than the big shops.  There's a good chance that many of the programmers, designers, and others that work for Funcom are talented hobbyists rather than trained professionals.  This is where the problem comes in.  Stir in some liberal turnover into the mix, and you suddenly have spaghetti.  It's happened at several of the studios I've frequented/worked at, even with some of the most talented teams.  Fortunately poor code philosophy doesn't hurt average off-the-shelf games as much as it hurts a mmog. :(<br>
+<br>
+I could be wrong about Funcom, they might be a huge megacorporation on thier side of the Atlantic, but the only two games I've ever heard of that they have released are The Longest Journey and AO, so I assume they are lean.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">17:34</span></td><td class="alt1 small right"><a href="#post369702">#14</a></td></tr>
+<tr class="post" id="post369708"><td class="alt2 author"><b class="name">griemdaall</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Divillian </i><br>
+<b>If it was VB they did it in they they did it very ineffieciantly. It seems the graphics have to be downloaded from the server in order to see them. If they made MORE (not all) of the graphics client side it would reduce lag like 500%. <br>
+ Id smack em with my boom stick for screwing something that simple up. </b>
+			
+		
+	<hr></blockquote>
+The graphics are definitely client side.  One of my haxx0r buddies wrote a utility to extract the graphics from the various dat files on the AO cd (he was attempting to use the minimap data to construct a map).  He ended up extracing thousands and thousands and thousands and thousands of textures at one point, including all the skins/armors/guns/faces/monsters/etc.  He was having a blast picking through all that stuff for a while.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">17:38</span></td><td class="alt2 small right"><a href="#post369708">#15</a></td></tr>
+<tr class="post" id="post369796"><td class="alt1 author"><b class="name">Unas</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Re: i thought</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by ReelBigFish </i><br>
+<b>it was written in C or Java (with various addaptions) but the interface may be VB, but not the game engine </b>
+			
+		
+	<hr></blockquote>
+The interface at least is written in C++ (you can tell that by the file names which show up as part of client crash records), don't know about the back end. I've worked as a developer since 1987 and in C++ for about 10 years and this app shows all the signs of a first OO project by a team of C programmers. There's a reason why they say you should throw your first OO project away. <img src="../images/smilies/smile.gif" alt="" class="smilie"> Also, their change control seems to be somewhat lacking (now there's an understatement for you).<br>
+<br>
+Someone above was marvelling at the possible size of AO. While this is only a guess, I wouldn't think it was more than a few hundred thousand lines of code, I'd be surprised if it was as many as 500,000. While that sounds huge, it's really no bigger than a fully developed e-mail system (server, client and gateways), and you'd never make any sales if your e-mail system worked as badly as this game does. Every large system has potential dependency problems, it's the development teams responsibility to correctly manage those problems. <br>
+<br>
+If you want to see large, correctly managed systems, look at the ones which run the telephone and electricity grids. Just be glad the folks who wrote AO don't work on those. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+Unas</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">18:49</span></td><td class="alt1 small right"><a href="#post369796">#16</a></td></tr>
+<tr class="post" id="post369993"><td class="alt2 author"><b class="name">griemdaall</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: Re: i thought</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Unas </i><br>
+<b>If you want to see large, correctly managed systems, look at the ones which run the telephone and electricity grids. Just be glad the folks who wrote AO don't work on those. :)<br>
+<br>
+Unas </b>
+			
+		
+	<hr></blockquote>
+Heh, interesting examples.  Maybe after FC has a hundred or so years to work on stability this game will be as ubiquitous and reliable as electricity. lol.  <br>
+<br>
+Have you ever lived in a small town?  Power and phone service are not to be taken for granted for some. :)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 27th, 2002 <span class="time">21:02</span></td><td class="alt2 small right"><a href="#post369993">#17</a></td></tr>
+<tr class="post" id="post370154"><td class="alt1 author"><b class="name">Nietya</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40240.jpg" alt=""></td><td class="alt1 body"><div class="message">Yep, that's definately true, about the game industry...  my brother worked at Raven for about 5 years, and he always told me the churn there is absurd, that people come in, do some work, and then either get hired elsewhere or just peter out into nonexistance, and none of them are really trained 'hardcore' programmers...<br>
+<br>
+It's absolutely mind-boggling to look at the pace at which changes happen in an mmorpg, on a side note... having developed content in the past (as well as currently working on a gaming system and world as well) I know that it shouldn't take 10 people 8 months of a game being released to come to some of the conclusions they have... <br>
+<br>
+At least, from my subjective outsider standpoint, that's the way it surely looks...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 28th, 2002 <span class="time">00:11</span></td><td class="alt1 small right"><a href="#post370154">#18</a></td></tr>
+<tr class="post" id="post370377"><td class="alt2 author"><b class="name">Whiterrabbit</b><br><span class="small usertitle">ReelBigFish</span><br><img class="avatar" src="../images/avatars/40713.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: Re: i thought</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Unas </i><br>
+<b><br>
+<br>
+The interface at least is written in C++ (you can tell that by the file names which show up as part of client crash records), don't know about the back end. </b>
+			
+		
+	<hr></blockquote>
+regarding the back end:<br>
+<br>
+im an AI student, i could write better AI into this game, FC, gimme the code and let me make those mobs think!<br>
+<br>
+no offense guys <img src="../images/smilies/wink.gif" alt="" class="smilie"> i know you had a deadline, i know the game engine isnt friendly, but you do need to take a look at it.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 28th, 2002 <span class="time">04:26</span></td><td class="alt2 small right"><a href="#post370377">#19</a></td></tr>
+<tr class="post" id="post370524"><td class="alt1 author"><b class="name">Kusimi</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40249.jpg" alt=""></td><td class="alt1 body"><div class="message">In theory of course, everyone is smarter and has better ways of solving a problem than the people that are actually trying to do it.<br>
+<br>
+But then in reality, something occurs and another thing occurs and pretty soon your f*cked.  Like deadlines, ect.<br>
+<br>
+It may be easy to just point and say 'Ah, this and this must be fixed in this way.'  But when you ALSO have to work with constant bugs/complaints/balance issues/server issues/ect. it's hard to issolate one problem and fix it.<br>
+<br>
+The code is still pretty fubar though...but hey, show me some that's not   =)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 28th, 2002 <span class="time">09:36</span></td><td class="alt1 small right"><a href="#post370524">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <b>[1]</b> <a href="17316-2.html">2</a> <a href="17316-3.html">3</a> <a href="17316-2.html">&raquo;</a> </span></td><td class="right small"><a href="https://web.archive.org/web/20250528224621/https://forums-archive.anarchy-online.com/showthread.php?17316-How-hard-can-it-be">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

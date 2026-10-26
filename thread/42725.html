@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Biggest bugs and solutions</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-play-bugs-11.html">Game-Play bugs</a> &gt; Biggest bugs and solutions</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="42649.html">Last Thread</a> &nbsp; <a href="42902.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Biggest bugs and solutions"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game-Play bugs"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post604706"><td class="alt2 author"><b class="name">PleaseNo!</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="small posttitle"><b>Biggest bugs and solutions</b></div><div class="message">These are the biggest problems in the game effecting the largest portion of players I believe.  Yes pet pathing problems exist, but they only effect a specific class in specific circumstances.  They are a big deal for that class, but these problems are bigger.  This is an honest attempt to identify problems in the game and suggest real solutions.  If you disagree with any portion of this post please feel free to state your opinion in a constructive manner giving real evidence of why you disagree.  Simply stating an opinion is not acceptable.  One should at least construct a scenerio to support your arguement.  <br>
+<br>
+If you agree or disagree with these problems lets here about it so that the games designers take notice!<br>
+<br>
+Now onto the problems:<br>
+<br>
+BUG 1) Spells canceling when consecutive attempts to cast occur.<br>
+Solution 1) NEVER cancel a spell when another attempt to cast that same spell is made.<br>
+<br>
+===========================================<br>
+<br>
+BUG 2) &quot;In a fight&quot; message happens when your not in a fight.<br>
+<br>
+This is very annoying in Boss rooms, when NPC's are far far away, when leaving the arena etc and so on....<br>
+<br>
+Solution 2) If you have not taken damage in N seconds then you are not in a fight.  <br>
+<br>
+===========================================<br>
+<br>
+BUG 3) One can cast negative spells on themselves, yet can't shoot or hit themselves.<br>
+<br>
+Solution 3)  Do not allow &quot;negative&quot; effects to be cast on yourself!  Its the same code as if you were going to cast on a team member for crying out loud!<br>
+<br>
+===========================================<br>
+<br>
+BUG 4) Roots are broken by spells that do not do any damage.  Casting an inexperience on yourself shouldn't break a root.<br>
+<br>
+Solution 4) Only allow spells cast by someone else to break a root and spells that do damage.  Except obviously for the spells that are specifically made to break a root.<br>
+<br>
+===========================================<br>
+<br>
+BUG 5) Concealment appears to be broke in that one can have very high concealment and be detected by those who have no investment into perception.<br>
+<br>
+Solution 5) Here is what I suggest:<br>
+A.) Movement by the concealed should lower their effective concealment.<br>
+B.) Range from a &quot;detector&quot; should play a factor with longer distances increasing the chance of hiding and in your face hiding being almost impossible.<br>
+C.) There should be ACTIVE revealing and PASSIVE revealing.<br>
+C.1.) Active revealing uses the full perception skill.<br>
+C.2.) When revealed actively the hiders concealment skill should drop to zero for N seconds.<br>
+C.3) Passive detection uses a percentage of your perception skill (&lt; 50%).<br>
+C.4) Passive detection will reveal the hider to the person detecting them and no one else.<br>
+C.5) No text message will be generated on a passive detect.<br>
+C.6) Passive checks should be on a slow timer or done once when the target enters the detectors range.<br>
+D.) The perception and concealment skills when used should be modified randomly from 85% to 115% when used in formula's.  This introduces an element of chance.  The philosophy being that someone with 91 perception should not always detect someone with 90 concealment.  Or someone with 91 concealment always hides from a 90 perception person.<br>
+<br>
+Suggested formulae:<br>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -<br>
+rndChance= random (0.85, 1.15)<br>
+<br>
+if (moving) then <br>
+movement = SOME_VALUE_LESS_THAN_ONE<br>
+else<br>
+movement = 1<br>
+end if<br>
+<br>
+effective concealment = (concealment * rndChance);<br>
+effective concealment = effective concealment * movment<br>
+<br>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -<br>
+<br>
+rndChance = random(0.85,1.15)<br>
+<br>
+effective active reveal = rndChance * perception<br>
+effective active reveal = effective active reveal  + (PercentageByDistance(distance) * perception)<br>
+effective passive reveal = 0.5 * effective active reveal <br>
+<br>
+Note: PercentageByDistance returns a value from 5 to 0 where distance being low returns a bigger number and distance being far returns a smaller one.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 6th, 2002 <span class="time">17:47</span></td><td class="alt2 small right"><a href="#post604706">#1</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529074813/https://forums-archive.anarchy-online.com/showthread.php?42725-Biggest-bugs-and-solutions">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

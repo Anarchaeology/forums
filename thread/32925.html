@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Ranged Weapons Evaluator - Working on new one</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-15.html">Game Mechanics</a> &gt; Ranged Weapons Evaluator - Working on new one</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="33776.html">Last Thread</a> &nbsp; <a href="32412.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Ranged Weapons Evaluator - Working on new one"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post518126"><td class="alt2 author"><b class="name">AnotherFixer</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Ranged Weapons Evaluator - Working on new one</b></div><div class="message">Hello all.<br>
+<br>
+Like most of you, I've utilized the weapons evaluator at AntiGuardians website alot in my quest to find a better weapon to use.  However, given my nature, I was always unsure that this weapon evaluator was giving me accurate numbers.  Not because I doubt that the folks at Antiguardians do great work, they definitely know they're stuff.  It's just that I always want to know what precepts and calculations were being done to produce the results.<br>
+<br>
+At any rate, I decided to undertake the challenge of putting once together myself.  Granted, it will never be as slick in presentation as theirs is, since I only know how to do this utilizing functions in Excel, but I do think I am getting close to nailing down the exact formula for the most accurate results.<br>
+<br>
+However, I wanted to sort of &quot;check myself&quot; here and use the talents and intelligence of the game mechanics nuts here to see if they agree with my work so far.<br>
+<br>
+So, here we go.  First, a list of the &quot;terms&quot; used in my formulae.<br>
+<br>
+<b>Terms</b><br>
+<br>
+ATK = Weapon Attack Time<br>
+REC = Weapon Recharge Time<br>
+Min Dmg = Minimum Weapon Damage<br>
+Max Dmg = Maximum Weapon Damage (normal shot)<br>
+Crit Dmg = Critical Damage number<br>
+Clip = Shots per clip<br>
+RI = Ranged Initiative Skill (specified by user)<br>
+ATK Rating = Attack Rating Based on weapon Skills<br>
+MATK = Modified ATK (Ranged init applied to attack)<br>
+MREC = Modified Recharge<br>
+MTT = Modified Total Time (Time Per Shot cycle w/ Ranged Init)<br>
+TPC = Time to Fire entire Clip<br>
+AMS = Damage Modifier based on ATK Rating<br>
+AC = Target Armor Class specificed by user<br>
+Timeframe = Number of seconds of fighting<br>
+% Crit chance = Percentage chance of landing a critical hit specified by the user<br>
+<br>
+<b> Precepts</b><br>
+<br>
+In my equations, I used the following precepts that have been long quoted here on the boards:<br>
+<br>
+600 Ranged Initiative = 1 second reduction to both ATK and REC at the same time (as such, each RI point = 0.001667 seconds)<br>
+<br>
+Every 10 points of AC reduces damage by 1 point<br>
+<br>
+AMS, or the damage factor based on weapon skills = 1 + (ATK Rating/400)<br>
+<br>
+Damage should be shown as a mean average, so final damage is calculated by taking the weapon's mid-point damage and multiplying it by the AMS and shots fired.  Afterwards, critical damage is added.<br>
+<br>
+Now for my calculations...<br>
+<br>
+<b>Calculations</b><br>
+<br>
+MATK =  ATK - (1/600*RI)  OR 1 second, whichever is greater<br>
+<br>
+MREC = REC  (1/600*RI) OR 1 second, whichever is greater<br>
+<br>
+MTT = MATK + MREC<br>
+<br>
+TPC = MTT*CLIP<br>
+<br>
+ATK Rating = (%SMG req * SMG skill) + (%AR Req * AR skill) + (%RE Req * RE skill) + etc, etc,.<br>
+<br>
+Full Clips Used =( Timeframe specified by user / TPC) rounded down do the nearest whole integer<br>
+<br>
+Clip Reload Time in Timeframe = Full Clips Used * REC<br>
+<br>
+Bullets Fired in Timeframe = (Timeframe specified by user  Clip Reload Time in Timeframe) / MTT <br>
+<br>
+NOTE: If, however, the clip recharge time in timeframe is great enough to keep enough bullets from being fired that would be equal to a full clip, then clip reload time must be changed to allow for one LESS clip being used.  The calculation then becomes:<br>
+<br>
+Bullets Fired in Timeframe = (Timeframe specified by user  Clip Reload time in Timeframe + REC) / MTT<br>
+<br>
+This is done using an IF / THEN Function.<br>
+<br>
+Critical hits done in Timeframe = (Bullets Fired in Timeframe / % crit chance specified by user) Rounded UP to the nearest whole integer<br>
+<br>
+AMS = 1+ (ATK Rating / 400)<br>
+<br>
+<br>
+Damage done in Timeframe = Damage Done by Normal Shots + Damage Done by Critical hits<br>
+<br>
+Normal Damage = (Bullets fired in Timeframe  Number of Critical hits done) * Damage Done by average shot<br>
+<br>
+Damage done by average shot = {(Max Dmg  Min Dmg) * 0.5 * AMS}  (AC/10)<br>
+<br>
+Damage done by critical hits = Critical hits done in Timeframe * [{(Max Dmg + Crit Dmg) * AMS}  (AC/10)]<br>
+<br>
+<br>
+So<br>
+<br>
+Total Damage done by weapon in Timeframe = |(Bullets fired in Timeframe  Number of Critical hits done) * [{(Max Dmg  Min Dmg) * 0.5 * AMS}  (AC/10)] | + | Critical hits done in Timeframe * [{(Max Dmg + Crit Dmg) * AMS}  (AC/10)]|<br>
+<br>
+<br>
+<br>
+I welcome any feedback on this.  I suppose I should second guess myself so much, but the results I get from my calculations differ a good bit from the same inputs into the Antiguardians weapon evaluator.<br>
+<br>
+<br>
+P.S. Thank to the Antiguardians for all the great work they've done so far.  I cannot tell you how valuable your site has been!<br>
+<br>
+P.P.S I also have a rudimentary first draft of the excel workbook with the calculator in place.  It only has a small batch of weapons that can be selected (mostly the ones I find to be good options), but at least it could give you a specific view of how my calculations worked out.  If you want a copy, send me a private message and I'll send it to you via email.</div><p class="small edited"><i>Last edited by AnotherFixer on June 22nd, 2002 at 00:09</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 22nd, 2002 <span class="time">00:07</span></td><td class="alt2 small right"><a href="#post518126">#1</a></td></tr>
+<tr class="post" id="post518817"><td class="alt1 author"><b class="name">Lucid Flow</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40706.jpg" alt=""></td><td class="alt1 body"><div class="message">Note that 600 Ranged Init = 1 second at FULL AGRESSIVE.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 22nd, 2002 <span class="time">15:28</span></td><td class="alt1 small right"><a href="#post518817">#2</a></td></tr>
+<tr class="post" id="post518903"><td class="alt2 author"><b class="name">AnotherFixer</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="message">Yup.  Init effectiveness is based completely on Slider setting.  <br>
+<br>
+100% agg = 100% init<br>
+<br>
+100% Def = 0 % init</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 22nd, 2002 <span class="time">16:48</span></td><td class="alt2 small right"><a href="#post518903">#3</a></td></tr>
+<tr class="post" id="post520445"><td class="alt1 author"><b class="name">Blunderbus</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40249.jpg" alt=""></td><td class="alt1 body"><div class="message">Is it still true that the attack speed can never be lower then 1s? Even if u have e.g. 1mio init.?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 23rd, 2002 <span class="time">22:30</span></td><td class="alt1 small right"><a href="#post520445">#4</a></td></tr>
+<tr class="post" id="post520681"><td class="alt2 author"><b class="name">AnotherFixer</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="message">Yes, apparently that is true.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 24th, 2002 <span class="time">01:52</span></td><td class="alt2 small right"><a href="#post520681">#5</a></td></tr>
+<tr class="post" id="post526256"><td class="alt1 author"><b class="name">ZanEridath</b><br><span class="small usertitle">Leetas</span></td><td class="alt1 body"><div class="message">*Edit - Ignore this - I found a post (named &quot;Critical Chance&quot;) indicating that it's 3% +/- 1 for every 10% you're AMS is above/below the defender's evade.<br>
+<br>
+Anyone know what the base chance is to crit with no scope?<br>
+<br>
+I know that it's based upon your AMS vs. mob evades, but anyone have a formula?<br>
+<br>
+Alternatively, anyone know what the chance to crit is if you have 700 AMS vs. vets (180 - 200)?<br>
+<br>
+===========================================<br>
+<br>
+That said, it's my understanding that your AMS vs. defender's evades will impact the actual damage that you do.  [For example, low AMS vs. defender's evades means that you're likely hitting towards the low end of your weapon's damage spectrum.]<br>
+<br>
+Can anyone quantify this?</div><p class="small edited"><i>Last edited by ZanEridath on June 27th, 2002 at 05:26</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 27th, 2002 <span class="time">05:10</span></td><td class="alt1 small right"><a href="#post526256">#6</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529061504/https://forums-archive.anarchy-online.com/showthread.php?32925-Ranged-Weapons-Evaluator-Working-on-new-one">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

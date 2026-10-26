@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Client-sync syndrome, suggested fixes (long)</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-play-bugs-26.html">Game-Play bugs</a> &gt; Client-sync syndrome, suggested fixes (long)</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="9712.html">Last Thread</a> &nbsp; <a href="9728.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Client-sync syndrome, suggested fixes (long)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game-Play bugs"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post287199"><td class="alt2 author"><b class="name">Strycker</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40191.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Client-sync syndrome, suggested fixes (long)</b></div><div class="message">It seems to me client-sync problems are at the root of a whole pattern of flaky behavior, especially in missions, but also throughout the game. I would appreciate some kind of developer comment on this somewhere, for example along the lines of that Salabim note on ranges.<br>
+<br>
+<br>
+As far as I am concerned, the main problem with client-sync issues is that in every possible situation where it arises, the player gets the short end of the stick.<br>
+<br>
+<br>
+For the worst example of problems caused by this syndrome, consider mob combat and targeting for nanos, a serious concern for NTs, and also a concern for many other professions. For a mob to attack, all that is needed is the server to believe line-of-sight exists within some range limit. For a player to attack, both the client and the server have to believe that the player has LoS and range. The effect of this behavior mismatch is that when client sync is lost, the player continues being hit while the player can no longer initiate new attacks, including new nano program invocations.<br>
+<br>
+Client-sync is for me routinely lost whenever I move more than a room from a hostile mob in a mission. This may be related also to poor mob pathfinding, but it is primarily caused, I believe, that the client totally loses track of the hostile mob position, and for some reason often may never regain it. <br>
+<br>
+So let us say I encounter an unexpected orange enforcer add deep in a mission level. The only thing I can do is flee to the main room, and either leave entirely or fight and zone. So I run a room or two away, with the stupid enforcer *apparently* hung up on a board-room table, stuck in a pond, or bouncing off some wall, and it seems that I am safe. Suddenly I start taking damage. No mob in sight, nothing I can target. This will continue all the way back to the antechamber, until I zone. On *rare* occasions, the mob in question will appear to teleport into the main room or the antechamber. Usually it never does. Until the client sees the mob I cannot fight it, so of course I have to zone, assuming I survived the flight back to the exit.<br>
+<br>
+<br>
+On return to the level, the mob is of course right there in the main room or antechamber where it *really* was all along, having in fact followed me closely all the way back to the exit. It's just that the client never saw it.<br>
+<br>
+<br>
+Similar problems occur throughout missions, with mobs teleporting through walls, with apparently distantly rooted melee mobs hitting regardless of our apparent locations, with nano and attack commands aborting due to range or LoS problems despite apparently standing right in front of the mob, etc. etc. etc. ad nauseam ad infinitum.<br>
+<br>
+<br>
+Why does this stuff happen? Does it have something to do with the TCP vs. UDP choice? I really doubt it. I think it is just network code which attempts at all costs to save bandwidth and reduce server CPU load coupled with game engine logic that always cuts against the player and for mobs.<br>
+<br>
+<br>
+There are some obvious possible workarounds to this syndrome or complex of apparently related problems:<br>
+<br>
+<br>
+* Detect loss of client sync from the server (how hard can this be? Just see if both server and client are reasonably close on their idea of the positions of hostile or nearby mobs every 10 seconds or so) and force sync when this happens. Could be hard to code at this late date, but should have been designed in from the beginning. However, maybe it can't be done at this point.<br>
+<br>
+* (slightly different) Have client detect that player has no LoS to mob which has just done conventional attack (melee/projectile) damage. The client can do this easily when it receives a combat/damage update from the server. If there is in fact no player LoS in the client at the moment that the client is told that there was server LoS from the mob, then obviously sync has been lost and the client should send a message saying &quot;I've lost sync, tell me where the mobs and the player are&quot; -- and incidentally suspending combat and mob activity (at least within missions) until sync has been achieved.<br>
+<br>
+* Send mob coordinates on every attack, forcing position sync in the client when the attack lands. Geez, what bandwidth would this incur -- maybe 12 whole bytes every second? Seems pretty easy to do IMO if the above two things turn out to be too hard.<br>
+<br>
+* Enable client-side player LoS for 1 second following every mob attack. Thus regardless of what the client thinks is going on, if a player takes damage, the client will let the player's nano or attack go off against the enemy which caused the damage, trusting the server to stop it if for some reason it shouldn't happen. This would let me root, calm, or combat some random &quot;invisible&quot; or &quot;teleporting&quot; mob such as I described above. Clearly this solution requires some way to distinguish conventional melee, projectile, and nano attacks from DoTs or similar things, but presumably either the protocol already makes this distinction, or else it would be easy to extend the protocol.<br>
+<br>
+<br>
+Obviously it requires knowledge of the code and the client-server protocol for a mere player like me to make really helpful suggestions. But the kind of problem I describe above can really be incredibly annoying when it happens time after time. It appears that all the logic in the game engine makes decisions against the player and in favor of mobs. This is particularly infuriating, because it seems to me that from the point of view of &quot;fairness&quot; to the player, that when because of poor game design or even just a bad network connection the player's client goes out of sync with the server, the server should give the *player* the benefit of the doubt, not the mob.<br>
+<br>
+<br>
+-Strycker NT 80<br>
+<br>
+<br>
+PS:<br>
+<br>
+Before you ask, I have a new 1.9 Mhz machine with 512 MB of RAM, 60 free GB of disk space, a GeForce 3 card, and a cable modem on a relatively uncluttered HFC network segment. I should have no hardware problems at all that would cause me to lose data, and in fact should do pretty well compared to the majority of other players in terms of the big 4 network characteristics of bandwidth, latency, jitter, and packet loss.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 24th, 2002 <span class="time">19:03</span></td><td class="alt2 small right"><a href="#post287199">#1</a></td></tr>
+<tr class="post" id="post287381"><td class="alt1 author"><b class="name">fancycrat</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Strycker that was impression, not a rant at all purely technical and made a lot of sense, hopefully FC will read it <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 24th, 2002 <span class="time">21:29</span></td><td class="alt1 small right"><a href="#post287381">#2</a></td></tr>
+<tr class="post" id="post287622"><td class="alt2 author"><b class="name">Zaal</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40172.jpg" alt=""></td><td class="alt2 body"><div class="message">Man - am I glad you went throught the time to type that and not me - although it was getting to the point where I was going to post something incredibly similar.<br>
+<br>
+Well presented - let's hope they listen.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 25th, 2002 <span class="time">02:23</span></td><td class="alt2 small right"><a href="#post287622">#3</a></td></tr>
+<tr class="post" id="post287816"><td class="alt1 author"><b class="name">Krneki</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40181.jpg" alt=""></td><td class="alt1 body"><div class="message"><span style="color:red">You were for 190 points of damage.</span> <br>
+<span style="color:red">You were for 203 points of damage.</span> <br>
+<span style="color:red">Someones reflect shield hit you for 20 points of damage.</span> <br>
+<span style="color:red">You were for 218 points of damage.</span> <br>
+<span style="color:red">You were for 457 points of damage.</span> <br>
+<span style="color:red">Someones reflect shield hit you for 20 points of damage.</span> <br>
+<span style="color:red">You were for 209 points of damage.</span> <br>
+<span style="color:red">Someones reflect shield hit you for 20 points of damage.</span> <br>
+<span style="color:red">You were for 190 points of damage.</span> <br>
+<span style="color:red">You were for 197 points of damage.</span> <br>
+<span style="color:red">You were for 210 points of damage.</span><br>
+<span style="color:white">Your items will be reclaimed in 60 seconds, and made available in a reclaim booth near your resurrection site..</span> <br>
+<span style="color:red">Changing area. Please Wait.</span><br>
+<br>
+I wuv this game.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 25th, 2002 <span class="time">08:25</span></td><td class="alt1 small right"><a href="#post287816">#4</a></td></tr>
+<tr class="post" id="post288130"><td class="alt2 author"><b class="name">Darkbane</b><br><span class="small usertitle">Council of Testers</span></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon6.gif" alt=""> <b>Good stuff</b></div><div class="message">That was good stuff, well written and not at all a rant. I fully agree that the desync issues are a major problem. Any network game can and will suffer from desync, but, short of major network problems, these should not last longer than a second or two. As you say, AO seems to be able to suffer from almost perpetual desync from time to time so clearly something is broken in the net code. I hope FC do read this and at least give us their view on the subject.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 25th, 2002 <span class="time">14:37</span></td><td class="alt2 small right"><a href="#post288130">#5</a></td></tr>
+<tr class="post" id="post290860"><td class="alt1 author"><b class="name">Meligant</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40652.jpg" alt=""></td><td class="alt1 body"><div class="message">Great post!  Hope we can get a development response on this topic one day ;(</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 28th, 2002 <span class="time">18:06</span></td><td class="alt1 small right"><a href="#post290860">#6</a></td></tr>
+<tr class="post" id="post298215"><td class="alt2 author"><b class="name">Codsan</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="message">Yes it's a good post, and it's indeed what should be Funcom's number one priority.<br>
+<br>
+99.9% of the weird freaky bugs in this game are cause because of the over-reliance on TCP in the  network code.<br>
+<br>
+A quick overview.<br>
+<br>
+There are 2 ways to send data in TCP/IP.<br>
+<br>
+TCP is what they call a connection-based protocol. This means for every packet of data sent, the other end must acknowlege that it's ready to get another packet before the data stream continues. This is what you're seeing with the sync problems. Part of what Funcom did to make the game &quot;feel&quot; less laggy earlier on was to ignore when packets back up and to drop them and catch up later. That's why you drop dead 5 minutes after a fight is over sometimes.<br>
+<br>
+UDP is connectionless, which means both ends of the connection just send data to each other. Now with modems and packet loss the way they are, you're looking at a worse mess with this. The good news is that you can do UDP, write your own error correction and STILL end up better off than you would if you used TCP.<br>
+<br>
+Looking back at the mistakes of others, and to show some similarities:<br>
+<br>
+Quake was the first popular game to ship that could support internet play out of the box. The mistake id made with this is that they used TCP for a lot of the network code.<br>
+<br>
+Players on modems would find that it would take 2 or 3 seconds just to be able to move forward, and stopping was just as bad. The feeling was much akin to ice skating. Firing weapons had just as much delay. Players standing in front of you would warp across the screen as you got updates on their position.  You'd warp back 30 feet and be dead from a fight you never saw. All in all it was a mess.<br>
+<br>
+So Id went back and did their homework and came up with Quakeworld. Quakeworld still used a little TCP here and there but the majority of the traffic used UDP. The client had it's own error checking and compression built in. The client side of QW also introduced the concept of Client Side Prediction, which allowed the client side to simulate movement for a few milliseconds while the server and client agreed on what was going on.  It took a few tries but the concepts are still being used today.<br>
+<br>
+Funcom of course is faced with the fact that changing their network code is not an easy task, and it would require a pretty hardcore rewrite of their client. It COULD be done and IMHO it should be done before they kluge together any more &quot;fixes&quot; to side step the fundimental problem.<br>
+<br>
+I've seen the posts in the technical forum from Funcom about how TCP really isn't the problem, etc. Yes that's correct if you're in a perfect environment where packet loss and latency don't exist. Therein is the rub.<br>
+<br>
+I'm through, thanks for reading.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 5th, 2002 <span class="time">19:38</span></td><td class="alt2 small right"><a href="#post298215">#7</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529075955/https://forums-archive.anarchy-online.com/showthread.php?8403-Client-sync-syndrome-suggested-fixes-(long)">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

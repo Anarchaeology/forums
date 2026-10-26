@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Analysis of multi-wield</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Professions &gt; <a href="../forum/adventurer.html">Adventurer (Wilderness)</a> &gt; Analysis of multi-wield</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <b>[1]</b> <a href="42737-2.html">2</a> <a href="42737-3.html">3</a> <a href="42737-2.html">&raquo;</a> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="45066.html">Last Thread</a> &nbsp; <a href="50646.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Analysis of multi-wield"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Adventurer (Wilderness)"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post604865"><td class="alt2 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="small posttitle"><b>Analysis of multi-wield</b></div><div class="message">(If you don't want to read the math and tests, just skip to conclusions.)<br>
+<br>
+<br>
+Premises:<br>
+Initiatives reduce your attack speed by ini/600 seconds. Initiatives reduce your recharge speed by ini/300 seconds. Neither can go below 1s. This is quite universally accepted as the way weapon initiatives work.<br>
+<br>
+Single weapon cycle goes atk+rch. Well, sure seems to be the case.<br>
+<br>
+Dual weapon cycle goes atk/atk/rch(both). I've observed this personally back when there was only one attack bar. This pertains to non-MA dualing, I have not studied how a MA+weapon cycle goes. Using melee weapon tests, it is easy to study that the in-game dualing works accordingly to the atk/atk/rch(both) cycle.<br>
+<br>
+Melee weapon dualing and single-wielding test:<br>
+Weapons: two merchant executioners, QL7 (IIRC, did not write this down and did this test a bit earlier)<br>
+Atk: 1.33s<br>
+Rch: 2.19s<br>
+<br>
+Melee ini 203<br>
+<br>
+Resultant weapon speed:<br>
+Atk: 1s<br>
+Rch: 1.51s<br>
+<br>
+Estimated ROF (swings/minute):<br>
+Single: 60/2.51s = 23.9 ROF<br>
+Dual: 60/3.51s*2 = 34.2 ROF<br>
+<br>
+Estimated ROF increase while dualing:<br>
+34.2 / 23.9 = +43.1%<br>
+<br>
+Test method: one minute period cut from ongoing combat with /say Hep. This minimizes the effect latency has due to making the start and stop markers go through the same latency. The combat has started prior to the start marker.<br>
+<br>
+Test results, ROF (swings/minute):<br>
+Single: 23,23,24,22,19(oddball),24,23,21,23,22<br>
+Average: 22.4<br>
+<br>
+Dual: 32,30,32,33,33,31,32,32,33,31<br>
+Average: 31.9<br>
+<br>
+Perceived IN-GAME ROF increase:<br>
+31.9 / 22.4 = +42.4%<br>
+<br>
+Difference between estimated ROF increase and actual in-game tested ROF increase: 0.7 percentage units, resulting in a 1.6% variation from estimated ROF increase. Attributed to short period of test time and too few repetitions, and well within acceptable range to maintain the validity of the atk/atk/rch cycle being valid.<br>
+<br>
+Also of importance is the fact that the Anarchy Online combat engine seems to run roughly 6% slower than real-time. If I were to guess, I believe there are small pauses in it (affecting all combat) where &quot;time stops&quot;. All sorts of validating processes are probably ran in this time period.<br>
+<br>
+Ranged weapon tests:<br>
+<br>
+The reps were smaller, due to me getting bored a bit. They were still consistent though.<br>
+<br>
+QL9 Mini shotgun:<br>
+Speed:<br>
+Atk: 0.98s<br>
+Rch: 1.5s<br>
+Clipsize 5<br>
+<br>
+Ranged ini 28<br>
+<br>
+Resultant weapon speed:<br>
+Atk: 1s<br>
+Rch: 1.41s<br>
+<br>
+Estimated ROF (shots/minute, unlimited clip):<br>
+Single: 60/2.41s = 24.9<br>
+Dual: 60/3.41s*2 = 35.2<br>
+<br>
+Estimated ROF increase while dualing (unlimited clip):<br>
+35.2 / 24.9 = +41.4%<br>
+<br>
+Test method: Two one minute periods cut from ongoing combat with /say Hep. This minimizes the effect latency has due to making the start and stop markers go through the same latency. The combat has started prior to the start marker.<br>
+<br>
+Test results, ROF (shots/minute):<br>
+Single: 18+18, 18+19<br>
+Average: 18.25<br>
+<br>
+Dual: 27+28, 28+27<br>
+Average: 27.5<br>
+<br>
+Perceived IN-GAME ROF increase:<br>
+27.5 / 18.25 = +50.7%<br>
+<br>
+How clipsize effects dual wielding: While one weapon is reloading, the other one can continue as if single-wielded. This results naturally in a higher ROF increase due to the period where no shots are taken is lessened considerably.<br>
+<br>
+Estimated ROF increase was +41.4% and perceived in-game ROF increase was +50.7%. The clipsize being only 5 results in a large amount of reloading periods, and thus dual wielding shines by allowing you to continue to fire even while the other weapon reloads. How this changes on higher clipsizes is one feature of the next test.<br>
+<br>
+QL2 MTI vp300 Caseless:<br>
+Speed:<br>
+Atk: 1.15s<br>
+Rch: 1.00s<br>
+Clipsize 15<br>
+<br>
+Ranged ini 28<br>
+<br>
+Resultant weapon speed:<br>
+Atk: 1.1s<br>
+Rch: 1s<br>
+<br>
+Estimated ROF (shots/minute, unlimited clip):<br>
+Single: 60/2.1s = 28.6<br>
+Dual: 60/3.2s*2 = 37.5<br>
+<br>
+Estimated ROF increase while dualing (unlimited clip):<br>
+37.5 / 28.6 = +31.1%<br>
+<br>
+Test method: Two one minute periods cut from ongoing combat with /say Hep. This minimizes the effect latency has due to making the start and stop markers go through the same latency. The combat has started prior to the start marker.<br>
+<br>
+Test results, ROF (shots/minute):<br>
+Single: 24+25, 25+26<br>
+Average: 25<br>
+<br>
+Dual: 33+34, 31+34, 32+34<br>
+Average: 33<br>
+<br>
+Added a 3rd rep due to 2nd having a slightly higher variance than usual.<br>
+<br>
+Perceived IN-GAME ROF increase:<br>
+33 / 25 = +32%<br>
+<br>
+How clipsize effects dual wielding: While one weapon is reloading, the other one can continue as if single-wielded. This results naturally in a higher ROF increase due to the period where no shots are taken is lessened considerably.<br>
+<br>
+Estimated ROF increase was +31.1% and perceived in-game ROF increase was +32%. The clipsize being 15 resulted in a much smaller increase of ROF due to reloading periods, and thus dual wielding is not in this sense much better than single wielding, if the clipsize is even moderately high.<br>
+<br>
+Even with a clipsize of 15, the difference in estimated and perceived in-game ROF was only 0.9 percentage units, or 2.8%. And as most of this can be accredited to the reloading period firing, this again confirms the atk/atk/rch(both) cycle being valid.<br>
+<br>
+Conclusion on ROF in single and dual wielding:<br>
+<br>
+Dual wielding melee gives you a ROF increase which can be very accurately calculated from the atk/atk/rch(both) cycle. Weapons maxed to 1s/1s with initiatives give a 33% ROF increase. As atk&gt;rch, the increase becomes smaller. As atk&lt;rch, the increase becomes greater.<br>
+<br>
+Dual wielding ranged gives you a ROF increase which can be accurately calculated from the atk/atk/rch(both) cycle if the weapons have a medium+ clipsize. On small clipsize weapons, the actual ROF increase is higher. Weapons maxed to 1s/1s with initiatives give a 33% ROF increase. As atk&gt;rch, the increase becomes smaller. As atk&lt;rch, the increase becomes greater.<br>
+<br>
+Damage over time capacity of dual wield on the premises of ROF increase just shown above:<br>
+<br>
+(a little math, skip to conclusion if not interested)<br>
+<br>
+Wielding a x/x weapon gives you a ROF increase of 33%. All &quot;damage average&quot; in the following formulaes mean the average damage IN-GAME(!) of either off or main hand. This results in the following damage over time capacity:<br>
+<br>
+Mainhand average damage 100%<br>
+Offhand average damage x%<br>
+<br>
+Two dual cycles, each taking 3 time units:<br>
+Time units used: 6<br>
+Hits: 2 main, 2 off<br>
+Damage: 100%, x%, 100%, x% = 200% + 2 * x%<br>
+<br>
+Three single cycles, each taking 2 time units:<br>
+Time units used:6<br>
+Hits: 3 main<br>
+Damage: 100%, 100%, 100% = 300%<br>
+<br>
+Break-even point:<br>
+300% = 200% + 2 * x%<br>
+100% = 2 * x%<br>
+50% = x%<br>
+<br>
+Thus a weapon which gives you 50% of mainhand damage on average (IN-GAME) results in a break-even of damage over time. For dualing to be of any bonus, you need to wield a weapon on your offhand doing over 50% if both weapons are at x/x speed after initiatives.<br>
+<br>
+-------<br>
+<br>
+Wielding a 2x/x weapon gives you a ROF increase of 20%. All &quot;damage average&quot; in the following formulaes mean the average damage IN-GAME(!) of either off or main hand. This results in the following damage over time capacity:<br>
+<br>
+Mainhand average damage 100%<br>
+Offhand average damage x%<br>
+<br>
+Three dual cycles, each taking 5 time units:<br>
+Time units used: 15<br>
+Hits: 3 main, 3 off<br>
+Damage: 100%, x%, 100%, x%, 100%, x% = 300% + 3 * x%<br>
+<br>
+Five single cycles, each taking 3 time units:<br>
+Time units used:15<br>
+Hits: 5 main<br>
+Damage: 100%, 100%, 100%, 100%, 100% = 500%<br>
+<br>
+Break-even point:<br>
+500% = 300% + 3 * x%<br>
+200% = 3 * x%<br>
+66% = x%<br>
+<br>
+Thus a weapon which gives you 66% of mainhand damage on average (IN-GAME) results in a break-even of damage over time. For dualing to be of any bonus, you need to wield a weapon on your offhand doing over 66% if both weapons are at 2x/x speed after initiatives.<br>
+<br>
+Conclusions about damage over time:<br>
+If using fast weapons that are maxed at 1s/1s, you need to do atleast 50% of damage (IN-GAME AVERAGE) with the offhand to break even. If you are doing less, unwield your off-hand and give yourself a boost.<br>
+<br>
+If using 2s/2s weapons with a high ini, but scoped to near 0, it will give you an estimated speed of 2s/1s. This is due to reduced initiative not affecting recharge speed, according reports by for example fixers where their maussers do not go slower than 1s/2s even if their ini is dropped. I first thought this was a silly bug or feature, but now I understand it is a design decision. The reasoning behind this design is probably in the fact that scopes for example slow your _aiming_, but you are still naturally quick so it will not slow your recovery from a taken shot. Anyways, when wielding a 2s/1s weapon, you need to do atleast 66% of damage (IN-GAME AVERAGE) with the offhand to break even. If you are doing less, unwield your off-hand and give yourself a boost.<br>
+<br>
+Analysis of multi-ranged and multi-melee:<br>
+Multi-melee is exceptionally good extra damage skill. It is possible to wield two QL200 weapons, for example SOL E and SOL F. If used with 600ini, dualing them will give you on average a 33% higher damage output.<br>
+<br>
+Multi-ranged is more difficult to analyze. The new good pistols usually also have a good clipsize, so that combats the reloading time bonus of dualing ranged weapons, so low that it has virtually no bonus. The question then becomes, how high can you wield in your offhand? I'm still awaiting for some lvl200 adv to report the max cap on multi ranged, that will enable to do atleast some comparison on actual values.<br>
+<br>
+In the mean-time, if you have two identical guns (for example River Seasons Xp's), here is a way to roughly compare whether it is worth it for you to dual them:<br>
+<br>
+Figure out your atk/rch speeds. For recharge, deduct ini/300 from it. Very often you end up at 1s, higher up nearly always. Use your unmodified ini. For attack, deduct ini/600 from it. Use your modified ini. For every +aggdef bonus you have, both are reduced. I'm not sure whether this is bonus/100 or bonus/50 seconds, use bonus/100 to be on the safe side. If something else is affecting your atk/rch speeds, calculate them in too. No idea what that something else could be.<br>
+<br>
+Take your atk/rch speeds and do this:<br>
+A. Count Atk+Atk+Rch<br>
+B. Count Atk+Rch<br>
+Then divide A by B, and deduct 1. This number is how much you must do IN-GAME AVERAGE damage with your offhand to _break even_.<br>
+<br>
+edit: The number is a percentage. 0.66 means 66%, etc.<br>
+<br>
+Then there are a couple of options. You can estimate what your mainhand damage on average is, and what your offhand damage on average is. Divide your offhand average with your mainhand average. If this resulting number is less than the one you got above, stop dual wielding! You are making yourself do less damage. Also of note is critical hits: does your offhand crit for atleast that above calculated number? If it does less, then depending on how much you crit you hurt your damage over time a bit, and a borderline better value on normal average hits may not be enough to better your overall damage over time. If it is over, then you are doing somewhat more damage over time.<br>
+<br>
+Another option for estimating average damages is this:<br>
+Write down your weapons base min, base max, and the atk/rch speeds you got. Also of importance is your usual fighting attack rating, write this up too. Add up all your +damage rings, and normal damage buffs you usually have running (morph, normal +dam buff), and note this number down. Then the hardest part is estimating the AC your usual opponents have. I'd guess one option is to write down your normal critical hits on both weapons vs. the stuff you fight, and the crit hits you do against leets in the backyard. Multiply the difference by 10. This ought to be the AC of your enemies.<br>
+<br>
+Then armed with these numbers, go to <a href="https://web.archive.org/web/20020806/http://www.student.oulu.fi/~isalmenk/AO/">http://www.student.oulu.fi/~isalmenk/AO/</a>  and fire up your Excel or OpenOffice Calc. The _ms. version is MS Excel format, the other one is OpenOffice format.<br>
+<br>
+Write into the fields the min dam, max dam, attack rating, AC, buff total. Skip the timer input fields, just write up the &quot;Average damage vs AC&quot; field. Do the same for your offhand gun. Compare the estimated average damages, and proceed to throw your offhand to the garbage bin (joking... well sort of <img src="../images/smilies/smile.gif" alt="" class="smilie">).<br>
+<br>
+As for dualing weapons of differing attack/recharge speeds, YUCH. That is way more complex, and I'd rather not explain how to compute the ROF increase. It is doable though, but if either gun has a low clipsize the accuracy goes whacko.<br>
+<br>
+Brought to you by your neighbourhood math geek (studying medicine though, games are my hobby as is doing maths in relation to the games),<br>
+<br>
+          Ewert</div><p class="small edited"><i>Last edited by ewert on August 6th, 2002 at 19:13</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 6th, 2002 <span class="time">19:02</span></td><td class="alt2 small right"><a href="#post604865">#1</a></td></tr>
+<tr class="post" id="post605623"><td class="alt1 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="small posttitle"><b>River Seasons XP: QL 200 &amp; QL 172 analysis</b></div><div class="message">(skip to analysis if you don't wish to read numbers)<br>
+<br>
+edit: Okay edited to compensate lower ROF when scoped. Changed the outlook of things big-time.<br>
+<br>
+Following numbers are base weapon values prior to attack rating modifiers.<br>
+<br>
+Weapons:<br>
+<br>
+River seasons XP ql 200:<br>
+Min: 50<br>
+Max: 350<br>
+Critmod: 320<br>
+Atk: 2s<br>
+Rch: 2s<br>
+Clipsize: 25 (medium+)<br>
+<br>
+River seasons XP ql 172, approximation from a point between ql133 and ql199:<br>
+Min: 44<br>
+Max: 303<br>
+Critmod: 279<br>
+Atk: 2s<br>
+Rch: 2s<br>
+Clipsize: 25 (medium+)<br>
+<br>
+Edit: multi-range req 943 (+- a couple), 120 buff, 209 implants, 120 base stats, 494 base skill increase. If 494 is higher than cap for MR, add +int +agi implants, +agi buffs, +int buffs. If 172 is not doable (someone said an adv squeezed into 172ql though), then please report adv max multiranged cap.<br>
+<br>
+Weapon user details:<br>
+Attack rating: 950<br>
+Damage buffs: Calia's Form: Sabretooth, +56, 2x power rings, +40, generic buff, +5, total +101<br>
+<br>
+Weapon hit average against extremely high AC (over 10125 armour class):<br>
+<br>
+Results in minimum damage on both weapons.<br>
+Avg ql200 damage: 269<br>
+Avg ql172 damage: 249<br>
+<br>
+Offhand damage percentage: 92.6%<br>
+<br>
+Estimated critical damage at 10130AC (I am not sure if criticals and AC handle the way I assumed they would handle, please report if enemy AC is NOT reduced from critical hits. However based on crit hits doing a bit less on bit higher level monsters, I am assuming AC is reduced.):<br>
+Ql200: 1248<br>
+Ql172: 951<br>
+<br>
+Offhand critical hit damage percentage: 76%<br>
+<br>
+ROF with over 600 ini un-scoped: 1s/1s -&gt; +33%<br>
+ROF with over 600 ini scoped down to zero: 2s/1s -&gt; +20%<br>
+<br>
+Resulting damage over time versus extreme AC, with 100% hit chance. Whether hit chance is different for &quot;offhand&quot; is another matter, but since you can wield a gun in left hand or right hand as you please, I would guess at an overall worse hit chance IF there is a hitchance modifier for dual wielding. Researching the hit chance is a long and arduous project though, and would need log parsers. Anyone willing to do it, please tell me the results. These values below also need an MA +crit buff. Only outside help I have so far added, but I feel this is realistic to calculate in.:<br>
+<br>
+10% crit chance, un-scoped (ROF 1.33 dualing):<br>
+Ql 200, single: 27hits, 3 criticals, 11007 damage<br>
+Ql 200, Ql 172, dual: 18 main, 18 off, 2 main crits, 2 off crits, 13722<br>
+<br>
+Damage over time increase: 24.6%<br>
+<br>
+25% crit chance, scoped (ROF 1.2 dualing, single ROF 0.66 of un-scoped):<br>
+Ql 200, single: 75 hits, 25 criticals, 51375<br>
+Ql 200, Ql 172, dual: 45 main, 45 off, 15 main crits, 15 off crits, 56295<br>
+<br>
+Damage over time increase: 9.6%<br>
+<br>
+Do note that the scoped higher critical chance with slower ROF constitutes an approximately 6.5% _decrease_ of damage over time on single wield. So going scoped only to 600ini is actually better with these weapons. These have a good minimum damage though, and the AC is truly high. Although after dualing bonus, scoped dualed these weapons are better than a single unscoped (well unscoped beyond 600ini) weapon of this type.<br>
+<br>
+--------<br>
+<br>
+Weapon hit average against lesser AC (around 5000 armour class):<br>
+<br>
+Results in average of above minimum damage on both weapons.<br>
+Avg ql200 damage: 399<br>
+Avg ql172 damage: 329<br>
+<br>
+Offhand damage percentage: 82.5%<br>
+<br>
+Estimated critical damage at 5000AC (I am not sure if criticals and AC handle the way I assumed they would handle, please report if enemy AC is NOT reduced from critical hits. However based on crit hits doing a bit less on bit higher level monsters, I am assuming AC is reduced.):<br>
+Ql200: 1761<br>
+Ql172: 1464<br>
+<br>
+Offhand critical hit damage percentage: 83.1%<br>
+<br>
+ROF with over 600 ini un-scoped: 1s/1s -&gt; +33%<br>
+ROF with over 600 ini scoped down to zero: 2s/1s -&gt; +20%<br>
+<br>
+Resulting damage over time versus 5000 AC, with 100% hit chance. Whether hit chance is different for &quot;offhand&quot; is another matter, but since you can wield a gun in left hand or right hand as you please, I would guess at an overall worse hit chance IF there is a hitchance modifier for dual wielding. Researching the hit chance is a long and arduous project though, and would need log parsers. Anyone willing to do it, please tell me the results. These values below also need an MA +crit buff. Only outside help I have so far added, but I feel this is realistic to calculate in.:<br>
+<br>
+10% crit chance, un-scoped (ROF 1.33 dualing):<br>
+Ql 200, single: 27hits, 3 criticals, 16056 damage<br>
+Ql 200, Ql 172, dual: 18 main, 18 off, 2 main crits, 2 off crits, 19554<br>
+<br>
+Damage over time increase: 21.8%<br>
+<br>
+25% crit chance, scoped (ROF 1.2 dualing):<br>
+Ql 200, single: 75 hits, 25 criticals, 73950<br>
+Ql 200, Ql 172, dual: 45 main, 45 off, 15 main crits, 15 off crits, 81135<br>
+<br>
+Damage over time increase: 9.7%<br>
+<br>
+Do note that the scoped higher critical chance with slower ROF constitutes an approximately 8% _decrease_ of damage over time on single wield. So going scoped only to 600ini is actually better with these weapons. These have a good minimum damage though. Although after dualing bonus, scoped dualed these weapons are better than a single unscoped (well unscoped beyond 600ini) weapon of this type.<br>
+<br>
+Analysis:<br>
+Depending on your weapons, ini, scope, enemy AC, the bonus damage over time with dualing compared to single varies.<br>
+<br>
+Best dual bonus is gained when fighting monsters with EXTREME AC, and enough initiative even if scoped to remain at 1s/1s speeds for your weapons. But even when scoped, you can still garner at best almost 10% more extra damage by dual wielding. Also with these weapons, scoping yourself to 0ini actually can hurt your overall damage. Where the optimum ini/scope+crit% lies between 0ini and 600ini is another thing to calculate. I'll just say, with these weapons that ini is very good to have.<br>
+<br>
+When fighting high (5000 in this example) AC enemies, the ability of the better mainhand gun to punch a bit better through that armor lessens the bonus of dualing. But with 10% crit chance and 600ini after modifiers, you still gain a good 20+bit % when dualing, over single. Again going the heavily scoped and crit buffed route lessens average damage gain from dualing, and as noted above, going un-scoped to a degree is actually better for your overall damage. Dualing still nets you a bonus though, in the case concerning above weapons, again almost 10%, bring dualed scoped to 0 ini weapons above an unscoped 600ini weapon.<br>
+<br>
+Conclusion:<br>
+If heavily scoped, damage bonus from dualing is less but still there. The bonus of scopes on damage over time is however not enough to make you want to scope no matter what. The closer you are to 1s atk time, the more important it is for you to sacrifice that last 1% of crit chance to make it a 1s atk time. At best you can look at a bit over 20% damage increase dualing. At &quot;worst&quot; (meaning using a good dual combo of the currently available weapons, scoped to high heaven), you get around 10% damage increase dualing.<br>
+<br>
+Most important note:<br>
+At worst, you are gimping yourself. These numbers were with an identical pair of weapons. Using two different weapon types can drop your dualing damage way under your single weapon style, if you pick the wrong choices. The popular v2/custom reet combo may be good when you can get it, but quite probably after a while when you can equip a better mainhand will get, NATURALLY since you haven't also upgraded your offhand, worse.<br>
+<br>
+Personal view on dualing pistols:<br>
+If you are not good at maths, I'd suggest you dual identical weapons with good min damage and not so high multiranged reqs. The River Seasons seem a good choice for example. If you are good at maths, go ahead and check whether your choice you are thinking of could bring in some extra damage. Aim for 1s/1s speed with initiatives (600 for Seasons).<br>
+<br>
+Also of note is how implant clusters conflict. Personally my ranged weapon choice of today is the rifle for adventurers who are still short on IP. One less skill to implant, rifle is easier to implant without conflicts, only need to be able to find one good weapon, more easily buffed into, etc.<br>
+<br>
+Personal view on dualing melee:<br>
+Dual and be happy! *slice'n'dice*</div><p class="small edited"><i>Last edited by ewert on August 7th, 2002 at 04:46</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">04:18</span></td><td class="alt1 small right"><a href="#post605623">#2</a></td></tr>
+<tr class="post" id="post606185"><td class="alt2 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="small posttitle"><b>Well, Serena and fl0w_ and other adventurers</b></div><div class="message">Is an 20% damage over time increase with great pistols dual wielded enough to spend the IP that you do when maxing multi ranged? No responses one way or the other yet from anyone.<br>
+<br>
+I would like to point out that Sol F is an excellent melee weapon, but it has same damage min and damage max as Seasons, but a lesser critical hit value. So although dualed Sol F because being able to get both on Ql200 will be better, the higher crit of Seasons chases the difference down a bit.<br>
+<br>
+Is that 20% damage over time with dualed Seasons and 600ish ini enough to warrant the IP cost, implant space and nanoskills required for the buffs?<br>
+<br>
+Another point was how cutting your ROF by dropping ini to near zero with a scope actually lessens your damage output with the Seasons, because they have so snuggly minimum damage.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">10:50</span></td><td class="alt2 small right"><a href="#post606185">#3</a></td></tr>
+<tr class="post" id="post606257"><td class="alt1 author"><b class="name">Askeladden</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40715.jpg" alt=""></td><td class="alt1 body"><div class="message">Ewert it would be nice if you post this thread in the Game Mechanics forum. Since this is not a advent only issue, and i think you will get more responses in Game Mechanics.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">11:44</span></td><td class="alt1 small right"><a href="#post606257">#4</a></td></tr>
+<tr class="post" id="post606286"><td class="alt2 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Askeladden </i><br>
+<b>Ewert it would be nice if you post this thread in the Game Mechanics forum. Since this is not a advent only issue, and i think you will get more responses in Game Mechanics. </b>
+			
+		
+	<hr></blockquote>
+Well, I don't think other than adventurers can get the adventurer self-only multi-wield buffs. And the Seasons are adventurer only weapons. As are Sol F.<br>
+<br>
+And this post is in direct opposition of some of the things said on the multi-wield threads here. Tests, theories, math, numbers, all accounted for and proving each other valid. I guess nobody either reads these posts, or nobody can invalidate my math, or nobody cares enough about what the current balance is, but only want to have better.<br>
+<br>
+I guess I could post a link on game-mechanics. I'll do that.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">11:59</span></td><td class="alt2 small right"><a href="#post606286">#5</a></td></tr>
+<tr class="post" id="post606304"><td class="alt1 author"><b class="name">Caloss2</b><br><span class="small usertitle">I R STORM</span><br><img class="avatar" src="../images/avatars/40714.jpg" alt=""></td><td class="alt1 body"><div class="message">Good job solid research, now if only FC put this much effort into some code writing, we get somewhere.<br>
+<br>
+I'm wondering if it's possible to factor in the amimation/lagg affects of GH, a valid point and I hope not seen as hair splitting, as I'm pretty sure a lot of us use the morph in most forms of combat.<br>
+<br>
+Cheers again<br>
+<br>
+peace<br>
+cal</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">12:09</span></td><td class="alt1 small right"><a href="#post606304">#6</a></td></tr>
+<tr class="post" id="post606617"><td class="alt2 author"><b class="name">Tetra</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: River Seasons XP: QL 200 &amp; QL 172 analysis</b></div><div class="message">I had hoped ignoring this thread would cause it to slip into obscurity but it doesnt seem to be working<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by ewert </i><br>
+<b>Edit: multi-range req 943 (+- a couple), 120 buff, 209 implants, 120 base stats, 494 base skill increase. If 494 is higher than cap for MR, add +int +agi implants, +agi buffs, +int buffs. If 172 is not doable (someone said an adv squeezed into 172ql though), then please report adv max multiranged cap.</b>
+			
+		
+	<hr></blockquote>
+At level 200 with stat and multiranged capped you might be able to squeeze into a ql173.  at level 163 with the primary stat capped and secondary almost capped and multiranged capped+implanted+dichotomy i was able to squeeze into a ql163, barely.   Without looking it up it either goes up +7 or +8 points of MR per QL in that range.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Weapon user details:<br>
+Attack rating: 950<br>
+Damage buffs: Calia's Form: Sabretooth, +56, 2x power rings, +40, generic buff, +5, total +101
+			
+		
+	<hr></blockquote>
+I had roughly 980-990 attack rating at the time of equipping it and still do when in wolf form (which is rather often when you look at what LotP does in it:)<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Weapon hit average against extremely high AC (over 10125 armour class):<br>
+<br>
+Results in minimum damage on both weapons.<br>
+Avg ql200 damage: 269<br>
+Avg ql172 damage: 249<br>
+<br>
+Offhand damage percentage: 92.6%<br>
+<br>
+Estimated critical damage at 10130AC (I am not sure if criticals and AC handle the way I assumed they would handle, please report if enemy AC is NOT reduced from critical hits. However based on crit hits doing a bit less on bit higher level monsters, I am assuming AC is reduced.):<br>
+Ql200: 1248<br>
+Ql172: 951
+			
+		
+	<hr></blockquote>
+The ratio on the low end damage is close but not quite correct, low end of the QL163 vrs a RM enf (which is about as high of an AC as you get) is upper 250's in my experience, low end on the QL190 I use is 29x-30x  <i>(i can say this number rather than just guess because it took me roughly a week of using just the ql190 seasons XP in comparison to a v3 before i found another in trade)</i><br>
+<br>
+While your damage on the low end cap was very close to what it actually was your crit damage is off by a wildly huge margain, against the same RM enf I would be hitting for 1900/2k on the ql190 and &gt;1600 - &lt;1750ish on the offhand so odds are good that there is a bug in your formula somewhere.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Resulting damage over time versus 5000 AC, with 100% hit chance. Whether hit chance is different for &quot;offhand&quot; is another matter, but since you can wield a gun in left hand or right hand as you please, I would guess at an overall worse hit chance IF there is a hitchance modifier for dual wielding. Researching the hit chance is a long and arduous project though, and would need log parsers. Anyone willing to do it, please tell me the results. These values below also need an MA +crit buff. Only outside help I have so far added, but I feel this is realistic to calculate in.:
+			
+		
+	<hr></blockquote>
+I did the test in game mechanics at some point with about 2k worth of shots from each with dual ql101 bbi faithfuls iirc (might have been dual ql100's) chosen at the time for their easy availability.  end results were a very small % in favor of the damage from single wielding (i.e. ~1-2%), could have just been randomness could have been an actual thing, either way it was such a small amount it hardly matters.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Do note that the scoped higher critical chance with slower ROF constitutes an approximately 8% _decrease_ of damage over time on single wield. So going scoped only to 600ini is actually better with these weapons. These have a good minimum damage though. Although after dualing bonus, scoped dualed these weapons are better than a single unscoped (well unscoped beyond 600ini) weapon of this type.
+			
+		
+	<hr></blockquote>
+because advents have huge perception buffs we can self equip one of the QL250 scopes pretty easily <img src="../images/smilies/smile.gif" alt="" class="smilie"> especially once they can cast gaze of the hunter (+480 with eagle eye), in all honesty group makeup sometimes difference in which scope I use but I really only flip flop between my ~QL200, and that's only when i don't have my intelligent kevlar shoulder pads going.   If I have OS going + godknows what else I'll usually use the QL250, aside from that it depends on what the group makeup is.   either way even with extreme amounts of crit buffs and a big scope i still do more damage over time when im at the low end of 1.x/1.x on them.  Since you admit later you don't know the optimum ini/crit% ratio i'll say that 8% works great if your at1.5/1.5 or less and leave it at that becuase you cant put an exact number on it due to the number of factors added in by buffs from your group, attempting to place a number on it simply hurts clueless n00bs (yes there are TL4/TL5 n00bs who never looked at their damage cause the looked at something someone wrote and ran with it.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				How clipsize effects dual wielding: While one weapon is reloading, the other one can continue as if single-wielded. This results naturally in a higher ROF increase due to the period where no shots are taken is lessened considerably.
+			
+		
+	<hr></blockquote>
+Actually you start to fire empty shots with the reloading weapon just like if you were single wielding cause of a many times reported bug <img src="../images/smilies/frown.gif" alt="" class="smilie"> each shot uses up 1 round of ammo too (no idea what a 1 round clip weapon does never cared to test).<br>
+<br>
+end results: n00bs don't believe that 50/66% offhand dmg is the break even and might do better point cause of something someone wrote, it's closer to 80% cause of what actually goes on in game.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">14:53</span></td><td class="alt2 small right"><a href="#post606617">#7</a></td></tr>
+<tr class="post" id="post606667"><td class="alt1 author"><b class="name">Borrace</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40681.jpg" alt=""></td><td class="alt1 body"><div class="message">ok...all arguing about mathmatics aside, and regardless of whether or not you need to equip a 50/66% weapon or 80% weapon in your offhand to break even...<br>
+<br>
+ISN'T IT JUST PLAIN DUMB THAT EQUIPING A SECOND WEAPON COULD ACTUALLY HARM A PLAYER?!<br>
+<br>
+who cares if the break even is 80% or 50% or 66%...this is only to BREAK EVEN!<br>
+<br>
+if you carry a second pistol...even a crappy pistol...you SHOULD get the benefits of having MORE FIREPOWER.<br>
+<br>
+you two are having an argument about what ql offhand weapon you need just to BREAK EVEN...isn't that silly?<br>
+ <br>
+FIX MULTI WIELD x 1000000000.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">15:24</span></td><td class="alt1 small right"><a href="#post606667">#8</a></td></tr>
+<tr class="post" id="post606841"><td class="alt2 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Borrace </i><br>
+<b><br>
+ISN'T IT JUST PLAIN DUMB THAT EQUIPING A SECOND WEAPON COULD ACTUALLY HARM A PLAYER?!<br>
+</b>
+			
+		
+	<hr></blockquote>
+Actually, this is the most important thing. Yeah, it is dumb.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">16:47</span></td><td class="alt2 small right"><a href="#post606841">#9</a></td></tr>
+<tr class="post" id="post606923"><td class="alt1 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="small posttitle"><b>Re: Re: River Seasons XP: QL 200 &amp; QL 172 analysis</b></div><div class="message">[QUOTE]<i>Originally posted by Tetra </i><br>
+I had hoped ignoring this thread would cause it to slip into obscurity but it doesnt seem to be working<br>
+[QUOTE]<br>
+*shrugs* Prove the numbers wrong then.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				At level 200 with stat and multiranged capped you might be able to squeeze into a ql173.  at level 163 with the primary stat capped and secondary almost capped and multiranged capped+implanted+dichotomy i was able to squeeze into a ql163, barely.   Without looking it up it either goes up +7 or +8 points of MR per QL in that range.
+			
+		
+	<hr></blockquote>
+This was an analysis of multiwield foremost, not the ability TO multiwield. If your ql163 does less damage than what was needed by the conclusion of the analysis above, then that would constitute that at your level, multiwield is not worth it. Glad you could agree?<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				I had roughly 980-990 attack rating at the time of equipping it and still do when in wolf form (which is rather often when you look at what LotP does in it:)
+			
+		
+	<hr></blockquote>
+More attack rating improves break-through of the ql200 weapon, but only a very very little amount. It does, but not by much.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				The ratio on the low end damage is close but not quite correct, low end of the QL163 vrs a RM enf (which is about as high of an AC as you get) is upper 250's in my experience, low end on the QL190 I use is 29x-30x  <i>(i can say this number rather than just guess because it took me roughly a week of using just the ql190 seasons XP in comparison to a v3 before i found another in trade)</i>
+			
+		
+	<hr></blockquote>
+Well, you do have higher AR than in the above. Nothing unexpected about that, now is there.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				While your damage on the low end cap was very close to what it actually was your crit damage is off by a wildly huge margain, against the same RM enf I would be hitting for 1900/2k on the ql190 and &gt;1600 - &lt;1750ish on the offhand so odds are good that there is a bug in your formula somewhere.
+			
+		
+	<hr></blockquote>
+Of course, that is why I asked whether it seems to follow a straight out -AC route after max dam+crit mod altered by attack rating. I'd point out though that your main/off hand crit values are around 300-400 difference apart. So are mine. This leads to the possibility that the deducted AC is maybe cut in half, or something. And actually this improves your offhand, because your offhand crit will be of higher % from mainhand than if the AC worked its full effect. And btw, were you referring to 10k+ AC or the 5k AC values of criticals?<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				I did the test in game mechanics at some point with about 2k worth of shots from each with dual ql101 bbi faithfuls iirc (might have been dual ql100's) chosen at the time for their easy availability.  end results were a very small % in favor of the damage from single wielding (i.e. ~1-2%), could have just been randomness could have been an actual thing, either way it was such a small amount it hardly matters.
+			
+		
+	<hr></blockquote>
+Both of same QL? And you gained nearly no extra damage? That is like from the twilight zone, spooky. Because no matter when, where and how many tests I've personally run (back about a year ago and now), it has always ended up validating the atk/atk/rch(both) cycle in the increase of ROF. And if you are wielding equal QL (as is case in melee weapons usually), then only a hit-chance penalty for multi'ing would drop overall damage. And with ranged weapons, the reloading period bonus is another, well, bonus.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				because advents have huge perception buffs we can self equip one of the QL250 scopes pretty easily <img src="../images/smilies/smile.gif" alt="" class="smilie"> especially once they can cast gaze of the hunter (+480 with eagle eye), in all honesty group makeup sometimes difference in which scope I use but I really only flip flop between my ~QL200, and that's only when i don't have my intelligent kevlar shoulder pads going.   If I have OS going + godknows what else I'll usually use the QL250, aside from that it depends on what the group makeup is.   either way even with extreme amounts of crit buffs and a big scope i still do more damage over time when im at the low end of 1.x/1.x on them.  Since you admit later you don't know the optimum ini/crit% ratio i'll say that 8% works great if your at1.5/1.5 or less and leave it at that becuase you cant put an exact number on it due to the number of factors added in by buffs from your group, attempting to place a number on it simply hurts clueless n00bs (yes there are TL4/TL5 n00bs who never looked at their damage cause the looked at something someone wrote and ran with it.
+			
+		
+	<hr></blockquote>
+In superfast combats, for each individual combat the chance of high damage using high scope is definitely higher. As for the higher crit damages than straight up AC deduction, that will tip the balance some more to the higher crit chance being better. And as said, it does depend too much on a situation whether to scope or not. Or how much to scope. Those calculated above were just two examples, if one ups the crit damages a bit it will be quite even on both 10% and 25% slower ROF. So... yeah, pick 1.5s atk and stay &quot;safe&quot;. <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Actually you start to fire empty shots with the reloading weapon just like if you were single wielding cause of a many times reported bug <img src="../images/smilies/frown.gif" alt="" class="smilie"> each shot uses up 1 round of ammo too (no idea what a 1 round clip weapon does never cared to test).
+			
+		
+	<hr></blockquote>
+Again, I'm sorry to have to repeat this, but client side has negligible effect on server-side on-going combat. Really. And I do mean really. Just today, in a mission, we killed a monster that didn't even _exist_ on my screen. On my screen, I was just standing. On my screen, no combat was taking place. On my screen, she was in combat posture. On my screen, I was standing up straight, no bars running.<br>
+<br>
+On HER screen, we were both shooting at it. On HER screen, most importantly, _I_ was shooting quite normally at the monster. See my point? Clientside acknowledgement of the combat didn't even MATTER to the server. On the server, we were in combat, and the server didn't care one iota that my client didn't know it was happening.<br>
+<br>
+Oh and what was especially funny was on the next mob. My client HAD received all the combat messages you see. But since it did not have an actual combat to put those messages into use (&amp; the animations for them) ... guess what. As I started the next mob, I got a stream of 10+ hit messages of me hitting the mob. My client even wrongly kicked down the mobs health bar 25% (didn't happen on her screen, and then on my screen the health bar stayed same for a while). Too bad they were named the same, or could have seen whether the damage messages are just &quot;hit enemy xxx damage&quot; or do they actually have &quot;hit enemy-name xxx damage&quot;.<br>
+<br>
+End result: Client side animations do not interrupt _server-side_ combat. It can interrupt your client side reporting of server-side events though. That was what happened with me. My client thought there was no combat going on, it held the combat messages in check. When it found a combat, it spammed the backlog. Totally wrong, nothing to do with animations at all.<br>
+<br>
+One of the only way animations can truly affect &quot;server-side&quot; combat is by denying you the right to use special cmds, and nanoformulaes. But if on the server-side a combat is on-going, it goes on no matter what your client-side animations tell you.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				end results: n00bs don't believe that 50/66% offhand dmg is the break even and might do better point cause of something someone wrote, it's closer to 80% cause of what actually goes on in game.
+			
+		
+	<hr></blockquote>
+Well, that is your opinion. 80% offhand damage on average nets you an okay increase in my book. All tests I have done on ROF work out such. Also, n00bs shouldn't be hurt by trying to dual, that is a, no not a, THE problem. But in itself, when wielding good weapons dualing IS a viable option.<br>
+<br>
+Also, if you were constantly fighting 10k+AC mobs, those Seasons seem a ton better choice than v3. <img src="../images/smilies/wink.gif" alt="" class="smilie"> So I would guess you were talking of the 5k AC?<br>
+<br>
+Again for anyone thinking of dualing ranged:<br>
+<br>
+If you aren't sure of what you are doing, don't do it. For melee-users, don't worry, be happy.</div><p class="small edited"><i>Last edited by ewert on August 7th, 2002 at 17:21</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">17:18</span></td><td class="alt1 small right"><a href="#post606923">#10</a></td></tr>
+<tr class="post" id="post607045"><td class="alt2 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="message">Some funny facts from dual wielding:<br>
+<br>
+Using a 2/2 gun single while not scoped bad, you can get 2 shots in 5 time units of full main hand damage. (1.5/1 atk/rch)<br>
+<br>
+Using a 2/2 gun dual while scoped bad, you can get 2 shots in 5 time units BUT one full, one offhand. (2/1 atk/rch)<br>
+<br>
+Using a 2/2 gun single while scoped little (over 600ini), you can get 3 shots in 6 time units.<br>
+<br>
+<br>
+<br>
+... *lol*<br>
+<br>
+I have an idea: Funcom should run a course about dual wielding, and anyone not without the diploma are not allowed to dual wield, since they can very easily gimp themselves... <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">17:55</span></td><td class="alt2 small right"><a href="#post607045">#11</a></td></tr>
+<tr class="post" id="post607101"><td class="alt1 author"><b class="name">meiko</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40246.jpg" alt=""></td><td class="alt1 body"><div class="message">Just wanted to chime in about Multiwield buffs, fixer also have self only multi-wield buffs, nothing on our level, but they have them.<br>
+<br>
+And I *think* roughly the highest possible MR for an opi adv at 199 is around 1020-1028, all self buffed.<br>
+<br>
+Current me (175)<br>
+<br>
+MR 957 (all 3 clusters)<br>
++ 16 (all possible int/agi)<br>
+---------<br>
+973<br>
+<br>
+Extrapolated me (199)<br>
+<br>
+Previous 973<br>
++ 36 (4*9, MR incr from lvl190-199, if 199 is the title cap)<br>
++ 15 (dance of the dervish difference)<br>
+-------<br>
+1024<br>
+<br>
+So of course this can be slightly higher if you have a set of full sekutek, soe pants, 2 eggs, and other various goofy items/buffs.  <br>
+<br>
+This is all asssuming 199 is the title cap. And getting teachings or masters at 199 to cast (dance of the the dervish).<br>
+<br>
+Amusing thing from this is that it will be possible to wield a Liaker(1000 MR) in the offhand easily, when/if it is available.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">18:10</span></td><td class="alt1 small right"><a href="#post607101">#12</a></td></tr>
+<tr class="post" id="post607307"><td class="alt2 author"><b class="name">Tetra</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: Re: Re: River Seasons XP: QL 200 &amp; QL 172 analysis</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by ewert </i><br>
+<b><br>
+This was an analysis of multiwield foremost, not the ability TO multiwield. If your ql163 does less damage than what was needed by the conclusion of the analysis above, then that would constitute that at your level, multiwield is not worth it. Glad you could agree?</b>
+			
+		
+	<hr></blockquote>
+it doesnt matter what the analysis comes to if it's not possible to do what is in question.   Furthermore it's important to note those sticky &quot;little details&quot; like the tested thing is only possible at level 200 or not <img src="../images/smilies/rolleyes.gif" alt="" class="smilie"><br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				More attack rating improves break-through of the ql200 weapon, but only a very very little amount. It does, but not by much.
+			
+		
+	<hr></blockquote>
+but certainly not enough to change the fact that the numbers in your tests assumed +40 from rings while I have a +11 and +16 giving +27 total <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				And btw, were you referring to 10k+ AC or the 5k AC values of criticals?
+			
+		
+	<hr></blockquote>
+the crits I listed were on par with what i would get on a mob that gave me the low end I listed (RM ENF).   your numbers for low end were <b>close</b> your numbers for crit were wildly off meaning that the numbers on your high end (which i dont recall if they were listed and am not going back to check) were probably also off.<br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Both of same QL? And you gained nearly no extra damage? That is like from the twilight zone, spooky. Because no matter when, where and how many tests I've personally run (back about a year ago and now), it has always ended up validating the atk/atk/rch(both) cycle in the increase of ROF. And if you are wielding equal QL (as is case in melee weapons usually), then only a hit-chance penalty for multi'ing would drop overall damage. And with ranged weapons, the reloading period bonus is another, well, bonus.
+			
+		
+	<hr></blockquote>
+You asked if there was a penalty on dual wielding damage not if there was an increase in ROF.   the test i mentioned was ~2k shots not 2k shots in one situation and however many shots in that same time period.<br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Again, I'm sorry to have to repeat this, but client side has negligible effect on server-side on-going combat. Really. And I do mean really. Just today, in a mission, we killed a monster that didn't even _exist_ on my screen. On my screen, I was just standing. On my screen, no combat was taking place. On my screen, she was in combat posture. On my screen, I was standing up straight, no bars running.
+			
+		
+	<hr></blockquote>
+um no.  shoot your till it has 1 round left and let autoreload kick in... if your inits are high enough to drop it to 1/1s weapon you will get 2-3 shots in during the reload but there is no damage on those shots.   when you get the first shot that registers as a miss or does damage stop shooting and look at the gun in question, it has 3 shots missing not 1.  when you hit 0/x shots in clip it will reload.  when multiwielding the same situation occurs but it's less pronounced cause you have something else to do as well (the other gun).  so really you gave us a big long explaination about client side sync problems between two clients that had nothing to do with the thing you were questioning...<br>
+<br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Also, if you were constantly fighting 10k+AC mobs, those Seasons seem a ton better choice than v3. <img src="../images/smilies/wink.gif" alt="" class="smilie"> So I would guess you were talking of the 5k AC?
+			
+		
+	<hr></blockquote>
+in my experience river seasons XP's are better in all situations that exist in game save for near 100% crit compared to a V3.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">19:07</span></td><td class="alt2 small right"><a href="#post607307">#13</a></td></tr>
+<tr class="post" id="post607441"><td class="alt1 author"><b class="name">Rothwinter</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">A note on the ability to dual seasons (or any gun)<br>
+<br>
+At level 163 I have a Q200 in my main hand and a Q172 in my off hand. The Q172 has a multi req of 944 but as I have 952 in multi I think I could get into a Q173 without problems (Itembot was not online so no check possible).<br>
+<br>
+As a wolf I only got 970 attack rating and Calias Sabretooth puts me above 1K and adds some more benefits so until I can use the Leader of the pack (at 165 I think) I'll stick with Sabre.<br>
+<br>
+However, the Seasons are working very well for me at the moment but when the init on the BBI's get fixed I will turn to use them for a while as they tend to have higher average damage and only a slightly lower crit. Speed is the same.<br>
+This is unless they manage to dig up the MTI Grey that is =)<br>
+<br>
+Oh, my init is somewhere above 600 but I use a Q200 Vision Enhancer that takes 300 of that. I did not notice ANY difference in speed after equipping that but I have not made any tests on it, only went by the feeling you get in the battle.<br>
+<br>
+Btw, think I capped out on everything at level 162...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">20:02</span></td><td class="alt1 small right"><a href="#post607441">#14</a></td></tr>
+<tr class="post" id="post607502"><td class="alt2 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				in my experience river seasons XP's are better in all situations that exist in game save for near 100% crit compared to a V3.
+			
+		
+	<hr></blockquote>
+Well, this may be true QL to QL...but it's not really true for &quot;any given situation&quot;... Why? Requirements!<br>
+<br>
+Electronicum is only 895 pistol at QL 200. This can be wrangled on at around shortly have the level 100 cap on an Opi without being OE. (With Ballad and Expertise running, of course.) Only need 712 running Pistol skill to do this. QL 170's are equippable without OE before the level 100 cap. (So, as soon as level 78-82, which an Opi's green skills max--may be different for other races.)<br>
+<br>
+River Seasons XP at QL 200 requires 1036 pistol, requiring a bit more work to get on without being OE. This requires 829 pistol skill running to achive, which isn't possible until you hit around level 145 with maxed Sense/Agility/Pistol and have QL 150 implants in. (Of course, implant twinkers can do it sooner...but many people don't go that route.)<br>
+<br>
+Other advantage to the Electronicum is Energy AC over Projectile AC on MOBs. Which seems to make a difference.<br>
+<br>
+50-350 (320) - projectile ac <br>
+1-391 (345) - energy ac<br>
+<br>
+I dunno...River XP probably doesn't have much of an edge unless you're min-hatting every time. But, there are probably better options for that, if that's the situation. Of course, I can't try a QL 200 River XP since I can't equip it yet. =)<br>
+<br>
+Oh well, Electronicum's have their time and place. I think an Electronicum/River XP combo wouldn't be so bad. But, River XP's can be notoriously hard to find.<br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">20:24</span></td><td class="alt2 small right"><a href="#post607502">#15</a></td></tr>
+<tr class="post" id="post607536"><td class="alt1 author"><b class="name">Tetra</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by JaydeStargunner </i><br>
+<b> <br>
+<br>
+Well, this may be true QL to QL...but it's not really true for &quot;any given situation&quot;... Why? Requirements!<br>
+<br>
+Electronicum is only 895 pistol at QL 200. This can be wrangled on at around shortly have the level 100 cap on an Opi without being OE. (With Ballad and Expertise running, of course.) Only need 712 running Pistol skill to do this. QL 170's are equippable without OE before the level 100 cap. (So, as soon as level 78-82, which an Opi's green skills max--may be different for other races.)</b>
+			
+		
+	<hr></blockquote>
+<br>
+<br>
+Lol true <img src="../images/smilies/smile.gif" alt="" class="smilie"> i could equip QL200 on both those guns when they were added so never got to that point hehe, you might be right <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Other advantage to the Electronicum is Energy AC over Projectile AC on MOBs. Which seems to make a difference.<br>
+<br>
+50-350 (320) - projectile ac <br>
+1-391 (345) - energy ac<br>
+<br>
+I dunno...River XP probably doesn't have much of an edge unless you're min-hatting every time. But, there are probably better options for that, if that's the situation. Of course, I can't try a QL 200 River XP since I can't equip it yet. =)
+			
+		
+	<hr></blockquote>
+my max damage went downa  bit yes but i have a much MUCH more reliable damage, also the average damage is a bit better IMO because of the high min dmg.   cant give any specific numbers without doing hours of testing which im too lazy to do but i'll just leave it at in my experience damage feels better.<br>
+<br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Oh well, Electronicum's have their time and place. I think an Electronicum/River XP combo wouldn't be so bad. But, River XP's can be notoriously hard to find.<br>
+<br>
+-Jayde [/B]
+			
+		
+	<hr></blockquote>
+yes, electronicium/river xp is a good combo too <img src="../images/smilies/smile.gif" alt="" class="smilie"> took me a few days of searching to get a set bought once i started looking.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">20:40</span></td><td class="alt1 small right"><a href="#post607536">#16</a></td></tr>
+<tr class="post" id="post607621"><td class="alt2 author"><b class="name">meiko</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40246.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Tetra </i><br>
+<br>
+<br>
+yes, electronicium/river xp is a good combo too <img src="../images/smilies/smile.gif" alt="" class="smilie"> took me a few days of searching to get a set bought once i started looking. [/B]
+			
+		
+	<hr></blockquote>
+The side effect of this is that you can actually find out which mobs are weak versus proj or energy.  Also helpful when you hit a high energy or proj boss, you can swap in an appropriate gun to maximize dmg.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">21:17</span></td><td class="alt2 small right"><a href="#post607621">#17</a></td></tr>
+<tr class="post" id="post607677"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Tetra </i><br>
+Lol true <img src="../images/smilies/smile.gif" alt="" class="smilie"> i could equip QL200 on both those guns when they were added so never got to that point hehe, you might be right <img src="../images/smilies/smile.gif" alt="" class="smilie">
+			
+		
+	<hr></blockquote>
+Yeah, that's the biggest advantage at lower levels. Before, when I was comparing numbers, my analysis was basically that Electronicum's do the same or maybe less than the BBI/River XP stats would indicate, but can be equipped sooner. Once you can equip a QL 200 XP, then this advantage may fly out the window. Until then, it's probably one of the best weapons that's easily weildable at low level/QL ratio.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				my max damage went downa  bit yes but i have a much MUCH more reliable damage, also the average damage is a bit better IMO because of the high min dmg.   cant give any specific numbers without doing hours of testing which im too lazy to do but i'll just leave it at in my experience damage feels better.
+			
+		
+	<hr></blockquote>
+Don't worry, I'm not gonna demand you go out and shoot 2000 times again. I can take your word for it. <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+I just need to find a River XP of suitable QL to give a whirl.<br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">21:50</span></td><td class="alt1 small right"><a href="#post607677">#18</a></td></tr>
+<tr class="post" id="post607882"><td class="alt2 author"><b class="name">Shaeidar</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40716.jpg" alt=""></td><td class="alt2 body"><div class="message">Well done Ewert!<br>
+<br>
+I dropped multiwield after my ip reset and went with a single v3.<br>
+<br>
+When I finally got hold of a custom reet at lvl 125 (oops lazy camper), I was so starved for specials that I quipped it.<br>
+<br>
+I have 320 init with a 5% scope and 900 AR.<br>
+<br>
+Would I in this case be better of without it? I like it because I can dish out more damage in a few seconds, but havent done any longer tests to see avg dmg.<br>
+<br>
+Ah well, thanks for a very good and informative post.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">23:51</span></td><td class="alt2 small right"><a href="#post607882">#19</a></td></tr>
+<tr class="post" id="post607891"><td class="alt1 author"><b class="name">Tetra</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Shaeidar </i><br>
+<b>Well done Ewert!<br>
+<br>
+I dropped multiwield after my ip reset and went with a single v3.<br>
+<br>
+When I finally got hold of a custom reet at lvl 125 (oops lazy camper), I was so starved for specials that I quipped it.<br>
+<br>
+I have 320 init with a 5% scope and 900 AR.<br>
+<br>
+Would I in this case be better of without it? I like it because I can dish out more damage in a few seconds, but havent done any longer tests to see avg dmg.<br>
+<br>
+Ah well, thanks for a very good and informative post. </b>
+			
+		
+	<hr></blockquote>
+keep the scope</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 7th, 2002 <span class="time">23:58</span></td><td class="alt1 small right"><a href="#post607891">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <b>[1]</b> <a href="42737-2.html">2</a> <a href="42737-3.html">3</a> <a href="42737-2.html">&raquo;</a> </span></td><td class="right small"><a href="https://web.archive.org/web/20250530071416/https://forums-archive.anarchy-online.com/showthread.php?42737-Analysis-of-multi-wield">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

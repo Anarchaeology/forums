@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - RubiCom: New LFG bot now in beta on RK-1</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-12.html">Game Mechanics</a> &gt; RubiCom: New LFG bot now in beta on RK-1</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="40210.html">Last Thread</a> &nbsp; <a href="40230.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:RubiCom: New LFG bot now in beta on RK-1"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post545986"><td class="alt2 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt2 body"><div class="message">RubiCom is comming. Are you ready?</div><p class="small edited"><i>Last edited by RubiCom on July 6th, 2002 at 09:24</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 6th, 2002 <span class="time">04:31</span></td><td class="alt2 small right"><a href="#post545986">#1</a></td></tr>
+<tr class="post" id="post565566"><td class="alt1 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><b>We are here to serve you</b></div><div class="message">Welcome to RubiCom. It is the newest communications channel for the citizens of Rubi-Ka.  RubiCom plans on offering many services in the future, but we would currently like to offer our group matching technology to all of you. Simply notify the bot that you are in need of a group, and then go about your normal business. When a group can be formed, all participants will be notified, and then a private chat channel can be set up to handle the details. No more wasted time standing around. No more frustration.<br>
+<br>
+RubiCom is a free service that is available to all, Omni, Clan and Neutrals alike. We only wish to help the productivity of all those on the planet. Your work produces many benefits that extend far beyond the bounds of Rubi-Ka. In helping you, we help ourselves.<br>
+<br>
+The software is in beta release while we get the bugs out. It is also missing a few key features like a looking for more command to quickly find a replacement for member that has left your party, or a Side filter for those that really cant get along with their neighbor. These are at the top of the to do list and should be available soon. Feel free to post any additional suggestions or problems here.<br>
+<br>
+Spread the word. The more people (and Atroxes...Hehe. Just making a funny big guys) that use RubiCom, the easier finding teams will be.<br>
+<br>
+One quick note before we jump into the commands. There are a lot of them and the list will be growing, but the only command that you really need to know is the basic LFG command. Simply type:<br>
+<br>
+/tell RubiCom LFG<br>
+<br>
+That tells the bot that you want a group. The rest is gravy. Oh, and you can use <br>
+<br>
+/tell RubiCom help <br>
+<br>
+to learn more later.<br>
+<br>
+<br>
+<br>
+<b>BASIC SYNTAX:</b><br>
+<br>
+/tell RubiCom (command) (parameters) <br>
+<br>
+<br>
+<b>COMMANDS:</b><br>
+<br>
+<b>LFG [OFF] [BS|PM] [GUILD] </b><br>
+Notifies the bot that you are currently looking for a group. <br>
+<ul><li>OFF: Tell the bot that you are no longer looking for a group. If you have players that are grouped with you (See below), those links will be broken.</li><li>BS|PM: Request teams that are going to that location<br>
+If no location is given then you are available for any location. This is obviously a very limited list. To simplify things right now, only the most popular locations are selectable. <ol type="a"><li>BS: Broken Shores</li><li>PM: Pleasant Meadows</li></ol></li><li>GUILD - This will allow you to be seen by the GuildList command (see below), but the bot will not try to match you up with a group. Guild members can use this command if they want to try to group with guild members first. </li></ul><br>
+Example:  <br>
+/tell RubiCom LFG<br>
+/tell RubiCom LFG BS<br>
+/tell RubiCom LFG OFF<br>
+/tell RubiCom LFG GUILD<br>
+<br>
+<br>
+<b>LVL #</b><br>
+Sets your level in the bots database. The bot will default to the level specified in your public file ( Funcoms site) but since that can get out of date, this will let you manually set it.  <br>
+<br>
+Example: /tell RubiCom LVL 98<br>
+<br>
+<br>
+<b>STARTGROUP</b><br>
+This command will allow other players to group with you. You will become a group leader and other players will be able to group with you. Then when you send a LFG command to RubiCom, the bot will keep all of you together when forming groups. See GROUPWITH command for more info. <br>
+<br>
+Note: This command will cancel any LFG request you have previously placed. Once all the other players have grouped with you, you must reissue a LFG command .<br>
+<br>
+<br>
+<b>GROUPWITH (playername)</b><br>
+Use this command if you want to go hunting with friends and still use the bot. When the player identified by (playername) requests a group, the bot will keep you together when setting the groups up. You can only use this command for one player. If you use the command again it will override the previous one. <br>
+<br>
+The player you want to group with must issue the STARTGROUP command before you can group with them.<br>
+<br>
+Up to 5 players can identify the same person to group with and you can only group with a player that has not used the GROUPWITH command on someone else. (No chaining). So for example if 3 people wanted to group together, 2 would use the GROUPWITH command on the third. Then that person would use the LFG command to actually request a group.<br>
+<br>
+The LFG command can't be used with GROUPWITH. Once you say you are grouping with someone else, they are the one that will use the LFG command, not you. You will automatically get invited to any group they get invited to.<br>
+<br>
+If (player name) is blank or OFF then any previous GROUPWITH command will be canceled.<br>
+<br>
+Example:<br>
+Hextor: /tell RubiCom STARTGROUP<br>
+Player1: /tell RubiCom GROUPWITH Hextor<br>
+Player2: /tell RubiCom GROUPWITH Hextor<br>
+Hextor: /tell RubiCom LFG BS<br>
+<br>
+The above example will have Hextor, Player1 and Player2 all looking for a group together to go hunting in Broken Shores. The last LFG command is important. Until it is issued, you are not looking for a group. Also, once the LFG command is issued, no more players can use GROUPWITH on the group leader. If more players need to be added, the group leader should reissue the STARTGROUP command, let the additional players GROUPWITH them, then issue the LFG command again.<br>
+<br>
+<br>
+<b>STATUS</b><br>
+Gives your current status in the system. If you are looking for a group, this command will also give you the number of players that are looking for a group close to your level. This is an approximation and does not account for any filters you have in place. It is meant to give a general idea of your chances for finding a group. The level range that it uses for this count will increase over time. <br>
+<br>
+FYI: This is what the bot does when it tries to form groups. It starts out at 10% of you level and increases the longer you have gone without finding a group. The bot also tries to form groups with a good composition of professions. It starts off requiring a tank, healer and mezzer. Over time these restrictions are also relaxed in an effort form groups when the players arent available.<br>
+<br>
+Example:<br>
+/tell RubiCom status<br>
+<br>
+<br>
+<b>GUILDLIST</b><br>
+Lists players in your guild or guild alliance (see GuildR command) that are looking for a group near your level. If players are grouped together, their names will be enclosed in ( ). <br>
+<br>
+Example:<br>
+/tell RubiCom GuildList<br>
+<br>
+Sample output: SinglePlayer 23 Fix, (GroupedPlayer1 24 Bur, GroupedPlayer2 22 Enf)<br>
+<br>
+<br>
+<b>GUILDR</b> <br>
+&quot;Guild relation&quot; command. It allows the guild leader to form an alliance or declare war on another guild. This is only usable by guild leaders.<br>
+<br>
+syntax: /tell RubiCom GuildR A|W|N (Guild name)<br>
+<br>
+A = Alliance<br>
+W = War<br>
+N = Neutral<br>
+<br>
+The guild name must match the guild name on Funcom's site exactly. Also someone from that guild must have used RubiCom at least once. The bot only downloads guild information when it needs it, so if no one from the guild has used the bot, it will not know anything about that guild.<br>
+<br>
+Guilds that have formed an alliance will be able to see each other's guild members in the GuildList command.  For an alliance to be formed and active, the leaders of two guilds must use this command on each other's guild. The effect is not transitive. If Guild A is in an alliance with Guild B and Guild B is in an alliance with Guild C, Guild A is not in an alliance with Guild C.<br>
+<br>
+Note: When this command is used, a message will be send to the targeted guild's leader.<br>
+<br>
+The War option has not been implemented yet.<br>
+The Neural option simply undoes a war or alliance. <br>
+<br>
+Example: <br>
+/tell RubiCom GuildR A Division 9 RSGE<br>
+ <br>
+<br>
+<b>GUILDINFO</b> <br>
+Shows your guild's current alliances and war declarations. You must be in a guild to use.<br>
+<br>
+<br>
+<b>HELP [StartGroup|GuildR] </b><br>
+Gives a brief list of the RubiCom commands. It has three parts, the general help and help for advanced features<br>
+<br>
+Syntax: <br>
+Example:<br>
+/tell RubiCom HELP<br>
+/tell RubiCom HELP StartGroup<br>
+/tell RubiCom HELP GuildR<br>
+<br>
+<br>
+<br>
+Note: In its current form, only citizens that have access to a vehicle should probably use RubiCom. The global nature of the bot makes quick travel a necessity.<br>
+<br>
+<br>
+Finally, we would like to thank MKaath for the <a href="https://web.archive.org/web/20020716/http://www.mkaath.org/ao/aochat/">tools</a> to make this happen.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 16th, 2002 <span class="time">17:36</span></td><td class="alt1 small right"><a href="#post565566">#2</a></td></tr>
+<tr class="post" id="post565567"><td class="alt2 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt2 body"><div class="message"><b>LFGLIST</b><br>
+Lists players near your level that are LFG. It will not show players that have used the &quot;LFG GUILD&quot; command and are not in your guild or alliance.<br>
+<br>
+Example:<br>
+/tell RubiCom LFGList <br>
+<br>
+Note: This is a temporary command until the number of players is large enough for bot to work correctly.  This command is meant to fill that void.</div><p class="small edited"><i>Last edited by RubiCom on July 17th, 2002 at 05:02</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 16th, 2002 <span class="time">17:37</span></td><td class="alt2 small right"><a href="#post565567">#3</a></td></tr>
+<tr class="post" id="post565570"><td class="alt1 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="message">(Another place saver)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 16th, 2002 <span class="time">17:39</span></td><td class="alt1 small right"><a href="#post565570">#4</a></td></tr>
+<tr class="post" id="post565582"><td class="alt2 author"><b class="name">Gimpeee</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40281.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> <b>WOW MKaath et al.... !</b></div><div class="message">nice surprise...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 16th, 2002 <span class="time">17:44</span></td><td class="alt2 small right"><a href="#post565582">#5</a></td></tr>
+<tr class="post" id="post565762"><td class="alt1 author"><b class="name">Garzu-perman</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40101.jpg" alt=""></td><td class="alt1 body"><div class="message">WoW, nice, thanks for that, its ppl like you that make AO a nice place to be <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 16th, 2002 <span class="time">19:36</span></td><td class="alt1 small right"><a href="#post565762">#6</a></td></tr>
+<tr class="post" id="post566381"><td class="alt2 author"><b class="name">ethernal3</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40184.jpg" alt=""></td><td class="alt2 body"><div class="message">Could you place a clone on Rk2? Since all you need is a chat client open? Also, looks nice. <img src="../images/smilies/smile.gif" alt="" class="smilie"> <br>
+~Chris</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 17th, 2002 <span class="time">03:02</span></td><td class="alt2 small right"><a href="#post566381">#7</a></td></tr>
+<tr class="post" id="post566528"><td class="alt1 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="message">LFGList command temporarily added. See above.<br>
+<br>
+<br>
+Megabio,<br>
+<br>
+It requires another computer and another account also. It is unlikely to be brought to RK2 in the near future.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 17th, 2002 <span class="time">05:12</span></td><td class="alt1 small right"><a href="#post566528">#8</a></td></tr>
+<tr class="post" id="post566649"><td class="alt2 author"><b class="name">ethernal3</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40184.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by RubiCom </i><br>
+<b>LFGList command temporarily added. See above.<br>
+<br>
+<br>
+Megabio,<br>
+<br>
+It requires another computer and another account also. It is unlikely to be brought to RK2 in the near future. </b>
+			
+		
+	<hr></blockquote>
+<br>
+You just need a chat client running, don't you? That's how Omnibot/Shopbot/etc ran. You can have as many of them as you need on one account (the game still records your names on the chat client even after deletion.) <br>
+<br>
+Then again I don't know anything =P<br>
+~Chris</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 17th, 2002 <span class="time">07:00</span></td><td class="alt2 small right"><a href="#post566649">#9</a></td></tr>
+<tr class="post" id="post567475"><td class="alt1 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Megabio </i><br>
+<b><br>
+<br>
+<br>
+You just need a chat client running, don't you? That's how Omnibot/Shopbot/etc ran. You can have as many of them as you need on one account (the game still records your names on the chat client even after deletion.) <br>
+<br>
+Then again I don't know anything =P<br>
+~Chris </b>
+			
+		
+	<hr></blockquote>
+Hmm... didn't know you could do that. Well then it might just work. <br>
+<br>
+BTW. The bot has been having some growing pains. Crashing the computer for unknown reason. It only happens when live and intermittently, so it might take a couple of days to sort out. Please be patient.<br>
+<br>
+When the bot becomes stable, I'll look into bringing it to RK2.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 17th, 2002 <span class="time">16:33</span></td><td class="alt1 small right"><a href="#post567475">#10</a></td></tr>
+<tr class="post" id="post569576"><td class="alt2 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt2 body"><div class="message">Quick update<br>
+<br>
+<ul><li>Good news. It looks like the stability issues have been fixed.</li><li>Player faction has been added to the information given by the LFGList command.</li><li>Fixed a problem with the GuildList and LFGList commands not showing players near your level.</li></ul></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 18th, 2002 <span class="time">17:16</span></td><td class="alt2 small right"><a href="#post569576">#11</a></td></tr>
+<tr class="post" id="post571232"><td class="alt1 author"><b class="name">xayle</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40680.jpg" alt=""></td><td class="alt1 body"><div class="message">Please have it time out the LFG players every hour or so.. And have it send a message to the player whom is about to be removed from the list &quot;You are about to be removed from the LFG list. Are you still LFG? /reply LFG if you are&quot;<br>
+<br>
+or something.. I keep forgeting to /msg LFG Off when i /quit so the bot attempts to place me in a grp when i am offline.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 19th, 2002 <span class="time">13:01</span></td><td class="alt1 small right"><a href="#post571232">#12</a></td></tr>
+<tr class="post" id="post584184"><td class="alt2 author"><b class="name">RubiCom</b><br><span class="small usertitle">Leet</span></td><td class="alt2 body"><div class="message">Sorry folks RubiCom is down for the count. It wasn't getting the number of players needed for it to work correctly, but the bigger reason is that the RubiCom server will become a NeverWinter Nights server.<br>
+<br>
+Thanks to everyone who has used it or shown support.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 25th, 2002 <span class="time">21:48</span></td><td class="alt2 small right"><a href="#post584184">#13</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529051212/https://forums-archive.anarchy-online.com/showthread.php?36366-RubiCom-New-LFG-bot-now-in-beta-on-RK-1">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

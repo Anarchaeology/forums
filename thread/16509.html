@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Armor Stats, Requirements, Calculations... The Whole Shebang!</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-26.html">Game Mechanics</a> &gt; Armor Stats, Requirements, Calculations... The Whole Shebang!</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="16534.html">Last Thread</a> &nbsp; <a href="16502.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Armor Stats, Requirements, Calculations... The Whole Shebang!"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post358480"><td class="alt2 author"><b class="name">Gerinn</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40682.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Armor Stats, Requirements, Calculations... The Whole Shebang!</b></div><div class="message">First, credit where credit's due: <a href="https://web.archive.org/web/20020320/http://home.rose.net/~tnix/aoarmor.html">http://home.rose.net/~tnix/aoarmor.html</a> for the initial AC calculation stats. With a few minor corrections, this is the same set of data I used (with a few minor changes, such as Leather being sense/agility, not agility/strength).<br>
+<br>
+Anyway, I have an unhealthy fascination with math, and thought I'd look into figuring out how the database calculates various things for various QLs of armor, such as AC per QL, and requirements. I've collated it all into a nifty spreadsheet so that you, too, can geekily min/max your armor. Heh. Whatever you plan to do with it.<br>
+<br>
+First, let's look into some facts:<br>
+<br>
+FACT 1) Not all armor is created equal. This should get a collective &quot;duh&quot; from most of you. Obviously, some kinds of armor are better than others. This is most obvious with various &quot;lines&quot; of armor. For instance, Bau is better than Cyber, Waitt is better than Bau, and Nano is better than Waitt (interestingly, these are the only four Int/Psy lines in the game, that I got data on). And of course, Raven's is better than Energized, and Link's is better than Raven's.<br>
+<br>
+BUT, did you know that Metaplast is, in terms of basic stat calculations, worse than Leather? Did you know that Chilled and Heated actually have slightly different requirements (Heated is harder to equip)? That Biomech, Nano, OP Elite, and Obtru Steel Ribbed are all tied for overall stats and have the exact same requirements? That all forms of the Cyber line (not including Nano) are superior to other armors on their 'tier'? Is Organic better than Vito's? You bet. Urban Battle Armor is better than Waitt. Note that this is in terms of overall stats... all armors have their nuances, but those are obvious; OP Elite and Nano have bad chemical AC, whereas Biomech and Obtru (and to a lesser extent, Flowers Tech) have very good chemical AC. Anyone can eyeball that.<br>
+<br>
+However, the stats can be misleading. Not all armor sets, at least early on, have full suits available; thus, while Leather has higher stats (marginally) than Metaplast, Metaplast will be better as a full suit because it has a helmet. The same is true of Kevlar and Tertius Decus; not only is Tertius better, is has a helmet where Kevlar doesn't. Most of the top armors have full suits, plus a cloak or coat to boot; again, not all coaks/coats/tank armor/battlesuits are created equal, another one most people know already.<br>
+<br>
+FACT 2) There are basically five categories of armor in the game. These are listed by the stat which is always the highest in requirements:<br>
+<br>
+Psychic/Stamina - Has 5 armor lines. The best armor in this line is Biomech armor; the worst armor in this set is Light Combat armor.<br>
+<br>
+Intelligence/Psychic - Has 4 armor lines. The best armor in this line is Nano armor; the worst armor in this set is Cyber armor.<br>
+<br>
+Stamina/Strength - Has 10 armor lines, 2 of which are Omni-Tek exclusive (the #1 and #3). The best armor in this line is Omni-Pol Elite; the worst armor in this line is Flak armor.<br>
+<br>
+Sense/Agility - Has 7 armor lines. The best armor in this line is Obtru Steel Ribbed; the worst armor in this line is Nail armor.<br>
+<br>
+Agility/Strength - Has 11 armor lines, 2 of which are Omni-Tek exclusive (OP Forest and Desert), and 2 of which are Battle Suit only (Battle and Urban Battle). The best armor in this line is Flowers Tech; the worst armor in this line is Metaplast.<br>
+<br>
+Obviously, Stam/Str and Agi/Str have the most gradual progression of armor types. Fortunately for the Psy/Stam and Int/Psy lines, they reach their top type early (~QL60-90ish, though some of the other lines top out there too), so it's less of an issue.<br>
+<br>
+FACT 3) Armor can basically be categorized into a series of 'tiers.' Each 'tier' is better than the previous in terms of ACs per QL, number of pieces available, and general coolness (let's face it, OP Elite and Nano look slick). They are worse in terms of cost (of course) and requirements. They are, roughly, as follows:<br>
+<br>
+Tier 1 - Nail, Low-Tech, Flak, Metaplast, Leather, Light, Heated Plasteel, Chilled Plasteel, Cyber<br>
+<br>
+Tier 2 - Energized, OP Forest, OP Desert, Sid's Leather, Kevlar, Raven's Energized, Tertius Decus, Steel Ribbed, Titan Plasteel, Vito's Plasteel, Nomad, Bau Cyber, Waitt Cyber<br>
+<br>
+Tier 3 - Martial Artist, Tech, Organic, Omni-Pol, Secundus Decus, Nadir Steel Ribbed, Graft, Flowers Tech<br>
+<br>
+Tier 4 - Obtru Steel Ribbed, Omni-Pol Elite, Nano, Biomech<br>
+<br>
+Tier 5 (Back-Slots) - Tertius/Secundus/Decus Coat, Nano Cloak, Tank Armor<br>
+<br>
+Tier 6 (Battlesuits) - Battle, Urban, Plasteel, Omni-Pol, OP Elite<br>
+<br>
+Unsorted - Primus Decus (Tier 3? Tier 4?), Link's Energized (Tier 3?)<br>
+<br>
+Thus, if you want to move up in terms of general armor, either look for a superior armor in the same tier that uses the same stats, or preferably, if you can get it, move up to a higher tier. Note that Tiers 5 and 6 are supplemental, or in the case of Battlesuits, replacements; they all have disadvantages (except Decus Coats and Nano Cloaks), but the advantages can be huge in terms of AC (for instance, Urban Battlesuits are HUGE, AC-wise... but is the nano hit worth that? Maybe you're better with Flowers Tech... in fact, you *are* better with Flowers Tech, look at the stats).<br>
+<br>
+Anyway, the link below will, I hope, suffice to help you look for armor yourself. It's not complete (missing at least Primus Decus and Link's Energized, and many starting QLs), but if you feel like helping out, send me some feedback or just post it here.<br>
+<br>
+To use the Comparison page, copy and paste the stats of one armor type into the &quot;Current&quot; line, and then input the QL in the top right box. You can do the same with the other one if you'd like. Make sure to save first, or make the spreadsheet read-only. This will show you the overall ACs of two particular armor sets at two separate QLs... and yes, you can use the same armor type twice to compare different QLs at a glance.<br>
+<br>
+The By Type page is just a list of armor by the five types, in order of stats.<br>
+<br>
+The QLs page is incomplete, but will eventually list the starting QLs for each particular armor set.<br>
+<br>
+The Set Calculator lets you determine your AC from a mixture of armor pieces, which may not be of the same set. To use this, copy the stats for each particular armor PIECE into the appropriate lines into the topmost box, and input the QL. The lower box will automatically fill in the AC-related details.<br>
+<br>
+Notes will eventually contain explanations of which sets are missing pieces of armor, and also contains requests for things I'm missing. It will also, eventually, explain the disadvantages to things like battlesuits and tank armor.<br>
+<br>
+Note: Freeservers doesn't allow external linkage, so you'll have to go to the URL below and right-click to save the file. You can also left-click to preview in Internet Explorer, if you have both IE 5 or greater and Excel 2000.<br>
+<br>
+<a href="https://web.archive.org/web/20020320/http://nakar.freeservers.com/armor.htm">http://nakar.freeservers.com/armor.htm</a></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">04:48</span></td><td class="alt2 small right"><a href="#post358480">#1</a></td></tr>
+<tr class="post" id="post358496"><td class="alt1 author"><b class="name">Kyvin</b><br><span class="small usertitle">Eleet</span></td><td class="alt1 body"><div class="message">&quot;Sense/Agility - Has 7 armor lines. The best armor in this line is Obtru Steel Ribbed...&quot;<br>
+<br>
+I dont know about that. It helps more with the environmental damage, but it is lacking in its melee (I think it was that, too lazy to check again) protection (per quality level).</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">05:27</span></td><td class="alt1 small right"><a href="#post358496">#2</a></td></tr>
+<tr class="post" id="post358500"><td class="alt2 author"><b class="name">Gerinn</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40682.jpg" alt=""></td><td class="alt2 body"><div class="message">Again, I mentioned max stats can be somewhat misleading. It's actually sometimes best to mix sets. Many people who use OP Elite, that I have heard of, toss in some Flowers Tech for chemical AC. I'm speaking strictly in terms of total ACs, which Obtru does indeed provide the most of in the Sense/Agility line. Sorry if &quot;best&quot; and &quot;worst&quot; are a little inappropriate. Easier to say, perhaps.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">05:34</span></td><td class="alt2 small right"><a href="#post358500">#3</a></td></tr>
+<tr class="post" id="post358536"><td class="alt1 author"><b class="name">Councilor</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Re: Armor Stats, Requirements, Calculations... The Whole Shebang!</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Gerinn </i><br>
+<b><br>
+Tier 4 - Obtru Steel Ribbed, Omni-Pol Elite, Nano, Biomech<br>
+<br>
+ </b>
+			
+		
+	<hr></blockquote>
+no str/agi in tier 4?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">06:42</span></td><td class="alt1 small right"><a href="#post358536">#4</a></td></tr>
+<tr class="post" id="post358537"><td class="alt2 author"><b class="name">Gerinn</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40682.jpg" alt=""></td><td class="alt2 body"><div class="message">Not technically. If you go strictly by the armors tied for max stats, there isn't one.<br>
+<br>
+BUT, Flowers Tech is arguably Tier 4 material, and also arguably the best armor in the game. You also get several kinds of battlesuits and Decus coats with Str/Agi, so what, are you complaining? <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">06:44</span></td><td class="alt2 small right"><a href="#post358537">#5</a></td></tr>
+<tr class="post" id="post358559"><td class="alt1 author"><b class="name">Councilor</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>no complaints here</b></div><div class="message">Not at all, was just surprised that flowers wasn't on tier 4.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">06:58</span></td><td class="alt1 small right"><a href="#post358559">#6</a></td></tr>
+<tr class="post" id="post358566"><td class="alt2 author"><b class="name">Gerinn</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40682.jpg" alt=""></td><td class="alt2 body"><div class="message">You know what? You're right. So what if it's slightly lower... who uses Disease AC anyway? <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+I hereby declare Flowers Tech armor Tier 4! *BAMF*</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">07:04</span></td><td class="alt2 small right"><a href="#post358566">#7</a></td></tr>
+<tr class="post" id="post358634"><td class="alt1 author"><b class="name">Grimjack</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Great work Gerinn, Thanks. ( NT )</b></div><div class="message">No Text</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">08:40</span></td><td class="alt1 small right"><a href="#post358634">#8</a></td></tr>
+<tr class="post" id="post358647"><td class="alt2 author"><b class="name">Tetra</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="message">IMO waitt is better than nano for the simple fact that nanoarmor spells near instant death if you ever get aggroed by the pink plate (chem damage) wielding mobs.  The difference in AC's between the two isnt all that much.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">08:46</span></td><td class="alt2 small right"><a href="#post358647">#9</a></td></tr>
+<tr class="post" id="post358656"><td class="alt1 author"><b class="name">Councilor</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Gerinn </i><br>
+<b>You know what? You're right. So what if it's slightly lower... who uses Disease AC anyway? <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+I hereby declare Flowers Tech armor Tier 4! *BAMF* </b>
+			
+		
+	<hr></blockquote>
+<br>
+Yay!  /me listens to angels sing<br>
+<br>
+<br>
+erm.   moving right along now</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">09:06</span></td><td class="alt1 small right"><a href="#post358656">#10</a></td></tr>
+<tr class="post" id="post359089"><td class="alt2 author"><b class="name">Archu</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="message">Exactly Tetra. The overall AC on nano armor might be higher than on waitt but that's because nano has high disease and fire/cold ACs wixh are almost useless. Nano has worse melee and chem ac than waitt does and on top of all it has way higher requirements.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">14:44</span></td><td class="alt2 small right"><a href="#post359089">#11</a></td></tr>
+<tr class="post" id="post359250"><td class="alt1 author"><b class="name">Gerinn</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40682.jpg" alt=""></td><td class="alt1 body"><div class="message">If anyone has a non QL1, non QL200 piece of Link's Energized or Primus Decus armor handy, could you post its requirements and AC benefits here? I need to verify my math for the inclusion of those two.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 20th, 2002 <span class="time">16:05</span></td><td class="alt1 small right"><a href="#post359250">#12</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529065840/https://forums-archive.anarchy-online.com/showthread.php?16509-Armor-Stats-Requirements-Calculations-The-Whole-Shebang!">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

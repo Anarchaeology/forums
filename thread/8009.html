@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Is there an IP Cost spreadsheet/ program?</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-35.html">Game Mechanics</a> &gt; Is there an IP Cost spreadsheet/ program?</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="8178.html">Last Thread</a> &nbsp; <a href="8208.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Is there an IP Cost spreadsheet/ program?"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post283605"><td class="alt2 author"><b class="name">foolishchild</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Is there an IP Cost spreadsheet/ program?</b></div><div class="message">I just spent the day at work trawling through 100's of posts on the subject and staring at the costs per skill/ class.  I still haven't figured out a way to make a character planner like Splitpea for AC.  Then again I was only playing with Access and Excel.  <br>
+<br>
+A way to put in the skill caps was causing me grief, to be honest.  <br>
+I wonder if anyone has already done this or has worked out nice formulae for skill level vs. no. of IPs spent/ character type/ stats/ etc.<br>
+<br>
+Tried to search the achive too but it seems to be down.  <br>
+<br>
+Can any number-crunchers out there help?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 21st, 2002 <span class="time">17:42</span></td><td class="alt2 small right"><a href="#post283605">#1</a></td></tr>
+<tr class="post" id="post284212"><td class="alt1 author"><b class="name">Myga</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="message">Calculate the cost of raising a skill with cost factor c from a1 to a2 (simple arithmetic series):<br>
+<br>
+cost = c(a1 + a2) * (a2 - a1 + 1) / 2<br>
+<br>
+The cost factor c is the number you find in the following table (it is the cost of increasing a skill first time basically):<br>
+<br>
+<a href="https://web.archive.org/web/20020122/http://anarchylore.com/AO_skillscomp.asp">http://anarchylore.com/AO_skillscomp.asp</a></div><p class="small edited"><i>Last edited by Myga on January 22nd, 2002 at 08:50</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2002 <span class="time">07:20</span></td><td class="alt1 small right"><a href="#post284212">#2</a></td></tr>
+<tr class="post" id="post284339"><td class="alt2 author"><b class="name">foolishchild</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="message">Thanks a lot!  After that it's a case of rounding off/ up?  <br>
+Another question, if you don't mind - I was under the impression that the first point costs 5+ the base cost calculated with a1=0 and a2=1.  Not sure now, must check when I get home.<br>
+<br>
+Thanks again for the formula - nice and simple.</div><p class="small edited"><i>Last edited by foolish_child on January 23rd, 2002 at 08:23</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2002 <span class="time">11:35</span></td><td class="alt2 small right"><a href="#post284339">#3</a></td></tr>
+<tr class="post" id="post284347"><td class="alt1 author"><b class="name">Myga</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="message">Just need to point out that a1 and a2 arent actual skill values but how many times you actually raised the skill (abilities/items/buffs can add to the visual skill value). To find out how many times you currently have raised a skill, take the cost for next increase and divide by the constant c. Dunno how its rounded or whether available ip is integer or floating point.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2002 <span class="time">11:54</span></td><td class="alt1 small right"><a href="#post284347">#4</a></td></tr>
+<tr class="post" id="post284349"><td class="alt2 author"><b class="name">ScottyB</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon9.gif" alt=""> <b>Am i thick ?</b></div><div class="message">Maybe its me not understanding<br>
+<br>
+BUT<br>
+with that calculation - it means that it is less costly to increase something in one big go ?<br>
+<br>
+so in skills you like to max - wait a few levels inbetween maxing them ? rather than each level jump .<br>
+<br>
+and therefore it costs you less IP ?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2002 <span class="time">11:56</span></td><td class="alt2 small right"><a href="#post284349">#5</a></td></tr>
+<tr class="post" id="post284350"><td class="alt1 author"><b class="name">Myga</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="message">No, it always cost the same amount to increase the skill 100 points whether you do it at 5points per level or 100 at a time. However if you do it slow, you might notice that your skill gets higher if you raise your abilities simultaneously.<br>
+<br>
+The formula should reflect this unless I done a mistake.<br>
+<br>
+Example: raise skill with c=2  from 1-20 in one go or from 1-10 then 11 to 20:<br>
+<br>
+One go:<br>
+cost = 2*(1+20)*(20-1+1)/2 = 420<br>
+<br>
+From 1-10 (including 10):<br>
+cost1 = 2*(1+10)*(10-1+1)/2 = 110<br>
+From 11-20 (already spent points for 10th increase)<br>
+cost2 = 2*(11+20)*(20-11+1)/2 = 310<br>
+<br>
+110+310 = 420 so should be ok.</div><p class="small edited"><i>Last edited by Myga on January 22nd, 2002 at 12:12</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2002 <span class="time">11:57</span></td><td class="alt1 small right"><a href="#post284350">#6</a></td></tr>
+<tr class="post" id="post285460"><td class="alt2 author"><b class="name">foolishchild</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="message">Okay - that all works nicely, though I now find myself with different sets of figures - or maybe they are complimentary.  <br>
+<br>
+ <a href="https://web.archive.org/web/20020123/http://www-personal.umich.edu/~tle/ao/skillsq_1.html">http://www-personal.umich.edu/~tle/ao/skillsq_1.html</a>   <br>
+this has what look like initial costs per skill.      <br>
+<br>
+<a href="https://web.archive.org/web/20020123/http://www.anarchylore.com/AO_skillscomp.asp">http://www.anarchylore.com/AO_skillscomp.asp</a>            <br>
+This must be the increment cost factor then?<br>
+<br>
+Have to do some work at the minute though, so can't play with the numbers.  Maybe you recognise them and spell it out for me <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 23rd, 2002 <span class="time">08:21</span></td><td class="alt2 small right"><a href="#post285460">#7</a></td></tr>
+<tr class="post" id="post285482"><td class="alt1 author"><b class="name">Myga</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="message">I dont know what first table is, I'm fairly sure I tested on a level one char and saw the costs in table 2 as the cost to increase a skill first time. Start a lvl 1 char and test it <img src="../images/smilies/tongue.gif" alt="" class="smilie">.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 23rd, 2002 <span class="time">08:53</span></td><td class="alt1 small right"><a href="#post285482">#8</a></td></tr>
+<tr class="post" id="post285554"><td class="alt2 author"><b class="name">foolishchild</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="message">You' re right.  Enough laziness :P<br>
+<br>
+Report to follow in a few days</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 23rd, 2002 <span class="time">10:17</span></td><td class="alt2 small right"><a href="#post285554">#9</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529073918/https://forums-archive.anarchy-online.com/showthread.php?8009-Is-there-an-IP-Cost-spreadsheet-program">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

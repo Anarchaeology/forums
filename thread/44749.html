@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - DirectDraw error...</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Tech &gt; <a href="../forum/other-technical-issues.html">Other Technical Issues</a> &gt; DirectDraw error...</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="39350.html">Last Thread</a> &nbsp; <a href="186883.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:DirectDraw error..."><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Other Technical Issues"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post623430"><td class="alt2 author"><b class="name">Tnekor</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40690.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>DirectDraw Errors with ATI cards</b></div><div class="message">Hmm, I reformatted my comp and noticed that the only OS I can use is Win95 (I ain't touching that one again), Win98 (not touching that one either) and WinME. So I installed WinME, cause I've got incompatible hardware for WinXP and it won't install the darn thing.<br>
+<br>
+Anyway, I've got WinME... downloaded DirectX 8.1 and the very latest drivers to my Hercules 3D Prophet DLX 8500LE 128MB DDR.<br>
+<br>
+Installed AO as soon as I've got all the drivers working and sorted out the crashes. Problem with auto downloading the patches so I had to do manual download... installed.<br>
+<br>
+Launched AO, looking good. After a while I believe WinME crashed cause I couldn't do anything at all... mouse, keyboard well you name it freezed. Re-booted the computer and launched AO. Now everytime AO boots up it says... &quot;Last time there was a problem with DirectDraw do you wish to not use it now?&quot; (Or something like that... it asks me if I want to disable it). Clicking either yes or no, AO launches and works fine.<br>
+<br>
+I've had 3 other crashes, cannot tell if it's AO that crashes or if it's WinME. I'm sorry but I forgot to check the errorlog, but as soon as I get my hands on it I can post it here.<br>
+<br>
+My question, has anyone else have had this problem or does anyone from FC know about this?<br>
+<br>
+CPU: PIII 700MHz<br>
+Motherboad: ABit BE6-II<br>
+Memory: 256MB 100MHz<br>
+Graphic: Hercules 2D Prophet DLX 8500LE 128MB DDR<br>
+OS: Fecking WinME<br>
+Drivers: The latest version of DirectX and graphic drivers from Hercules</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 15th, 2002 <span class="time">07:16</span></td><td class="alt2 small right"><a href="#post623430">#1</a></td></tr>
+<tr class="post" id="post624056"><td class="alt1 author"><b class="name">GM-Zixxax</b><br><span class="small usertitle">Customer Service</span></td><td class="alt1 body"><div class="message">ATI cards seem to do that. It doesn't inhibit the game, but I've seen them do that when testing, and switching drivers. Perhaps it is a bad install of the drivers. Try uninstalling and reinstalling them. <br>
+<br>
+Then run dxdiag in the start-&gt;run and choose to run the direct draw test under the visual tab and then try the game. <br>
+<br>
+You might also want to try switching the graphics device in the hardware options. Or, turn on w-buffer support in the driver options menu (somewhere buried in display properties-&gt;settings-&gt;advanced-&gt;direct3d-&gt;more options or so) and use the w-buffer in the hardware options.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 15th, 2002 <span class="time">14:15</span></td><td class="alt1 small right"><a href="#post624056">#2</a></td></tr>
+<tr class="post" id="post625078"><td class="alt2 author"><b class="name">Tnekor</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40690.jpg" alt=""></td><td class="alt2 body"><div class="message">Thanx GM-Zixxax.<br>
+<br>
+I noticed that it didn't matter if you chose to run with or without DirectDraw when launching AO. The game booted up and nothing else happened. I tried with HAL and Lightning &amp; Transform configs.<br>
+<br>
+I also ran the dxdiag and the test passed in both DirectDraw and Direct3D. Though it complains that the ATI drivers are not digitally signed but that shouldn't matter... right?!<br>
+<br>
+Well, I'm going to give it another try.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 15th, 2002 <span class="time">21:13</span></td><td class="alt2 small right"><a href="#post625078">#3</a></td></tr>
+<tr class="post" id="post625858"><td class="alt1 author"><b class="name">Tnekor</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40690.jpg" alt=""></td><td class="alt1 body"><div class="message">Okay I've solved it.<br>
+I came to the conclusion that it wasn't AO who complained at DirectDraw (maybe you knew), it was &quot;dxdiag&quot;.<br>
+<br>
+I ran dxdiag as I posted in previous reply and now the error message doesn't pop up anymore. Only tested it in dxdiag and when it passed it never came up again.<br>
+<br>
+Though my frecking WinME keeps me from playing hours after hours in a row... ME ain't that good in dealing with the memory... random freezes are the most popular. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+New computer on it's way though <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+Thanx again  GM-Zixxax for the fast reply. <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 16th, 2002 <span class="time">07:16</span></td><td class="alt1 small right"><a href="#post625858">#4</a></td></tr>
+<tr class="post" id="post833477"><td class="alt2 author"><b class="name">R3ap3r</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40689.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Me too</b></div><div class="message">I've got the same problem, though for probably slightly different reasons. I upgraded my video card to a radeon 7600, and I now get the: There was a problem loading direct draw the last time this program was used, would you like to bypass it screen with the buttons. It's slightly annoying, but I can deal. However, I have noticed that I can run the tests in dxdiag and they all come up fine. Then, the message doesn't show up until I restart my computer. I think the problem is that I didn't upgrade the drivers for my intel chipset, because I couldn't figure that out. (Not a real Techie here by any means.) So, if anyone can possibly help me out in that area, it'd be appreciated.<br>
+<br>
+BattleReaper@aol.com</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 9th, 2002 <span class="time">00:57</span></td><td class="alt2 small right"><a href="#post833477">#5</a></td></tr>
+<tr class="post" id="post931272"><td class="alt1 author"><b class="name">Arcain</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon8.gif" alt=""> <b>Same problem... almost.</b></div><div class="message">Okay, so I've been at this since the new patch... <br>
+<br>
+System:<br>
+<br>
+Motherboard: Asus A7M266<br>
+Processor: AMD Thunderbird 1ghz<br>
+Ram: 768mb PC-1600 DDR<br>
+Video: ATI Radeon 9000 pro<br>
+Sound: SB LIVE! Platinum<br>
+OS: Windows ME<br>
+<br>
+I have so far..<br>
+<br>
+Re-installed DirectX<br>
+Re-installed Radeon Drivers<br>
+Updated Bios<br>
+Re-configured Bios<br>
+Re-Re-installed DirectX<br>
+Downgraded Radeon Drivers.<br>
+Re-upgraded Radeon Drivers.<br>
+<br>
+Also tried lowering resolution, tried w-buffer, tried using HAL/T&amp;L, 32-bit, 16-bit etc.. etc...  No help at all..<br>
+<br>
+etc.. etc..<br>
+<br>
+Not only do I get the DirectDraw error EVERY time I boot the game, but I get to play for about 2 minutes before the whole thing freezes up on me and I have to reset the computer.<br>
+<br>
+Honestly.... I would really like to have an option for OpenGL for AO.  It may not be quite as advanced, but at least it's fast and STABLE!  I can't ever remember a time when I was running anything in OpenGL that it crashed my system.. maybe was glitchy.. but never crashed.<br>
+<br>
+Owell.. hopefully they will get this sorted out with ATI and we can all start playing again.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 8th, 2002 <span class="time">07:17</span></td><td class="alt1 small right"><a href="#post931272">#6</a></td></tr>
+<tr class="post" id="post946121"><td class="alt2 author"><b class="name">R3ap3r</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40689.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Crashes</b></div><div class="message">Just out of curiosity, are you using dialup?<br>
+<br>
+When I first started playing AO I had the problem of the game crashing every 2 minutes. Turns out it was my modem...old p.o.s. Anyway, I switched over to my other computer, and now I don't crash (except rarely or when I try to enter trade)<br>
+<br>
+Your system sounds better than what I'm using, so I would assume you've got a decent modem or are using dsl or broadband. Anyway, I'd say look to your connection. I think the problem lies there somewhere. Now If I can only get them to fix the trade district for me...<br>
+<br>
+Reaper</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 12th, 2002 <span class="time">15:00</span></td><td class="alt2 small right"><a href="#post946121">#7</a></td></tr>
+<tr class="post" id="post946892"><td class="alt1 author"><b class="name">Arcain</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon9.gif" alt=""> <b>Wow is this an odd beastie</b></div><div class="message">Heh, I have DSL <img src="../images/smilies/smile.gif" alt="" class="smilie"> 1.54 down, 384 up.<br>
+<br>
+I at least know it's not lag.. BUT! I have concluded the following.<br>
+<br>
+I don't think it's AO, DirectX, OR the ATI drivers at this point.  All of which I have re-installed, and (with the exception of AO) have tried using previous versions of. DX8.0, 8.1, 8.1a and the ATI CATALYST 2.2-2.4 driver sets. None of which make any difference.  I also removed the ATI 9000 pro and replaced it with an old Geforce 2 MX 32mb and get the same problem.<br>
+<br>
+The only thing I can conclude at this point is that Microsloth put out it's &quot;critical&quot; updates and that may have something to do with it.  I would say that it's because I'm using WinME, but other folks have been having the same issue with win98, SE and 2K as well.<br>
+<br>
+I'm still looking, but it looks like I'm going to have to wipe my machine and re-install.  Shame too, I've been running on this install of ME for almost 2 years now with no major problems. &lt;sigh&gt;<br>
+<br>
+TTFN!<br>
+<br>
+Arcain.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 12th, 2002 <span class="time">17:32</span></td><td class="alt1 small right"><a href="#post946892">#8</a></td></tr>
+<tr class="post" id="post1059652"><td class="alt2 author"><b class="name">Phoxtrot0</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40669.jpg" alt=""></td><td class="alt2 body"><div class="message">I have a similar problem:<br>
+<br>
+Windows ME.<br>
+-AMD 2200<br>
+-512MB Memory<br>
+-ADSL<br>
+-Hercules 3D Prophet 9000. (gotta verify exact number but pretty sure)<br>
+-Don't remember motherboard. Must be Asus or Abit.<br>
+-Directx 8.1<br>
+<br>
+The game let me choose between 4 adapters for display but only 2 of them are different.<br>
+<br>
+I'll check exact denomination but one is &quot;DirectDraw&quot; and the other is &quot;somesuch and lightning&quot;.<br>
+<br>
+When I choose DirectDraw, the game always crashes within 5 minutes.<br>
+<br>
+When I pick the other choice, the game is much more stable but it does crash once in a while. When it does crash and I reload the game, it tends to be less stable than usual.<br>
+<br>
+On reload, I always get that dxdiag failure report.<br>
+<br>
+<br>
+Sidenote : If I change my choice for adapter from the first menu (not logging into my account), that change is never saved.<br>
+<br>
+<br>
+I'll edit this when I can complete the info.<br>
+(If this board is still running...)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2003 <span class="time">10:13</span></td><td class="alt2 small right"><a href="#post1059652">#9</a></td></tr>
+<tr class="post" id="post1060206"><td class="alt1 author"><b class="name">Arcain</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon9.gif" alt=""> <b>Found the problem (sorta)</b></div><div class="message">I still get the Ddraw error, but now it's changed.  I now actually GET an error message when I get to the desktop.  ddhelp.dll (exe?) appears to be the culprit, or at least it is now.  ddhelp by the way is a background proccess present in all versions of windows (even NT4) but unless you have a &quot;task manager&quot; you can't see it in win9x-ME.  I don't think it has anything to do with Anarchy either.  As soon as ddhelp goes awry, directX is no longer available and I have to reboot my machine.  Don't know what the deal is, but I'm sure MS will put out another update soon and disguise it as some sort of &quot;Security&quot; update or something.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2003 <span class="time">17:04</span></td><td class="alt1 small right"><a href="#post1060206">#10</a></td></tr>
+<tr class="post" id="post1126336"><td class="alt2 author"><b class="name">seigmen</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/223889.jpg" alt=""></td><td class="alt2 body"><div class="message">i'll add my description.. not sure if it fits in. i never got any error message.<br>
+<br>
+win98se - fully updated<br>
+amd 1.2ghz <br>
+389ram<br>
+k7s5a lan - latest drivers, bios NOT updated<br>
+DSL through router<br>
+only background application is norton 2002 (if i disable it it wont make any difference)<br>
+<br>
+radeon 7500 64mb ddr - latest drivers<br>
+asus v9180/td mx440-8x 128mb ddr - latest drivers<br>
+.. no difference<br>
+<br>
+dx 8.1/9 .. no difference<br>
+<br>
+T&amp;L / HAL .. no difference.. same for W/Z buffer<br>
+<br>
+ao re-installed .. no difference<br>
+hard disk formatted, complete system re-install .. no difference <img src="../images/smilies/frown.gif" alt="" class="smilie"><br>
+<br>
+<br>
+--<br>
+windowed mode: game randomly freezes. maximum delay has been ~30 minutes (i thought ive got it.... doh)<br>
+iam able to close ao with win task manager (ao is marked as &quot;doesn't reply&quot; then)..<br>
+back to windows: starting ao again doesn't work. iam able to log in, but after clicking on &quot;play&quot; nothing happens expext a black window... :|<br>
+start menu -&gt; shut down -&gt; restart: desktop fades into grey, cursor goes into &quot;idle&quot; .. then - system frozen -&gt; reset button.<br>
+(i also tried to press the reset button right after ao freezes without closing ao. always had to use &quot;aorepair.exe&quot; then)<br>
+<br>
+<br>
+fullscreen: almost stable, but if i alt-tab into windows, ao always freezes or takes &gt;1 minute to come back.<br>
+<br>
+makes me unable to play ao, because i HAVE to be able to access other programs, sites, emails, ..whatever very often. actually my account isnt worth the money.<br>
+<br>
+<br>
+--<br>
+now... my girlfriend, sitting right next to me in front of:<br>
+<br>
+win98se<br>
+amd 1.2ghz <br>
+389ram<br>
+k7s5a lan<br>
+DSL through router<br>
+dx 8.1<br>
+<br>
+gainward mx440 4x agp, 64mb ddr<br>
+<br>
+windowed: whatever she does, ao is running stable. no freezes at all.<br>
+<br>
+fullscreen: same here.<br>
+<br>
+--<br>
+now to go a bit deeper:<br>
+<br>
+..her mainboard (same model as mine) was bought months later, so her bios is on a newer version.<br>
+<br>
+..the manufacturers of our ram chips are different, but this has made no difference. already tried her ram chips in my computer<br>
+<br>
+..i have a seagate baracuda with 80gb (c:15/d:65) hers is a seagate baracuda with 40gb (c:15/d:25)<br>
+<br>
+..same monitors (running with same drivers), same mouse (also same drivers), standard keyboards (so no special drivers here)<br>
+<br>
+<br>
+<br>
+<br>
+well.. next thing ill try is to upgrade my bios. bleh. if it doesnt work then, i dont know what i can do (switching computers is not possible)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 14th, 2003 <span class="time">21:32</span></td><td class="alt2 small right"><a href="#post1126336">#11</a></td></tr>
+<tr class="post" id="post1267318"><td class="alt1 author"><b class="name">Tasman</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon9.gif" alt=""> <b>This has seemed to pop up again</b></div><div class="message">I just started having a similar problem.<br>
+My motherboard blew up and of coarse Windows just loves having the mb swapped on it. Re-installed windows over it's self. Re-installed all the drivers. Got the latest Bios and Via drivers for the mb installed. Went to Window's Update Site. Saw Critical Updates and DirectX 9. Downloaded and installed both. Now everything works fine except AO. Ran dxdiag. Got all the same errors and messages as listed above. Went through and ran all the tests. All tests passed. Tried AO again. Logged in and as soon as I tried to move or anything AO crashes.  I'll list my specs if asked but from what I saw above I tend to agree that it seems to have to do with the Critical update or DirectX 9 or a combo of both. If any of you came up with a solution I'd be most gratefull.<br>
+btw I never really had any problems with AO before. Oh, and I did try re-installing AO also.<br>
+<br>
+Decided to add that I use a Asus V8200 GeForce 3, am running Win 98 se and on a cable modem. All else is very similar to everyone above for the most part.<br>
+<br>
+Thanks for your assistance<br>
+<br>
+Tasman</div><p class="small edited"><i>Last edited by Tasman on April 9th, 2003 at 05:19</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 9th, 2003 <span class="time">05:14</span></td><td class="alt1 small right"><a href="#post1267318">#12</a></td></tr>
+<tr class="post" id="post1279495"><td class="alt2 author"><b class="name">Tasman</b><br><span class="small usertitle">Leet</span></td><td class="alt2 body"><div class="small posttitle"><b>Found the problem</b></div><div class="message">DirectX 9 was the culprit.<br>
+<br>
+*Note to self: Only do 1 thing at a time when repairing your system*<br>
+<br>
+Downloaded and installed DirectX 9.0a that was to fix problems with 9.0.<br>
+<br>
+9.0a was released March 26, 03.  Went to nVidia's site and found a new driver (43.45) that was released March 27th and stated to be compatable with DX 9.  All is well now.<br>
+<br>
+Tasman</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 13th, 2003 <span class="time">18:47</span></td><td class="alt2 small right"><a href="#post1279495">#13</a></td></tr>
+<tr class="post" id="post1662279"><td class="alt1 author"><b class="name">NanoGryphon</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40188.jpg" alt=""></td><td class="alt1 body"><div class="message">Mine.. ah.. won't even start up. After it says &quot;Checking DirectX Capabilities&quot; (I now notice the DirectX) it gives me an Illegal Operations message. Any of you know what this means?<br>
+<br>
+ANARCHY caused an invalid page fault in<br>
+module ANARCHY.EXE at 0167:004117c7.<br>
+Registers:<br>
+EAX=00000000 CS=0167 EIP=004117c7 EFLGS=00010246<br>
+EBX=016514d8 SS=016f ESP=006de8c8 EBP=006de910<br>
+ECX=00000000 DS=016f ESI=006dfa5c FS=0d17<br>
+EDX=004129a3 ES=016f EDI=bff55836 GS=0000<br>
+Bytes at CS:EIP:<br>
+8b 41 10 c3 55 8b ec 51 8b 41 0c 8b 4d 0c 83 65 <br>
+Stack dump:<br>
+004129bd 006de91c 006de968 0000898c 00000002 0049a990 006de91c 0000898c 0046b889 0046a734 00000000 00000000 00000191 00000073 0047bf10 00000000</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 15th, 2003 <span class="time">15:21</span></td><td class="alt1 small right"><a href="#post1662279">#14</a></td></tr>
+<tr class="post" id="post1704546"><td class="alt2 author"><b class="name">Shikhan</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40627.jpg" alt=""></td><td class="alt2 body"><div class="message">This was my resolution to this issue:<br>
+<br>
+Unlike most of the replys here, I would crash no matter what I clicked: No dont use direct draw, or yes load without. <br>
+<br>
+I was in the middle of DLing the Ao fix utility when I noticed the rather old version of dxdiag in the funcom folder. Clicking on it I got a &quot;this version of dxdiag is much older than the version of your video driver&quot; and then it immediately gave me the SAME error msg I had been getting trying to run AO: Dxdiag has noted that the last time this program was launched there may have been...blah blah blah&quot;. <br>
+<br>
+Ran a search on my harddrive for a more recent version of dxdiag and copied it into my funcom folder...poof! No more direct draw/dxdiag AO crashes..hope this helps one person out there. =)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 31st, 2003 <span class="time">00:28</span></td><td class="alt2 small right"><a href="#post1704546">#15</a></td></tr>
+<tr class="post" id="post1895145"><td class="alt1 author"><b class="name">chynn</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Yeppers ... had the same problem as Shikhan did ...</b></div><div class="message">As did several other players on Test Live.<br>
+<br>
+Found the old dxdiag.exe program under the Funcom folders.<br>
+<br>
+Deleted it.<br>
+<br>
+Everything works fine now.<br>
+<br>
+I'm on WinXP with a Asus V8460 (nVidia 4600 chip) and 43.xx drivers.<br>
+<br>
+Hope this helps ...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 29th, 2003 <span class="time">02:11</span></td><td class="alt1 small right"><a href="#post1895145">#16</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250527172303/https://forums-archive.anarchy-online.com/showthread.php?44749-DirectDraw-error">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

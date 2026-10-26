@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - How is the aggdef bar divided up?</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-6.html">Game Mechanics</a> &gt; How is the aggdef bar divided up?</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="59130.html">Last Thread</a> &nbsp; <a href="59337.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:How is the aggdef bar divided up?"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post760700"><td class="alt2 author"><b class="name">Mharc</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40707.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>How is the aggdef bar divided up?</b></div><div class="message">The aggdef bar seems to have a 'stepped', rather than a linear characteristic. When I run at full agg, my heals cast instantly, whereas when I move down the aggdef slider even 1 tick, they slow down noticably. Does anyone know into how many intervals the bar is divided? <br>
+<br>
+Also, while we're on the subject, does anyone have exact numbers as to how the bar setting affects speed? I'm sure it's been posted before, but I'm kinda lazy right now <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 14th, 2002 <span class="time">08:42</span></td><td class="alt2 small right"><a href="#post760700">#1</a></td></tr>
+<tr class="post" id="post761247"><td class="alt1 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Nano execution and aggdef bar:<br>
+<br>
+0% = +1s atk time<br>
+1-99% = +-0s atk time<br>
+100% = -1s atk time<br>
+<br>
+Rch time is never affected, by ini or by aggdef bar<br>
+<br>
+Weapon and aggdef bar (AFAIK):<br>
+87.5% = listed atk/rch times<br>
+each 1/8s step = + (or - for 100%) 0.25s/0.25s<br>
+(so it is one step up to -0.25/-0.25, or max 7 steps down to +1.75/+1.75)<br>
+<br>
+Not 100% certain whether there are more steps than eight or not. But that is the general outlining for weapon &amp; aggdef bar.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 14th, 2002 <span class="time">14:23</span></td><td class="alt1 small right"><a href="#post761247">#2</a></td></tr>
+<tr class="post" id="post761292"><td class="alt2 author"><b class="name">Mharc</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40707.jpg" alt=""></td><td class="alt2 body"><div class="message">Thanks for the reply!<br>
+<br>
+So, am I correct in understanding that if you wanna go def, it's better to go one tick higher than full def for a full second faster nano execution?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 14th, 2002 <span class="time">14:44</span></td><td class="alt2 small right"><a href="#post761292">#3</a></td></tr>
+<tr class="post" id="post761975"><td class="alt1 author"><b class="name">nipsnaps</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Yup</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 14th, 2002 <span class="time">19:39</span></td><td class="alt1 small right"><a href="#post761975">#4</a></td></tr>
+<tr class="post" id="post762485"><td class="alt2 author"><b class="name">Wrigz</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt2 body"><div class="message">Is Initiative applied before or after defagg modifier?<br>
+<br>
+IE: Have a 2.5/2.5 weapon to consider.<br>
+<br>
+Case 1: If initiative is applied after defagg modifier<br>
+Wtih defagg on 100% defensive, this should make it 4.25/4.25.<br>
+With 900 in weapon initiative, this becomes 2.65/1.25.<br>
+<br>
+Case 2: If initiative is applied before defagg modifier<br>
+Initiative of 900 makes weapon 1/1. <br>
+Defagg on 100% defensive makes it 2.75/2.75.<br>
+<br>
+Also, is 1/1 weapon cap applied after all calculations, or it applies to each individual calculation?<br>
+2nd case looks different if 1/1 comes in the end of all calculations:<br>
+Initiative 900 makes weapon 1/-0.5<br>
+Defagg on 100% defensive makes it 2.75/1.25<br>
+<br>
+<br>
+Cheers,<br>
+<br>
+Zarsp, RK1 130 doc</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 15th, 2002 <span class="time">00:04</span></td><td class="alt2 small right"><a href="#post762485">#5</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250527135334/https://forums-archive.anarchy-online.com/showthread.php?59026-How-is-the-aggdef-bar-divided-up">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

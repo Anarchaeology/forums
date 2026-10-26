@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Final bug list and new content</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/suggestions-42.html">Suggestions</a> &gt; Final bug list and new content</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="38516.html">&laquo;</a> <a href="38516.html">1</a> <b>[2]</b> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="42967.html">Last Thread</a> &nbsp; <a href="43472.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Final bug list and new content (page 2)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Suggestions"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post602269"><td class="alt2 author"><b class="name">Centurion3</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0005.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: Final bug list and new content</b></div><div class="message"><b>
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				3. Title caps. Title caps need to be relaxed a little. I play every day and it took me to 3 months to break the 150 title cap( I was capped at 122). That's 3 months of facing increasing tougher mobs without improving my skills. I almost quit because it was too monotonous. Some of my guildies did quit.
+			
+		
+	<hr></blockquote>
+</b>Then tell me how you mean this? You want to change the skill system now? This means an increased total of skill, meaning you will need more weapons and nanos or you'll hit the maximum of weapons and nanos to early or you'll go around and have nothing to look forward to instead. And will everyone who is level 200 be able to increase their skill beyond what they have? And will they then get more IP for that purpose?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">08:34</span></td><td class="alt2 small right"><a href="#post602269">#21</a></td></tr>
+<tr class="post" id="post602272"><td class="alt1 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt1 body"><div class="small posttitle"><b>Thanks Coz</b></div><div class="message">So could the lizards fly like parrots do? And are there any combat benefits in being a pit lizard?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">08:35</span></td><td class="alt1 small right"><a href="#post602272">#22</a></td></tr>
+<tr class="post" id="post602294"><td class="alt2 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt2 body"><div class="message">----------------------------------------------------------<br>
+Then tell me how you mean this? You want to change the skill system now? This means an increased total of skill, meaning you will need more weapons and nanos or you'll hit the maximum of weapons and nanos to early or you'll go around and have nothing to look forward to instead. And will everyone who is level 200 be able to increase their skill beyond what they have? And will they then get more IP for that purpose?<br>
+---------------------------------Centurion---------------<br>
+<br>
+I think you missed the point of my comment about skill caps. Maybe I was not clear so I will explain it differently and then maybe that will clear up my point for you.<br>
+The game currently has Title Caps. I am sure you have seen them.<br>
+I am using bogus numbers, just for the sake of argument because I want this to be easy to read. Funcom has code in place that checks your skills and compares them against a table that has title caps. Let's say that Funcom has decided that you cannot reach 500 in the Bow skill until you are level 100. As soon as you add IP to the Bow skill, the code looks at your level and compares it to the required level for that amount of Bow skill. If you try to go beyond 500 bow skill but your level is less than the level they have in the table for 500, the game tells you &quot;You have reached the maximum amount for this Title.&quot; Once you hit the next Title, you are now allowed to add IP to the Bow skill and go past 500 and the Title cap is now raised to 800 in Bow, but the required level is now 150.<br>
+So, when you are putting IP into the bow skill, they have something similar to the following that checks your skill:<br>
+<br>
+If player.skill.bow &gt;= 500 and player.level &lt; 100 then cout &lt;&lt; &quot;You have reached the maximum for this level.&quot; &lt;&lt; endl;<br>
+<br>
+Something like the line above is what they have. The point is, I can go in and change the numbers to all skills and/or all title tables(it depends on whether they use a statement specifically for each skill or load the skills and values into one routine that processes all skills) in one hour. I can make it so that the player does NOT have to be title level 100 to reach 500 Bow skill, but level 80:<br>
+<br>
+If player.skill.bow &gt;= 500 and player.level &lt; 80 then cout &lt;&lt; &quot;You have reached the maximum for this level.&quot; &lt;&lt; endl;<br>
+<br>
+See that? I didn't have to change the skill system, I didn't have to redefine the universe and it didnn't take a year.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">08:54</span></td><td class="alt2 small right"><a href="#post602294">#23</a></td></tr>
+<tr class="post" id="post602599"><td class="alt1 author"><b class="name">Scorus</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="small posttitle"><b>Re: Final bug list and new content</b></div><div class="message">I agree on many of your points (though I think some of them should be way down on the priority list). A few points:<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by jonjon </i><br>
+<b>1. When someone puts an item down, I want to see the correct representation of that item and not a cube with ? on its sides. If someone drops a bow, I want to see a bow.</b>
+			
+		
+	<hr></blockquote>
+The problem with this is find item missions. A small, dark item on the floor in a dark cave mission? A nightmare. The thin items are tough enough, I can't imagine if I was looking for a black hood.<br>
+<br>
+<b>
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				2. Title caps. Title caps need to be relaxed a little. I play every day and it took me to 3 months to break the 150 title cap( I was capped at 122). That's 3 months of facing increasing tougher mobs without improving my skills. I almost quit because it was too monotonous. Some of my guildies did quit.
+			
+		
+	<hr></blockquote>
+</b>Absolutely! The caps starting with 100 are absurd! I would argue for increasing all of them by at least 25.<br>
+<br>
+<b>
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				6. NODROPS. The only items in this game that should be nodrops are apartment keys.
+			
+		
+	<hr></blockquote>
+</b>AND TOKENS! Vehicles, Flurry of Blows, IQ Rings, Bracers: all of those items should be tradeable/sellable.<br>
+<br>
+<b>
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				9. Blaster beetles. Ummm, these things stick out of walls in indoor missions, attack from 3 rooms away, appear and disappear all over the mission. Remove them from indoor missions since they don't fit anyway.
+			
+		
+	<hr></blockquote>
+</b>This is the reason that hardly anyone at high levels takes non-human missions, which in turn contributes to the boredom of missions.<br>
+<br>
+One idea to add: a command that tells you what zone you last saved in and how much XP you have gained since you last saved. All that info is stored, so a command to retrieve it should be relatively easy.<br>
+<br>
+Scorus</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">13:15</span></td><td class="alt1 small right"><a href="#post602599">#24</a></td></tr>
+<tr class="post" id="post602602"><td class="alt2 author"><b class="name">Scorus</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="small posttitle"><b>Re: Re: Final bug list and new content</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Centurion3 </i><br>
+<b>Then tell me how you mean this? You want to change the skill system now? This means an increased total of skill, meaning you will need more weapons and nanos or you'll hit the maximum of weapons and nanos to early or you'll go around and have nothing to look forward to instead. And will everyone who is level 200 be able to increase their skill beyond what they have? And will they then get more IP for that purpose? </b>
+			
+		
+	<hr></blockquote>
+What are you talking about? He is talking about going into the system and where a number says X (the maximum that a skill can be raised before it stopped by title limits), it should be changed to X+25. This has absolutely nothing to do with anything you mention whatsoever.<br>
+<br>
+Scorus</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">13:19</span></td><td class="alt2 small right"><a href="#post602602">#25</a></td></tr>
+<tr class="post" id="post602654"><td class="alt1 author"><b class="name">Centurion3</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0005.jpg" alt=""></td><td class="alt1 body"><div class="message">Oooook I guess I was unclear... <br>
+<br>
+(Again bogus numbers)<br>
+If max skill for bow is 100 at title level 3, and you increase the title caps to 150 instead, that means that in the end, after title level 6, you will need to increase the maximum skill even more to even things out in the long run (I assume you dont want 50 less point as max in title level 4 compared to what you used to have)<br>
+<br>
+If you max the ammount of skill you can have in an weapon you'll hit the QL 200 weapons faster, and then everyone will complain that there are no weapons over QL 200, so then you'll need to create new weapons up to around QL 300 in order to keep the game as interesting on higher levels (its not like someone wants to stick with the same weapon from level 100 to 200).<br>
+<br>
+Or to balance things out you can lower the max level 200 to level 150 to balance things out since you can put more IP in each title caps, but Im sure you'd hear alot of protests there too... <br>
+<br>
+see my point?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">13:48</span></td><td class="alt1 small right"><a href="#post602654">#26</a></td></tr>
+<tr class="post" id="post602920"><td class="alt2 author"><b class="name">Scorus</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">And he is so right about lag deaths! Just today I was on a solo mission (i.e. no other players there to create more lag). I was going along great and got to a chest. Clicked to open it and nothing happened. Waited a few seconds and tried again, still nothing. Then suddenly the chest opens, and the frightened rollerrat has already hit me half a dozen times! I frantically hit the mez button and get the annoying casting nano message several times, only of course I'm not casting the nano. Hello, reclaim.<br>
+<br>
+Whatever you guys did the other day to decrease lag, it didn't work.<br>
+<br>
+Scorus</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">16:36</span></td><td class="alt2 small right"><a href="#post602920">#27</a></td></tr>
+<tr class="post" id="post603175"><td class="alt1 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt1 body"><div class="small posttitle"><b>Centurion3 is getting warmer</b></div><div class="message">---------------------------------------------------<br>
+If you max the ammount of skill you can have in an weapon you'll hit the QL 200 weapons faster, and then everyone will complain that there are no weapons over QL 200.<br>
+-----------------------------------Centurion3----<br>
+<br>
+This is already going on now, sir. Not only that, but before OE, some people were slipping into ql200 guns while they were in their 60s! You are close to a topic I wanted to discuss though, so I will do it now. Basically, you are saying that they need to keep Title Caps where they are, so we don't level too fast , and run out of things to look forward to(in this case, the next more powerful weaspon). Actually, you have identified the sympton, but not the problem...Funcom needs a better carrot. <br>
+What do I mean by that? In the United States, there is an old folk image of a farmer in a field with his Donkey. The Donkey has a stick tied to his back that runs out over his head. Hanging from the end of the stick is a carrot that dangles right in front of the Donkey's face. The Donkey wants the carrot, so he never stops walking forward, trying to get the carrot. This is how, the  farmer gets the Donkey to plow his field.<br>
+I have done this before and it is sacreligious, but I will use another game to illustrate...Diablo II. When I was out in the dungeons, I found a unique(only one in the game) Scythe called &quot;The Grim Reaper.&quot; It was much better than my current weapon but I couln't use it because my stats were still too low. So, I put it in the bank and levelled, levelled and levelled some more and then finally I had the stats to use it. I ran back to the bank and equipped it and walked around with pride. It took me a week of solid playing to squeeze into that. Now THAT, is a better carrot. In their games, people find items that are well above their current use and it makes them continue to play(and have fun), while they work towards finally equipping it. In AO, people can rarely solo a mission with items high enough, that they are useful to them. At level 100, I was wearing ql150 Armor without being OE. If I do a ql100 mission, I find items ranging in ql from 90 to 105. Completely useless to me. In teams, you can run team missions high enough to get something you want but funcom makes you fight the other team members for it...even worse than no carrot at all.<br>
+So you see, we need a better carrot, a better reason to keep playing, and  I am not just talking about equipment. By the way, I play a MA and I don't even use weapons. The reason of my post about Title Caps is that I hit them at level 122. Playing non stop, it took me months to get to 150. That means for months, I had no carrot. I was not ALLOWED to improve my character, he did the exact same brawl and fist damage every single day, through thousands of mobs and hundreds of hours. It was very grueling and tedious and I almost quit becaase the game was the exact same grinding treadmill without any content or reward for my work. I hope this helps. By the way, Funcom is going to implememnt your suggestion in the Shadowlands expansion. They are going to put in items that go up to ql 400. You can see some of them at the antiguardians site. Instead of giving us a better carrot, they are extending the length of the stick it hangs from. <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">19:10</span></td><td class="alt1 small right"><a href="#post603175">#28</a></td></tr>
+<tr class="post" id="post603237"><td class="alt2 author"><b class="name">Centurion3</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0005.jpg" alt=""></td><td class="alt2 body"><div class="message">I agree... and maybe super rare nodrop unique items might be nice to have... but that means that we'll need alot of different ones so we dont need to search for over a month for a single item.<br>
+<br>
+Another thing I find ironic though, is that in some posts people complain that there is no high level content, and in another post they complain about the level requirements on nanos. This is just one way to make more high level content, then people complain that they cant use it on lower levels. On higher levels its easier to up your skills beyond average, the level requiement is just one way to give an level 200 an advantage over an level 150, since they got almost the same equipment between those levels anyway.<br>
+<br>
+I too think the game is slowing down at higher levels, but I think funcom is heading in the right direction to give us more high level content... its far from enough but its a start.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">19:49</span></td><td class="alt2 small right"><a href="#post603237">#29</a></td></tr>
+<tr class="post" id="post603311"><td class="alt1 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt1 body"><div class="small posttitle"><b>umm, no</b></div><div class="message">-------------------------------------------------<br>
+Another thing I find ironic though, is that in some posts people complain that there is no high level content, and in another post they complain about the level requirements on nanos. This is just one way to make more high level content, then people complain that they cant use it on lower levels.<br>
+--------------------------Centurion3----------<br>
+<br>
+Putting level requirements on items is not adding content. Content is new mobs, new vehicles to ride in, interacting with NPCs, going to the entertainment district to play games with other. That's content. Putting level requirements on nanos doesn't add to the plot or give people something new to do, it merely pisses them off.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 5th, 2002 <span class="time">20:37</span></td><td class="alt1 small right"><a href="#post603311">#30</a></td></tr>
+<tr class="post" id="post603787"><td class="alt2 author"><b class="name">Nakomis</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40263.jpg" alt=""></td><td class="alt2 body"><div class="message">Must.........not.................<br>
+Can't.............................help............  ...........it..........................<br>
+<br>
+<br>
+AAAAAAAAAAAAAAAAHHHHHHHHHHHHHH!!!!!!!<br>
+<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP<br>
+BUMP!!!!!!!!!!!!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 6th, 2002 <span class="time">03:50</span></td><td class="alt2 small right"><a href="#post603787">#31</a></td></tr>
+<tr class="post" id="post604274"><td class="alt1 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt1 body"><div class="small posttitle"><b>better late than never</b></div><div class="message">Ok,<br>
+This post is in response to Darkbane's. He took the time to go through and reply so I am responding. Sorry to take so long to get to you man, but had other things to do and then got side-tracked with other posts:<br>
+-----------------------------------------------------------------------------------------------<br>
+Well, the models for some of these things exist, so they at least should be possible. Not everything has a model though, even most armour doesn't have a seperate model, just variations on the toon's... I'll give this an 8 for weapons, and 3 for most everything else. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+My point on this one is that everything SHOULD have a model. They had several years to develop this game it was their responsibility to provide the staff with sufficient people to add items to their game. Most of the items in this game are not difficult to model either. I could do 4 or 5 of them a day with 3D studio and I am just one person, so I know it is feasible. Its just that every time I pass a little cube with ? on it, I am reminded that no one wanted to put the effort into making this game more immersive than it is.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Even differnet colours would be nice, make them using tradeskill using an item dropped by some unique mob or the like. That I'll give a 9. Custom bitmaps gets a 1 since even if implemented, only you'd see it making it somewhat pointless really. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Yeah, I forgot that custom bitmaps would need to be loaded on everybodys client to see it correctly. A Rookie mistake on my part <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+The 150 cap is from what I hear the worst, the rest aren't too bad, even the 100 cap. Teams are the way to go once your capped. For the 150 cap, I rate 6, for the rest, 2. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Going for  months at a time without the opportunity to do anything new with your character is demotivating and feels like punishment at times. They could relax title caps a little without hurting the player base at all. Remember, if it took me several months to get from 122 to 150, playing all day. How long does it take that guy who only has time to play a couple of hours a week?<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+MOB/Pet pathing, oh dear, oh dear, oh dear. Fix this. Gets a 10. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+I believe Coz stated that pathing for pets was the #2 priority right now, right behind the tools for giving back lost items. Hopefully, the developers will gain insight into that problem and work out a solution for mob pathing as well.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Its a game mechanic, and in games like this a necessary one. That said, there are probably some things that are NODROP that don't need to be. So for them, a 7, for the rest a 1. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Yes, it is a game mechanic, but a poor one. I played an MMORPG where there were NO rules regardings items. If you saw it on the ground(and it looked like the item it represented too), you could pick it up. If you opened a corpse and there were items on it, you could loot it. If you went to the hardest dungeon and found that rare Dragon Bone armor, you could drop it, trade it, sell it or display it prominently on your front porch. THAT is how real life is. It eliminates numerous headaches with maintaining inventory and allows people to share their items with others, which fosters a community spirit more than selling an account on ebay.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Or make mission blaster beetles much smaller... whatever, rate 6, nice but hardly end-of-world stuff. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+None of this stuff is end of world, but why aggravate us even more? Beetle missions are so screwy that when we get one now we delete it and move on. By the way, shrinking the beetles down to fit in the rooms will work well for this problem. Good call.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Appartments could do with work, oh yes. Rate 6 again since its a 'would be nice' rather than vital. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Ive been asking for windows in apartments for over a year! /me wants to have a reason to go into my apartment <img src="../images/smilies/frown.gif" alt="" class="smilie"><br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Hmm, even less vital, so gets a 5. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+I used specific armor items to illustrate my point but the idea is still the same: effort. This is the same as item number 1, where instead of seeing the object you see a generic cube. They put no effort into their special armor. Unique armor should look, well, unique. Nothing else in the game should look like it. Again, yes you are right, not vital, but really, none of this is since it is a game after all. But dont you want this game to be the best it can be?<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+May be legal issues, and I can survive without, so gets 3. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+There is no legal issue here, because you are not gambling real money. You are merely trading one in-game item(credits) for another. <br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Ah, more content in other words. Nice but... gets 3. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Not necessarily more content, per se, but rather a fix to the current animation of running. When a mob is chasing, his arms and legs move, he doesnt skid across the floor. If the mob is running then the run animation overrides the combat stance until they are within arms reach of you. If they are within arms reach of you and both of you are running, then yes, they are to use their run animation still.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+QL not the same as level. So this gets a 0. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+I phrased this one wrong, but I am not basing my opinion on QL=Player level. The fact that some of the nanos have requirements so high, that by the time you can self cast them, you are level 190ish. Thats a bit steep for the majority of the people who dont play around the clock. I am on the fence about it though because I recognize that some nanos are meant to be high level. THe inspiration for this post was the fact that a 189 MA cannot self cast UVC. <br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Correct, PvP is just broken. Realistically the Pvp and PvM are two different things and would be best served by being handled as such in all areas of the game, not this halfway house we have now. Major effort though, so rate 3. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Just because something is a major effort, that doesnt mean it gets a 3 on the Darkbane scale, hehe. They should have tested and balanced PvM and PvP before game launch. Fix it.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+And even more content, fun but rates 2. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Fun should never rate a 2! Where is your spirit? Drop some chests in the water, put little islands out in the water with items and mobs on them. Give us a reason to have those damn hydros. We need a reason to use swimming.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Never had that happen, so can't comment. Rate n/a <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+If you never had a storm cause you to LD then I want your ISP and computer. My friends and I have severe trouble with this in Home, Newland and sometimes even Athens.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Again, hardly vital, and even mission tokens can be exploited. And you do get some tokens from other places. Rate 2. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+I dont need tokens anymore, but getting them through ways other than missions would have been more fun.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Err, go play a sport game? Might be fun, but lets just stick to getting what we have right first. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+hehe, I think most people missed the point of this one. I dont want to play a sport game, I want to play some twisted, future sci-fi version of a game HERE. This is an idea that gives high level players something to do besides level all day. It is not that hard to implement, you just create some graphics for a simple playfield, add some rules and some type of disc/ball thing create a place the ball has to go for a goal. Maybe some lacrosse type game where you catch and pass it on, and have other balls that are hostile and can be thrown at the players. :P Ok, this will take a few months but maybe a life size battle chess field where players stand in the squares would be easier. The point here is something other than killing mobs.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+Hardly essential, fun for a while maybe, but not that interested. So rate 3. <br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Yet again, essential is not the issue here, but fun. If you get tired of it turn it off in the options, thats why I suggested a toggle switch. That way, those that enjoy seeing it can play along side those that dont.<br>
+<br>
+-----------------------------------------------------------------------------------------------<br>
+So there we go. Some good ideas, some wishful thinking, some just plain off-the-wall.<br>
+-----DarkBane-------------------------------------------------------------------------------<br>
+Yeah, my wife will agree about the off the wall thing, but I think all of it is wishful thinking.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 6th, 2002 <span class="time">13:31</span></td><td class="alt1 small right"><a href="#post604274">#32</a></td></tr>
+<tr class="post" id="post604969"><td class="alt2 author"><b class="name">Darkbane</b><br><span class="small usertitle">Council of Testers</span></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon7.gif" alt=""> </div><div class="message">Hey, thanks for the reply <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+I may have been a bit harsh with some of these items, but as I said, I was taking a realistic approach as to what is possible given limited manpower and other demands on it (other fixes etc.) - hence some of the scores being lower than they might otherwise warrant.<br>
+<br>
+As to the 3d representation of items, I guess that quite a bit of the armour would be the same model, just with a different texture, so that would reduce the workload. Hence i'll bump that 'everything else' in #1 up to a 7.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 6th, 2002 <span class="time">20:00</span></td><td class="alt2 small right"><a href="#post604969">#33</a></td></tr>
+<tr class="post" id="post605005"><td class="alt1 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt1 body"><div class="message">hehe,<br>
+I would like to get Funcom to bump some of these up to 7 <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 6th, 2002 <span class="time">20:16</span></td><td class="alt1 small right"><a href="#post605005">#34</a></td></tr>
+<tr class="post" id="post608287"><td class="alt2 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt2 body"><div class="small posttitle"><b>i thought of a new one</b></div><div class="message">How about fake ID badges? This will add a little content and is relatively easy to implement. With a fake ID, maybe Clanners could get into OT areas/shops without getting killed, and vice versa. This adds a new tradeskill item and sets up more of a role for blackmarket items. Fixers with sufficient skill will make a fake ID for you, for a price. Maybe someone with a fake ID can get past guards into a true hidden &quot;street&quot; or &quot;alley&quot; with vendors who sell black market items and things not found elsewhere.  Maybe the vendors do a check against your concealment skill and if they detect the badge is fake, they confiscate it and call the guards. Maybe even add a little something for the true PvPers and allow fake badges to get you into other people's missions. Now THAT is controversial! It's time to put the &quot;Anarchy&quot; back in Anarchy Online and get some conflict going. The players will drive their own conflict if gven a &quot;vehicle&quot; to do so. <img src="../images/smilies/biggrin.gif" alt="" class="smilie"> All flames/ideas are welcome as usual.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 8th, 2002 <span class="time">06:30</span></td><td class="alt2 small right"><a href="#post608287">#35</a></td></tr>
+<tr class="post" id="post611711"><td class="alt1 author"><b class="name">jonjon</b><br><span class="small usertitle">Leetas</span></td><td class="alt1 body"><div class="message">sorry to keep ranting, but I have another question:<br>
+Whatever happened to mining? Presumably, this whole &quot;conflict' thing is derived out of the notum mining operation of OT. Right? How come we can't mine for resources? <br>
+<br>
+You know this is more content too. Something for engineers to do in the form of mining equipment, repair and installation.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 9th, 2002 <span class="time">19:05</span></td><td class="alt1 small right"><a href="#post611711">#36</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="38516.html">&laquo;</a> <a href="38516.html">1</a> <b>[2]</b> </span></td><td class="right small"><a href="https://web.archive.org/web/20250529090817/https://forums-archive.anarchy-online.com/showthread.php?38516-Final-bug-list-and-new-content">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

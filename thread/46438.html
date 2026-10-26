@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - dynamic load suggestion</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/suggestions-39.html">Suggestions</a> &gt; dynamic load suggestion</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="46422.html">Last Thread</a> &nbsp; <a href="46449.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:dynamic load suggestion"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Suggestions"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post640199"><td class="alt2 author"><b class="name">Sean-Roach</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>dynamic load suggestion</b></div><div class="message">I was just reading a request for you to move the gridpoint in Tir, and it reminded me of something.<br>
+<br>
+Can you put in something to change rendering selections, on the fly, according to conditions?<br>
+<br>
+Something like this.  Open up a text editor, and type out the following, (or better yet, a template to modify.)<br>
+<br>
+100%<br>
+Liquid_Animations = 1<br>
+Client_Wildlife = 1<br>
+Realistic_Sunrays = 1<br>
+Realistic_Clouds = 1<br>
+Simple_Clouds = 1<br>
+Ground_Shadows = 1<br>
+Show_Buffs = 1<br>
+Show_Tracers = 1<br>
+Show_Nano_Effects = 1<br>
+Show_Muzzleflash = 1<br>
+Show_Environmental_Effects = 1<br>
+Show_Others_Effects = 1<br>
+Show_All_Names = 1<br>
+Texture_Resolutions = 2 (Full)<br>
+Texture_Quality = 16/32<br>
+Use_continuing_level_of_detail = 0<br>
+CLOD_full_detail_distance = 100<br>
+View_distance = 75<br>
+Character_view_distance = 70m<br>
+Ground_quality = 130<br>
+Full_ground_quality_radius = 7<br>
+<br>
+75%<br>
+Liquid_Animations = 0<br>
+Client_Wildlife = 0<br>
+Realistic_Sunrays = 0<br>
+Realistic_Clouds = 0<br>
+Simple_Clouds = 1<br>
+Ground_Shadows = 1<br>
+Show_Buffs = 1<br>
+Show_Tracers = 1<br>
+Show_Nano_Effects = 1<br>
+Show_Muzzleflash = 1<br>
+Show_Environmental_Effects = 1<br>
+Show_Others_Effects = 1<br>
+Show_All_Names = 1<br>
+Texture_Resolutions = 1 (Medium)<br>
+Texture_Quality = 16<br>
+Use_continuing_level_of_detail = 0<br>
+CLOD_full_detail_distance = 100<br>
+View_distance = 65<br>
+Character_view_distance = 50m<br>
+Ground_quality = 100<br>
+Full_ground_quality_radius = 7<br>
+<br>
+50%<br>
+Liquid_Animations = 0<br>
+Client_Wildlife = 0<br>
+Realistic_Sunrays = 0<br>
+Realistic_Clouds = 0<br>
+Simple_Clouds = 0<br>
+Ground_Shadows = 0<br>
+Show_Buffs = 0<br>
+Show_Tracers = 1<br>
+Show_Nano_Effects = 1<br>
+Show_Muzzleflash = 1<br>
+Show_Environmental_Effects = 1<br>
+Show_Others_Effects = 1<br>
+Show_All_Names = 1<br>
+Texture_Resolutions = 0 (Low)<br>
+Texture_Quality = 16<br>
+Use_continuing_level_of_detail = 0<br>
+CLOD_full_detail_distance = 80<br>
+View_distance = 50<br>
+Character_view_distance = 40m<br>
+Ground_quality = 80<br>
+Full_ground_quality_radius = 5<br>
+<br>
+25%<br>
+Liquid_Animations = 0<br>
+Client_Wildlife = 0<br>
+Realistic_Sunrays = 0<br>
+Realistic_Clouds = 0<br>
+Simple_Clouds = 0<br>
+Ground_Shadows = 0<br>
+Show_Buffs = 0<br>
+Show_Tracers = 0<br>
+Show_Nano_Effects = 0<br>
+Show_Muzzleflash = 0<br>
+Show_Environmental_Effects = 0<br>
+Show_Others_Effects = 0<br>
+Show_All_Names = 1<br>
+Texture_Resolutions = 0 (Low)<br>
+Texture_Quality = 16<br>
+Use_continuing_level_of_detail = 0<br>
+CLOD_full_detail_distance = 50<br>
+View_distance = 50<br>
+Character_view_distance = 20m<br>
+Ground_quality = 60<br>
+Full_ground_quality_radius = 5<br>
+<br>
+Basically, let us &quot;script&quot; different resolution settings for different levels of lag.  In an open, and empty, plain, we can have all the extras turned on, but have the client shut them down incrementally as client-side lag builds up due to crowding.<br>
+<br>
+Of course, to do this, certain things would have to be doable on the fly.  Things like Texure resolution and texture quality, which you can adjust in the client, but which the client warns you won't take effect until you log back in.<br>
+<br>
+BTW, I like the grid being there, but you might put in an alternate exit for high-load hours.  Back on the island where the exit used to be, (before the terminal was there) would be about right.  (Anyone else remember having to run to Newland to get into the grid?  Remember AVOIDING exiting in Newland because you'd fall to your death?)</div><p class="small edited"><i>Last edited by Sean Roach on August 22nd, 2002 at 13:46</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 22nd, 2002 <span class="time">13:43</span></td><td class="alt2 small right"><a href="#post640199">#1</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529085857/https://forums-archive.anarchy-online.com/showthread.php?46438-dynamic-load-suggestion">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

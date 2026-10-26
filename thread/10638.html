@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Technical Asking: Memory Cache Management</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/suggestions-71.html">Suggestions</a> &gt; Technical Asking: Memory Cache Management</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="11493.html">Last Thread</a> &nbsp; <a href="11791.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Technical Asking: Memory Cache Management"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Suggestions"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post305191"><td class="alt2 author"><b class="name">Docgalaad</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40201.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon5.gif" alt=""> <b>Technical Asking: Memory Cache Management</b></div><div class="message">In the future,<br>
+Could we disable the Memory Cache Management of the game, so there will not old playfield data in memory ? <br>
+I think my PC will explode with 3 or 4 areas in memory. This is useless to keep all these data in the virtual memory. I have to relog all 4 outdoor playfields i zone in because the &quot;clientr.exe&quot; process use all the memory. If i add 256 or 512 Mo, this will be all 8 or 10 playfields, but in the same way, the game take all the available memory until windows is saturated. I already had 1.1 Go RAM reserved for the &quot;ClientR.exe&quot; Process !<br>
+<br>
+Cz or Cosmik, have you got technical info about that ?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 10th, 2002 <span class="time">12:34</span></td><td class="alt2 small right"><a href="#post305191">#1</a></td></tr>
+<tr class="post" id="post305262"><td class="alt1 author"><b class="name">FeloniousPunk</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> </div><div class="message">Best advice yet for the game. I have 512 Mb on my system and still get low memory warnings after a couple of hours.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> February 10th, 2002 <span class="time">15:07</span></td><td class="alt1 small right"><a href="#post305262">#2</a></td></tr>
+<tr class="post" id="post305393"><td class="alt2 author"><b class="name">Aggregate</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40100.jpg" alt=""></td><td class="alt2 body"><div class="message">This has gotten better, but still needs some work, agreed.<br>
+<br>
+BTW Felonious, that is one of the funniest names I've seen.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 10th, 2002 <span class="time">17:48</span></td><td class="alt2 small right"><a href="#post305393">#3</a></td></tr>
+<tr class="post" id="post306293"><td class="alt1 author"><b class="name">starknaked</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="message">This is the same memory leak which has plagued us since day 1.  For some reason, Funcom has never figured out how to fix it.  The game uses up more and more of your memory until there is none left, then it starts using up all your virtual memory, and the game runs horribly and the hard drive grinds and grinds.<br>
+<br>
+It is much worse if you don't have much memory.  When I first started the game, I had &quot;only&quot; 256 megs.  I upgraded to 512 megs solely to get AO to run better, and it definitely helped.  I still have to quit and restart the game if I've moved through a number of zones though.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> February 11th, 2002 <span class="time">15:20</span></td><td class="alt1 small right"><a href="#post306293">#4</a></td></tr>
+<tr class="post" id="post306307"><td class="alt2 author"><b class="name">dropcid</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="message">You will find your memory usage will be much better if you:<br>
+1. Turn off compressed textures<br>
+2. Set your AGP aperature size down to 32 MB in your Bios.<br>
+<br>
+#2 caused my clientr.exe to go from averaging 350MB to averaging 200MB  (had my aperature at 256)<br>
+<br>
+But, this doesn't excuse funcom for poor, poor, wretched memory management.<br>
+<br>
+-D</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 11th, 2002 <span class="time">15:23</span></td><td class="alt2 small right"><a href="#post306307">#5</a></td></tr>
+<tr class="post" id="post310965"><td class="alt1 author"><b class="name">Shylara</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40222.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon3.gif" alt=""> <b>Relatively simple solutions...</b></div><div class="message">Why doesn't FC just get some good profiling software to 'clean' their code with?  Stuff like Purify and such has been around for a while, and it is VERY good at detecting memory leaks and such.<br>
+<br>
+(Okay, so I'm a software engineer.  If they'd let me, I'd do some debugging on their code for FREE in my spare time.....They can pay me in game credits <img src="../images/smilies/wink.gif" alt="" class="smilie"> )</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> February 14th, 2002 <span class="time">17:14</span></td><td class="alt1 small right"><a href="#post310965">#6</a></td></tr>
+<tr class="post" id="post313718"><td class="alt2 author"><b class="name">haniblecter</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/opifexmale.gif" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Dropcid </i><br>
+<b>You will find your memory usage will be much better if you:<br>
+1. Turn off compressed textures<br>
+2. Set your AGP aperature size down to 32 MB in your Bios.<br>
+</b>
+			
+		
+	<hr></blockquote>
+Compressed textures?<br>
+<br>
+What be those, thought they increased effiecency?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 17th, 2002 <span class="time">03:37</span></td><td class="alt2 small right"><a href="#post313718">#7</a></td></tr>
+<tr class="post" id="post315147"><td class="alt1 author"><b class="name">dropcid</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by haniblecter </i><br>
+<b><br>
+<br>
+Compressed textures?<br>
+<br>
+What be those, thought they increased effiecency? </b>
+			
+		
+	<hr></blockquote>
+In the REAL world, compressed textures and a large AGP aperature would be of benefit to you. But, alas, we are in Funcom's world now. My computer is tweaked for one thing only... running AO for as long as possible without crashing.<br>
+<br>
+-D</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> February 18th, 2002 <span class="time">14:34</span></td><td class="alt1 small right"><a href="#post315147">#8</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250530081612/https://forums-archive.anarchy-online.com/showthread.php?10638-Technical-Asking-Memory-Cache-Management">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

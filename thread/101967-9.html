@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Pricing for tradeskills</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Professions &gt; <a href="../forum/engineer.html">Engineer (Workshop)</a> &gt; Pricing for tradeskills</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (9): <a href="101967.html">&laquo; First</a> ... <a href="101967-8.html">&laquo;</a> <a href="101967-7.html">7</a> <a href="101967-8.html">8</a> <b>[9]</b> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="142167.html">Last Thread</a> &nbsp; <a href="106865.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Pricing for tradeskills (page 9)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Engineer (Workshop)"></span><span data-pagefind-filter="year:2003"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1814107"><td class="alt2 author"><b class="name">Yamaeda</b><br><span class="small usertitle">Supa Leet Creator of VG</span><br><img class="avatar" src="../images/avatars/40666.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Price formula</b></div><div class="message">Good idea with a price suggestion list, Elbo, so far, my pricing has been double the price of the components (but then i've bought them also), 25-50% price of component if just combining them.<br>
+<br>
+I don't know is this is the right thread, but i feel it's relevant here anyhow.<br>
+<br>
+No pricing in the game is linear. There is no 1k/qual, that works all the way. Your list also suggests that in dividing prices in qual ranges.<br>
+<br>
+I've studied the prices on a few things and worked out how the pricing formula works, it can be used on your prices to make a continueus (sp?) function.<br>
+<br>
+The pricing in shop works like this: <br>
+<b>Quality price (QP) * Quality pricing factor (QPF) + Base price (BP)</b><br>
+<br>
+Saying 1k/qual would make the QPF 1, 3k/qual thus 3, and so on.<br>
+<br>
+My studies show that the <b>quality factor = Q^2 - 2*Q</b> in percent overprice. <br>
+<br>
+To get a simple multiplying factor, we adjust the result to the formula, <b>Quality pricing factor = ( Q^2 - 2*Q )/100 + 1</b><br>
+<br>
+This is a simple and good formula that is perfect for a script:<br>
+Script &quot;qual&quot; (or QPF or whatever)<br>
+/tell helpbot calc (%1*%1 - 2*%1)/100 + 1<br>
+<br>
+Just do /qual 54 to get the QPF of a Q54 item. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+The cost of an item/service, whatever, would then be as above.<br>
+<br>
+The formula shows that (shop pricing) makes Q1 = 1, Q32 = 10, Q50 = 25, Q100 = 100, Q150 = 222, Q200 = 396 times the base price.<br>
+<br>
+Linear pricing from 1 - 100 makes the Q50 (relatively speaking) very expensive.<br>
+<br>
+<b>What's the use of this?</b><br>
+<br>
+Using good values in QP and BP you can use one formula for all items, although QP and BP is unique to each item.<br>
+<br>
+Ex. Carbonum plate (if i remember correctly) has:<br>
+QP ~1,75k, BP of ~6k<br>
+(i'll update later with more price examples)<br>
+<br>
+Using the same formula on, e.g. Nano Creation, a QP of 3,5k and BP 0 (as suggested price at Q100 was 3k and at 101 4k) would give:<br>
+Q10, 6k<br>
+Q25, 25k<br>
+Q50, 90k<br>
+Q100, 350k<br>
+Q125, 540k<br>
+Q150, 780k<br>
+Q175, 1mill<br>
+Q200, 1,4mill<br>
+<br>
+The exact QPF and BP is a work in progress, but as a rule of thumb the Xk/qual at 100-110 is fine.<br>
+How does that idea sound?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">11:42</span></td><td class="alt2 small right"><a href="#post1814107">#161</a></td></tr>
+<tr class="post" id="post1814178"><td class="alt1 author"><b class="name">Inale</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/223931.jpg" alt=""></td><td class="alt1 body"><div class="message">I am gonna macro this thread's URL into a hotkey and use it when people ask me prices from now on... I got totally ripped last night making a 212 ID... not only did I make the ID I had to fly out and get the rock because I didn't have one in stock... between switching implants and buffing myself, getting the rock and the other store-bought parts (oh, and I logged on my engie specifically to make this ID for this person) took damn near an hour... they tipped me 350k....  Including the price of the store bought junk. <br>
+<br>
+<br>
+If its normal crap that I can do without changing imps or taking for frickin ever, I dont mind doing it just for tips... but at 168 its not that easy to make a 212 disc. I'm glad I didnt go get meistros to do it cause I always tip the traders at least 200k...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">11:53</span></td><td class="alt1 small right"><a href="#post1814178">#162</a></td></tr>
+<tr class="post" id="post1814760"><td class="alt2 author"><b class="name">Elbo</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="small posttitle"><b>Re: Price formula</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Yamaeda </i><br>
+<b>Good idea with a price suggestion list, Elbo, so far, my pricing has been double the price of the components (but then i've bought them also), 25-50% price of component if just combining them.<br>
+<br>
+I don't know is this is the right thread, but i feel it's relevant here anyhow.<br>
+<br>
+No pricing in the game is linear. There is no 1k/qual, that works all the way. Your list also suggests that in dividing prices in qual ranges.<br>
+<br>
+I've studied the prices on a few things and worked out how the pricing formula works, it can be used on your prices to make a continueus (sp?) function.<br>
+<br>
+The pricing in shop works like this: <br>
+<b>Quality price (QP) * Quality pricing factor (QPF) + Base price (BP)</b><br>
+<br>
+Saying 1k/qual would make the QPF 1, 3k/qual thus 3, and so on.<br>
+<br>
+My studies show that the <b>quality factor = Q^2 - 2*Q</b> in percent overprice. <br>
+<br>
+To get a simple multiplying factor, we adjust the result to the formula, <b>Quality pricing factor = ( Q^2 - 2*Q )/100 + 1</b><br>
+<br>
+This is a simple and good formula that is perfect for a script:<br>
+Script &quot;qual&quot; (or QPF or whatever)<br>
+/tell helpbot calc (%1*%1 - 2*%1)/100 + 1<br>
+<br>
+Just do /qual 54 to get the QPF of a Q54 item. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+The cost of an item/service, whatever, would then be as above.<br>
+<br>
+The formula shows that (shop pricing) makes Q1 = 1, Q32 = 10, Q50 = 25, Q100 = 100, Q150 = 222, Q200 = 396 times the base price.<br>
+<br>
+Linear pricing from 1 - 100 makes the Q50 (relatively speaking) very expensive.<br>
+<br>
+<b>What's the use of this?</b><br>
+<br>
+Using good values in QP and BP you can use one formula for all items, although QP and BP is unique to each item.<br>
+<br>
+Ex. Carbonum plate (if i remember correctly) has:<br>
+QP ~1,75k, BP of ~6k<br>
+(i'll update later with more price examples)<br>
+<br>
+Using the same formula on, e.g. Nano Creation, a QP of 3,5k and BP 0 (as suggested price at Q100 was 3k and at 101 4k) would give:<br>
+Q10, 6k<br>
+Q25, 25k<br>
+Q50, 90k<br>
+Q100, 350k<br>
+Q125, 540k<br>
+Q150, 780k<br>
+Q175, 1mill<br>
+Q200, 1,4mill<br>
+<br>
+The exact QPF and BP is a work in progress, but as a rule of thumb the Xk/qual at 100-110 is fine.<br>
+How does that idea sound? </b>
+			
+		
+	<hr></blockquote>
+<br>
+I'll quote it all and just say<br>
+<br>
+WAAAAAHHH!!!!! AHHH!!!! EEURRRGGHH!! (repeat x10)<br>
+<br>
+I look at it from the point of : What can a lvl 130 NT pay and what will he be willing to pay and what it takes me in time to do.  <br>
+<br>
+Somethings require sick amounts of skill :junk metal x 6 in ME to make for instance.  VS 3.5 and 4X requirements (various tradeskill parts).   The Level of the person making it and his time vs say the time of a lvl 90 person making it.  Most people will not invest heavy into tradeskills until they are past lvl 150.  Rewarding that person who invested earlier seems to be in order since he isnt leveling like a mad dog and getting the 'fat boss loot' to sell in the stores or rolling for soul frags/soul globes/7% rings/GA etc in team missions.  He is instead sitting in some backyard and doing tradeskills for 90K for a lvl 90 nano (see your reference above).<br>
+<br>
+90K... 2M for a soul frag.  90K... 2 bodies with loot on it.  90K...exp plus a fat chest with a 4 pcs of armor.<br>
+<br>
+Its not as clear cut with a (real basic example) 2+2=4 type of math.<br>
+<br>
+Msg a lvl 190+ engineer and tell him you need a lvl 90 nano made and your willing to tip 90k and he might give you a smile... <img src="../images/smilies/biggrin.gif" alt="" class="smilie">.  Perhaps he will do it because you were 'funny'.  <br>
+<br>
+Anyone else want to bring some input on this.  I'm about 1/2 way through the tradeskills update adding more of the new items.  Somethings may not have the proper names as I call em something odd like gylph thingys :-)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">13:46</span></td><td class="alt2 small right"><a href="#post1814760">#163</a></td></tr>
+<tr class="post" id="post1815417"><td class="alt1 author"><b class="name">Edvieira</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40191.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Re: Re: Price formula</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Elbo </i><br>
+<b><br>
+Msg a lvl 190+ engineer and tell him you need a lvl 90 nano made and your willing to tip 90k and he might give you a smile... <img src="../images/smilies/biggrin.gif" alt="" class="smilie">.  Perhaps he will do it because you were 'funny'.  <br>
+ </b>
+			
+		
+	<hr></blockquote>
+ROFL<br>
+<br>
+Happens to me all the time <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">16:39</span></td><td class="alt1 small right"><a href="#post1815417">#164</a></td></tr>
+<tr class="post" id="post1815429"><td class="alt2 author"><b class="name">Elbo</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">So what do you do?  Do you make it for him or give him a <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">16:41</span></td><td class="alt2 small right"><a href="#post1815429">#165</a></td></tr>
+<tr class="post" id="post1815629"><td class="alt1 author"><b class="name">Yamaeda</b><br><span class="small usertitle">Supa Leet Creator of VG</span><br><img class="avatar" src="../images/avatars/40666.jpg" alt=""></td><td class="alt1 body"><div class="message">Read again Elbo, my formula gave 90k for a Q50 nano. A Q90 would be 280k. <img src="../images/smilies/smile.gif" alt="" class="smilie"> That sounds a little bit more fair, dont you think?<br>
+<br>
+The point of the formula is that at Q100 it intersects your pricing giving the same result, the difference is in the Q's in between. <br>
+<br>
+The linear pricing always make some strange effects in the intersections, that's my point. According to your pricing a Q100 nano should cost 300k to assemble, but a Q101 = 404k?<br>
+<br>
+As i said, the exakt numbers included is to be decided but the number i chose intersects yours at Q100. Your other pricing idea of price according to tradeskiller level i totally agree with.<br>
+<br>
+If you read it differently, i'm on your side here!<br>
+<br>
+/Yamaeda</div><p class="small edited"><i>Last edited by Yamaeda on October 2nd, 2003 at 17:49</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">17:47</span></td><td class="alt1 small right"><a href="#post1815629">#166</a></td></tr>
+<tr class="post" id="post1816276"><td class="alt2 author"><b class="name">Elbo</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">I don't doubt your on my side with that indepth view of math you gave above...<br>
+<br>
+/me does the URRGGH! ARRRGH EEAAARGGH and a EEEK!!<br>
+<br>
+My mind set isnt that set in math as nice round numbers that I know people will pay and people like nice round numbers.<br>
+<br>
+Instead of 260K for a QL90 nano 250K instead of 1.4M for a QL212 nano 1.5 or 2 <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+People like round numbers.  They don't want to figure on 772K for a QL(insert your math skills here) nano to be made.<br>
+<br>
+How about I make my set of #'s and come back to you and let you run your numbers and we'll see how badly I do putting down a number I know people will pay and that its worth a engi's time.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">21:06</span></td><td class="alt2 small right"><a href="#post1816276">#167</a></td></tr>
+<tr class="post" id="post1816902"><td class="alt1 author"><b class="name">Stepho556</b><br><span class="small usertitle">Eleet</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon4.gif" alt=""> <b>Nano&#39;s</b></div><div class="message">I think it is important to consider the price of Nano's from shops when quoting a price to a potential customer.  If someone comes to me with a disk that he wants to make, but could buy in store, quoting 500k for a ql 125 will likely scare them away.  I believe the nano itself would likely cost them 480k or so at a shop.  I would ask 400k for such a service so that I make money, they save money.  This pricing can spur positive economic activity for lower level engineers who are just developing their craft.<br>
+<br>
+ Were the nano to be disk only drop such as GA, i'd probably ask 5-10% of market price of the disk for the trust factor on big disks.  On those nanos that drop by disk only but not quite so rare or low trading value, I charge 125% of what that ql Nano sell for in shops.  So I just quote whatever i think that is typically after I round it to a nice smooth number.  <br>
+<br>
+Otherwise I do like the pricing schemes for higher level nanos and other tradeskill operations.  Good work for putting it down on a forum and allowing discussion of the issue.<br>
+<br>
+Stepho556 - Lvl 183 Engineer - Atlantean</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 2nd, 2003 <span class="time">23:20</span></td><td class="alt1 small right"><a href="#post1816902">#168</a></td></tr>
+<tr class="post" id="post1817375"><td class="alt2 author"><b class="name">Yamaeda</b><br><span class="small usertitle">Supa Leet Creator of VG</span><br><img class="avatar" src="../images/avatars/40666.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Elbo </i><br>
+<b>Instead of 260K for a QL90 nano 250K instead of 1.4M for a QL212 nano 1.5 or 2 <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+People like round numbers.  They don't want to figure on 772K for a QL(insert your math skills here) nano to be made.<br>
+</b>
+			
+		
+	<hr></blockquote>
+Agreed, people like round numbers. Round upwards to a nice 50 or 100k mark. <img src="../images/smilies/smile.gif" alt="" class="smilie"> <br>
+<br>
+At my level 100k is what i can gain in a good mission, so i'm a little more price sensitive. <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 3rd, 2003 <span class="time">01:56</span></td><td class="alt2 small right"><a href="#post1817375">#169</a></td></tr>
+<tr class="post" id="post1926018"><td class="alt1 author"><b class="name">RVWinkle</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40263.jpg" alt=""></td><td class="alt1 body"><div class="message">Just curious, what do you guys think a fair price for using an Omnifier/Clanalizer on carb? I've been offering to do it for 100k but someone was suggesting that was too low of a price.<br>
+<br>
+Just as a reference it takes 800 chem.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 8th, 2003 <span class="time">09:23</span></td><td class="alt1 small right"><a href="#post1926018">#170</a></td></tr>
+<tr class="post" id="post1926072"><td class="alt2 author"><b class="name">Stepho556</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon7.gif" alt=""> <b>Omnification</b></div><div class="message">If i'm making the set of carb i throw in the omnification free, when i'm just doing the omnify on ql 200 carb, i think i charged 600k for a full set recently, similar to 100k a part.  I don't have to play imp swap to do it though, if I did, the service wouldn't be anywhere near so cheap.  100k for ql 200 has a good ring to it though, makes the cost of improving carb 250k a piece or so depending on what you buy the omni spray bottles at.  Could you charge more? I'm sure you could.  Do you want to?  Depends on how difficult 800 chem is for you to get. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+Stepho556<br>
+Level 195 Engineer - Atlantean</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 8th, 2003 <span class="time">09:59</span></td><td class="alt2 small right"><a href="#post1926072">#171</a></td></tr>
+<tr class="post" id="post1931533"><td class="alt1 author"><b class="name">Elbo</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="message">Interesting.  I havent been asked to make this yet.  I'll add the omni/clan to the carb for free when making the set initally.<br>
+<br>
+What are your thoughts on doing it after the fact?  100K for making it after the fact too?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 10th, 2003 <span class="time">14:34</span></td><td class="alt1 small right"><a href="#post1931533">#172</a></td></tr>
+<tr class="post" id="post1933806"><td class="alt2 author"><b class="name">Stepho556</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> </div><div class="message">Yes, 100k for a single omnificationsounds fair to me at ql 200.  And i think if you making the ql 200 carb which takes 900 chem, is just a good buisness practice to throw in the extra 800 chem at one click for free, since no MRR required to omnify, it's not like i got to make back creds for a tool i buy, it's just like spray painting the armor to me, no cost other than a few mouse clicks..., makes customer happy.  This is how i'd approach it unless the customer tried to grind me on price for carb in the first place...<br>
+<br>
+Stepho556<br>
+Level 195 Engineer - Atlantean</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 11th, 2003 <span class="time">06:58</span></td><td class="alt2 small right"><a href="#post1933806">#173</a></td></tr>
+<tr class="post" id="post1951306"><td class="alt1 author"><b class="name">Jawiz</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/Leets_0005.jpg" alt=""></td><td class="alt1 body"><div class="message">I decided recently to try my hand at tradeskilling, thought it would make AO life more interesting than just doing mission after mission. <img src="../images/smilies/biggrin.gif" alt="" class="smilie"> <br>
+<br>
+I thought that a good place to start would be raising enough skills to make upto QL50 carbonum armor and if that went well take it from there and get a good range of services.<br>
+Thats were the problem started, it didn't go well at all. I went to the shop and bought 7 sheets of QL48 and the HSR's and everything else that was needed - compliled myself a full set and stuck it on the shopping channel.<br>
+<br>
+From the list at the start of this thread, hoping I had understood it correctly - 2k x QL48 = 96k x 7pieces = 672k. Now it cost 303k to buy the sheets and being new I thought 600k would sell a bit better so that's the price I tried.<br>
+My response was 'Dude, that's expensive - I picked up a set of QL100 for 800k'. I asked what price they thought I should be selling for and was told I should be charging 6k per QL for the whole set, this would mean 288k (a loss of credits just on the sheet price, nevermind the HSR's and everything else).<br>
+<br>
+I'm a little worried that I have spent a lot of time and credits for nothing...can anyone advise me whether I was overcharging or not <img src="../images/smilies/confused.gif" alt="" class="smilie"> <br>
+<br>
+Thanks in advance</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 17th, 2003 <span class="time">08:45</span></td><td class="alt1 small right"><a href="#post1951306">#174</a></td></tr>
+<tr class="post" id="post1952598"><td class="alt2 author"><b class="name">Elbo</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">The person you might have been dealing with might not have known the cost of the full set of carb sheets.  So you were charging 600K for the sheets and the creation?<br>
+<br>
+There is a huge separation between those who actually do tradeskills and buyers.  I had people asking me to do junk armor when that was popular and give me 220+ robot parts (6x ME I believe) 1260 was a hard number to get pre shadowlands.  <br>
+<br>
+<br>
+I almost never prebuy the sheets.   I let the customer pickup the sheets since they know how buffed they can get to fit into the right quality level.  While a lvl 75 Carb armor will just squeek onto a nanomage at lvl 60 given a few buffs while atrox will nab some 100+ at lvl 60 self buffed.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 17th, 2003 <span class="time">17:40</span></td><td class="alt2 small right"><a href="#post1952598">#175</a></td></tr>
+<tr class="post" id="post1952917"><td class="alt1 author"><b class="name">Powerbernie</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">Maybe u wanna add Arul Saba Bracelets.<br>
+<br>
+Seems a high 1gem Bracer goes for about 5M. Pices are firming atm - me will give feedback if interested.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 17th, 2003 <span class="time">19:45</span></td><td class="alt1 small right"><a href="#post1952917">#176</a></td></tr>
+<tr class="post" id="post1953161"><td class="alt2 author"><b class="name">Stepho556</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="small posttitle"><b>Carb Sheets</b></div><div class="message">Personally, I have decided I do not do the buying for parts.  Ever.  There is just too much time involved collecting parts for this to be a valuable use of my time.  If you are going to pre-make things without a particular customer in mind, you really need to understand that there are about 60% of the potential buyers out there that will try to make you feel greedy and overpriced when you are just trying to be fair to yourself and make a decent profit.  Remember that if they can get it cheaper, why are they asking you in the first place?  Remain firm on your prices and usually they come back hat in hand so to speak.  And for my part, i'll remember to not dump the old sets off my alts at sub parts price when they grow out of them, I don't want to ruin your market.<br>
+<br>
+Stepho556<br>
+Level 197 Engineer - Atlantean</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 17th, 2003 <span class="time">21:11</span></td><td class="alt2 small right"><a href="#post1953161">#177</a></td></tr>
+<tr class="post" id="post1957531"><td class="alt1 author"><b class="name">Elbo</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Powerbernie </i><br>
+<b>Maybe u wanna add Arul Saba Bracelets.<br>
+<br>
+Seems a high 1gem Bracer goes for about 5M. Pices are firming atm - me will give feedback if interested. </b>
+			
+		
+	<hr></blockquote>
+Sure if you could give me a run down on the arul bracelets and the selling points.  I'll add them.  I've adjusted the list (on my computer hehe) with new selling points etc.  I'll post for feedback tomorrow.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 19th, 2003 <span class="time">12:28</span></td><td class="alt1 small right"><a href="#post1957531">#178</a></td></tr>
+<tr><td colspan="2" class="gap">This thread continued after 2003; its 17 later replies aren't part of this archive.</td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (9): <a href="101967.html">&laquo; First</a> ... <a href="101967-8.html">&laquo;</a> <a href="101967-7.html">7</a> <a href="101967-8.html">8</a> <b>[9]</b> </span></td><td class="right small"><a href="https://web.archive.org/web/20250530050757/https://forums-archive.anarchy-online.com/showthread.php?101967-Pricing-for-tradeskills">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

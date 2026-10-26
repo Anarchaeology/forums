@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - The problems with scripts in AO</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-39.html">Game Mechanics</a> &gt; The problems with scripts in AO</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="5677.html">Last Thread</a> &nbsp; <a href="5623.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:The problems with scripts in AO"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2001"></span></td><td>Thread</td></tr>
+<tr class="post" id="post254598"><td class="alt2 author"><b class="name">Dareus</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>The problems with scripts in AO</b></div><div class="message">1.  You can call another script from within a script (will give error message if the second script isn't found) but it will not execute any commands in the second script<br>
+<br>
+Nice command, not hard to finish implimenting, how could a programmer not like recursive scripting? <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+2.  Key strokes in the script are not processed by the command interface.  If you have a script with only &quot;x&quot; in it, you will not sit down when executing the script.<br>
+<br>
+A real finger saver here, as an MP I buff up about 11 nanos before I'm ready for combat and thats every 30 minutes.  Very annoying, if you allow commands to be executed correctly, I could script it.<br>
+<br>
+An easier solution, and still a nice one would be a new script command.<br>
+<br>
+/run1,3 for the 1st shortcut bar and do the 3'd thing on it.<br>
+<br>
+I'd also like a /sit /stand for that so I could have it buff me and renano while I get more soda <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+3.  Arguments passed to scripts are not observing quotation boundries. ie:<br>
+<br>
+/pet bobo %1 %2<br>
+<br>
+When you pass<br>
+/script chat &quot;Hello there!&quot;<br>
+<br>
+Executes<br>
+<br>
+bobo: Hello<br>
+<br>
+This ones a RP one for now, only real use is people who want to get thier pets chating.  There shouldn't be a reason to have a seperate script just for chatting and it wouldn't be required if this were processed correctly.<br>
+<br>
+4. I'd have to do more testing, but I'm pretty sure they script system is not waiting for the execution of one item before moving on to the next.<br>
+<br>
+/selectself<br>
+/pet heal<br>
+<br>
+Sometimes ends up with the healer healing the original target instead of me.<br>
+<br>
+I can always delay it if I have to, but the script would have better reliability if AO didn't process the second command until the 1st had executed completely.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 19th, 2001 <span class="time">00:00</span></td><td class="alt2 small right"><a href="#post254598">#1</a></td></tr>
+<tr class="post" id="post254624"><td class="alt1 author"><b class="name">Dareus</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message">Related request<br>
+<br>
+/pet &quot;name&quot; select</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 19th, 2001 <span class="time">00:54</span></td><td class="alt1 small right"><a href="#post254624">#2</a></td></tr>
+<tr class="post" id="post254691"><td class="alt2 author"><b class="name">Spookymonster</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt2 body"><div class="message">Recursive scripting, while nice, is also dangerous.<br>
+Think spam.<br>
+Think client-side resources.<br>
+Think server-side resources.<br>
+<br>
+I'd personally love it, but I don't think we'll see it any time soon <img src="../images/smilies/frown.gif" alt="" class="smilie">.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 19th, 2001 <span class="time">02:58</span></td><td class="alt2 small right"><a href="#post254691">#3</a></td></tr>
+<tr class="post" id="post255184"><td class="alt1 author"><b class="name">Dareus</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message">I don't think it's any more dangerous then what we currently have available.<br>
+<br>
+I could see making a 1 level limit or something to it, but I have no actual length limits in the main script so if I wanted to spam <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 19th, 2001 <span class="time">14:33</span></td><td class="alt1 small right"><a href="#post255184">#4</a></td></tr>
+<tr class="post" id="post255245"><td class="alt2 author"><b class="name">Valerian</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40682.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Good ol&#39; EQ days</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				4. I'd have to do more testing, but I'm pretty sure they script system is not waiting for the execution of one item before moving on to the next.
+			
+		
+	<hr></blockquote>
+Hmm, I'm in no way an expert in scripting or macros but that reminds me of EQ. You had similar problems with macros/scripts there. Putting 2 command lines to your pet one after the other, the second was often ignored, cause the first was still executing. The server doesnt seem to buffer the second command. Probably due to the way client and server communicate its better to put a &quot;wait&quot; in. <br>
+<br>
+Val (no biggie)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 19th, 2001 <span class="time">15:02</span></td><td class="alt2 small right"><a href="#post255245">#5</a></td></tr>
+<tr class="post" id="post257767"><td class="alt1 author"><b class="name">Dareus</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message">Bump</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 21st, 2001 <span class="time">13:59</span></td><td class="alt1 small right"><a href="#post257767">#6</a></td></tr>
+<tr class="post" id="post258044"><td class="alt2 author"><b class="name">Ming</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/opifexmale.gif" alt=""></td><td class="alt2 body"><div class="message">so put a pause in between?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 21st, 2001 <span class="time">18:10</span></td><td class="alt2 small right"><a href="#post258044">#7</a></td></tr>
+<tr class="post" id="post258051"><td class="alt1 author"><b class="name">Dareus</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message">Sorry Ming, I don't quite get your question.<br>
+<br>
+Yes a delay between /selectself and /pet Bobo heal is needed if scripting.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 21st, 2001 <span class="time">18:15</span></td><td class="alt1 small right"><a href="#post258051">#8</a></td></tr>
+<tr class="post" id="post263322"><td class="alt2 author"><b class="name">Leumas</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: The problems with scripts in AO</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Dareus </i><br>
+<b>1.  You can call another script from within a script (will give error message if the second script isn't found) but it will not execute any commands in the second script </b>
+			
+		
+	<hr></blockquote>
+Yes,you can.Put a /delay 100 at the start of second command ,then you should able to execute yours commands in the second script.I had personally try this.<br>
+<br>
+script 1 :<br>
+/delay 100<br>
+/pet rename 1<br>
+/delay 100<br>
+/pet rename 2<br>
+/2<br>
+<br>
+script 2 :<br>
+/delay 100<br>
+/pet rename 3<br>
+/delay 100<br>
+/pet rename 4<br>
+/1<br>
+<br>
+<br>
+As a result,my pet's name circle from 1 to 4 in a loop.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 31st, 2001 <span class="time">08:12</span></td><td class="alt2 small right"><a href="#post263322">#9</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250530073316/https://forums-archive.anarchy-online.com/showthread.php?4537-The-problems-with-scripts-in-AO">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

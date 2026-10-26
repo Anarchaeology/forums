@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Solution to Voodoo5500 and Windows2000</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Tech &gt; <a href="../forum/other-technical-issues.html">Other Technical Issues</a> &gt; Solution to Voodoo5500 and Windows2000</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="106157.html">Last Thread</a> &nbsp; <a href="106402.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Solution to Voodoo5500 and Windows2000"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Other Technical Issues"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post278265"><td class="alt2 author"><b class="name">Isabella9</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40207.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon6.gif" alt=""> <b>Solution to Voodoo5500 and Windows2000</b></div><div class="message">I am using Voodoo5500 PCI on Windows20000 with Directx8.0.<br>
+<br>
+I have tried to install drivers from <a href="https://web.archive.org/web/20020116/http://www.3dfx.com,">www.3dfx.com,</a> both original drivers (vs-w2k-1.04.00 and x3dfx_V5_Win2K_1.08.04) and 3dfx third party drivers (Omega, Jofsh and Boing), but none of these drivers work with Anarchy Online.<br>
+<br>
+The one and only driver that I have found working with Anarchy Online is installed from the Microsoft Windows Update page (3Dfx Interactive Inc. - Display - version 01/07/2000,5.00.2195.0005). (Select Windows Update from your Start bar, and then press Product Update).<br>
+<br>
+Since I already had installed a recent driver from <a href="https://web.archive.org/web/20020116/http://www.3dfx.com">www.3dfx.com</a> and then ran Microsoft Update it would not let me install 3Dfx Interactive Inc. - Display - version 01/07/2000,5.00.2195.0005  it told me that this driver was less appropriate than the one I already had installed. <br>
+<br>
+How to fix this problem:<br>
+From the Display Properties in Control Panel make sure you uninstall your Voodoo5500 driver. Restart your PC. It will now start up in VGA mode. Delete all 3dfx*.dll, .sys and .inf files from your directories. <br>
+Open Device Manger (open System from Control Panel then select Hardware and then Device Manager), then select your Voodoo card from Display Adapters, then properties and Driver. Press Update Driver and select Search for a suitable driver for my device, then make sure that ONLY Microsoft Windows Update is selected. After Windows has completed the search select Install one of the other driver  then press next. Then select the driver where you see the Location (just scroll to the right and you will find this colum) is from MicrosoftUpdate.<br>
+Restart your PC and it now work with Anarchy Online.<br>
+<br>
+(If you have Directx8.1 and it does not work, try to uninstall. I used a program called directx108-remover located on <a href="https://web.archive.org/web/20020116/http://www.3dfx.com">www.3dfx.com</a>  Directx8.1. And then install DX80NTeng.exe from Microsoft. <br>
+<br>
+<br>
+Isabellak (lvl 50 Soldier)<br>
+Isabella9 (lvl52 MA)</div><p class="small edited"><i>Last edited by Isabella9 on April 22nd, 2002 at 06:32</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 16th, 2002 <span class="time">09:43</span></td><td class="alt2 small right"><a href="#post278265">#1</a></td></tr>
+<tr class="post" id="post284784"><td class="alt1 author"><b class="name">Cloaks</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40654.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>ATTN: FUNCOM - Make sticky</b></div><div class="message">This is a good solution to make sticky.  It fixed my problem when everything else had failed.  There is definately an issue with the other Voodoo 5 drivers running on Win 2K.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 22nd, 2002 <span class="time">18:46</span></td><td class="alt1 small right"><a href="#post284784">#2</a></td></tr>
+<tr class="post" id="post316968"><td class="alt2 author"><b class="name">Weiskopf</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40701.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>lol, doesn&#39;t work</b></div><div class="message">do you have any other solutions? the only thing it actually did was make anarhy crash a little bit sooner than five secs instead of five mins. lol, maybe my comp is just ghetto =)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 19th, 2002 <span class="time">16:46</span></td><td class="alt2 small right"><a href="#post316968">#3</a></td></tr>
+<tr class="post" id="post395748"><td class="alt1 author"><b class="name">Powadain</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><b>vd</b></div><div class="message">the best thing would be to run glsetup to get the drivers.. ive noticed that installing the post 3dfx death drivers, x3dfx and others, games would not function properly. <br>
+<br>
+but when installing glsetup/last official beta drivers1.04.01(dx8 support+some fixes to the 1.04) from 3dfx first, then installing the 3rd party drivers, almost everything would function properly.  <br>
+<br>
+an alternate fix would be to do what i did and create a 98 partition and a 2k partition.. when something doesnt work in 2k i use 98 and it works perfectly.  Also, in 2k, its best to install dx8.0 or dx8.0a because there are some issues to 8.1<br>
+<br>
+<a href="https://web.archive.org/web/20020415/http://www.x3dfx.com">www.x3dfx.com</a> has forums that will probably be helpful to you also and I wish funcom would point their lack of much 3dfx support over there because they can help</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 15th, 2002 <span class="time">09:17</span></td><td class="alt1 small right"><a href="#post395748">#4</a></td></tr>
+<tr class="post" id="post404507"><td class="alt2 author"><b class="name">xyberviri</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt2 body"><div class="message">I use to Crash Alot with Vd5 but then i installed the omega drivers this started around 11.5 but i recently reinstalled my video card with the 3dfx std drivers, no problems</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 20th, 2002 <span class="time">15:20</span></td><td class="alt2 small right"><a href="#post404507">#5</a></td></tr>
+<tr class="post" id="post423725"><td class="alt1 author"><b class="name">Sharkking</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon9.gif" alt=""> <b>still no chance to start AO</b></div><div class="message">Tryed all things you dexcribed , but game wan´t start.<br>
+Always the same error INCOORECTPICELSIZE or somethin like that.. please help.<br>
+<br>
+Registered today but cant´s play</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 29th, 2002 <span class="time">20:23</span></td><td class="alt1 small right"><a href="#post423725">#6</a></td></tr>
+<tr class="post" id="post437951"><td class="alt2 author"><b class="name">Farmer</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40621.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Re: still no chance to start AO</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Sharkking </i><br>
+<b><br>
+Always the same error INCOORECTPICELSIZE or somethin like that.. please help.<br>
+</b>
+			
+		
+	<hr></blockquote>
+I only had this problem with window mode so I switched to fullscreen mode...  (Win98SE, V5500)<br>
+sometimes it works with window mode sometimes not... (perhaps AO don't bother if you install new drivers so it uses the old settings and refreshes these settings only after a patch?? don't really know it, but perhaps... <img src="../images/smilies/smile.gif" alt="" class="smilie">)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 7th, 2002 <span class="time">22:57</span></td><td class="alt2 small right"><a href="#post437951">#7</a></td></tr>
+<tr class="post" id="post439045"><td class="alt1 author"><b class="name">Farmer</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40621.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Re: vd</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Powadain </i><br>
+<b>the best thing would be to run glsetup to get the drivers.. ive noticed that installing the post 3dfx death drivers, x3dfx and others, games would not function properly. <br>
+</b>
+			
+		
+	<hr></blockquote>
+Where did you found a glsetup for win2000??<br>
+I didn't found it and i don't think it exists...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 8th, 2002 <span class="time">14:27</span></td><td class="alt1 small right"><a href="#post439045">#8</a></td></tr>
+<tr class="post" id="post443140"><td class="alt2 author"><b class="name">GM-Zixxax</b><br><span class="small usertitle">Customer Service</span></td><td class="alt2 body"><div class="message">&quot;I only had this problem with window mode&quot;<br>
+<br>
+It is a limitation of the hardware. If you are running in window mode, both the game and the desktop have to be in 16bit color.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 10th, 2002 <span class="time">21:36</span></td><td class="alt2 small right"><a href="#post443140">#9</a></td></tr>
+<tr class="post" id="post783106"><td class="alt1 author"><b class="name">Floh</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="message">Isa is correct.  3DFX was notorious for its 32 bit color/textures neglegance.  They figured, hey everyones going to use glide RIGHT!  Well its not 1997 anymore, and no one used glide past 1999, nice API, but limited to one souce.  3dFX is horrible in D3D.  OGL it does ok, but its performance/compatablity with D3D applications is horrendous.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 22nd, 2002 <span class="time">16:49</span></td><td class="alt1 small right"><a href="#post783106">#10</a></td></tr>
+<tr class="post" id="post839828"><td class="alt2 author"><b class="name">Sarcast</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40113.jpg" alt=""></td><td class="alt2 body"><div class="message">I tried this because since 14.6 game crashes !!!!<br>
+And there is no change i got back to 8.0a and toke the drivers from microsoft.<br>
+<br>
+The game crashes after i turn left or right ... <br>
+when iam outdoor i can play but if i get back to reclaim now i cant play at all, even the nw beta nether on testserver!<br>
+<br>
+Do something, i send 3 crash mails to fc with crash log and dxlog ...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 11th, 2002 <span class="time">13:14</span></td><td class="alt2 small right"><a href="#post839828">#11</a></td></tr>
+<tr class="post" id="post857255"><td class="alt1 author"><b class="name">Sarcast</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40113.jpg" alt=""></td><td class="alt1 body"><div class="message">I am very angry about the 14.6 patch and much more about fc not to reply on my bug report emails!<br>
+<br>
+I paid for this game and i cant use it any more because of circumstances i am not responsibil for!<br>
+<br>
+If this lasts for more than a month i will let my account running out and want my money back for the time the servers got patched to 14.6! <br>
+<br>
+Therefor i hope not to take legal measure.<br>
+<br>
+EDIT: The latest patch 14.7.1 fixed this problem. All is running smoothly again and its fine.</div><p class="small edited"><i>Last edited by Sarcast on November 23rd, 2002 at 17:35</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 15th, 2002 <span class="time">22:02</span></td><td class="alt1 small right"><a href="#post857255">#12</a></td></tr>
+<tr class="post" id="post1109531"><td class="alt2 author"><b class="name">xyberviri</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt2 body"><div class="message">Btw, Last night i noticed that my Gf cards fan started going out. i put in my VD 5, 5500 and preatty much noticed  no diffrences between my VD 5 and my GF 3 ti200.<br>
+<br>
+well anyways, i still using the Omega Special 1.02 Drivers and loged on to AO hit up the noober dungeon with my twink, only problem i did notice is while at the Bank East of the Ent Arena the textures on the character modles seems to selectily dissappear. IE on second the head maybe showing the the head and arms are gone on my player model.<br>
+<br>
+<br>
+just so you know it is working with AO as of thise writing.<br>
+<br>
+Edit, Also i feel this should be included:<br>
+I run <br>
+-1 copy of MYsql<br>
+-1 copy of Apache<br>
+-2 perl AO Chat Bots<br>
+-1 FTP server<br>
+-1 VNC client<br>
+-1 Copy of AO<br>
+<br>
+all of this is on a P3 500mhz, with 768MB of Ram, Voodoo 5 5500.<br>
+<br>
+So, all these grips about how So en so has a top of the line system are bs, either alot of people are lieing or simply got ripped off.<br>
+<br>
+I get 30FPS in almost every zone includeing trade and ent.</div><p class="small edited"><i>Last edited by Xyberviri on February 10th, 2003 at 07:52</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 10th, 2003 <span class="time">07:45</span></td><td class="alt2 small right"><a href="#post1109531">#13</a></td></tr>
+<tr class="post" id="post1172257"><td class="alt1 author"><b class="name">Weiskopf</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40701.jpg" alt=""></td><td class="alt1 body"><div class="message">yeah, I just went out and bought a Radeon 9700 pro...hopefully the problem will be solved, but I guess I'll find out tonight.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 4th, 2003 <span class="time">15:01</span></td><td class="alt1 small right"><a href="#post1172257">#14</a></td></tr>
+<tr class="post" id="post1173375"><td class="alt2 author"><b class="name">Rootworm</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40098.jpg" alt=""></td><td class="alt2 body"><div class="message">Actually,<br>
+<br>
+Voodoo 5 cards have so many problems its not even funny.  <br>
+<br>
+It also has problems with anarchy, ultima, and everq.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 4th, 2003 <span class="time">22:07</span></td><td class="alt2 small right"><a href="#post1173375">#15</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250527170120/https://forums-archive.anarchy-online.com/showthread.php?7415-Solution-to-Voodoo5500-and-Windows2000">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

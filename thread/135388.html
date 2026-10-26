@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Crowd Limiting - how it works</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics.html">Game Mechanics</a> &gt; Crowd Limiting - how it works</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="91809.html">Last Thread</a> &nbsp; <a href="140240.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Crowd Limiting - how it works"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2003"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1414027"><td class="alt2 author"><b class="name">Cz</b></td><td class="alt2 body"><div class="small posttitle"><b>Crowd Limiting - how it works</b></div><div class="message">Crowd Limiting is the system that prevents huge crowds from gathering in small areas. Such crowds result in lag (client side from loading textures and other data, and client side from data processing), and can choke/crash a server if they stay there for a long time. Combat results in even more data being handled, and thus land control battles are more prone to this than other areas/events.<br>
+<br>
+There's two numbers currently involved in the Crowd Limiting system:<br>
+- Max: The maximum number of characters allowed in the area<br>
+- Buffer: The number of characters that will be moved out of a land control area to allow for new characters to enter<br>
+<br>
+Counting of characters is done per 120x120 meters &quot;block&quot;, overlapping every 40 meters. Each 40x40 meter area is thus part of 9 such Crowd Limiting blocks.<br>
+<br>
+<b>In land control areas</b> (during battles)<br>
+Each block can hold up to <i>Max</i> number of people. Half of <i>Max</i> is reserved for the organization owning the area (the &quot;defenders&quot;), while the rest is for everybody else.<br>
+<br>
+Defenders will be able to enter for as long as the total number of characters in the area is less than <i>Max</i>, <b>and</b> the total number of defenders is less than <i>Max</i>/2.<br>
+Others will be able to enter as long as the total number of characters in the area is less than <i>Max</i>, <b>and</b> the total number of non-defenders is less than <i>Max</i>/2.<br>
+<br>
+At regular intevals, if the total number of characters is greater than <i>Max minus Buffer</i>, characters will be removed (teleported) from the area until the number is low enough. Characters teleported will always be from the non-defenders group unless the defenders somehow have more than <i>Max</i>/2 characters in the area, and be prioritized (but randomly selected) based on how much damage their organization has dealt to towers in the area. I.e. if your organization has dealt a lot of damage to towers in the area, you run a lower chance of being teleported away.<br>
+<br>
+<b>In other areas</b><br>
+Each block can hold up to <i>Max</i> characters. Anybody can enter the area as long as the total number of characters is less than <i>Max</i>. The <i>Buffer</i> has no effect in these areas.<br>
+<br>
+---<br>
+<br>
+Any questions can be sent to me by e-mail or private message, and I'll try update this post if needed. Any feedback or suggestions are appreciated, and can be sent to feedback@anarchy-online.com or posted in the Suggestions forum, respectively. <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 23rd, 2003 <span class="time">13:53</span></td><td class="alt2 small right"><a href="#post1414027">#1</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20241112190347/https://forums-archive.anarchy-online.com/showthread.php?135388-Crowd-Limiting-how-it-works">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

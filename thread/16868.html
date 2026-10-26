@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Outdoor/Indoor Server Synching with Suggestion</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-play-bugs-20.html">Game-Play bugs</a> &gt; Outdoor/Indoor Server Synching with Suggestion</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="16500.html">Last Thread</a> &nbsp; <a href="17130.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Outdoor/Indoor Server Synching with Suggestion"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game-Play bugs"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post362298"><td class="alt2 author"><b class="name">RandaZ</b><br><span class="small usertitle">Film director extraordinairre</span><br><img class="avatar" src="../images/avatars/40646.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon3.gif" alt=""> <b>Outdoor/Indoor Server Synching with Suggestion</b></div><div class="message">This is a suggestion for Funcom's live code team.  Pass this on if you will Cz or Cosmik.<br>
+<br>
+I've noticed a lot more problems in indoor missions lately.   Invisible mobs and mirror walls to name a few.  This is probably due to a more unstable network connection recently.  However, some changes to the client/server code might mitigate the problem.<br>
+<br>
+First off, let's take a look at outdoor synching as a baseline (which is still working robust enough as is).  The dead reckoning currently used is working well the majority of the time.  However, when the client and server desynch, you generally have let the client win.  That is, unless the client somehow crossed outside the 9 active 40m squares.  In that case, the server wins (has to) and pulls the client back.  That's a good design, and given the 120m width of our active region, warping is kept to a minimum.  Someone's gotta be awful lagged or the network congested pretty badly for the client to traverse even half that distance.<br>
+<br>
+Now, the problem is that with indoor missions, the active region is far less than 120m wide.  It looks like it's actually two adjoining rooms distance.  Considering that rooms can be quite small, and can be traversed quickly (especially those 4-door rooms, or L joints), it actually happens quite frequently that the client moves out of the active region.  The hall of mirrors is a classic effect.  In those cases, the only solution is to retrace your steps and hope that you get back into an active region.<br>
+<br>
+But here's whats puzzling me.  Sometimes, if we haven't moved too far out of the active, the game resynch's itself.  Unlike the outdoor situation though, the client wins.  I understand the design choice here, as warping indoors is somewhat undesirable.  However, given the fact that the client needs certain information as it switches active rooms (i.e. mob descriptions), warping the server to the client's position has been causing more problems than it solves.  We're getting invisible mobs (the client missed getting the mob descriptor).  <br>
+<br>
+What I'm suggesting now, is to just treat indoor desyncs the same way as you do outdoor.  That is, if it ever occurs, let the server win.  Warp the client back to where we SHOULD be.  That'll take care of the hall of mirrors.  And since the server has always been the one deciding what the client sees (i.e. mobs, chests, etc), there won't be any surprise disappearances.<br>
+<br>
+If you're worried about users being jarred by the warping experience, it's still better than thinking everything's okay until you reach that mirror door barrier.  Not to mention that it's impossible to target an invisible mob as it currently is.  <br>
+<br>
+I know this probably rolls back a lot of the code that you've placed in to make things theoretically smoother.  But network realities dictate otherwise.  Sometimes, simpler is better.<br>
+<br>
+<br>
+Tap</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 22nd, 2002 <span class="time">11:03</span></td><td class="alt2 small right"><a href="#post362298">#1</a></td></tr>
+<tr class="post" id="post364579"><td class="alt1 author"><b class="name">BrontoCowboy</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40281.jpg" alt=""></td><td class="alt1 body"><div class="message">This is a sweet post!<br>
+<br>
+<span style="color:red">End Mission door lag!! <img src="../images/smilies/mad.gif" alt="" class="smilie"></span></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 24th, 2002 <span class="time">11:02</span></td><td class="alt1 small right"><a href="#post364579">#2</a></td></tr>
+<tr class="post" id="post365669"><td class="alt2 author"><b class="name">Checkbit</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt2 body"><div class="message">BUMP for a well thought out post!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 25th, 2002 <span class="time">06:08</span></td><td class="alt2 small right"><a href="#post365669">#3</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529080929/https://forums-archive.anarchy-online.com/showthread.php?16868-Outdoor-Indoor-Server-Synching-with-Suggestion">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

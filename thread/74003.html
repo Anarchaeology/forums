@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - THANK YOU Jayde!</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-3.html">Game Mechanics</a> &gt; THANK YOU Jayde!</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <b>[1]</b> <a href="74003-2.html">2</a> <a href="74003-2.html">&raquo;</a> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="76740.html">Last Thread</a> &nbsp; <a href="76885.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:THANK YOU Jayde!"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post890409"><td class="alt2 author"><b class="name">Yazule</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40112.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>THANK YOU Jayde!</b></div><div class="message">ok, I just noticed your damage calc<br>
+<br>
+it has opponents AC on it....<br>
+<br>
+thanks, I been complainin for a long time that no damage calc deals with ac's.<br>
+<br>
+you da man<br>
+<br>
+/prostrate<br>
+/bow<br>
+/prostrate<br>
+<br>
+You get the Dnastyone gold star for the day! *stamps his forhead*</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 25th, 2002 <span class="time">17:00</span></td><td class="alt2 small right"><a href="#post890409">#1</a></td></tr>
+<tr class="post" id="post891781"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">lol<br>
+<br>
+Glad you find it useful...<br>
+<br>
+Also figured it would be useful to folks to have a variable AggDef bar as well. (Still need to double-check my numbers on that one... Currently using -300 at 0, +300 at 100, and neutral at 75. Was late when I did it, and couldn't check on the boards.)<br>
+<br>
+Working on dual-wield calculator as well as throwing most specials in there. (Probably gonna have to ignore AimedShot, SneakAttack, and FullAuto just due to the random nature of the multipliers. All the others are fair-game though.)<br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 25th, 2002 <span class="time">23:58</span></td><td class="alt1 small right"><a href="#post891781">#2</a></td></tr>
+<tr class="post" id="post891972"><td class="alt2 author"><b class="name">Shatai</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt2 body"><div class="message">I think Chronita was saying her tests showed something like:-<br>
+<br>
+100% agg - -0.25/-0.25<br>
+87.5% agg - 0 change (speed as listed on your weapon)<br>
+0% agg - +1.75/+1.75<br>
+<br>
+Aggro bar spanning a total of 2/2<br>
+<br>
+So, a list would be<br>
+<br>
+100% - -0.25/-0.25<br>
+75% - +0.25/+0.25<br>
+50% - +0.75/+0.75<br>
+25% - +1.25/+1.25<br>
+0% - +1.75/+1.75<br>
+<br>
+If you add those to the speed of the weapon, and then apply init, it should be right.<br>
+<br>
+Here's a link to <a href="29770.html">Chronita's Init FAQ</a>, it's where I got my numbers from.<br>
+<br>
+Apart from that, nice damage calc. <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 26th, 2002 <span class="time">01:23</span></td><td class="alt2 small right"><a href="#post891972">#3</a></td></tr>
+<tr class="post" id="post892113"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">Thanks much for the link, I had a heck of a time finding it last night. (I knew I had read it elsewhere...)<br>
+<br>
+I will look into implementing it a bit better. =)<br>
+<br>
+One thing I call into question is that these tests seem to have been done before AggDef was affecting Recharge. (Fix as of 14.6/14.7) Meaning the time calculated (-.5s at 100%) may be 100% of the Attack change, with no Recharge. This would fit the theory of +300 init at 100% AggDef.<br>
+<br>
+I'll run some tests to see what I can verify.<br>
+<br>
+-Jayde</div><p class="small edited"><i>Last edited by Jayde on November 26th, 2002 at 02:43</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 26th, 2002 <span class="time">02:40</span></td><td class="alt1 small right"><a href="#post892113">#4</a></td></tr>
+<tr class="post" id="post893419"><td class="alt2 author"><b class="name">Downsizr</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/223839.jpg" alt=""></td><td class="alt2 body"><div class="message">You can add to the Official Dnastyone Gold Star of the Day (tm) the not so common Gummiz Two Thumbs Up of Redemption (c).<br>
+<br>
+Now, what a day of consecration for you ! <img src="../images/smilies/tongue.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 26th, 2002 <span class="time">13:33</span></td><td class="alt2 small right"><a href="#post893419">#5</a></td></tr>
+<tr class="post" id="post895967"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">Added preliminary calculation for Burst, Fling, and Fast Attack special attacks. Brawl forthcoming. AS/FullAuto/Sneak may be a bit difficult due to their random nature.<br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">01:51</span></td><td class="alt1 small right"><a href="#post895967">#6</a></td></tr>
+<tr class="post" id="post896315"><td class="alt2 author"><b class="name">secondkenlon</b><br><span class="small usertitle">Back One Mo&#39; Tiiiiiiime!</span><br><img class="avatar" src="../images/avatars/40694.jpg" alt=""></td><td class="alt2 body"><div class="message">Jayde&gt;Auno.<br>
+<br>
+Wow.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">04:28</span></td><td class="alt2 small right"><a href="#post896315">#7</a></td></tr>
+<tr class="post" id="post897596"><td class="alt1 author"><b class="name">Yazule</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40112.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Kenlon </i><br>
+<b>Jayde&gt;Auno.<br>
+<br>
+Wow. </b>
+			
+		
+	<hr></blockquote>
+Jayde&gt;&gt;Auno</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">14:07</span></td><td class="alt1 small right"><a href="#post897596">#8</a></td></tr>
+<tr class="post" id="post898328"><td class="alt2 author"><b class="name">locomdenom</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40257.jpg" alt=""></td><td class="alt2 body"><div class="message">Jayde&gt;&gt;&gt;Auno<br>
+<br>
+Auno == mostly dead.<br>
+<br>
+Auno != best database<br>
+<br>
+I == too much time on my hands.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">17:49</span></td><td class="alt2 small right"><a href="#post898328">#9</a></td></tr>
+<tr class="post" id="post898478"><td class="alt1 author"><b class="name">engelstein</b><br><span class="small usertitle">Old Timer</span><br><img class="avatar" src="../images/avatars/40666.jpg" alt=""></td><td class="alt1 body"><div class="message">Auno has the best nanoprogram lists, though. And the implant designer.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">18:25</span></td><td class="alt1 small right"><a href="#post898478">#10</a></td></tr>
+<tr class="post" id="post899198"><td class="alt2 author"><b class="name">secondkenlon</b><br><span class="small usertitle">Back One Mo&#39; Tiiiiiiime!</span><br><img class="avatar" src="../images/avatars/40694.jpg" alt=""></td><td class="alt2 body"><div class="message">Jayde, I believe that's your cue. . . <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">22:23</span></td><td class="alt2 small right"><a href="#post899198">#11</a></td></tr>
+<tr class="post" id="post899278"><td class="alt1 author"><b class="name">Shatai</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt1 body"><div class="message">It's true, though.  The fact that Auno's lists the reqs when you do a nano search is nice.  The other thing I like Auno's better for is that you can specify your search terms.<br>
+<br>
+I know you can specify three requirements and an effect in Jayde's, but sometimes I want to specify how much of something I want <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+I can put an eff(martial arts)&gt;0 into Auno's search, to find the items that buff MA.  If I select Martial Arts as the effect in Jayde's DB, it'll give me debuff items/nanos as well.<br>
+<br>
+Or, if I'm looking for a weapon, I might not be able to get, say, Fling Shot above 300.  So I could put req(fling shot)&lt;300 into Auno's DB.<br>
+<br>
+Jayde's DB wins hands-down when it comes to displaying info, though.  So much more info on the items comes out when you do get the items you want.  And it's not too hard to sift through them <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+edit: I should say, that Auno's lists the reqs in the summary listing.  Jayde's lists it once you actually select the nano, of course, but sometimes it's nice not to have to select each nano to look at the reqs <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">22:53</span></td><td class="alt1 small right"><a href="#post899278">#12</a></td></tr>
+<tr class="post" id="post899339"><td class="alt2 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt2 body"><div class="message">Thanks for all the kind words folks... Just trying to do the best I can to provide a service to my fellow players. =)<br>
+<br>
+Nano reqs on the listing, as well as the ability to search for req values is on my list for the next dump. (Assuming FC doesn't release another big patch too soon.)<br>
+<br>
+Gotta change the way I index my search data to do that, so it has to be done at dump-time. Once I make this change, it should be pretty easy to do both searching for min/max req values, as well as showing the nano requirments on the simple search results page.<br>
+<br>
+Thanks for the suggestions. I'm open to adding whatever folks think would be useful to them.<br>
+<br>
+As a side-note, thanks to some input from Timber and Chronita, I've changed the AggDef portion of the damage simulator. It now has a 9-setting AggDef bar, using Chronita's .25s/.25s per 1/8th formula. (Can check out the sticky thread in the MA forum for more info on that.)<br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">23:11</span></td><td class="alt2 small right"><a href="#post899339">#13</a></td></tr>
+<tr class="post" id="post899446"><td class="alt1 author"><b class="name">Shatai</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt1 body"><div class="message">Just a couple of notes on the damage calc / init bit, Jayde.<br>
+<br>
+You've got in the greyed notes (unless you changed it in the last two minutes), that 0% adds +1.25/+1.25.  If 100% is -.25/-.25, and every 1/8 of the bar is +.25/+.25, that'd make 0% +1.75/+1.75.  Probably just a typo, but thought I should ask <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+The second thing I noticed was when I was checking out the specials.  I can't comment on how accurate they are, but I was looking at the <a href="https://web.archive.org/web/20021128/http://v020u46eff.maximumasp.com/AODB/calc.asp?MinDamage=2&amp;MaxDamage=98&amp;CritValue=200&amp;AttkSpeed=0.5&amp;RechSpeed=0.5&amp;FastAttack=True&amp;ClipSize=&amp;AMS=950&amp;CritRate=3&amp;TargetAC=0&amp;TestDuration=30&amp;AggDef=7&amp;Init=600&amp;Weapon=Master+G%2DStaff">Master G-Staff</a>, and your damage simulator gives a cycle time of 1s, 0.5 attack, 0.5 recharge.  That's the weapon speeds, and initiative in your simulator won't take it below that, but isn't weapon speed capped at 1/1?<br>
+<br>
+Looks pretty good so far <img src="../images/smilies/smile.gif" alt="" class="smilie">  One thing you might be able to do without changing the DB or anything, is put up an FAQ on special recharge.  I noticed you explained how Burst recharge is calculated on another thread.  That information would be useful to know.<br>
+<br>
+One other thing.  I'm a little confused as to this &quot;special damage&quot;.  For example, the <a href="https://web.archive.org/web/20021128/http://v020u46eff.maximumasp.com/AODB/calc.asp?MinDamage=1&amp;MaxDamage=295&amp;CritValue=295&amp;AttkSpeed=1.5&amp;RechSpeed=1.45&amp;ClipSize=120&amp;Burst=True&amp;BurstSkill=750&amp;BurstRech=1500&amp;FlingSkill=&amp;FastAtkSkill=&amp;AMS=950&amp;AggDef=7&amp;Init=600&amp;CritRate=3&amp;TargetAC=0&amp;TestDuration=30&amp;Weapon=Quality+OT+Kerans+Automatic+Grinner">ql200 Kerans</a> with a Burst skill of 750 (just as an example).  Average damage, OK, bursts, OK.  But &quot;Total special damage would be around 9000 points...&quot;.  What's this for?<br>
+<br>
+Thanks, it's looking good so far.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 27th, 2002 <span class="time">23:46</span></td><td class="alt1 small right"><a href="#post899446">#14</a></td></tr>
+<tr class="post" id="post899519"><td class="alt2 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt2 body"><div class="message">Thanks for the feedback..<br>
+<br>
+-The 1.25 was a typo and has been corrected.<br>
+<br>
+-Weapon speed is capped at 1/1 *or* the base speed of the weapon. If the base speed of the weapon is less than 1/1, it will be that fast. AggDef or negitive initiative can take it above the base, but a speed with base below 1 second can remain there with positive initiative. With 1000 init, you could theorhetically get the G-Staff back down to .58/.5 at 0% AggDef.<br>
+<br>
+-Special damage is the total of all specials. (Some weapons have Burst and Fling, for instance.) There was a glitch in this causing it to get multiplied, which is why the number wasn't making sense. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+-Lastly, I may throw together a FAQ page with useful info from various sources. I'll have to contact the folks who originally posted the info to get their permission to repost, though. =)<br>
+<br>
+/me does emergency patch to 1.4 <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 28th, 2002 <span class="time">00:17</span></td><td class="alt2 small right"><a href="#post899519">#15</a></td></tr>
+<tr class="post" id="post899542"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">Quick follow-up...<br>
+<br>
+I changed the way the output is formatted to make special attack damage a little more clear.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				In 30s with a cycle speed of 2s, (1s Attack, 1s Recharge) you would have attacked 15 times. Total damage in 30s would be around 8160 points.<br>
+<br>
+Special attack damage in 30s would be around 4500 points, bringing total damage to around 12660 points.<br>
+<br>
+Your average normal hit would be around 500 points.<br>
+Bursts in 30s would be approx. 3 @ 14s, adding around 1500 points each for 4500 points total.
+			
+		
+	<hr></blockquote>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 28th, 2002 <span class="time">00:27</span></td><td class="alt1 small right"><a href="#post899542">#16</a></td></tr>
+<tr class="post" id="post899571"><td class="alt2 author"><b class="name">Shatai</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt2 body"><div class="message">Excellent, thank you very much for that, Jayde, looks good <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 28th, 2002 <span class="time">00:37</span></td><td class="alt2 small right"><a href="#post899571">#17</a></td></tr>
+<tr class="post" id="post899963"><td class="alt1 author"><b class="name">Yazule</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40112.jpg" alt=""></td><td class="alt1 body"><div class="message">fyi bro, the inits part of Chronita's faq will be changing soon<br>
+<br>
+the new math is <br>
+<br>
+If init&gt;1200 then <br>
+init = ((init-1200)/3)+1200<br>
+else<br>
+init = init<br>
+<br>
+(1/3 effectiveness for all inits over 1200)<br>
+<br>
+<img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+I dont THINK that it applys to nano init though.<br>
+<br>
+again kudo's to a not lazy person with brains! hehe<br>
+<br>
+(not sure if I am lazy or brainless, but one has to be true <img src="../images/smilies/tongue.gif" alt="" class="smilie">)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 28th, 2002 <span class="time">03:41</span></td><td class="alt1 small right"><a href="#post899963">#18</a></td></tr>
+<tr class="post" id="post900179"><td class="alt2 author"><b class="name">AkodoReign</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt2 body"><div class="message">Good work Jayde <img src="../images/smilies/smile.gif" alt="" class="smilie"> you have done a outstanding job...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> November 28th, 2002 <span class="time">06:36</span></td><td class="alt2 small right"><a href="#post900179">#19</a></td></tr>
+<tr class="post" id="post902074"><td class="alt1 author"><b class="name">secondkenlon</b><br><span class="small usertitle">Back One Mo&#39; Tiiiiiiime!</span><br><img class="avatar" src="../images/avatars/40694.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Jayde </i><br>
+<b><br>
+-Weapon speed is capped at 1/1 *or* the base speed of the weapon. If the base speed of the weapon is less than 1/1, it will be that fast. AggDef or negitive initiative can take it above the base, but a speed with base below 1 second can remain there with positive initiative. With 1000 init, you could theorhetically get the G-Staff back down to .58/.5 at 0% AggDef.<br>
+ </b>
+			
+		
+	<hr></blockquote>
+<br>
+*blink*<br>
+<br>
+*blink*<br>
+<br>
+*blink*<br>
+<br>
+Are you sure on this?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> November 28th, 2002 <span class="time">17:53</span></td><td class="alt1 small right"><a href="#post902074">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <b>[1]</b> <a href="74003-2.html">2</a> <a href="74003-2.html">&raquo;</a> </span></td><td class="right small"><a href="https://web.archive.org/web/20250527140030/https://forums-archive.anarchy-online.com/showthread.php?74003-THANK-YOU-Jayde!">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

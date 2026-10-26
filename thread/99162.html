@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Specials Refresh Formulae (for Reference)</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Professions &gt; <a href="../forum/soldier.html">Soldier (Boot Camp)</a> &gt; Specials Refresh Formulae (for Reference)</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <b>[1]</b> <a href="99162-2.html">2</a> <a href="99162-3.html">3</a> <a href="99162-2.html">&raquo;</a> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="31016.html">Last Thread</a> &nbsp; <a href="175515.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Specials Refresh Formulae (for Reference)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Soldier (Boot Camp)"></span><span data-pagefind-filter="year:2003"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1112251"><td class="alt2 author"><b class="name">SirAronar</b><br><span class="small usertitle">Wandering Paladin</span></td><td class="alt2 body"><div class="small posttitle"><b>Specials Refresh Formulae (for Reference)</b></div><div class="message">All based on current (Feb 2003) testings<br>
+<br>
+Aimed Shot = (Recharge x 40) - (3 x AS skill/100)<br>
+Brawl = 15s<br>
+Burst = (Recharge x 20) + Burst Delay* - Burst skill/25)<br>
+Dimach = 1800s<br>
+Fast Attack = (Attack x 16) - Fast skill/100<br>
+Fling Shot = (Attack x 16) - Fling skill/100<br>
+Full Auto = (Recharge x 40) + Full Auto Delay** - FA skill/25<br>
+Sneak Attack/Backstab = 40 - Sneak Attack skill/150 (backstab is ~2x faster)<br>
+<br>
+* Burst Delay = BurstRecharge/100. BurstRecharge can be found with Anarchy Mainframe<br>
+** Full Auto Delay = FullAutoRechage/100. FullAutoRecharge can also be found with Anarchy Mainframe<br>
+<br>
+<br>
+Determining Full Auto potential and damage:<br>
+<br>
+Full Auto fires a number of bullets up to an amount equal to 6 +1 for every 100 Full Auto skill you have. No cap is known, and it seems to ignore weapon clip size.<br>
+<br>
+Damage is equal to one normal shot per bullet with normal crit chance, less AC per shot as well. Hence weapons with high minimum damage are usually the best bets. Weapons with low minimum damage and damage range will tend to suck.<br>
+<br>
+Each bullet has its own to hit roll much like a normal shot. Once one bullet misses, all successive bullets will automatically miss.<br>
+<br>
+<br>
+Determining Aimed Shot potential and damage<br>
+<br>
+Aimed Shot will do max damage modified by a multiplier. It ignores AC.<br>
+<br>
+Starting with Aimed Shot skill of 95 (not 100% verified), you should be able to crit with Aimed Shot. From there, every 95 points of Aimed Shot will increase your maximum multiplier by one (so 665 AS will have a max modifier of 7). No cap is known.<br>
+<br>
+Multipliers factor in after all other damage mods. Defenses check after the final damage is determined (only layers, and reflects in the case of Aimed Shot - damage debuffs count as damage mods).<br>
+<br>
+The multiplier is charted on a curve based on your Aimed Shot skill. The curve begins heavily weighted to the 1x multiplier at lower values. Around the 6x multiplier, 2x becomes more prevalent. Target DMS seems to have no affect on the multiplier at all.<br>
+<br>
+Your Aimed Shot damage range will be MaxWeaponDamage to MaxCritDamage*TopMultiplier. Ex. if your weapon's normal damage range (after AMS) is 200-900 (1500) and you have up to a 6x multiplier, your AS will range from 900 to 9000 damage. Non crits would cap at 5400, and any crit AS will not be less than 1500. Remeber that damage buffs are multiplied.<br>
+<br>
+Note on Sneak Attack and Backstab<br>
+<br>
+Sneak Attack and Backstab both use the same multiplier mechanic as Aimed Shot. Sneak Attack ignores AC like Aimed Shot, but on a non-crit it rolls damage normally. Backstab is like a Sneak Attack except it is fully affected by AC.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 11th, 2003 <span class="time">02:54</span></td><td class="alt2 small right"><a href="#post1112251">#1</a></td></tr>
+<tr class="post" id="post1112275"><td class="alt1 author"><b class="name">SirAronar</b><br><span class="small usertitle">Wandering Paladin</span></td><td class="alt1 body"><div class="message">Here's some refresh times on other items.<br>
+<br>
+Bow Special Attack (all lock Bow Special Attack)<br>
+<br>
+Apple Seed = 30s<br>
+Frozen Cherry Blossom = 360s<br>
+Maple Blaze = 720s<br>
+Needle of Pine = 120s<br>
+Petering Gadfly = 120s<br>
+Poison Bamboo = 270s<br>
+<br>
+Miscellaneous<br>
+<br>
+Cluster Bullets = 20s (locks SMG skill - fixer-only)<br>
+Wen-wen = 15s (locks Ranged Energy Weapons skill)<br>
+HSR Hedgehog Grenade = 10s (locks Grenade skill)<br>
+May Fly Grenade = 20s (locks Grenade skill)<br>
+Aluminum Throwing Dagger = 4s (locks Sharp Objects skill - not in game)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> February 11th, 2003 <span class="time">03:07</span></td><td class="alt1 small right"><a href="#post1112275">#2</a></td></tr>
+<tr class="post" id="post1121235"><td class="alt2 author"><b class="name">Sheldon</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt2 body"><div class="message">Nice compilation SirAronar... bump.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> February 13th, 2003 <span class="time">10:02</span></td><td class="alt2 small right"><a href="#post1121235">#3</a></td></tr>
+<tr class="post" id="post1200177"><td class="alt1 author"><b class="name">ocra12</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40680.jpg" alt=""></td><td class="alt1 body"><div class="message">Bump! Root this?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 14th, 2003 <span class="time">14:41</span></td><td class="alt1 small right"><a href="#post1200177">#4</a></td></tr>
+<tr class="post" id="post1200410"><td class="alt2 author"><b class="name">Alphafemale</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40656.jpg" alt=""></td><td class="alt2 body"><div class="message">speaking of specials, mainly burst, i have not seen one single datebase with correct info on Boosted Hellfurys burst recharge. most people (i did too at first) took it for granted that the recharge is 8-10 seconds. its mroe like 12-15.<br>
+I use Boosted Fury with 740ish(i think) Burst skill<br>
+and used a stop-watch to time it and RL time for burst recharge was around 14 seconds... yea big suprise ha? dont belive it, time it yourself. one TL6 soldier with 800ish Burst and Aug Fury times 12 sec. so no one can get 8 sec like most people belive</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 14th, 2003 <span class="time">15:45</span></td><td class="alt2 small right"><a href="#post1200410">#5</a></td></tr>
+<tr class="post" id="post1200468"><td class="alt1 author"><b class="name">Poweredge|vault</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40654.jpg" alt=""></td><td class="alt1 body"><div class="message">Visual proof is one thing Alphafemale... give us the mathematical proof and we'll believe it. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+There is another factor that may apply. Speaking to Auno a week or so ago about burst, and he claimed that burst is actually limited to a minum of 10 seconds.<br>
+<br>
+Other than that Aronar... very nice. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+I might make a page for people to fill in that will spit out results for them.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 14th, 2003 <span class="time">16:02</span></td><td class="alt1 small right"><a href="#post1200468">#6</a></td></tr>
+<tr class="post" id="post1200675"><td class="alt2 author"><b class="name">Sjoko</b><br><span class="small usertitle">Ultra Leet</span><br><img class="avatar" src="../images/avatars/40105.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Okkra </i><br>
+<b>Bump! Root this? </b>
+			
+		
+	<hr></blockquote>
+Nice information to have stuck on our wall <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 14th, 2003 <span class="time">17:11</span></td><td class="alt2 small right"><a href="#post1200675">#7</a></td></tr>
+<tr class="post" id="post1200748"><td class="alt1 author"><b class="name">Poweredge|vault</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40654.jpg" alt=""></td><td class="alt1 body"><div class="message"><a href="https://web.archive.org/web/20030314/http://www.aeonflux.co.uk/soldiercalc/index.php">http://www.aeonflux.co.uk/soldiercalc/index.php</a><br>
+<br>
+I've adjusted the Fuall Auto and Burst so that they take into account the burst/fa recharge being divided by 100, but the Fling calc above is incorrect. According to that calc above, the Nophex is kinda slow. <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+Edit: Readjusted the fling to:<br>
+<br>
+((( Attack * 15) - FlingSkill ) / 100) and still seems to come back with suspect values.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 14th, 2003 <span class="time">17:34</span></td><td class="alt1 small right"><a href="#post1200748">#8</a></td></tr>
+<tr class="post" id="post1201370"><td class="alt2 author"><b class="name">Nausferatu</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40269.jpg" alt=""></td><td class="alt2 body"><div class="message">Lol, i think &quot;you hit with 0 bullets&quot; means the sound of the gun did hearing dmg :P. but no, ive been using a mother nitrogena recently and it has a fairly fast FA recharge, 1min20sec, compared to the hellspinners 3min20sec. i always make sure i have a full clip before i fire off a FA. well i was at supply master Eel earlier today and heres how it went pretty much. <br>
+<br>
+400,400,400,3759,400,400.......and so on, this mob has pretty high evades too. only once or twice was i able to get off a decently high FA. that gun has an INSANE range btw almost 1/3 farther range than a x-3 with a scope in... Sucks in pvp tho...<br>
+<br>
+but as asked, no i still have the boosted hellspinner, OE is a barstad and doesnt have a 100% droprate nomore. for pvp tho i use a supernova with the augmented hellfury. its a decent combo i think.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 14th, 2003 <span class="time">21:04</span></td><td class="alt2 small right"><a href="#post1201370">#9</a></td></tr>
+<tr class="post" id="post1201991"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">Burst is capped at 8s... And the Hellfury can get that low. Chronita has tested it quite a bit and confirmed this with her Solider on test.<br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 15th, 2003 <span class="time">01:08</span></td><td class="alt1 small right"><a href="#post1201991">#10</a></td></tr>
+<tr class="post" id="post1202045"><td class="alt2 author"><b class="name">Poweredge|vault</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40654.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Jayde </i><br>
+<b>Burst is capped at 8s... And the Hellfury can get that low. Chronita has tested it quite a bit and confirmed this with her Solider on test.<br>
+<br>
+-Jayde </b>
+			
+		
+	<hr></blockquote>
+Thanks for popping in Jayde. Nice work with the DB btw. <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+Want to ask if you can spot any obvious miscalculations with the link above, and the calcs at the top, as I'm sure that something isn't quite right. I think they're nearly there, but getting some mismatches in values from the calcs, versus actual usage.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 15th, 2003 <span class="time">01:39</span></td><td class="alt2 small right"><a href="#post1202045">#11</a></td></tr>
+<tr class="post" id="post1202204"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">Hmm... Let's see... <br>
+<br>
+BurstRecharge (and FullAutoRecharge) in the DB need to be divided by 100 from their base value. So, the 900 value on the Hellfury is representitive of 9s. (I'll look into adjusting this manually on my next DB dump to prevent any confusion.)<br>
+<br>
+I put in 500 Burst skill, and am getting:<br>
+Burst Recycle Time: 9.1 seconds - (((( 1.5 × 20 ) + 900 ) - ( 500 / 25 )) / 100 ) <br>
+<br>
+Now, assuming the formula is:<br>
+Recharge Delay * 20 + [Burst Delay] / 100 - Burst Skill / 25<br>
+<br>
+Should end up as:<br>
+1.5 * 20 + 900 / 100 - 500 / 25 = 19s<br>
+<br>
+To clarify the order of ops:<br>
+(1.5 * 20) + (900 / 100) - (500 / 25)<br>
+<br>
+Just appears as if you're putting the / 100 in the wrong spot. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+That should be more reflective of the in-game speed, I believe.  The Hellfury should hit the 8s cap at around 775 Burst skill if all goes well.<br>
+<br>
+I'm not sure about the Fling. In my experience, the:<br>
+(Attack Delay * 15) - (Fling Shot Skill / 100)<br>
+<br>
+Formula has held true... I've tested with various pistols, and can't find much of an obvious discrepency there. I'll look into it some more tonight to see if I can find out anything else.<br>
+<br>
+-Jayde</div><p class="small edited"><i>Last edited by Jayde on March 15th, 2003 at 03:19</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 15th, 2003 <span class="time">03:11</span></td><td class="alt1 small right"><a href="#post1202204">#12</a></td></tr>
+<tr class="post" id="post1202210"><td class="alt2 author"><b class="name">SirAronar</b><br><span class="small usertitle">Wandering Paladin</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Jayde </i><br>
+<b>Hmm... Let's see... <br>
+<br>
+Aronar did forget to specify one important fact in the calculations mentioned above--one that has caused you to make a slight error in your formula to adjust it.<br>
+<br>
+BurstRecharge (and FullAutoRecharge) in the DB need to be divided by 100 from their base value. So, the 900 value on the Hellfury is representitive of 9s. (I'll look into adjusting this manually on my next DB dump to prevent any confusion.)<br>
+<br>
+I put in 500 Burst skill, and am getting:<br>
+Burst Recycle Time: 9.1 seconds - (((( 1.5 × 20 ) + 900 ) - ( 500 / 25 )) / 100 ) <br>
+<br>
+Now, assuming the formula is:<br>
+Recharge Delay * 20 + [Burst Delay] / 100 - Burst Skill / 25<br>
+<br>
+Should end up as:<br>
+1.5 * 20 + 900 / 100 - 500 / 25 = 19s<br>
+<br>
+That should be more reflective of the in-game speed, I believe.  The Hellfury should hit the 8s cap at around 775 Burst skill if all goes well.<br>
+<br>
+To clarify the order of ops:<br>
+(1.5 * 20) + (900 / 100) - (500 / 25)<br>
+<br>
+-Jayde </b>
+			
+		
+	<hr></blockquote>
+<br>
+Did you read the frelling asterisks that even plug your site? :P</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 15th, 2003 <span class="time">03:15</span></td><td class="alt2 small right"><a href="#post1202210">#13</a></td></tr>
+<tr class="post" id="post1202217"><td class="alt1 author"><b class="name">Jayde</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by SirAronar </i><br>
+<b><br>
+Did you read the frelling asterisks that even plug your site? :P </b>
+			
+		
+	<hr></blockquote>
+Bah, guess not. Well, that's what you get for logging off of AIM the second I said hello today. <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+Edited my original post. <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+-Jayde</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 15th, 2003 <span class="time">03:19</span></td><td class="alt1 small right"><a href="#post1202217">#14</a></td></tr>
+<tr class="post" id="post1202270"><td class="alt2 author"><b class="name">Poweredge|vault</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40654.jpg" alt=""></td><td class="alt2 body"><div class="message">*lol* - thanks for this Jayde.<br>
+<br>
+I'll have a play tomorrow, and get a few of the IRC gang to check out the theoretical and practical results to see if they are sound.<br>
+<br>
+<img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 15th, 2003 <span class="time">03:50</span></td><td class="alt2 small right"><a href="#post1202270">#15</a></td></tr>
+<tr class="post" id="post1202636"><td class="alt1 author"><b class="name">Hannibal</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Hmm.  I have a burst skill of 789.  According to calc's I should only need a 775 to go to 8 secs on boosted hellfury.  However, I've timed it like 8 times or so, and everytime come back with a burst recycle of 11 secs.  I've talked to some other people who claim to be getting 8 secs, even though they have a lower burst skill than me.  <br>
+<br>
+So what I'm wondering is are the peeps who are getting 8 secs using the boosted or the augmented version?  If everybody who is getting 8 secs is using aug and everybody who is getting 10-12 secs is using boosted it would suggest a hard cap built into the weapon.  So if peeps could test out their time and post their version of the hellfury and their burst skill, we might be able to figure this out.  <br>
+<br>
+Me:<br>
+<br>
+Burst 789, recycle time 11 secs, boosted hellfury.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 15th, 2003 <span class="time">09:36</span></td><td class="alt1 small right"><a href="#post1202636">#16</a></td></tr>
+<tr class="post" id="post1204051"><td class="alt2 author"><b class="name">Chronita</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40207.jpg" alt=""></td><td class="alt2 body"><div class="message">boosted hellfury = 9 burst delay stat<br>
+<br>
+augmented hellfury = 5 burst delay stat<br>
+<br>
+So you need 100 more burst skill to get the boosted version down to 8 seconds.<br>
+<br>
+I only tested this with the augmented version and got the cap at around 8 seconds (was upset b/c I was hoping to get it lower <img src="../images/smilies/tongue.gif" alt="" class="smilie">). Not sure what the problem with the boosted might be - unfortunately the soldier I had on test was there pre-wipe and went buhbye <img src="../images/smilies/frown.gif" alt="" class="smilie"><br>
+<br>
+*edit* - if ppl could try this out with the boosted it would be great <img src="../images/smilies/smile.gif" alt="" class="smilie"> I am thinking that perhaps that there might be a cap on how much the burst skill can lower the recycle time? that might explain the problems if boosted in fact can not reach 8s - say maybe a cap at 700 skill?</div><p class="small edited"><i>Last edited by Chronita on March 16th, 2003 at 04:02</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 16th, 2003 <span class="time">03:54</span></td><td class="alt2 small right"><a href="#post1204051">#17</a></td></tr>
+<tr class="post" id="post1205580"><td class="alt1 author"><b class="name">Tza</b><br><span class="small usertitle">Bacon Reveries</span><br><img class="avatar" src="../images/avatars/40652.jpg" alt=""></td><td class="alt1 body"><div class="message">Lets see if we can't &quot;doc&quot; you up tomorrow at the arena Chron and have a look at that burst recycle<img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 17th, 2003 <span class="time">00:03</span></td><td class="alt1 small right"><a href="#post1205580">#18</a></td></tr>
+<tr class="post" id="post1205605"><td class="alt2 author"><b class="name">muppeteater</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40664.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Burst Recharge</b></div><div class="message">Hello,<br>
+<br>
+I'm new to posting to these things and i don't want to tread on anyones feet but i have been looking at these figures and i haven't found the Burst Formula to be accurate.<br>
+<br>
+In fact i've found that if i make a simple change to it, then it becomes more accurate and matches the figures i get when i use a Stopwatch within the game.<br>
+<br>
+Currently it says:<br>
+<br>
+Burst Skill/25<br>
+<br>
+I have used<br>
+<br>
+Burst Skill/30<br>
+<br>
+Sorry if i'm doing it wrong or anything, but i'm putting these formula's on my website and wanted to be as accurate as possible.<br>
+<br>
+Anyway, thanks for putting up with this!<br>
+<br>
+Hugs <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+<a href="https://web.archive.org/web/20030317/http://www.thechaps.org/frekkle">www.thechaps.org/frekkle</a></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 17th, 2003 <span class="time">00:20</span></td><td class="alt2 small right"><a href="#post1205605">#19</a></td></tr>
+<tr class="post" id="post1205624"><td class="alt1 author"><b class="name">Sjoko</b><br><span class="small usertitle">Ultra Leet</span><br><img class="avatar" src="../images/avatars/40105.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Re: Burst Recharge</b></div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Frekkle </i><br>
+<b>Hello,<br>
+<br>
+I'm new to posting to these things and i don't want to tread on anyones feet but i have been looking at these figures and i haven't found the Burst Formula to be accurate.<br>
+<br>
+In fact i've found that if i make a simple change to it, then it becomes more accurate and matches the figures i get when i use a Stopwatch within the game.<br>
+<br>
+Currently it says:<br>
+<br>
+Burst Skill/25<br>
+<br>
+I have used<br>
+<br>
+Burst Skill/30<br>
+<br>
+Sorry if i'm doing it wrong or anything, but i'm putting these formula's on my website and wanted to be as accurate as possible.<br>
+<br>
+Anyway, thanks for putting up with this!<br>
+<br>
+Hugs <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+<a href="https://web.archive.org/web/20030317/http://www.thechaps.org/frekkle">www.thechaps.org/frekkle</a> </b>
+			
+		
+	<hr></blockquote>
+That was your virgin post, so welcome aboard <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 17th, 2003 <span class="time">00:29</span></td><td class="alt1 small right"><a href="#post1205624">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <b>[1]</b> <a href="99162-2.html">2</a> <a href="99162-3.html">3</a> <a href="99162-2.html">&raquo;</a> </span></td><td class="right small"><a href="https://web.archive.org/web/20250530052030/https://forums-archive.anarchy-online.com/showthread.php?99162-Specials-Refresh-Formulae-(for-Reference)">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

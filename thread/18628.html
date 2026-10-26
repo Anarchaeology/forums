@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Possible EXPLOIT</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-play-bugs-19.html">Game-Play bugs</a> &gt; Possible EXPLOIT</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="18377.html">Last Thread</a> &nbsp; <a href="17638.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Possible EXPLOIT"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game-Play bugs"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post379696"><td class="alt2 author"><b class="name">Sael</b><br><span class="small usertitle">Leet</span></td><td class="alt2 body"><div class="small posttitle"><b>Possible EXPLOIT</b></div><div class="message">Yes I thought that would catch your eyes.<br>
+<br>
+I did report this bug about 6 months ago before I quit the first time.<br>
+<br>
+I have encountered a bug that allows the wrong person to control ones pet. Unfortunately I have not been able to isolate exactly what causes it but the symptoms simply are that the commands you send to your pet, somehow starts controlling someone elses pet, or viceversa.<br>
+<br>
+It seems both people involved need to have a pet going in order for the bug to appear.<br>
+This has happened to me numerous times so I am certain that the bug exist and is not simply a figment of my imagination.<br>
+<br>
+Some examples of situations where it occured:<br>
+<br>
+Me (engineer) and a friend (also engineer) was hunting out in the wild. We were grouped.<br>
+We both renamed our pets to silly names to easilly tell them apart. We stood there chatting for a while and I´m getting kinda bored so I give my pet the /hunt command.<br>
+My pet does absolutely nothing.. just stands there, my friends pet on the other hand goes hunting, and he cant control it anymore. And this was easilly verifyable since we were sitting in the same room, and we know each other irl. From that point on I had a pet not obeying me, however still guarding me with the /guard command on, and an extra pet under my control, his pet.<br>
+<br>
+another example..<br>
+<br>
+I am sitting down using some treatment kits and nanorechargers. An mp spurts by with some monsters chasing him and suddenly my pets goes right after them. My pet kills the monsters and the mp comes over thanking me cause I saved his life.. the problem is, I never even had the time to react, the pet went by itself and I never gave it the order. And even better, the pet kept following him from that point on, and obeying his orders.<br>
+<br>
+This bug keep popping up every now and then and from a programmers point of view I think its a pointerbug. Somehow a pointer gets misaligned or mangled so that it sometimes get messed up who the owner is. Could be some memcopy or stringcopy operation on something that is exactly the same size of some kind of limit in the game and thereby owerwriting or not writing enough.<br>
+<br>
+Ex:<br>
+<br>
+if (var &gt;= 0) <br>
+<br>
+is often mistakenly written as <br>
+<br>
+if (var &gt; 0)<br>
+<br>
+thereby leaving a &quot;logic gap&quot; on exactly 0 where it isn´t clearly defined what is going to happend.<br>
+<br>
+....<br>
+<br>
+<br>
+Got a suggestion about those meory leaks too..<br>
+I know there are some, its eating away memory like crazy when I´m not even doing something.<br>
+<br>
+try using __LINE__ and __FILE__ directive to the precompiler and wrap the malloc and the new command, then put every call to malloc in a table using the __FILE__ and __LINE__ to identify them. Wrap free and delete in a similar manner and let them identify the pointer in the database and delete it there too.<br>
+When the program,server or game ends, have it write whatever is left in the table in a textfile. That way you get a textfile with every single little malloc that never gets freed and you even get the file and linenumber they are on. This works GREAT on finding most types of memory leaks. (I assume FunCom use Visual C++, not sure about other compilers but I think they ought to have something similar to __FILE__ and __LINE__ if not the same syntax.)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 5th, 2002 <span class="time">08:39</span></td><td class="alt2 small right"><a href="#post379696">#1</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529081059/https://forums-archive.anarchy-online.com/showthread.php?18628-Possible-EXPLOIT">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

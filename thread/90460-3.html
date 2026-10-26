@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - NODROP loot, and how to fix the damn ninja looting. FUNCOM READ</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/next-patch.html">Next patch</a> &gt; NODROP loot, and how to fix the damn ninja looting. FUNCOM READ</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <a href="90460-2.html">&laquo;</a> <a href="90460.html">1</a> <a href="90460-2.html">2</a> <b>[3]</b> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="91797.html">Last Thread</a> &nbsp; <a href="90911.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:NODROP loot, and how to fix the damn ninja looting. FUNCOM READ (page 3)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Next patch"></span><span data-pagefind-filter="year:2003"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1055697"><td class="alt2 author"><b class="name">SilentMobius</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40165.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon4.gif" alt=""> </div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Jaesic </i><br>
+<b><br>
+character data would have to be significantly larger (this becomes a problem in both loaded character and file storage... or load time if the information is kept in storage until you try to loot this type object) if you need to keep track of every item with a flag like this.  even larger if it needs a counter for things like the sleeves. i agree something needs done... but this is why this option would be problematic. </b>
+			
+		
+	<hr></blockquote>
+Actually no it wouldn't be any bigger at all.<br>
+Unique/special is a flag on a given item, its a 4 byte ID in the item DB only. All your bank/inv records is an object type (and a serial number for things that are not unique/special).<br>
+<br>
+Implimenting a &quot;Dual Special&quot; flag that makes the same check as unique/special but only objects if there are more than two would be easy and require no more dynamic storage and virtually no itemDB storage.<br>
+<br>
+Personally I _much_ prefer the unique/special mechanism over the nodrop kludge.<br>
+<br>
+But trying to keep on topic, ninjalooting:<br>
+1. Corpse should not decay while loot window is open (It's happend to me before and is _damn_ annoying)<br>
+2. Loot rights should be transferable <br>
+      /loot transfergroup (Gives loot rights and the current window to the group whos member you have just selected)<br>
+     /loot add (adds the currently selected person those with looting rights and transfers the window to them)<br>
+3. (Contraversial) Loot rights should only be transferable to someone/somepeople that have actually damaged the mob in question (nuking alt farming unless you run your alts on a different account)<br>
+4. GM's now have 24's hours of &quot;how I got this item&quot; log, make ninjalooting a bonafide exploit and that woulds be that.<br>
+<br>
+Timed boxes are just another &quot;mobile corpse&quot; and cause more problems than they solve (and are annoying to impliment in the DB) <br>
+All IMHO of course.</div><p class="small edited"><i>Last edited by SM on January 21st, 2003 at 08:23</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 21st, 2003 <span class="time">08:19</span></td><td class="alt2 small right"><a href="#post1055697">#41</a></td></tr>
+<tr class="post" id="post1055728"><td class="alt1 author"><b class="name">Peisinoe</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/solitusfemale.gif" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Jaesic </i><br>
+<b><br>
+<br>
+Then maybe you should reread the thread and take a look at the other options presented. After all, the comment you started your post with was &quot;It would seem half the replies on this thread are selective readers&quot;  ... next time you begin with a flame, you might want to make sure you don't walk yourself into being a hypocrite about it.<br>
+<br>
+As to Eaze's idea already existing... the mechanics for spawning a container may already be in game, but time stamping, and removing it from the bank, inventory, or wherever when that decays (or the next time they log on if it decays while they're offline) is not. This might not be difficult code... but its no more   difficult that the other &quot;better and more streamlined ways&quot; that were also proposed (either in this thread or others dealing with this topic).<br>
+<br>
+And... as I have said before... Eaze's idea doesn't prevent ninja looting anyway... all it does is allow the designated looter to grab it for safekeeping until it is passed along. It does not prevent someone from ninja'ing it before that happens. So why mess around with work arounds at all? </b>
+			
+		
+	<hr></blockquote>
+That was her point. The other options don't exist. Blah blah blah. And the one proposed by Eaze does. Whether you wish to believe it or not. *shrug*<br>
+<br>
+And you must have a very warped sense of ninja looting. You kill mob, you loot item. It can't be ninjaed. Unless you don't loot item. Sounds to me like you use the term ninjalooting whenever you don't get an item you want. They aren't the same thing.<br>
+<br>
+But if you have figured out how to loot before loot rights time out when you yourself don't have loot rights, then more power to you.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 21st, 2003 <span class="time">08:31</span></td><td class="alt1 small right"><a href="#post1055728">#42</a></td></tr>
+<tr class="post" id="post1055849"><td class="alt2 author"><b class="name">Jaesic</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40191.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Zylina </i><br>
+<b><br>
+<br>
+That was her point. The other options don't exist. Blah blah blah. And the one proposed by Eaze does. Whether you wish to believe it or not. *shrug*<br>
+<br>
+And you must have a very warped sense of ninja looting. You kill mob, you loot item. It can't be ninjaed. Unless you don't loot item. Sounds to me like you use the term ninjalooting whenever you don't get an item you want. They aren't the same thing.<br>
+<br>
+But if you have figured out how to loot before loot rights time out when you yourself don't have loot rights, then more power to you. </b>
+			
+		
+	<hr></blockquote>
+not a question of believing it or not. none of the options that have been proposed in this thread would be difficult to implement. i just don't believe Eaze's solution is really a solution to the problem but a means of bypassing the reasons nodrop exists in the first place. i don't know if i agree with the concept of nodrop... but obviously someone at FC does. Of course... there's really no point in debating the issue here anyway... the forum nerf shows about how much our discussion is worth.<br>
+<br>
+As to my 'sense' of ninja looting... I consider any attempt to take the loot from the person designated as the looter to be ninja looting. whether that attempt succeeds or fails. I'm also one of those 'sick' people who does the honorable thing... stands back and doesn't loot anything until its my turn... and before you bring it up, no I am not raising my points because I feel that someone stole something rightfully mine. i've had the good luck to have been with fairly rational and mostly unselfish people when i've been a part of larger raids. However, I have dealt with this issue in the past from a coder/designer standpoint and thought I'd throw in my two cents worth. Of course, we all know what you can get for two cents...</div><p class="small edited"><i>Last edited by Jaesic on January 21st, 2003 at 09:42</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 21st, 2003 <span class="time">09:19</span></td><td class="alt2 small right"><a href="#post1055849">#43</a></td></tr>
+<tr class="post" id="post1055892"><td class="alt1 author"><b class="name">Jaesic</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40191.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by SM </i><br>
+<b><br>
+<br>
+Actually no it wouldn't be any bigger at all.<br>
+Unique/special is a flag on a given item, its a 4 byte ID in the item DB only. All your bank/inv records is an object type (and a serial number for things that are not unique/special).<br>
+<br>
+Implimenting a &quot;Dual Special&quot; flag that makes the same check as unique/special but only objects if there are more than two would be easy and require no more dynamic storage and virtually no itemDB storage.<br>
+</b>
+			
+		
+	<hr></blockquote>
+So you're thinking of traversing the list of all possessed objects any time you are trying to grab another new object that has the flag? Much more computation usage than what I was thinking. Its possible to have a very large number of objects between containers and bank (containers in bank, etc.) ... and that list traversal would have to occur every time you clicked on the object to try to loot it ... until you noticed the &quot;you already have this object&quot; message. the only thing keeping this from getting really out of hand would be that the number of objects of this type getting looted at any time has to be pretty low.<br>
+<br>
+I was thinking more along the lines of toggling a bit in a vector in your character data (indexed by those ID's you referred to) when an object with the flag is picked up (or, in the case of a counter, a vector of small integers instead of a bit). Then its a quick and easy boolean check to see if you already have that object. The memory usage comes from having that vector loaded with the character. Or, alternately, accessing the vector from file storage.<br>
+<br>
+editted to add: admittedly, i don't know how the character files or database is set up here... so it may be much quicker than a complete traversal of the list.</div><p class="small edited"><i>Last edited by Jaesic on January 21st, 2003 at 09:39</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 21st, 2003 <span class="time">09:34</span></td><td class="alt1 small right"><a href="#post1055892">#44</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <a href="90460-2.html">&laquo;</a> <a href="90460.html">1</a> <a href="90460-2.html">2</a> <b>[3]</b> </span></td><td class="right small"><a href="https://web.archive.org/web/20250527111944/https://forums-archive.anarchy-online.com/showthread.php?90460-NODROP-loot-and-how-to-fix-the-damn-ninja-looting-FUNCOM-READ">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

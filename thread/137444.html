@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - The Jynne Guide to Auto-Attack</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics.html">Game Mechanics</a> &gt; The Jynne Guide to Auto-Attack</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (4): <b>[1]</b> <a href="137444-2.html">2</a> <a href="137444-3.html">3</a> <a href="137444-2.html">&raquo;</a> ... <a href="137444-4.html">Last &raquo;</a></span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="215358.html">Last Thread</a> &nbsp; </td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:The Jynne Guide to Auto-Attack"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2003"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1430473"><td class="alt2 author"><b class="name">Jynne</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40658.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>The Jynne Guide to Auto-Attack</b></div><div class="message"><b>I.  Introduction.</b><br>
+There are a number of systems, statistics, and concepts on which combat in AO rests.  These are the major gears of the combat engine that apply to anyone who is fighting with auto-attack.<br>
+ <br>
+This guide will cover the following mechanics:  Attack rating, defense rating/evades, initiative &amp; the aggressive/defensive slider, critical hits, and damage rolls vs armor class.  <br>
+<br>
+The goal of this guide is to assemble this information in a single place for easy reference and thereby give a comprehensive look at what the combat engine does to resolve the auto-attack cycle for each attack.  The bulk of the information contained herein is not new; I do not take credit for researching any of it.  Consider this a compilation of many posts made by many posters over time, as well as whatever official Funcom word was to be had on the matter.<br>
+ <br>
+<b>II.  Attack Rating.</b><br>
+Your Attack Rating is a measure of how good you are at inflicting damage on something.  Attack Rating has three effects in combat:  first, it determines how often you hit your target via a comparison with the target's Defense Rating; second, it factors into the damage you inflict on a hit as a multiplier; third, it effects your chances of landing a critical hit in comparison to the target's Defense Rating.<br>
+ <br>
+Your attack rating can be seen in your Status window.  It is calculated by the attack skills your weapon uses plus a bonus called AddAllOff.  To see your attack rating with a given weapon, look at the attack skill in its description.  If the weapon is 100% pistol, for example, ((1 * your pistol skill) + AddAllOff) is your attack rating.  If the weapon is 67% assault rifle 33% ranged energy, your attack rating is (((0.67 * assault rifle skill) + (0.33 * ranged energy skill)) + AddAllOff).  Your AddAllOff bonus can be 0, or much higher.  There are buffs, items (including your token board), and implants that have AddAllOff bonuses.  There are also AddAllOff debuffs, notably blinds, that are quite nasty.<br>
+ <br>
+When you attack a target, your Attack Rating is compared to the target's Defense Rating.  If your Attack Rating is about equal to or higher than the target's Defense Rating, your chances of hitting it are very good; if your Attack Rating is lower than the target's Defense Rating, your chances of hitting it are very poor.  What Defense Rating is and how it's determined is covered in the next section.  <br>
+ <br>
+Furthermore, your chance of landing a critical hit is increased or decreased proportionally to the difference between your AR and the target's DR.  In other words:  AR higher than DR, you crit more often, DR higher than AR, you crit less often.  This is why high level characters will crit almost every attack against low level mobs:  the high level's Attack Rating is far superior to the low level's Defense Rating.<br>
+ <br>
+Finally, your Attack Rating is applied in a multiplier to your damage after it's rolled on a hit.  This multiplier is (1 + (Attack Rating / 400)) and is applied after the random damage is rolled for your weapon.<br>
+<br>
+<b>Update for Shadowlands:</b>  As part of the Shadowlands expansion, there have been two major changes to attack rating.<br>
+<br>
+First, every weapon now has an attribute labeled &quot;Max Beneficial Skill.&quot;  This attribute is a cap on your attack rating with that weapon, at least as regards the damage multiplier.  In other words, if your weapon has an MBS of 1000, the highest your damage multiplier will go is (1 + (1000/400)), even if you get a 2000 attack rating.<br>
+<br>
+The devs have said that MBS should not affect your chance to hit with the weapon, only the damage multiplier, but this has not been confirmed by players via in-game testing to my knowledge.<br>
+<br>
+Secondly, attack rating multipliers have changed for AR over 1000.  These multipliers are different for every profession, and are not yet known, but generally have been reported as much lower than pre-SL.<br>
+ <br>
+<b>III.  Defense Rating / Evades.</b><br>
+Your Defense Rating is a number you cannot view.  This may be because your defense rating varies depending on what sort of attack is being directed at you.  You have four &quot;defense&quot; skills:  Dodge Ranged, Evade Close Combat, Duck Explosions, and Nano Resistance.  When you are attacked by something, one of these skills is what is chosen to be your basic defense rating.  You can see what percent of a skill is used as the defense rating for weapons and nanos in their description, much like with attack rating.  Multiply the skill(s) listed by the percents listed to get your basic defense rating.<br>
+ <br>
+Just like AddAllOff, there is an AddAllDef modifier for defense skills.<br>
+ <br>
+Having higher defense causes attacks to miss you more, and causes fewer critical hits to land on you.  It's very easy in most teams, to tell who hasn't raised their evades:  the mobs are critting them on almost every attack <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+ <br>
+The effectiveness your defense rating has is tied closely to your agg/def slider in your status window.  When you are 100% aggressive you will not be missed often at all by most attackers around your own level, unless you have a massive defense rating (ie, Grid Armor), though critical hits are very rare for people with high evades even at 100% aggressive.  If you are at 0% aggressive you will be missed very often, especially by attackers with lower attack ratings.<br>
+<br>
+<b>Update for Shadowlands:</b>  The agg/def slider is supposed to have a larger effect on your defenses now, according to the Shadowland patch notes.  However, this remains unconfirmed.  Some players complain of seeing no effect from going defensive agg/def, others swear by it.<br>
+ <br>
+<b>IV.  Attack Speed: Initiatives and the Agg/Def Slider.</b><br>
+Every weapon has an Attack Time and a Recharge Time as part of its stats. The Attack Time represents how long it takes for the weapon to &quot;charge up&quot; before you attack, and the Recharge Time represents how long it takes to &quot;recover&quot; after you attack. <br>
+<br>
+Attack time and Recharge time are both capped at 1 second apiece, so no matter how fast your weapon is, and how high your initiatives are, you will only attack once every two seconds (1s attack, 1s recharge - also called 1/1 speed). <br>
+<br>
+A major influence on your attack speed is the position of your agg/def slider. At 100% (all the way right, or fully aggressive) you will attack more quickly. 100% agg/def modifies both attack and recharge time by -0.25 seconds. At approximately 88% agg/def, you have no modifier. Lower than 88% agg/def, you begin to experience penalties - at 0% agg/def you have a +1.75/1.75 penalty to your attack and recharge times. <br>
+ <br>
+After your attack speed is modified by the agg/def slider, your initiative applies a modifier to it too. Initiative affects your attack speed in the following way: 300 points of weapons initiative, results in -0.5 seconds to attack time, and -1 second to recharge time. So if you have a weapon that is 1.5/2 speed, getting 300 in your initiative skill will make it 1/1 speed. Or, if you have a 1/1 weapon, and pull your agg/def slider left, having a higher initiative will keep the weapon at 1/1 and you get the bonus of a better DMS too. <br>
+<br>
+<b>Update for Shadowlands:</b>  Some weapons now have speed caps on attack, recharge, or both that are individual to that weapon.  Regardless of your initiative you cannot get these weapons under their own individual speed caps.<br>
+ <br>
+<b>V.  Critical Hits.</b><br>
+Occasionally you will land a Critical Hit in combat.  Critical Hits are very damaging normal attacks that pass an additional percentate check after the game engine determines that you hit the target.  The percent chance of landing a Critical Hit on your target is, at base, 3%.  There are a number of ways this is modified, however.<br>
+ <br>
+First, there are items and nanos that add directly to your Critical Hit chance.  These items, such as scopes, and nanos such as MA Mark of Peril, increase that base 3% chance by a set number.  Something that is +5 critical hit mod, means you have a 5% greater chance of scoring a crit.<br>
+<br>
+Second, there is the comparison between your attack rating and the target's defense rating.  If your attack rating is higher than your target's defense rating, your chance of scoring a critical hit goes up.  If your target's defense is higher than your attack, your chance of scoring a critical hit goes down.  No one has figured out the numbers to attach to this but it is felt that the calculation is linearly proportional - in other words, having an attack rating 200 points higher than the target's defense rating, gives twice the crit chance increase as being 100 points higher.<br>
+ <br>
+<b>VI.  Damage Rolls and ArmorClass.</b><br>
+All weapons have a damage range statistic.  This reads &quot;min damage - max damage (crit bonus)&quot; - in other words, a weapon that is 1-100 (100) has min damage 1, max damage 100, crit bonus 100.<br>
+<br>
+When a normal hit is scored with a weapon, a random number is rolled between the min damage and the max damage.  This random number is then multiplied by the attack rating multiplier of (1 + (attack rating up to 1000 / 400) + (profession specific AR multiplier over 1000)).  This modified number is then subjected to armor class reduction based on the target's armor class for the damage type being used, divided by 10.  <br>
+ <br>
+However:  no matter how good the target's armor, no weapon can do less damage on a hit than (min damage * attack rating modifier).  However, all damage is reduced by reflects - ie, reflects are calculated after AC reduction.<br>
+<br>
+Finally, after AC reduction is applied, +damage bonuses from items or buffs is added.  Even though these items/buffs say %add damage, they do not add a percent, they just add the fixed number.  So a +20 damage ring, is +20 damage per hit.  These buffs are the last things added on - they aren't reduced by AC, and they aren't multiplied by your attack rating.  To express it in a mathlike pseduo-code:<br>
+ <br>
+Damage = max[(min damage * (1 + (attack rating mod)) + damage buffs), <br>
+((random (min damage, max damage) * (1 + (attack rating mod))) - (target AC / 10) + damage buffs)]<br>
+<br>
+Critical hit damage is calculated somewhat differently.  When a critical hit is scored, no random number is involved.  Instead the damage is equal to max damage plus crit bonus, multiplied by attack rating, minus armorclass.  As above: <br>
+ <br>
+Critical Damage = (((max damage + crit bonus) * (1 + (attack rating mod))) - (target AC /10) + damage buff)<br>
+ <br>
+<b>VII.  Putting It Together:  One Attack Cycle.</b><br>
+So, what happens during a single iteration of the auto-attack cycle?  Based on my interpretation, this is my model for what happens when you target something and press Q:<br>
+ <br>
+1.  <i>Attack Time.</i>  First, the game calculates your attack time.<br>
+2.  <i>In Range?</i>  The game checks to see if your target is within the range of your weapon.<br>
+3.  <i>Hit or Miss?</i>  After the attack time is met, if you are in range, the game calculates if you hit or miss your target.<br>
+4.  <i>Critical Hit?</i>  If you hit, the game rolls your critical hit chance.<br>
+5.  <i>Damage.</i>  If you hit, damage is calculated.  If you crit, crit damage is used, else normal damage is. <br>
+6.  <i>Recharge Time.</i>  Hit or miss, the recharge time for your weapon is calculated and applied.  <br>
+ <br>
+Then the cycle starts over again at Step 1 until you press Q to stop attacking, your target dies, or you die.<br>
+<br>
+Revision 5/29/03:  Added where damage buffs fit in.<br>
+Revision 9/11/03:  Updated for Shadowlands changes.</div><p class="small edited"><i>Last edited by Jynne on September 11th, 2003 at 16:41</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 28th, 2003 <span class="time">18:26</span></td><td class="alt2 small right"><a href="#post1430473">#1</a></td></tr>
+<tr class="post" id="post1431043"><td class="alt1 author"><b class="name">Frogstar</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40692.jpg" alt=""></td><td class="alt1 body"><div class="message">Good Stuff, a Bump for you!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 28th, 2003 <span class="time">21:52</span></td><td class="alt1 small right"><a href="#post1431043">#2</a></td></tr>
+<tr class="post" id="post1431225"><td class="alt2 author"><b class="name">Revelator</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40703.jpg" alt=""></td><td class="alt2 body"><div class="message">Uber post Jynne! Shouldn't be bumped, should be STICKY! <br>
+<br>
+But here's a bump till then <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 28th, 2003 <span class="time">23:06</span></td><td class="alt2 small right"><a href="#post1431225">#3</a></td></tr>
+<tr class="post" id="post1431759"><td class="alt1 author"><b class="name">Metalhand</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40098.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> </div><div class="message">Great info Jynne!!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">02:45</span></td><td class="alt1 small right"><a href="#post1431759">#4</a></td></tr>
+<tr class="post" id="post1432071"><td class="alt2 author"><b class="name">Ashuras</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">Good stuff.<br>
+<br>
+Can add how inits affect casting of nanos as well ? <br>
+I think that'll almost complete the picture.<br>
+<br>
+(there is still the Multi Wield part that's a bit too complicated to explain with words IMO)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">05:26</span></td><td class="alt2 small right"><a href="#post1432071">#5</a></td></tr>
+<tr class="post" id="post1432163"><td class="alt1 author"><b class="name">Nursedaou</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40628.jpg" alt=""></td><td class="alt1 body"><div class="message">best friend bump<br>
+<br>
+<br>
+wtf does she find the time for this? *cough* work slacker *cough* <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">06:05</span></td><td class="alt1 small right"><a href="#post1432163">#6</a></td></tr>
+<tr class="post" id="post1432326"><td class="alt2 author"><b class="name">Irish</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40686.jpg" alt=""></td><td class="alt2 body"><div class="message">Wow you are too smart Jynne.  Thanks for the info.  Bump for you.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">07:44</span></td><td class="alt2 small right"><a href="#post1432326">#7</a></td></tr>
+<tr class="post" id="post1433083"><td class="alt1 author"><b class="name">Jynne</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40658.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Ashuras </i><br>
+<b>Good stuff.<br>
+<br>
+Can add how inits affect casting of nanos as well ? <br>
+I think that'll almost complete the picture.<br>
+<br>
+(there is still the Multi Wield part that's a bit too complicated to explain with words IMO) </b>
+			
+		
+	<hr></blockquote>
+These are both whole other guides IMO <img src="../images/smilies/wink.gif" alt="" class="smilie">  Nano init works on a wholly different system and multi-wield is just screwey. <br>
+<br>
+I can only slack off so much to write these things yanno <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">13:28</span></td><td class="alt1 small right"><a href="#post1433083">#8</a></td></tr>
+<tr class="post" id="post1433125"><td class="alt2 author"><b class="name">Randomtasks</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40705.jpg" alt=""></td><td class="alt2 body"><div class="message">Awesome post!!<br>
+I've been looking all over for info like that, thanks!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">13:41</span></td><td class="alt2 small right"><a href="#post1433125">#9</a></td></tr>
+<tr class="post" id="post1433351"><td class="alt1 author"><b class="name">Caduceus</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/atrox.gif" alt=""></td><td class="alt1 body"><div class="message">great guide as usual Jynne  *puts it on his shelf next to the big stack of other Jynne guides*<br>
+<br>
+I do have one question though...Has anyone figured out yet what the formulas for how the agg-def bar effects your AR/DR yet?  I'm not asking how it affects my inits, rather what the actual benefit of sitting at 1% or 0% agg-def.  As a doc that's the difference between insta-CH and slow CH.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">14:45</span></td><td class="alt1 small right"><a href="#post1433351">#10</a></td></tr>
+<tr class="post" id="post1433430"><td class="alt2 author"><b class="name">Jynne</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40658.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Caduceus </i><br>
+<b>I do have one question though...Has anyone figured out yet what the formulas for how the agg-def bar effects your AR/DR yet?  I'm not asking how it affects my inits, rather what the actual benefit of sitting at 1% or 0% agg-def.  As a doc that's the difference between insta-CH and slow CH. </b>
+			
+		
+	<hr></blockquote>
+As far as I'm aware nobody has been able to figure this out in a quantifiable manner.  <br>
+<br>
+I'd be up for testing it sometime, but the only way to test it in a controlled manner would be in PvP.  In this case we'd be able to compare the shooter's AR with the target's DR (evades + addalldef items) and take 50 shots at full agg, counting misses.  Then 50 shots at full def, counting misses.  Then 50 shots at 50% agg/def, counting misses.  And 50 shots at 99%, and 50 more at 1%.  100 shots per test might be better, actually.  Not sure <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+EDIT - oh, and a similar test would have to be run for nano resist, since it doesn't seem to work exactly the same as weapons evades.<br>
+<br>
+The way the agg/def slider <i>seems</i> to work, it looks like 0% and 100% are &quot;magic numbers&quot; that don't scale linearly with 1% to 99%.  But the only way to know, would be to test.</div><p class="small edited"><i>Last edited by Jynne on May 29th, 2003 at 15:12</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">15:10</span></td><td class="alt2 small right"><a href="#post1433430">#11</a></td></tr>
+<tr class="post" id="post1434055"><td class="alt1 author"><b class="name">Kzak</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40701.jpg" alt=""></td><td class="alt1 body"><div class="message">Great work, Jynne!<br>
+<br>
+I'd recommend this to go in the online manual, actually. Hope Cz sees the value of this as well. <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">18:25</span></td><td class="alt1 small right"><a href="#post1434055">#12</a></td></tr>
+<tr class="post" id="post1434124"><td class="alt2 author"><b class="name">Little Rot</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">Nice Post</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 29th, 2003 <span class="time">18:46</span></td><td class="alt2 small right"><a href="#post1434124">#13</a></td></tr>
+<tr class="post" id="post1449689"><td class="alt1 author"><b class="name">Jynne</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40658.jpg" alt=""></td><td class="alt1 body"><div class="message">Bumping up from page 2 <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 3rd, 2003 <span class="time">20:46</span></td><td class="alt1 small right"><a href="#post1449689">#14</a></td></tr>
+<tr class="post" id="post1451055"><td class="alt2 author"><b class="name">Mharc</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40707.jpg" alt=""></td><td class="alt2 body"><div class="message">This is one of the most helpful posts I've ever read on these boards. I can just imagine new players saying to themselves &quot;ohhh.... so *that's* how it works!&quot;. Excellent stuff, Jynne!<br>
+<br>
+As for how the aggdef setting affects nano casting times... I've always thought -and have had that thought confirmed by personal experience and other players, e.g. Jayde- that 0% aggdef means a 1s penalty to nano attack time, 100% aggdef means a 1s bonus and 1%-99% doesn't affect it. That would explain the difference between 0% (&quot;insta-CH&quot;) and 1% (&quot;slow CH&quot;).</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 4th, 2003 <span class="time">07:29</span></td><td class="alt2 small right"><a href="#post1451055">#15</a></td></tr>
+<tr class="post" id="post1451232"><td class="alt1 author"><b class="name">strawpeter</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt1 body"><div class="message">Wonderful post Jynne, thanks.  One thing I'm still not clear about?  Say your AC is 1024 in that type of damage, so you apply your divide by ten, gives you an armour def rating of 100.  But what does that 100 do?  By how much will it reduce the hit?  I'm probably being dim, but I can't find that in your calculations?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 4th, 2003 <span class="time">08:49</span></td><td class="alt1 small right"><a href="#post1451232">#16</a></td></tr>
+<tr class="post" id="post1452407"><td class="alt2 author"><b class="name">Kzak</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40701.jpg" alt=""></td><td class="alt2 body"><div class="message">An AC of 1024 reduces damage by 1 point for every 10 points of AC. Thus, at most, that AC value reduces a hit by 102 points of damage.<br>
+<br>
+This reduction goes down to the minimum damage a weapon does, it won't go lower than that except if reflect shields are in play.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 4th, 2003 <span class="time">13:36</span></td><td class="alt2 small right"><a href="#post1452407">#17</a></td></tr>
+<tr class="post" id="post1452533"><td class="alt1 author"><b class="name">Caduceus</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/atrox.gif" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Mharc </i><br>
+<b>This is one of the most helpful posts I've ever read on these boards. I can just imagine new players saying to themselves &quot;ohhh.... so *that's* how it works!&quot;. Excellent stuff, Jynne!<br>
+<br>
+As for how the aggdef setting affects nano casting times... I've always thought -and have had that thought confirmed by personal experience and other players, e.g. Jayde- that 0% aggdef means a 1s penalty to nano attack time, 100% aggdef means a 1s bonus and 1%-99% doesn't affect it. That would explain the difference between 0% (&quot;insta-CH&quot;) and 1% (&quot;slow CH&quot;). </b>
+			
+		
+	<hr></blockquote>
+That's accurate regarding casting <b>speed</b> but I'm interested in what I'm losing in terms of AddAllDef when I sit at 1% for the insta-CH as opposed to going to 0%.  It's hard to tell if it's worth my time to go to 0% or not without knowing how much my evades are being boosted.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 4th, 2003 <span class="time">13:53</span></td><td class="alt1 small right"><a href="#post1452533">#18</a></td></tr>
+<tr class="post" id="post1455570"><td class="alt2 author"><b class="name">Revelator</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40703.jpg" alt=""></td><td class="alt2 body"><div class="message">Bump</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 5th, 2003 <span class="time">08:55</span></td><td class="alt2 small right"><a href="#post1455570">#19</a></td></tr>
+<tr class="post" id="post1467511"><td class="alt1 author"><b class="name">Rapella</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40240.jpg" alt=""></td><td class="alt1 body"><div class="message">A very nice summary of many of the combat formulaes on the forums:<br>
+<br>
+Bump for a question:<br>
+<br>
+When do the following get added:<br>
+Damage buffs (Nano Augmentation cloud, Fists of Energy, etc)<br>
+Damage increasing items (Notum rings from ToTW, Rings of Physics, etc)<br>
+<br>
+These buffs/items tend to add small amounts of damage and I've always wondered if they get added BEFORE the AR/400 multiplier, or AFTER.<br>
+<br>
+Anyone have any hard research to justify one or the other claim?<br>
+<br>
+(Edit: typos)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 9th, 2003 <span class="time">15:10</span></td><td class="alt1 small right"><a href="#post1467511">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (4): <b>[1]</b> <a href="137444-2.html">2</a> <a href="137444-3.html">3</a> <a href="137444-2.html">&raquo;</a> ... <a href="137444-4.html">Last &raquo;</a></span></td><td class="right small"><a href="https://web.archive.org/web/20220628122157/https://forums-archive.anarchy-online.com/showthread.php?137444-The-Jynne-Guide-to-Auto-Attack">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

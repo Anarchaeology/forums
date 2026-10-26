@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Redo the weapon creating process</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/suggestions-14.html">Suggestions</a> &gt; Redo the weapon creating process</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="79429.html">Last Thread</a> &nbsp; <a href="76563.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Redo the weapon creating process"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Suggestions"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post931520"><td class="alt2 author"><b class="name">Engelen</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40663.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon5.gif" alt=""> <b>Redo the weapon creating process</b></div><div class="message">I had an Idea while talking to one of my buds about AO and weapons. Today it is pretty &quot;unlogical&quot; how to make a weapon. <br>
+<br>
+How about making it pretty clear for everyone?<br>
+<br>
+You buy a &quot;shell&quot;. You already know that different weapons uses the same shell right? Lets say, you buy the shell of a Vektor.<br>
+This is an empty shell, there is nothing in it, and it wont work alone.<br>
+Then you RIGHT click on it, and it opens an implantmenu, just like on your character. Then you just insert the parts you like into the right places. You should be able to buy all parts in the shop, and they should be able to fit directly. <br>
+<br>
+Example: You got the empty shell. You have to add all the necessary parts, like Ammo capacity, damage type, speed, recharge and stuff like that, but the point is, all the parts should have names like described on the weapon when you Shift+clicks it. So you can buy a part that is called &quot;Recharger timer&quot; i.e, and insert it directly into the implantslot called &quot;recharge&quot;. This was just an example, but imagine how much fun it would have been to really start making weapons. <br>
+<br>
+A few things more. <br>
+-You should be able to rename the weapons, like &quot;The Ereaser&quot; or &quot;Bubblegum Bubblegun&quot;.<br>
+-Requirements would be dependent on what parts you insert, like if you decide to use Burst, Burst would of course be a part of the req. Then the QL would decide how much Burst required. <br>
+-Finally, You should be able to make better weapons than those who can be found too! Its not worth it if the weapons you make sucks, like today. <br>
+<br>
+What ya think!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 8th, 2002 <span class="time">10:00</span></td><td class="alt2 small right"><a href="#post931520">#1</a></td></tr>
+<tr class="post" id="post936181"><td class="alt1 author"><b class="name">starwolf</b><br><span class="small usertitle">Eleet</span></td><td class="alt1 body"><div class="small posttitle"><b>Cool Idea</b></div><div class="message">Something like this has been suggested before, but I still find it quite cool.<br>
+For instance the range of the weapon is dependent on the length of the barrel. Damage to combustionchamber or whatever used to propell the laser/bullet towards the target. <br>
+Accuracy dependent on scopes, stocks and so on.<br>
+<br>
+But I guess this will require a totally different item database.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 9th, 2002 <span class="time">20:49</span></td><td class="alt1 small right"><a href="#post936181">#2</a></td></tr>
+<tr class="post" id="post936801"><td class="alt2 author"><b class="name">Atreyu</b><br><span class="small usertitle">Phear Leet</span></td><td class="alt2 body"><div class="message">I like this idea.<br>
+<br>
+I think the technical challenge isn't the item database, its the user interface and game rules.<br>
+<br>
+From the different database sites it looks like for most items there are two entries, one for lowest item QL, one for highest, I think what happens at that point is that the two components are then run through a formula of somesort and used to automatically generate the different QL's based on the upper and lower bounds of the item.  So the database change would require two entries for each item, and then just do the same type of formula to determine the stats of the different QL's.<br>
+<br>
+This should also be done for armors, and pretty much anything you can make.  Want the stats of Carbonum in something that looks like CAS?  Why not, it should be doable.<br>
+<br>
+As far as the guns with all the stuff in them, run them more like a player.  I certainly hope that all our player stats are not stored in some database on the client side...to easy to hack.  So instead have the stats of the gun be dynamically calculated when you equip the weapon and store this on the character object, or a special custom type object.  When the gun changes, update the weapon stats on this object.  That way you won't have to have umpteen jillion entries in the DB to account for all possible combinations of guns or armor.  This could also be done for implants...in fact any object that is comprised of components should have its own object with a stat values determined by the components of the object.  If done with implants, then you'd be able to put any cluster in any slot, without having to worry about which combinations are explicitely listed in the DB.  If you made the &quot;Customizable&quot; Object generic enough (having it store all the stat data of a character would do it, skills, abilities, hp, nano etc. which would represent modifiers to the character who equips it) then you would only need to create the code for this once and then use that generic class with different front ends (IE gun vs armor vs implant) to implement truly customizable things.</div><p class="small edited"><i>Last edited by Atreyu on December 9th, 2002 at 23:49</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 9th, 2002 <span class="time">23:47</span></td><td class="alt2 small right"><a href="#post936801">#3</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529081806/https://forums-archive.anarchy-online.com/showthread.php?78881-Redo-the-weapon-creating-process">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

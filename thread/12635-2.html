@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Docs and 50% - Not ever gonna happen</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/pvp-conflict-30.html">PvP Conflict</a> &gt; Docs and 50% - Not ever gonna happen</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="12635.html">&laquo;</a> <a href="12635.html">1</a> <b>[2]</b> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="19192.html">Last Thread</a> &nbsp; <a href="18918.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Docs and 50% - Not ever gonna happen (page 2)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:PvP Conflict"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post377268"><td class="alt2 author"><b class="name">Kinkstaah</b><br><span class="small usertitle">unimpressed by your post</span><br><img class="avatar" src="../images/avatars/40666.jpg" alt=""></td><td class="alt2 body"><div class="message">Lose 50% damage, keep caps in, double everyone's HP <img src="../images/smilies/tongue.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 3rd, 2002 <span class="time">17:42</span></td><td class="alt2 small right"><a href="#post377268">#21</a></td></tr>
+<tr class="post" id="post377395"><td class="alt1 author"><b class="name">Leumas</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Dragonfly </i><br>
+<b>my company is working on a mmorpg. im the brains behind the project. Its called &quot;Xtreme Pedestrian&quot;. Its a hard core pvp game. you can be a traffic cop, dog walker, carraige pusher, business man, bum, old lady, and punk kid. dog walkers and carraige pushers could be considered a pet class and old ladies the nuke class. were expecting it to be a big hit. </b>
+			
+		
+	<hr></blockquote>
+You just dun get it! Nobody will paid for a pure pvp mmorpg, well expect some underage kids who has nothing to do but play game all days.<br>
+<br>
+As for this issue, just check if the previous damage was done by a player, if yes then heal/=2.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 3rd, 2002 <span class="time">18:59</span></td><td class="alt1 small right"><a href="#post377395">#22</a></td></tr>
+<tr class="post" id="post377508"><td class="alt2 author"><b class="name">Valen</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40179.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Leumas </i><br>
+<b>As for this issue, just check if the previous damage was done by a player, if yes then heal/=2. </b>
+			
+		
+	<hr></blockquote>
+It's just not that simple (not even close!).  <br>
+<br>
+Look at the logic (this is probably a simplistic view of how Funcom does it):<br>
+<br>
+For figuring out how to apply damage in PvP is easy:<br>
+<br>
+PlayerA is taking damage (this assumes a hit was already approved), so you take the logic and figure out how much:<br>
+<br>
+1) Calculate damage based on weapon used, crit or non-crit, AC of PlayerA, etc... (standard fancy damage calculation)<br>
+<br>
+2) *then* figure out where damage came from (Player or NPC).  If from player, take that damage and run through PvP reduction (divide damage by 2, and if Crit, make sure it's below 1/4 opponents total healt (or is it 1/3?)).<br>
+<br>
+3) Apply damage by reducing players health.<br>
+<br>
+<b>After 3, most likely all information about damage applied will have been discarded, as it's not likely ever stored anywhere, because frankly, there was no reason to.</b>  All the game really cares about it at the end of that one shot, how much health does PlayerA have left, and how much ammo does PlayerB (the attacker) have left.<br>
+<br>
+Now, take a case of what you said:<br>
+<br>
+1) Damage is dealt to PlayerA.  Now Funcom would have to keep an array of damage dealt to PlayerA over a period of time (say for simplicity, for as long as PlayerA is in a fight, although that introduces a lot of other problems).  This is not likely done now, so that would require a major code change.<br>
+<br>
+2) PlayerA attempts to heal him/herself.  A lookup of all damage applied to PlayerA would have to be done to see if any of it was done by another player, if so, do you heal player damage by 50% and NPC damage by 100% (boy would that be ugly to figure out)?  or do you heal everything by 50% if any player damage is found?   How far back do you go?  Just the current fight (what happens if someone is attacked at 50% health already from an NPC fight)?  If so, doesn't work so well with team PvP.  etc..<br>
+<br>
+Bottom line is, I cannot see halving heals being a reasonable solution (it's really ugly to calculate), and I'm not saying that just because I'm a doc <img src="../images/smilies/smile.gif" alt="" class="smilie">.  I'd favor upping the damage over halving the heals, if there truly is an imbalance.  (I don't PvP much, so I don't have a lot of first hand knowledge).</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 3rd, 2002 <span class="time">20:09</span></td><td class="alt2 small right"><a href="#post377508">#23</a></td></tr>
+<tr class="post" id="post378103"><td class="alt1 author"><b class="name">Leumas</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Valen </i><br>
+<b><br>
+<br>
+It's just not that simple (not even close!).  <br>
+<br>
+Look at the logic (this is probably a simplistic view of how Funcom does it):<br>
+<br>
+For figuring out how to apply damage in PvP is easy:<br>
+<br>
+PlayerA is taking damage (this assumes a hit was already approved), so you take the logic and figure out how much:<br>
+<br>
+1) Calculate damage based on weapon used, crit or non-crit, AC of PlayerA, etc... (standard fancy damage calculation)<br>
+<br>
+2) *then* figure out where damage came from (Player or NPC).  If from player, take that damage and run through PvP reduction (divide damage by 2, and if Crit, make sure it's below 1/4 opponents total healt (or is it 1/3?)).<br>
+<br>
+3) Apply damage by reducing players health.<br>
+<br>
+<b>After 3, most likely all information about damage applied will have been discarded, as it's not likely ever stored anywhere, because frankly, there was no reason to.</b>  All the game really cares about it at the end of that one shot, how much health does PlayerA have left, and how much ammo does PlayerB (the attacker) have left.<br>
+<br>
+ </b>
+			
+		
+	<hr></blockquote>
+Just add a new boolean type var, set the default to 0. Everytime a person is damage by a player, set this boolean to true. When heal is apply, check if this var is true and the person is in combat. <br>
+To restore the default value, everytime a mob done damage to a player or that particular player are no longer engage in combat, set the value to 0. Just how hard is that? Rethink the possibility bf you flame me for not knowing a shi*.<br>
+<br>
+BTW, where you buy your degree?</div><p class="small edited"><i>Last edited by Leumas on April 4th, 2002 at 07:09</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 4th, 2002 <span class="time">06:48</span></td><td class="alt1 small right"><a href="#post378103">#24</a></td></tr>
+<tr class="post" id="post378536"><td class="alt2 author"><b class="name">Supersoly</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40112.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>well....if u knowso much...</b></div><div class="message">Why don't you go over to Norway, ransack and destroy the FC offices, steal the code, then come back to where-ever your from, and fix the code yourself.  It'd probably be faster, and I'm sure it wouldn't take long to ransack FC's officies...I mean, its just an igloo, right?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 4th, 2002 <span class="time">14:09</span></td><td class="alt2 small right"><a href="#post378536">#25</a></td></tr>
+<tr class="post" id="post378645"><td class="alt1 author"><b class="name">Leumas</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt1 body"><div class="message">The question is...Why should I?   You know, offering a possible solution to a problem and actually working to solve a problem is two different things.  And, which part of my post did I claim I know everything?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 4th, 2002 <span class="time">15:33</span></td><td class="alt1 small right"><a href="#post378645">#26</a></td></tr>
+<tr class="post" id="post378652"><td class="alt2 author"><b class="name">NicholaSix</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40644.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by MiKEBoND </i><br>
+<b>Lose 50% damage, keep caps in, double everyone's HP <img src="../images/smilies/tongue.gif" alt="" class="smilie"> </b>
+			
+		
+	<hr></blockquote>
+Yep, said the same thing myself a bunch of times, funcom said they were against it because it would unbalance PVM (translation: we are too lazy to fix PVM or anything, so up yours, and please enjoy or messed up system).<br>
+<br>
+It would be the easiest solution, but crits will still need to be looked at no matter what, their frequency is WAY too high.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 4th, 2002 <span class="time">15:38</span></td><td class="alt2 small right"><a href="#post378652">#27</a></td></tr>
+<tr class="post" id="post378731"><td class="alt1 author"><b class="name">Valen</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40179.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Leumas </i><br>
+<b>Just how hard is that? Rethink the possibility bf you flame me for not knowing a shi*.<br>
+<br>
+BTW, where you buy your degree? </b>
+			
+		
+	<hr></blockquote>
+Heh...not sure how you came to the conclusion that my post was a flame.  Posting a counterpoint to your argument is not a flame, it's an opposing view.<br>
+<br>
+But, seeing how you want to turn this into a flame instead of an intelligent conversation, I'm not going to bother responding about all the holes I see in the boolean variable solution.<br>
+<br>
+Instead I think I'll head back to my street corner and beg for change so I can buy a new degree.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 4th, 2002 <span class="time">16:31</span></td><td class="alt1 small right"><a href="#post378731">#28</a></td></tr>
+<tr class="post" id="post378748"><td class="alt2 author"><b class="name">Leumas</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt2 body"><div class="message">Post the holes, I dare you.<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<b>It's just not that simple (not even close!). </b>
+			
+		
+	<hr></blockquote>
+<br>
+<br>
+Of couse this is not a flame, its a good way of starting an int dicussion. <br>
+/sarcasm off</div><p class="small edited"><i>Last edited by Leumas on April 4th, 2002 at 16:52</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 4th, 2002 <span class="time">16:46</span></td><td class="alt2 small right"><a href="#post378748">#29</a></td></tr>
+<tr class="post" id="post379262"><td class="alt1 author"><b class="name">Phonokol</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40645.jpg" alt=""></td><td class="alt1 body"><div class="message">50% reduced effect has allready been implemented on nukes. A nuke, heal and any other nano program modifies properties on the target. What exactly makes you think that a heal is special and alltogether different from a nuke? They both do the same thing, only nuke is negative and heal is positive.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 4th, 2002 <span class="time">23:35</span></td><td class="alt1 small right"><a href="#post379262">#30</a></td></tr>
+<tr class="post" id="post379530"><td class="alt2 author"><b class="name">Valen</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40179.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Matica </i><br>
+<b>50% reduced effect has allready been implemented on nukes. A nuke, heal and any other nano program modifies properties on the target. What exactly makes you think that a heal is special and alltogether different from a nuke? They both do the same thing, only nuke is negative and heal is positive. </b>
+			
+		
+	<hr></blockquote>
+Nukes are executed against hostile targets ... if target = player, divide by 2, nothing more required.  You'll notice that if you nuke or DoT yourself, you take half damage as well, even if your standing in a shop minding your own business.<br>
+<br>
+Heals are executed against friendly players ... if target = player, well....we have to figure out if player is/was in PvP fight first, in otherwords, the target alone is no longer sufficient information to say divide by 2.<br>
+<br>
+Basically, the fact one is a hostile action and the other is a friendly action, is what causes the big difference.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 5th, 2002 <span class="time">05:32</span></td><td class="alt2 small right"><a href="#post379530">#31</a></td></tr>
+<tr class="post" id="post379648"><td class="alt1 author"><b class="name">Leumas</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt1 body"><div class="message">Valen, Would you stop assuming things here?  You have never saw the actual code. Yet you speak as if you understand truely how things work. Based on what? Your own observation? Give me a break!<br>
+<br>
+Besides, you a doctor.  You will do everything to remain your unfair advantage in PVP.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 5th, 2002 <span class="time">07:57</span></td><td class="alt1 small right"><a href="#post379648">#32</a></td></tr>
+<tr class="post" id="post379680"><td class="alt2 author"><b class="name">Phonokol</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40645.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Valen </i><br>
+<b><br>
+<br>
+Nukes are executed against hostile targets ... if target = player, divide by 2, nothing more required.  You'll notice that if you nuke or DoT yourself, you take half damage as well, even if your standing in a shop minding your own business.<br>
+<br>
+Heals are executed against friendly players ... if target = player, well....we have to figure out if player is/was in PvP fight first, in otherwords, the target alone is no longer sufficient information to say divide by 2.<br>
+<br>
+Basically, the fact one is a hostile action and the other is a friendly action, is what causes the big difference. </b>
+			
+		
+	<hr></blockquote>
+I don't see any difference at all. Divide by 2 if the player is engaged in a pvp fight. If you execute a nuke on yourself you are actually in a pvp fight :P</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 5th, 2002 <span class="time">08:25</span></td><td class="alt2 small right"><a href="#post379680">#33</a></td></tr>
+<tr class="post" id="post380236"><td class="alt1 author"><b class="name">Valen</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40179.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Leumas </i><br>
+<b>Valen, Would you stop assuming things here?  You have never saw the actual code. Yet you speak as if you understand truely how things work. Based on what? Your own observation? Give me a break!</b>
+			
+		
+	<hr></blockquote>
+Based on having coded things like this 10 years ago.  I may be rusty with the code (I'm a systems/networking guy now, not a developer anymore), but I'm just talking about the simple logic of figuring out if you're in a PvP fight or not.  This isn't rocket science, and I'm not claiming to be an expert (even if I do come off strong at times).  <br>
+<br>
+Maybe Funcom has some magical formula for easily determining you are in a PvP fight, and 50% heals would be simple, but I highly doubt that based on the simple observation of how they implemented 50% damage.  But we will never know for sure unless Funcom themselves respond (but don't hold your breath on that one).<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<b>Besides, you a doctor.  You will do everything to remain your unfair advantage in PVP. </b>
+			
+		
+	<hr></blockquote>
+I love how everyone just assumes that.  Because I'm a doctor I can't have an opposing opinion?  Besides, I didn't say I'm against 50% heals.  I'm just saying I don't believe can be realistically done well, and personally think any 50% heal solution would be more of a band-aid, and that the PvP system needs a better look as a whole.  If you go with something as simple as a boolean var, that can be exploited pretty easily (get out of a fight for a moment, you have 100% heals, attack a mob while in a fight, you could be at 100% heals, have a PvPer attack you while fighting a mob, then you might only be able to do 50% heals against the mob damage and be guaranteed death...say hello to ganking hunting parties, etc....).<br>
+<br>
+Btw, anyone who's seen my doc PvP can attest that 100% heals don't help me much, I die anyway.  <img src="../images/smilies/biggrin.gif" alt="" class="smilie">  <br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Matica</i><b>I don't see any difference at all. Divide by 2 if the player is engaged in a pvp fight. If you execute a nuke on yourself you are actually in a pvp fight :P</b>
+			
+		
+	<hr></blockquote>
+But that is the difference.  If you nuke someone, you don't have to see if they are in a PvP fight, because that action *is* PvP.  If you heal someone *then* you also have to figure out if they are in a PvP fight (because a heal is *not* a PvP action, it's a reaction to one).<br>
+<br>
+But anyway, no I'm not the expert, only Funcom knows for sure what would be required.  I'm only basing my opinions off my personal experiences.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 5th, 2002 <span class="time">16:47</span></td><td class="alt1 small right"><a href="#post380236">#34</a></td></tr>
+<tr class="post" id="post382754"><td class="alt2 author"><b class="name">Leumas</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Valen </i><br>
+<b><br>
+<br>
+Based on having coded things like this 10 years ago.  I may be rusty with the code (I'm a systems/networking guy now, not a developer anymore), but I'm just talking about the simple logic of figuring out if you're in a PvP fight or not.  This isn't rocket science, and I'm not claiming to be an expert (even if I do come off strong at times).  <br>
+<br>
+</b>
+			
+		
+	<hr></blockquote>
+Based on the previous solution (The array of damage crap) you have offer, I highly doubt that you are once a programmer.  So, forgive me for not believe in such a obvious troll.  <br>
+<br>
+If indeed I was wrong, and you were a programmer after all.  Then, I think you might match what my signature describe.</div><p class="small edited"><i>Last edited by Leumas on April 8th, 2002 at 09:02</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 8th, 2002 <span class="time">08:59</span></td><td class="alt2 small right"><a href="#post382754">#35</a></td></tr>
+<tr class="post" id="post382821"><td class="alt1 author"><b class="name">Lona</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40145.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Matica </i><br>
+<b><br>
+<br>
+I don't see any difference at all. Divide by 2 if the player is engaged in a pvp fight. If you execute a nuke on yourself you are actually in a pvp fight :P </b>
+			
+		
+	<hr></blockquote>
+Its alot difference in damage and heal. What if the doc is engaged in pvp and pvm at the same time, got a DoT from a NPC etc?<br>
+<br>
+<br>
+Maybe if they flag health that done by players. And all health wich are reduced by a player needs twice as much to heal...<br>
+<br>
+But i still think its better to remove the  50% damage and double our hp... It should make single play a bit easier too.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 8th, 2002 <span class="time">10:27</span></td><td class="alt1 small right"><a href="#post382821">#36</a></td></tr>
+<tr class="post" id="post382869"><td class="alt2 author"><b class="name">Obergeist</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt2 body"><div class="message">No, doubling everyone's hp isn't the answer.<br>
+<br>
+They'd up the mobs which are a wee bit overpowered already...<br>
+<br>
+Who cares about Docs that can PvP.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> April 8th, 2002 <span class="time">11:25</span></td><td class="alt2 small right"><a href="#post382869">#37</a></td></tr>
+<tr class="post" id="post386183"><td class="alt1 author"><b class="name">Destria</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40632.jpg" alt=""></td><td class="alt1 body"><div class="message">There are waay too many factors involved to make Healing 50% too, especially if it's in a zone with PvP and PvM taking place. Sure, it's simple to say &quot;If target player is engaged in PvP, heals are 50%&quot;, but... how do we define &quot;engaged in PvP&quot;. Attacked by another player, or has actually initiated an attack. The latter would obviously be PvP, but the former leads us to some problems.<br>
+<br>
+Say a group are attacking some rather dangerous beast in a PvP zone. The Doctor is healing the tank, and all is well. Now a level 75 player of an opposing faction wanders up to the tank and starts hitting him with a banjo. If the tank is then in PvP combat as defined by the rules, the Doctor's heals are now only healing half of what they were before. This is far too unpredictable and haphazard. Now, of course, nobody would PvP with a banjo <img src="../images/smilies/biggrin.gif" alt="" class="smilie">, but that was just exaggeration to make a point. Having heals suddenly become half as effective is a very poor way of implementing such a 'fix'.<br>
+<br>
+Another possible method would be to tally 'PvP damage' and 'PvM' damage as different totals (internally of course, not having two HP bars <img src="../images/smilies/smile.gif" alt="" class="smilie"> ), with twice as many 'heal points' being needed to heal PvP damage than PvM damage. But then which gets healed first? PvP? PvM? An average of the two based on some calculation? The system is starting to get unwieldy and hard to understand for the players, not to mention the extra CPU time it'd take to calculate these things.<br>
+<br>
+And then we have the Complete heal nanos. What about those? Should they only restore the target to 50% health <img src="../images/smilies/biggrin.gif" alt="" class="smilie">? Should they instead be considered as simply a very large (5000 pt given assumed 50% healing) heal? Perhaps double the nano cost if the target is in PvP?<br>
+<br>
+Making Healing 50% is such a horrendously complicated proposition that it could never satisfy everybody. It'd make far more sense to find a way to eliminate the need for 50% damage in PvP. That way there won't be any need to demand 50% healing.<br>
+<br>
+And yes, though I am a Doc, I don't PvP myself... as anybody's who's met me in-game knows <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+Dest</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> April 10th, 2002 <span class="time">08:45</span></td><td class="alt1 small right"><a href="#post386183">#38</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="12635.html">&laquo;</a> <a href="12635.html">1</a> <b>[2]</b> </span></td><td class="right small"><a href="https://web.archive.org/web/20250528233453/https://forums-archive.anarchy-online.com/showthread.php?12635-Docs-and-50-Not-ever-gonna-happen">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

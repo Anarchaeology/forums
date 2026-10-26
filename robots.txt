@@ -1,0 +1,10 @@
+# Anarchy Online forum archive: search engines welcome. Crawlers that collect AI training data are asked to stay out.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: Bytespider
+Disallow: /
+
+User-agent: *
+Allow: /

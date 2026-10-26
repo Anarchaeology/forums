@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Can&#39;t Connect on Second Computer with Win XP ICS?</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Tech &gt; <a href="../forum/other-technical-issues.html">Other Technical Issues</a> &gt; Can&#39;t Connect on Second Computer with Win XP ICS?</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="45697.html">&laquo;</a> <a href="45697.html">1</a> <b>[2]</b> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="25728.html">Last Thread</a> &nbsp; <a href="39350.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Can&#39;t Connect on Second Computer with Win XP ICS? (page 2)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Other Technical Issues"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post1623860"><td class="alt2 author"><b class="name">Wrigz</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt2 body"><div class="message">you don't really need to phone anyone. <img src="../images/smilies/wink.gif" alt="" class="smilie"><br>
+<br>
+On the gateway machine (the one that's directly connected to the internet) open up Command Prompt, and type<br>
+<br>
+ipconfig /all<br>
+<br>
+This will tell you how things are setup on that box.  You'll see something like:<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				Etherned adapter Local Are Connection:<br>
+<br>
+Connection-specific DNS Suffix:<br>
+Description: 3Com..<br>
+Physical Address: 00-01-02-03-04-05<br>
+IP Address: 192.168.0.1
+			
+		
+	<hr></blockquote>
+From this section note down IP Address (1).  There will be another lot of similar information, this time with DNS Servers and Default Gateway.  Note down DNS servers (2).<br>
+<br>
+On the 2nd, 3rd, 4th... computer, right click on 'My Network Places', choose 'Properties'.  Rightclick on 'Local Area Connection' choose 'Properties'. Find Internet Protocol (TCP/IP) in list of items that this connection uses, click on it, then click on 'Properties' button.<br>
+<br>
+Tlick 'Use the following IP address'.  IP Address, put the same as your gateway; but add one to the last number. (in my example this would make it 192.168.0.2).  under Default Gateway, put IP Address of the first computer (ie 192.168.0.1). <br>
+<br>
+Then tick 'Use the following DNS server addresses' and put in DNS servers you noted down in (2).<br>
+<br>
+Click ok on all dialog boxes, reboot the 2nd computer.  Move onto 3rd, and repeat the process (add two to the last number of gateway IP number -- each IP number must be unique).<br>
+<br>
+Away you go.<br>
+<br>
+Without this, some misty WinXP bugs cause Anarchy Launcher to time out / cant find dimension on 2nd, 3rd... etc computer, if gateway computer logs in first.  However, problem doesn't exist if those 'other' computers login first.<br>
+<br>
+G'luck,<br>
+Wrigz</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 31st, 2003 <span class="time">23:51</span></td><td class="alt2 small right"><a href="#post1623860">#21</a></td></tr>
+<tr class="post" id="post1624710"><td class="alt1 author"><b class="name">ntrox1</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40100.jpg" alt=""></td><td class="alt1 body"><div class="message">192.168.x.x is a generic non-Internet IP address range that is usually used for internal networks.  192.168.x.x is like 10.x.x.x, where they are not ever usable on the Internet.  You need a NAT or Proxy to be able to communicate from your network out onto the Internet.<br>
+<br>
+On your main machine that can connect to AO, you need to run a command prompt (in XP do a RUN... cmd &lt;return&gt;) then type <b>ipconfig /all</b>.<br>
+
+	<blockquote>code:<hr><pre>IP Address. . . . . . . . . . . . : 10.0.0.3
+Subnet Mask . . . . . . . . . . . : 255.0.0.0
+Default Gateway . . . . . . . . . : 10.0.0.1
+DNS Servers . . . . . . . . . . . : 10.0.0.1</pre><hr></blockquote>
+The above is part of what shows on my machine.  Your DNS server(s) should be different.  Mine is going through a router so its 10.0.0.1, the IP address of the router.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 1st, 2003 <span class="time">08:57</span></td><td class="alt1 small right"><a href="#post1624710">#22</a></td></tr>
+<tr class="post" id="post1652024"><td class="alt2 author"><b class="name">Qhite</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40283.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Logging into second account on the same computer?</b></div><div class="message">Hiya<br>
+<br>
+I have a problem that is a bit of the same and dont know what to do about it, hopefully there is someone out there that can shed some light on this too.<br>
+<br>
+I have 2 accounts on the same computer and used to be able to log onto second account with no problems. Now I cant unless I zone with the toon on the account that is logged in. Just to clarify this is how it goes.<br>
+1. First toon logged in.<br>
+2. Want to log into second account while first account is active.<br>
+3. When I try to do that normally I time out ever time on second account.<br>
+4. Then I proceed to zone with the toon on first account and after 1-3 zones I can log onto second account.<br>
+<br>
+Now there are instances in the game when you just cant zone if you want to log into second account and then I'm stuck.....<br>
+<br>
+So... if there is anyone out there that has any ideas what to do about this it would be greatly appreciated.<br>
+<br>
+My system:WinXP pro, P4 2.4GHz, Geforce4 Ti4200 128Mb, 512 Ram, SoundblasterLive 5.1, Detonator 44.03<br>
+<br>
+Crossing fingers, hoping someone can help me out</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 12th, 2003 <span class="time">05:55</span></td><td class="alt2 small right"><a href="#post1652024">#23</a></td></tr>
+<tr class="post" id="post1652889"><td class="alt1 author"><b class="name">ntrox1</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40100.jpg" alt=""></td><td class="alt1 body"><div class="message">Qhite, I get this on my 2nd PC too.  Its a known issue.  Basically the 2nd account times out and will not log in.  Changing the status of the toon in the first account helps, ie zoneing, as you said, or logging off then relogging both in sync.  There appears to be some latency involved in the handshake with the authentication server.  Either that or the auth server doesn't take too kindly to NAT addresses.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 12th, 2003 <span class="time">13:07</span></td><td class="alt1 small right"><a href="#post1652889">#24</a></td></tr>
+<tr class="post" id="post1792320"><td class="alt2 author"><b class="name">Traxxx</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="message">Easiest way is to use an external application, e.g. Winroute (<a href="https://web.archive.org/web/20030925/http://www.kerio.com">www.kerio.com</a>) works great for me, has DHCP/DNS/NAT and<br>
+much more. It´s easy to install and clients don´t need any<br>
+software installed you only have to set IP for DHCP <br>
+(default gateway depending on your OS must be set too).</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> September 25th, 2003 <span class="time">11:42</span></td><td class="alt2 small right"><a href="#post1792320">#25</a></td></tr>
+<tr><td colspan="2" class="gap">This thread continued after 2003; its 3 later replies aren't part of this archive.</td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="45697.html">&laquo;</a> <a href="45697.html">1</a> <b>[2]</b> </span></td><td class="right small"><a href="https://web.archive.org/web/20250527170040/https://forums-archive.anarchy-online.com/showthread.php?45697-Can&#39;t-Connect-on-Second-Computer-with-Win-XP-ICS">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

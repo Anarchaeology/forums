@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Reflect shields need a bugfix</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/next-patch-6.html">Next patch</a> &gt; Reflect shields need a bugfix</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="79259.html">Last Thread</a> &nbsp; <a href="79299.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Reflect shields need a bugfix"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Next patch"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post935464"><td class="alt2 author"><b class="name">Sethil</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/223810.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Reflect shields need a bugfix</b></div><div class="message">We all know, reflect shields like RRFe take away several % of the incoming damage. But are shield really right calculated?<br>
+Lets have an example:<br>
+<br>
+A character with 5000 HP, 5000 AC (in all classes) and buffed with RRFe (30%)<br>
+Now, someone shoots at him and the incoming damage is 6000 in PvP (AS, Crits and FA would make that possible). We know, a character can take only 40% damage of his HP, that would reduce the damage to 2000. We all know, a character with 5000 HP can take 2000 damage without wearing RRFe, which means, the AC is already taken from the incoming damage <b>before</b> the 40% check takes effect.<br>
+This means we have the following order to this point:<br>
+<br>
+1. Incoming damage = 6000<br>
+2. Check for 50% PvP = 3000 (which could be a part of 1. or it is right from the beginning only 50%, which doesnt make a difference)<br>
+3. reduce damage by AC = 2500<br>
+4. check for 40% limit = 2000<br>
+<br>
+But we all know, a reflect shield can reduce also the 40%-capped damage, so the next point is:<br>
+<br>
+5. RRFe = 1400 The last point<br>
+<br>
+1400 is the right value for this character. So, but what is wrong now? Did you ever looked at a Soldier casting his shield? The shield appears like a ball around him and that is like a shied should be - a protective field around him. But RRFe is for sure the last point in the list.<br>
+<br>
+Next example:<br>
+<br>
+1. Incoming damage = 2000<br>
+2. Check for 50% PvP = 1000 <br>
+3. reduce damage by AC = 500<br>
+4. check for 40% limit = 500<br>
+5. RRFe = 350<br>
+<br>
+350 is the remaining damage from the incoming 1000 - ok....<br>
+But should be the shield the last point? As far as know, shields are around the armor and they are the first, an incoming damage have to pass by and then AC.<br>
+The logical right order in this case should be either (<b>high damage in big letters</b>):<br>
+<br>
+A:<br>
+1. Incoming damage = 2000 (<b>6000</b>)<br>
+2. Check for 50% PvP = 1000 (<b>3000</b>)<br>
+3. check for 40% limit = 1000 (<b>2000</b>)<br>
+4. RRFe = 700 (<b>1400</b>)<br>
+5. reduce damage by AC = 200 (<b>900</b>)<br>
+<br>
+or<br>
+<br>
+B:<br>
+1. Incoming damage = 2000 (<b>6000</b>)<br>
+2. Check for 50% PvP = 1000 (<b>3000</b>)<br>
+3. RRFe = 700 (<b>2100</b>)<br>
+4. reduce damage by AC = 200 (<b>1600</b>)<br>
+5. check for 40% limit = 200 (<b>1600</b>)<br>
+<br>
+or<br>
+<br>
+C:<br>
+1. Incoming damage = 2000 (<b>6000</b>)<br>
+2. Check for 50% PvP = 1000 (<b>3000</b>)<br>
+3. RRFe = 700 (<b>2100</b>)<br>
+4. check for 40% limit = 700 (<b>2000</b>)<br>
+5. reduce damage by AC = 200 (<b>1500</b>)<br>
+<br>
+As you see in all 3 cases, the low damage is lower (in every case 200) than it actually is (350 now). <br>
+But in the highdamage range, where the 40% cap hits, it could happen that it is either much lower (900) or in 2 cases a little bit higher (1500/1600). The only question here is.... where in this order comes the 40% cap?<br>
+But we all should agree, damage should pass first the shields, then the AC.<br>
+<br>
+Ok, FunCom - Fix it pls.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 9th, 2002 <span class="time">16:59</span></td><td class="alt2 small right"><a href="#post935464">#1</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250527112146/https://forums-archive.anarchy-online.com/showthread.php?79331-Reflect-shields-need-a-bugfix">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

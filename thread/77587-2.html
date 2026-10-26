@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Helpbot needs your help for /tell helpbot level 151</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/pvp-conflict-5.html">PvP Conflict</a> &gt; Helpbot needs your help for /tell helpbot level 151</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="77587.html">&laquo;</a> <a href="77587.html">1</a> <b>[2]</b> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="77745.html">Last Thread</a> &nbsp; <a href="78100.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Helpbot needs your help for /tell helpbot level 151 (page 2)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:PvP Conflict"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post924973"><td class="alt2 author"><b class="name">Hypos</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40143.jpg" alt=""></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>posted by Dyna18</i><br>
+<br>
+Have you tried contacting the funcom developers? <br>
+<br>
+Since they put up a commercial for helpbot in the Subway dungeon, they might want to help you with this getting the correct numbers.
+			
+		
+	<hr></blockquote>
+Ah, Dyna.  You're so cute when you get all optimistic like that <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> December 5th, 2002 <span class="time">22:58</span></td><td class="alt2 small right"><a href="#post924973">#21</a></td></tr>
+<tr class="post" id="post925225"><td class="alt1 author"><b class="name">Docmax</b><br><span class="small usertitle">Tradeskill n00bie</span><br><img class="avatar" src="../images/avatars/40176.jpg" alt=""></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Sethil </i><br>
+<b>Ok, here we go - lvl 144 doesnt work, lvl 147 works with my lvl 184. Dont know it for 145-146, couldnt test that. </b>
+			
+		
+	<hr></blockquote>
+hmmm, I wonder if the limit is 25% of your level, not 30%, like I was using.<br>
+<br>
+<br>
+<br>
+
+	<blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Dyna18 </i><br>
+<b>indeed not completely accurate.<br>
+<br>
+
+	<blockquote>code:<hr><pre>L150: pvp 116-194</pre><hr></blockquote>
+L150 should be able to attack till L200 </b>
+			
+		
+	<hr></blockquote>
+Woops!  I forgot to account for that case.<br>
+<br>
+ok, here is my table (version 2)<br>
+<br>
+assuming 25% now, not 30%<br>
+<br>
+
+	<div>PHP Code:</div>
+	<div><code><code><span style="color:#000000">
+<span style="color:#007700">for&nbsp;(</span><span style="color:#0000BB">$level</span><span style="color:#007700">=</span><span style="color:#0000BB">1</span><span style="color:#007700">;</span><span style="color:#0000BB">$level</span><span style="color:#007700">&lt;=</span><span style="color:#0000BB">200</span><span style="color:#007700">;</span><span style="color:#0000BB">$level</span><span style="color:#007700">++)<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#0000BB">$low&nbsp;</span><span style="color:#007700">=&nbsp;</span><span style="color:#0000BB">$level</span><span style="color:#007700">/</span><span style="color:#0000BB">1.25</span><span style="color:#007700">;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color:#0000BB">$level</span><span style="color:#007700">&lt;</span><span style="color:#0000BB">150</span><span style="color:#007700">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#0000BB">$high&nbsp;</span><span style="color:#007700">=&nbsp;</span><span style="color:#0000BB">$level</span><span style="color:#007700">*</span><span style="color:#0000BB">1.25</span><span style="color:#007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#0000BB">$high</span><span style="color:#007700">=</span><span style="color:#0000BB">200</span><span style="color:#007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color:#0000BB">$high</span><span style="color:#007700">&gt;</span><span style="color:#0000BB">200</span><span style="color:#007700">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#0000BB">$high</span><span style="color:#007700">=</span><span style="color:#0000BB">200</span><span style="color:#007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color:#0000BB">$high</span><span style="color:#007700">&lt;</span><span style="color:#0000BB">$level</span><span style="color:#007700">)&nbsp;&nbsp;&nbsp;</span><span style="color:#0000BB">$high</span><span style="color:#007700">=</span><span style="color:#0000BB">$level</span><span style="color:#007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color:#0000BB">$low</span><span style="color:#007700">&lt;</span><span style="color:#0000BB">1</span><span style="color:#007700">)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#0000BB">$low</span><span style="color:#007700">=</span><span style="color:#0000BB">1</span><span style="color:#007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color:#0000BB">$low</span><span style="color:#007700">&gt;</span><span style="color:#0000BB">$level</span><span style="color:#007700">)&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:#0000BB">$low</span><span style="color:#007700">=</span><span style="color:#0000BB">$level</span><span style="color:#007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color:#0000BB">$level</span><span style="color:#007700">&gt;</span><span style="color:#0000BB">150&nbsp;</span><span style="color:#007700">&amp;&amp;&nbsp;</span><span style="color:#0000BB">$low</span><span style="color:#007700">&gt;</span><span style="color:#0000BB">150</span><span style="color:#007700">)&nbsp;&nbsp;</span><span style="color:#0000BB">$low</span><span style="color:#007700">=</span><span style="color:#0000BB">150</span><span style="color:#007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color:#0000BB">sprintf</span><span style="color:#007700">(</span><span style="color:#DD0000">"L%s:&nbsp;pvp&nbsp;%0.0f-%0.0f\n"</span><span style="color:#007700">,</span><span style="color:#0000BB">$level</span><span style="color:#007700">,</span><span style="color:#0000BB">$low</span><span style="color:#007700">,</span><span style="color:#0000BB">$high</span><span style="color:#007700">);<br>}&nbsp;<br></span>
+</span>
+</code></code></div>
+
+	<blockquote>code:<hr><pre>L1: pvp 1-1
+L2: pvp 2-3
+L3: pvp 2-4
+L4: pvp 3-5
+L5: pvp 4-6
+L6: pvp 5-8
+L7: pvp 6-9
+L8: pvp 6-10
+L9: pvp 7-11
+L10: pvp 8-13
+L11: pvp 9-14
+L12: pvp 10-15
+L13: pvp 10-16
+L14: pvp 11-18
+L15: pvp 12-19
+L16: pvp 13-20
+L17: pvp 14-21
+L18: pvp 14-23
+L19: pvp 15-24
+L20: pvp 16-25
+L21: pvp 17-26
+L22: pvp 18-28
+L23: pvp 18-29
+L24: pvp 19-30
+L25: pvp 20-31
+L26: pvp 21-33
+L27: pvp 22-34
+L28: pvp 22-35
+L29: pvp 23-36
+L30: pvp 24-38
+L31: pvp 25-39
+L32: pvp 26-40
+L33: pvp 26-41
+L34: pvp 27-43
+L35: pvp 28-44
+L36: pvp 29-45
+L37: pvp 30-46
+L38: pvp 30-48
+L39: pvp 31-49
+L40: pvp 32-50
+L41: pvp 33-51
+L42: pvp 34-53
+L43: pvp 34-54
+L44: pvp 35-55
+L45: pvp 36-56
+L46: pvp 37-58
+L47: pvp 38-59
+L48: pvp 38-60
+L49: pvp 39-61
+L50: pvp 40-63
+L51: pvp 41-64
+L52: pvp 42-65
+L53: pvp 42-66
+L54: pvp 43-68
+L55: pvp 44-69
+L56: pvp 45-70
+L57: pvp 46-71
+L58: pvp 46-73
+L59: pvp 47-74
+L60: pvp 48-75
+L61: pvp 49-76
+L62: pvp 50-78
+L63: pvp 50-79
+L64: pvp 51-80
+L65: pvp 52-81
+L66: pvp 53-83
+L67: pvp 54-84
+L68: pvp 54-85
+L69: pvp 55-86
+L70: pvp 56-88
+L71: pvp 57-89
+L72: pvp 58-90
+L73: pvp 58-91
+L74: pvp 59-93
+L75: pvp 60-94
+L76: pvp 61-95
+L77: pvp 62-96
+L78: pvp 62-98
+L79: pvp 63-99
+L80: pvp 64-100
+L81: pvp 65-101
+L82: pvp 66-103
+L83: pvp 66-104
+L84: pvp 67-105
+L85: pvp 68-106
+L86: pvp 69-108
+L87: pvp 70-109
+L88: pvp 70-110
+L89: pvp 71-111
+L90: pvp 72-113
+L91: pvp 73-114
+L92: pvp 74-115
+L93: pvp 74-116
+L94: pvp 75-118
+L95: pvp 76-119
+L96: pvp 77-120
+L97: pvp 78-121
+L98: pvp 78-123
+L99: pvp 79-124
+L100: pvp 80-125
+L101: pvp 81-126
+L102: pvp 82-128
+L103: pvp 82-129
+L104: pvp 83-130
+L105: pvp 84-131
+L106: pvp 85-133
+L107: pvp 86-134
+L108: pvp 86-135
+L109: pvp 87-136
+L110: pvp 88-138
+L111: pvp 89-139
+L112: pvp 90-140
+L113: pvp 90-141
+L114: pvp 91-143
+L115: pvp 92-144
+L116: pvp 93-145
+L117: pvp 94-146
+L118: pvp 94-148
+L119: pvp 95-149
+L120: pvp 96-150
+L121: pvp 97-151
+L122: pvp 98-153
+L123: pvp 98-154
+L124: pvp 99-155
+L125: pvp 100-156
+L126: pvp 101-158
+L127: pvp 102-159
+L128: pvp 102-160
+L129: pvp 103-161
+L130: pvp 104-163
+L131: pvp 105-164
+L132: pvp 106-165
+L133: pvp 106-166
+L134: pvp 107-168
+L135: pvp 108-169
+L136: pvp 109-170
+L137: pvp 110-171
+L138: pvp 110-173
+L139: pvp 111-174
+L140: pvp 112-175
+L141: pvp 113-176
+L142: pvp 114-178
+L143: pvp 114-179
+L144: pvp 115-180
+L145: pvp 116-181
+L146: pvp 117-183
+L147: pvp 118-184
+L148: pvp 118-185
+L149: pvp 119-186
+L150: pvp 120-200
+L151: pvp 121-200
+L152: pvp 122-200
+L153: pvp 122-200
+L154: pvp 123-200
+L155: pvp 124-200
+L156: pvp 125-200
+L157: pvp 126-200
+L158: pvp 126-200
+L159: pvp 127-200
+L160: pvp 128-200
+L161: pvp 129-200
+L162: pvp 130-200
+L163: pvp 130-200
+L164: pvp 131-200
+L165: pvp 132-200
+L166: pvp 133-200
+L167: pvp 134-200
+L168: pvp 134-200
+L169: pvp 135-200
+L170: pvp 136-200
+L171: pvp 137-200
+L172: pvp 138-200
+L173: pvp 138-200
+L174: pvp 139-200
+L175: pvp 140-200
+L176: pvp 141-200
+L177: pvp 142-200
+L178: pvp 142-200
+L179: pvp 143-200
+L180: pvp 144-200
+L181: pvp 145-200
+L182: pvp 146-200
+L183: pvp 146-200
+L184: pvp 147-200
+L185: pvp 148-200
+L186: pvp 149-200
+L187: pvp 150-200
+L188: pvp 150-200
+L189: pvp 150-200
+L190: pvp 150-200
+L191: pvp 150-200
+L192: pvp 150-200
+L193: pvp 150-200
+L194: pvp 150-200
+L195: pvp 150-200
+L196: pvp 150-200
+L197: pvp 150-200
+L198: pvp 150-200
+L199: pvp 150-200
+L200: pvp 150-200</pre><hr></blockquote></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> December 6th, 2002 <span class="time">00:25</span></td><td class="alt1 small right"><a href="#post925225">#22</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="77587.html">&laquo;</a> <a href="77587.html">1</a> <b>[2]</b> </span></td><td class="right small"><a href="https://web.archive.org/web/20250527120141/https://forums-archive.anarchy-online.com/showthread.php?77587-Helpbot-needs-your-help-for-tell-helpbot-level-151">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

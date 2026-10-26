@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Updated release of my AO World Map v4.1</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/the-world-of-rubi-ka-35.html">The World of Rubi-Ka</a> &gt; Updated release of my AO World Map v4.1</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <a href="31105.html">&laquo;</a> <a href="31105.html">1</a> <b>[2]</b> <a href="31105-3.html">3</a> <a href="31105-3.html">&raquo;</a> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="35378.html">Last Thread</a> &nbsp; <a href="35600.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Updated release of my AO World Map v4.1 (page 2)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:The World of Rubi-Ka"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post511159"><td class="alt2 author"><b class="name">Cozy</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Darkbane</i><br>
+The new map is a single file that is in fact a concatenation of lots of smaller files, the text file contains the offsets. The individual files are just 128x128x24bit PNG files, one set for zoomed out, another for zoomed in. <br>
+<br>
+So not as easy to work with as the original, but it shouldn't be too hard. We'll need a tool to extract the bits based on the text file, and another to put them back and write a new text file.
+			
+		
+	<hr></blockquote>
+Can someone send the new map to me? It's so much more fun to code stuff like this than server sync services <img src="../images/smilies/wink.gif" alt="" class="smilie"></div><p class="small edited"><i>Last edited by Cozy on June 18th, 2002 at 23:35</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 18th, 2002 <span class="time">21:35</span></td><td class="alt2 small right"><a href="#post511159">#21</a></td></tr>
+<tr class="post" id="post511222"><td class="alt1 author"><b class="name">Pahpa</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40115.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>wow</b></div><div class="message">Looks great. Now if i could just get out of work and get home so i could try it ...... I should try sneaking *pours the points into Concealment*</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 18th, 2002 <span class="time">22:11</span></td><td class="alt1 small right"><a href="#post511222">#22</a></td></tr>
+<tr class="post" id="post512054"><td class="alt2 author"><b class="name">NanoKiss</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40215.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Excellent!</b></div><div class="message">This is a great resource for many players, and very helpful.<br>
+<br>
+Hopefully something for the new maps won't be too Hard to Make.<br>
+<br>
+Thanks!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">09:09</span></td><td class="alt2 small right"><a href="#post512054">#23</a></td></tr>
+<tr class="post" id="post512055"><td class="alt1 author"><b class="name">Dhurdahl</b><br><span class="small usertitle">Drunken Leet!!</span><br><img class="avatar" src="../images/avatars/Leets_0007.jpg" alt=""></td><td class="alt1 body"><div class="message">Actually after a bit of tinkering with the txt file I manage to show a picture of my cat (1024x768x24) instead of the ingame map.<br>
+So I don't think we absolutly need to stick to 128x128 PNGs.<br>
+I actually saved it in an external file, not the original bin file since you can name the file it saved in.<br>
+<br>
+As the rest said... the bin file looks like concated pngs with the byte border stated in the txt file.<br>
+<br>
+------------------------------<br>
+File normal\PlanetMapGfxNormal.bin  &lt;&lt; filename<br>
+TextureSize 128 &lt;&lt; size of picture<br>
+<br>
+Size 378 458 &lt;&lt; total size ??<br>
+Tiles 3 4 &lt;&lt; nr of tiles x,y<br>
+MapRect 23 0 378 458 &lt;&lt; no idea, looks like start pos of window<br>
+FilePos 0 &lt;&lt; start pos of png nr1<br>
+FilePos 27319 &lt;&lt; start pos of png nr2<br>
+FilePos 56505<br>
+FilePos 87973<br>
+FilePos 90968<br>
+FilePos 127287<br>
+FilePos 165852<br>
+FilePos 203984<br>
+FilePos 215616<br>
+FilePos 253136<br>
+FilePos 291750<br>
+FilePos 329319</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">09:10</span></td><td class="alt1 small right"><a href="#post512055">#24</a></td></tr>
+<tr class="post" id="post512081"><td class="alt2 author"><b class="name">Greendevil</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt2 body"><div class="message">Great job dude, cleanest and most useful map. I'll sure be using this one.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">09:29</span></td><td class="alt2 small right"><a href="#post512081">#25</a></td></tr>
+<tr class="post" id="post512091"><td class="alt1 author"><b class="name">Dhurdahl</b><br><span class="small usertitle">Drunken Leet!!</span><br><img class="avatar" src="../images/avatars/Leets_0007.jpg" alt=""></td><td class="alt1 body"><div class="message">Okie more tests <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+Created 4 pngs and concated them into one file....<br>
+<br>
+----------<br>
+File normal\test.bin<br>
+TextureSize 128<br>
+<br>
+Size 256 256<br>
+Tiles 2 2 <br>
+MapRect 0 0 256 256<br>
+FilePos 0<br>
+FilePos 789<br>
+FilePos 1814<br>
+FilePos 2933<br>
+<br>
+They show up in this order<br>
+<br>
+|-------|<br>
+| 1 | 3 |<br>
+|-------|<br>
+| 2 | 4 |<br>
+---------<br>
+<br>
+So yes, it can be quite easily done <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">09:34</span></td><td class="alt1 small right"><a href="#post512091">#26</a></td></tr>
+<tr class="post" id="post512245"><td class="alt2 author"><b class="name">Orchid</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">Terrific map hon, you earned a place on my list of Cutest Characters in Rubi-Ka  * You were nominated by my friend Meiko!<br>
+<br>
+HEHE  take a look in world of rubi ka section for my growing list!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">10:45</span></td><td class="alt2 small right"><a href="#post512245">#27</a></td></tr>
+<tr class="post" id="post512380"><td class="alt1 author"><b class="name">Comador64</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40694.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> </div><div class="message">Great job on the map!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">11:40</span></td><td class="alt1 small right"><a href="#post512380">#28</a></td></tr>
+<tr class="post" id="post512518"><td class="alt2 author"><b class="name">Darkbane</b><br><span class="small usertitle">Council of Testers</span></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> <b>Dhurdahl...</b></div><div class="message">Nice work! I was going to have a play this weekend with it, but you've saved me a lot of time. Now I just need to hack apart the bits, combine them in a paint package and voila! Well, maybe...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">12:30</span></td><td class="alt2 small right"><a href="#post512518">#29</a></td></tr>
+<tr class="post" id="post512789"><td class="alt1 author"><b class="name">Dhurdahl</b><br><span class="small usertitle">Drunken Leet!!</span><br><img class="avatar" src="../images/avatars/Leets_0007.jpg" alt=""></td><td class="alt1 body"><div class="message">hehe, this was fun... aka more tinkering <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+Remember to rename your PlanetMapIndexNormal.txt before you extract this one...<br>
+You can't press minimize/maximize... need to start it in maxed mode <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+<a href="https://web.archive.org/web/20020619/http://www.solace.mh.se/~jocke/ao/hugemap.zip">HugeMap</a><br>
+<br>
+It's huge... too big to be used but it's a nice showoff what can be done <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+Can't get the coords to align perfectly.... oh well <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 19th, 2002 <span class="time">14:24</span></td><td class="alt1 small right"><a href="#post512789">#30</a></td></tr>
+<tr class="post" id="post519159"><td class="alt2 author"><b class="name">Dhurdahl</b><br><span class="small usertitle">Drunken Leet!!</span><br><img class="avatar" src="../images/avatars/Leets_0007.jpg" alt=""></td><td class="alt2 body"><div class="message">Okie.... made a small c util that extracts everything....<br>
+It reads the file boundaries from the txt file so it should be quite generic <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+I included the extraced maps also <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+<a href="https://web.archive.org/web/20020622/http://www.solace.mh.se/~jocke/ao/14.4-map.zip">mapextractor</a></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 22nd, 2002 <span class="time">21:02</span></td><td class="alt2 small right"><a href="#post519159">#31</a></td></tr>
+<tr class="post" id="post519675"><td class="alt1 author"><b class="name">Dovve</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40246.jpg" alt=""></td><td class="alt1 body"><div class="message">wow very nice Dhurdahl,<br>
+<br>
+This is certainly be usefull <img src="../images/smilies/smile.gif" alt="" class="smilie"> well done!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 23rd, 2002 <span class="time">08:57</span></td><td class="alt1 small right"><a href="#post519675">#32</a></td></tr>
+<tr class="post" id="post519788"><td class="alt2 author"><b class="name">Dhurdahl</b><br><span class="small usertitle">Drunken Leet!!</span><br><img class="avatar" src="../images/avatars/Leets_0007.jpg" alt=""></td><td class="alt2 body"><div class="message">Hum... typical... I was missing the last png...<br>
+<br>
+Oh well, here is a new version that should work.<br>
+<br>
+<br>
+<a href="https://web.archive.org/web/20020623/http://www.solace.mh.se/~jocke/ao/mapextractor.zip">mapextractor + maps</a></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 23rd, 2002 <span class="time">11:25</span></td><td class="alt2 small right"><a href="#post519788">#33</a></td></tr>
+<tr class="post" id="post536573"><td class="alt1 author"><b class="name">Dovve</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40246.jpg" alt=""></td><td class="alt1 body"><div class="message">Now for the tricky part. You wouldn't happen to have a tool that takes all those peices and put them back together again?<br>
+<br>
+I am nearing completion of my 5.0 version. But i've got no way to test it in game as of yet.<br>
+<br>
+P.S I think you all will like this by the way <img src="../images/smilies/smile.gif" alt="" class="smilie"> I re-did all of the zone boundries, and made a lot of improvements to my previous version. I can't wait to get this out to the public <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 1st, 2002 <span class="time">18:58</span></td><td class="alt1 small right"><a href="#post536573">#34</a></td></tr>
+<tr class="post" id="post536976"><td class="alt2 author"><b class="name">Orchid</b><br><span class="small usertitle">Supa Leet</span></td><td class="alt2 body"><div class="message">Me too, I onlywill use Dovve's map !!! ACCEPT NO SUBSTITUTE!<br>
+<br>
+^.^</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 1st, 2002 <span class="time">22:23</span></td><td class="alt2 small right"><a href="#post536976">#35</a></td></tr>
+<tr class="post" id="post537036"><td class="alt1 author"><b class="name">Darkbane</b><br><span class="small usertitle">Council of Testers</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon2.gif" alt=""> </div><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by Dovve </i><br>
+<b>Now for the tricky part. You wouldn't happen to have a tool that takes all those peices and put them back together again?<br>
+<br>
+I am nearing completion of my 5.0 version. But i've got no way to test it in game as of yet.<br>
+<br>
+P.S I think you all will like this by the way <img src="../images/smilies/smile.gif" alt="" class="smilie"> I re-did all of the zone boundries, and made a lot of improvements to my previous version. I can't wait to get this out to the public <img src="../images/smilies/smile.gif" alt="" class="smilie"> </b>
+			
+		
+	<hr></blockquote>
+Sticking the bits back together is simple enough, even the DOS copy command can do this, though there are easier tools available. The tricky part is constructing a new text file, and even that can be done with little more than windows calculator and file properties dialog.<br>
+<br>
+If you need a hand, PM me or maybe Dhurdahl can help...<br>
+<br>
+I think we're all looking forward to it <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 1st, 2002 <span class="time">23:11</span></td><td class="alt1 small right"><a href="#post537036">#36</a></td></tr>
+<tr class="post" id="post537325"><td class="alt2 author"><b class="name">Borox</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>YAY!</b></div><div class="message">/me bows before the wonderful goddess Dovve</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 2nd, 2002 <span class="time">02:35</span></td><td class="alt2 small right"><a href="#post537325">#37</a></td></tr>
+<tr class="post" id="post537694"><td class="alt1 author"><b class="name">Encerah</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon9.gif" alt=""> <b>help!</b></div><div class="message">whenever i install the skin with the map, it shows me the skin just fine, but the map is the same as it was before. i've tried downloading map only files too, and they dont work either, does someone know what my problem is?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 2nd, 2002 <span class="time">07:58</span></td><td class="alt1 small right"><a href="#post537694">#38</a></td></tr>
+<tr class="post" id="post537824"><td class="alt2 author"><b class="name">Demendar</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/opifexmale.gif" alt=""></td><td class="alt2 body"><div class="message">same prob</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 2nd, 2002 <span class="time">10:01</span></td><td class="alt2 small right"><a href="#post537824">#39</a></td></tr>
+<tr class="post" id="post537864"><td class="alt1 author"><b class="name">Darkbane</b><br><span class="small usertitle">Council of Testers</span></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon2.gif" alt=""> </div><div class="message">That's because that is an old version that only works fully for versions of AO prior to 14.4 - a new map is in the works...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 2nd, 2002 <span class="time">10:30</span></td><td class="alt1 small right"><a href="#post537864">#40</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (3): <a href="31105.html">&laquo;</a> <a href="31105.html">1</a> <b>[2]</b> <a href="31105-3.html">3</a> <a href="31105-3.html">&raquo;</a> </span></td><td class="right small"><a href="https://web.archive.org/web/20250601051205/https://forums-archive.anarchy-online.com/showthread.php?31105-Updated-release-of-my-AO-World-Map-v4-1">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

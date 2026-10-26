@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Could be a bug .. feedback plz</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/the-world-of-rubi-ka-54.html">The World of Rubi-Ka</a> &gt; Could be a bug .. feedback plz</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="14509.html">Last Thread</a> &nbsp; <a href="14299.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Could be a bug .. feedback plz"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:The World of Rubi-Ka"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post339953"><td class="alt2 author"><b class="name">Maydje</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40170.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon2.gif" alt=""> <b>Could be a bug .. feedback plz</b></div><div class="message">Hey guys ... whilst playing around with some scripting concepts I decided to write a setup script for my pets (MP).  So I did, /setup renames combat and mez pets.  It also orders combat to guard, and mez / healing to follow.<br>
+<br>
+After realizing that I didn't have the healing pet set to watch me I wrote another script /AReset which sets combat to guard, mez to follow, does a /selectself, then orders healing pet to heal.<br>
+<br>
+So I came up with the bright idea that anytime I had to re-summon a pet, instead of typing /setup then /AReset, or instead of creating 2 different macros, I'd just place a call to /AReset at the very end of the /setup script.<br>
+<br>
+I executed it from the command entry box guy and blammo, worked great!  So I created a macro to the /setup script.  You would expect the macro that is executing a script to act the same as a script, but it doesn't ....... <br>
+<br>
+It appears that the /AReset call at the bottom of the /setup script is begin ignored if executed from a macro, whereas execution from the command line works fine.<br>
+<br>
+Can anyone else confirm this behavior?<br>
+<br>
+Thanks<br>
+maydje</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 7th, 2002 <span class="time">15:30</span></td><td class="alt2 small right"><a href="#post339953">#1</a></td></tr>
+<tr class="post" id="post340029"><td class="alt1 author"><b class="name">Divillian</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""></td><td class="alt1 body"><div class="message">not a bug, im sure they wouldnt allow calling a macro from a macro to prevent spamming..<br>
+<br>
+i.e.<br>
+<br>
+/wheee<br>
+/rocky<br>
+/s wheeee<br>
+/wheee</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 7th, 2002 <span class="time">16:08</span></td><td class="alt1 small right"><a href="#post340029">#2</a></td></tr>
+<tr class="post" id="post340045"><td class="alt2 author"><b class="name">Maydje</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40170.jpg" alt=""></td><td class="alt2 body"><div class="message">Technically isn't a macro simply a graphical reference to a script?  If it is, shouldn't it then execute the script when clicked?  The reason I think it may be a bug is that you can call a script from another script, the only variable factor is if you actually type in /scriptname or do /macro Scriptname /scriptname ...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> March 7th, 2002 <span class="time">16:15</span></td><td class="alt2 small right"><a href="#post340045">#3</a></td></tr>
+<tr class="post" id="post340499"><td class="alt1 author"><b class="name">Detonate</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40686.jpg" alt=""></td><td class="alt1 body"><div class="message">/org commands don't work from a script either...<br>
+<br>
+Using the online info, I have a script that identifies all inactive members who have not leveled in 6 weeks, so that they may removed from First Order.<br>
+<br>
+I then got the bright idea to have that exported to a script...<br>
+<br>
+i.e.<br>
+/org kick member1<br>
+/org kick member2<br>
+/org kick member3<br>
+etc....<br>
+<br>
+But no go...  Wouldn't even kick a single member through a script.<br>
+<br>
+So I'm back to having to do it one line at a time, kicking about 150 inactive accounts every six weeks...<br>
+<br>
+Game is dying fast, and my patience is wearing thin.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 7th, 2002 <span class="time">20:44</span></td><td class="alt1 small right"><a href="#post340499">#4</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250530031043/https://forums-archive.anarchy-online.com/showthread.php?14608-Could-be-a-bug-feedback-plz">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

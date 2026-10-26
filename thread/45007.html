@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Randomize in scripts, and execute on idle.</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/suggestions-26.html">Suggestions</a> &gt; Randomize in scripts, and execute on idle.</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <b>[1]</b> <a href="45007-2.html">2</a> <a href="45007-2.html">&raquo;</a> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="62072.html">Last Thread</a> &nbsp; <a href="62454.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Randomize in scripts, and execute on idle."><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Suggestions"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post626116"><td class="alt2 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon3.gif" alt=""> <b>Cz, Ideas to enhance scripting(Randomize, and execute on idle)</b></div><div class="message">Unless Ive missed somehow, I belive there is no randomize in the scripts, and im sure there are other things that would be sweet to have in the scripting language.<br>
+<br>
+What I would want, would be a randomize argument in the script, so that if you for example write<br>
+<br>
+<span style="color:red">%rand</span><span style="color:white">(1)</span><br>
+<span style="color:yellow">{1}</span> &quot;My master is so über&quot;<span style="color:yellow">{/1}</span><br>
+<span style="color:yellow">{2}</span> &quot;Whohoo!&quot;<span style="color:yellow">{/2}</span><br>
+<span style="color:yellow">{3}</span> &quot;Hey, who touched my bum?&quot;<span style="color:yellow">{/3}</span><br>
+<span style="color:red">%endrand</span><br>
+/pet chat %r1<br>
+<br>
+It would randomly choose from one of the 3 each time you execute the script.<br>
+<br>
+It could also be like this.<br>
+<br>
+<span style="color:red">%rand</span><span style="color:white">(1)</span><br>
+<span style="color:yellow">{1}</span> /disco<br>
+/me throws a party<br>
+/delay 5000<br>
+/ymca<br>
+/say Whohoo! Lets rock!<br>
+<span style="color:yellow">{/1}</span><br>
+<span style="color:yellow">{2}</span> /pointlef<br>
+/say This way!<br>
+/delay 1000<br>
+/say No, that way!<br>
+/pointrig<br>
+/delay 1000<br>
+/angry<br>
+/say Argh, Im so confused<br>
+<span style="color:yellow">{/2}</span><br>
+<span style="color:red">%endrand</span><br>
+%r1<br>
+<br>
+If you use more than one randomize in a script, you'd simply add more and use different numbers (%rand(2) %r2, ect)<br>
+<br>
+Now, the second thing I would like to see, that happens when you stand around for a long time, doing nothing, would be able to connect a script or something else to execute. For example<br>
+/setidle /backflip<br>
+or<br>
+/setidle /idlescript<br>
+<br>
+Now, I belive that it should not be possible to link other scripts within scripts, to avoid looping. Like:<br>
+<br>
+Script1<br>
+/say &quot;Ultraloop&quot;<br>
+/script2<br>
+<br>
+Script2<br>
+/say &quot;Megaloop&quot;<br>
+/script1<br>
+<br>
+If anyone can think of more things to enhance the scripting language(well, it might not be that advanced to be called a scripting language, but it might be in the future, i hope)<br>
+please post it here.</div><p class="small edited"><i>Last edited by Joramon on August 16th, 2002 at 13:11</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 16th, 2002 <span class="time">11:14</span></td><td class="alt2 small right"><a href="#post626116">#1</a></td></tr>
+<tr class="post" id="post626233"><td class="alt1 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon10.gif" alt=""> </div><div class="message">*Shameless self-bump*</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 16th, 2002 <span class="time">12:37</span></td><td class="alt1 small right"><a href="#post626233">#2</a></td></tr>
+<tr class="post" id="post626346"><td class="alt2 author"><b class="name">secondkenlon</b><br><span class="small usertitle">Back One Mo&#39; Tiiiiiiime!</span><br><img class="avatar" src="../images/avatars/40694.jpg" alt=""></td><td class="alt2 body"><div class="message">Oooh, nifty.<br>
+<br>
+<br>
+*bump*</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 16th, 2002 <span class="time">13:27</span></td><td class="alt2 small right"><a href="#post626346">#3</a></td></tr>
+<tr class="post" id="post626749"><td class="alt1 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon10.gif" alt=""> </div><div class="message">Glad to see one of my ideas appreciated <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 16th, 2002 <span class="time">16:10</span></td><td class="alt1 small right"><a href="#post626749">#4</a></td></tr>
+<tr class="post" id="post626821"><td class="alt2 author"><b class="name">Pepin</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt2 body"><div class="message">Very nice idea - so you get a *bump*<br>
+<br>
+And while I'm here :<br>
+<br>
+How do you 'stop' a script (with, say, 20 second delays between each of 30 actions ? <img src="../images/smilies/biggrin.gif" alt="" class="smilie"> (I call it my &quot;nologout&quot; script when I'm afk)<br>
+<br>
+Does zoning stop a /script sequence ? Or that infinite loop seque,ce of a script within a script ?<br>
+<br>
+Thanks.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 16th, 2002 <span class="time">16:33</span></td><td class="alt2 small right"><a href="#post626821">#5</a></td></tr>
+<tr class="post" id="post626993"><td class="alt1 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt1 body"><div class="message">Good question. There ought to be a way to stop scripts, for example pressing esc, same should apply when casting nanos.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 16th, 2002 <span class="time">17:25</span></td><td class="alt1 small right"><a href="#post626993">#6</a></td></tr>
+<tr class="post" id="post630323"><td class="alt2 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt2 body"><div class="message">Well, I really really really want this idea to be implented, so i bump it again. I wish cz or cosmik would read it.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 18th, 2002 <span class="time">12:42</span></td><td class="alt2 small right"><a href="#post630323">#7</a></td></tr>
+<tr class="post" id="post632259"><td class="alt1 author"><b class="name">Pepin</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon10.gif" alt=""> </div><div class="message">Hey !! who let this post slip ?!?!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 19th, 2002 <span class="time">14:08</span></td><td class="alt1 small right"><a href="#post632259">#8</a></td></tr>
+<tr class="post" id="post634157"><td class="alt2 author"><b class="name">skybert</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt2 body"><div class="message">I know that I would love this! Very, very much!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">06:38</span></td><td class="alt2 small right"><a href="#post634157">#9</a></td></tr>
+<tr class="post" id="post634439"><td class="alt1 author"><b class="name">Promoo</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40271.jpg" alt=""></td><td class="alt1 body"><div class="message">Bumpity bump bump</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">10:37</span></td><td class="alt1 small right"><a href="#post634439">#10</a></td></tr>
+<tr class="post" id="post635187"><td class="alt2 author"><b class="name">Pepin</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> </div><div class="message">Gotcha !!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">15:44</span></td><td class="alt2 small right"><a href="#post635187">#11</a></td></tr>
+<tr class="post" id="post641006"><td class="alt1 author"><b class="name">Docgalaad</b><br><span class="small usertitle">Phear Leet</span><br><img class="avatar" src="../images/avatars/40201.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Thread Completly Useless</b></div><div class="message">The command to randomize parts of a scripts already exists.<br>
+ROTFL.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 22nd, 2002 <span class="time">19:23</span></td><td class="alt1 small right"><a href="#post641006">#12</a></td></tr>
+<tr class="post" id="post641358"><td class="alt2 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt2 body"><div class="message">And everytime you run script with random in it, it randomly picks from a list of arguments or whatnot?<br>
+<br>
+If so, give me the hard facts how to do it.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 22nd, 2002 <span class="time">22:02</span></td><td class="alt2 small right"><a href="#post641358">#13</a></td></tr>
+<tr class="post" id="post647101"><td class="alt1 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt1 body"><div class="message">Well, this thread has fallen too far down. bump.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 26th, 2002 <span class="time">07:28</span></td><td class="alt1 small right"><a href="#post647101">#14</a></td></tr>
+<tr class="post" id="post647154"><td class="alt2 author"><b class="name">Krabbus</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40694.jpg" alt=""></td><td class="alt2 body"><div class="message">make it possible to execute nanos/use utils/select person from scripts.<br>
+<br>
+I have a standard buffline, trimmerset for my pet and just want to press one button - why can't it be like this:<br>
+<br>
+/pet rename myPET<br>
+/selectchar myPET<br>
+/use [referenceoftrimmer]<br>
+/use [referenceoftrimmer]<br>
+/use [referenceofnano]<br>
+delay [attack+recharg]<br>
+/use [referenceofnano]<br>
+.... etc etc...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 26th, 2002 <span class="time">08:27</span></td><td class="alt2 small right"><a href="#post647154">#15</a></td></tr>
+<tr class="post" id="post647285"><td class="alt1 author"><b class="name">Pepin</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40261.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon2.gif" alt=""> </div><div class="message">I like all the ideas posted here, especially yours Krabbus (plus the ability to 'stop' a script <img src="../images/smilies/biggrin.gif" alt="" class="smilie"> ), but wouldn't your (Krabbus) ideas permit the existence of bots à la AC ? :/</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 26th, 2002 <span class="time">10:21</span></td><td class="alt1 small right"><a href="#post647285">#16</a></td></tr>
+<tr class="post" id="post647374"><td class="alt2 author"><b class="name">Joramon</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40684.jpg" alt=""></td><td class="alt2 body"><div class="message">I wouldnt know, never played AC.<br>
+<br>
+Though I did post this on #anarchyonline, and I belive one of the devs have looked at it, though im not sure.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 26th, 2002 <span class="time">11:19</span></td><td class="alt2 small right"><a href="#post647374">#17</a></td></tr>
+<tr class="post" id="post648314"><td class="alt1 author"><b class="name">MissMaul</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40643.jpg" alt=""></td><td class="alt1 body"><div class="message">Ok, he didn't reply. Looks like a troll threadcrapping.<br>
+<br>
+Anyway, bump for a randomizing feature, and the ability to STOP emotes/scripts.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 26th, 2002 <span class="time">19:07</span></td><td class="alt1 small right"><a href="#post648314">#18</a></td></tr>
+<tr class="post" id="post680444"><td class="alt2 author"><b class="name">Miniexplicit</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40680.jpg" alt=""></td><td class="alt2 body"><div class="message">To stop a script what you have to do is run another script.<br>
+<br>
+I have a special script called scriptkill, right now its not macro'd because none of my longer scripts repeat themselves faster than I can type it.<br>
+<br>
+Inside scriptkill is a single command /end.  Its not a valid command, but it serves my purpose.  I don't know but its possible that nothing even has to be inside the script you use to stop another script.<br>
+<br>
+/selectself<br>
+/tell %t Fin!<br>
+<br>
+Except for another script the only thing that stops a script is the end and logging off.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> September 10th, 2002 <span class="time">13:02</span></td><td class="alt2 small right"><a href="#post680444">#19</a></td></tr>
+<tr class="post" id="post680840"><td class="alt1 author"><b class="name">Luxxan</b><br><span class="small usertitle">Phear Leet</span></td><td class="alt1 body"><div class="message">Bump<br>
+<br>
+I'd also like to see a %c variable that holds the text in your clipboard.  It would be oh-so useful..</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> September 10th, 2002 <span class="time">15:54</span></td><td class="alt1 small right"><a href="#post680840">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <b>[1]</b> <a href="45007-2.html">2</a> <a href="45007-2.html">&raquo;</a> </span></td><td class="right small"><a href="https://web.archive.org/web/20250528215008/https://forums-archive.anarchy-online.com/showthread.php?45007-Randomize-in-scripts-and-execute-on-idle">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

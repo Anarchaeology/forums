@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Something I&#39;d like to see. Ad Hoc stats on items.</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Future Anarchy &gt; <a href="../forum/suggestions-28.html">Suggestions</a> &gt; Something I&#39;d like to see. Ad Hoc stats on items.</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="58667.html">Last Thread</a> &nbsp; <a href="59331.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Something I&#39;d like to see. Ad Hoc stats on items."><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Suggestions"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post754206"><td class="alt2 author"><b class="name">Sean-Roach</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Something I&#39;d like to see. Ad Hoc stats on items.</b></div><div class="message">Okay.  Right now, any item in the game is in the database.  This makes for a rather...large...database.<br>
+<br>
+For instance, before the 14.5 patch, the head implant had 27 possible shining nanoclusters, (including the null), 7 bright, and 6 faded.  This comes to a grand-total of 27*7*6, or 1134 different head implants in the database.<br>
+<br>
+The same is true for jewelry, and a few other things with &quot;variable&quot; components.<br>
+<br>
+Now, what I'd like to see would be items that can have variable statistics.  On the high end, this would mean that all the statistics can be changed in every case, from the model, to how much it improves nano-delta.  Of course, this means that every item would have to be stored separately.<br>
+<br>
+On the low end, it could mean some objects had inheritance.  For instance, that head implant.  What if the head implant you were wearing had the following statistics.  <br>
+Item Number:<br>
+Name: A[n] &lt;slot1(Inherit_Name)&gt;[/]&lt;slot2(Inherit_Name)&gt;[/]&lt;slot3(Inherit_Name)&gt; Head Implant <br>
+QL: <br>
+slot1: <br>
+slot2:<br>
+slot3:<br>
+<br>
+OnUse1: slot1(OnUse1)<br>
+OnUse2: slot1(OnUse2)<br>
+OnUse3: Slot2(OnUse1)<br>
+OnUse4: slot2(OnUse2)<br>
+OnUse5: slot3(OnUse1)<br>
+OnUse6: Slot3(OnUse2)<br>
+<br>
+One example<br>
+Item Number: 504<br>
+Name: An Electronics/Captainship/Disarming Head Implant<br>
+QL: 200<br>
+slot1: 101534(QL)<br>
+slot2: 101480(QL)<br>
+slot3: 101568(QL)<br>
+<br>
+OnUse1: slot1(OnUse1)<br>
+OnUse2: slot1(OnUse2)<br>
+OnUse3: Slot2(OnUse1)<br>
+OnUse4: slot2(OnUse2)<br>
+OnUse5: slot3(OnUse1)<br>
+OnUse6: Slot3(OnUse2)<br>
+<br>
+Slot one might be filled in accordingly.<br>
+Item Number: 101534<br>
+Name: A Shining Electronics Nanocluster<br>
+Inherit_Name: Electronics<br>
+QL: 100<br>
+OnUse1: Modify Wearer   ElectricalEngineering 63 <br>
+ <br>
+Slot two might point to the following<br>
+Item Number: 101480<br>
+Name: A Bright NanoCluster of Captainship<br>
+Inherit_Name: Captainship<br>
+QL: 100<br>
+OnUse1: Modify Wearer   VehicleWater 63 <br>
+<br>
+Slot three could reference the following<br>
+Item Number: 101568<br>
+Name: A Faded NanoCluster of Disarming<br>
+Inherit_Name: Disarming<br>
+QL: 100<br>
+OnUse1: Modify Wearer   TrapDisarm 42 <br>
+ <br>
+The result would be, instead of having about 1155 different implants as of 14.5, you could have 1 head, and one for each nanocluster.<br>
+<br>
+The same could be applied to jewelry, armor, and weapons.<br>
+<br>
+And most especially, tradeskills.<br>
+<br>
+Imagine a gun that inherited the modifiers of a certain barrel, magazine, cooling system, stock, sight, and receiver combination, instead of being a static gun that requires you find a certain barrel, magazine, cooling system, stock, sight and receiver, to acquire.<br>
+<br>
+By doing this, although it'd be more complex to implement, a player could truly build custom items, and not simply slap things together according to a recipe to get the outcome.<br>
+<br>
+Imagine a piece of armor that adopted the advantages and disadvantages of the various elements.  Becoming heavier, but also better able to take impact damage, at a cost of higher stats required.<br>
+<br>
+Imagine a database that could be pared down to the component parts, and still represent everything in the game, while allowing for even more items to enter the game without even touching the database.<br>
+<br>
+Basically, a database of legos.<br>
+<br>
+One other thing.  I suggested this or something like it before.<br>
+<br>
+In that other suggestion, I went on to say how you could have a tradeskill system that truly invited tinkering, while not always rewarding it.  Pick a kit, drop in the first component, then hunt around until you found the right next filler component or five so you could drop in the next primary component.  That filler component being determined at random, from the first two components.</div><p class="small edited"><i>Last edited by Sean Roach on October 11th, 2002 at 04:21</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 11th, 2002 <span class="time">04:12</span></td><td class="alt2 small right"><a href="#post754206">#1</a></td></tr>
+<tr class="post" id="post754226"><td class="alt1 author"><b class="name">locomdenom</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40257.jpg" alt=""></td><td class="alt1 body"><div class="message">Only problem with this is that it requires a re-write of the ENTIRE database system.<br>
+<br>
+Which means new bugs will be introduced, new exploits will appear, etc, etc....<br>
+<br>
+I wish it would happen, but don't get yer hopes up too high.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 11th, 2002 <span class="time">04:24</span></td><td class="alt1 small right"><a href="#post754226">#2</a></td></tr>
+<tr class="post" id="post760699"><td class="alt2 author"><b class="name">starwolf</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="small posttitle"><b>Great idea</b></div><div class="message">This is a great idea. It would give Non-combtatants like Engineers and fixers something else to earn their XP on. Equipment would then be more of a supply and demand.<br>
+<br>
+Combine this with another idea someone posted here that a QL 150 character would make a better QL 50 item than one character at QL 50, but just slightly so the balance is not skeeved.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 14th, 2002 <span class="time">08:42</span></td><td class="alt2 small right"><a href="#post760699">#3</a></td></tr>
+<tr class="post" id="post762970"><td class="alt1 author"><b class="name">Sean-Roach</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""></td><td class="alt1 body"><div class="message">Actually, letting higher levels produce lower level gear at an advantage is fine by me, but I think the advantage should be in a price break, not in better stats.  Even an extreme price break won't mean that much to a higher level player, as the stuff's so cheap to make anyway.<br>
+<br>
+&lt;Edit&gt;  The above is in Comparison to tradeskilling gear of their own level.  ALso note, this does not include the example below.  Emergency med kits are EXPENSIVE to make.&lt;/Edit&gt;<br>
+<br>
+An example would be the way I think emergency med kits are now.  A higher level can produce ones with more charges.  They don't heal for any more than one produced by someone with just barely the skills needed to produce that QL, but they get more charges for the same cost of materials.<br>
+<br>
+Also, I think this price break should be tied to skills always.  Never level.  If a person with the skills to produce a QL 100 decides to make a QL 50, he should get the break even if he's only level 50.  If a person who IS level 100 decides to make some QL 50 gear, because that's the best he can make with his mix of tradeskills, there should be no price break over a level 50 guy making QL 50 stuff.<br>
+<br>
+Of course pulling this off would be rather difficult.  You'd have to keep a table for each item sold in shops, so the shops could reduce the price if the person has the right tradeskills high enough.<br>
+<br>
+Another way would be to allow a player to work with inferior components and still pull out decent gear.  Instead of requiring a certain component be, say, 25% of the QL of the other piece, allow it to be 25% minus 1% per the difference in the QL they are working with and the QL they COULD be working on, to a minimum QL.  If a guy has the skills to produce QL 70 gear, and if the person is working on a QL 50 item, and if a certain step allows for the lesser component to be 90%, then for this individual, instead of allowing anything from QL 45 up, allow anything from, (70-50=20, 45-20=25), QL 25 up.<br>
+<br>
+Or for only slightly more math, but slightly more scalable results, make that a percentage of the percentage.  For a person capable of producing QL 70, who is producing QL 50, who is working on a step that allows for the QL of the lesser component to be 90% of the greater component, allow the lesser component to be, instead of QL 45 or better, to be, (70-50=20, 1.00-.20=.80, 45*.80=36), QL 36.<br>
+<br>
+Just my opinion.</div><p class="small edited"><i>Last edited by Sean Roach on October 15th, 2002 at 05:22</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 15th, 2002 <span class="time">05:18</span></td><td class="alt1 small right"><a href="#post762970">#4</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529100021/https://forums-archive.anarchy-online.com/showthread.php?58263-Something-I&#39;d-like-to-see-Ad-Hoc-stats-on-items">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

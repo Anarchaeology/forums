@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Possible solution for those who couldn&#39;t patch to 11.1</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Tech &gt; <a href="../forum/cant-get-the-game-running.html">Can&#39;t get the game running</a> &gt; Possible solution for those who couldn&#39;t patch to 11.1</b> <span class="small badge">From the 2001 launch forum</span></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="l8461.html">&laquo;</a> <a href="l8461.html">1</a> <b>[2]</b> </span></td><td class="right small"><a href="l26410.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Possible solution for those who couldn&#39;t patch to 11.1 (page 2)"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Can&#39;t get the game running"></span><span data-pagefind-filter="year:2001"></span></td><td>Thread</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Goatboy</b></td><td class="alt2 body"><div class="message">WOMPO WOMPO!!!!!!!!!!!!!!! IT WORKS!!!!!!!!!!!!!!!!!!!<br>
+<br>
+you need to create a dimensions.txt file in the /launcher/ directory  and it works!!!!!!!!!!!! i'm at the 1st stage of character creation now!!! (doesn't detect my geforce 2 mx though <img src="../images/smilies/frown.gif" alt="" class="smilie"> )<br>
+<br>
+<br>
+the dimensions.txt file should contain this:<br>
+<br>
+<br>
+<br>
+STARTINFO<br>
+description = US Live Server<br>
+connect = lh.d1.funcom.com<br>
+ports = 7500<br>
+url = <a href="https://web.archive.org/web/20010611/http://www.anarchy-online.com/community/messages/index.html">http://www.anarchy-online.com/commu...ages/index.html</a><br>
+version = 11.1<br>
+ENDINFO<br>
+<br>
+<br>
+<br>
+<br>
+THANK YOU CAMPBELL !!!!!!!!!!!!!!!!!!!!!!!!!!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:01</span></td><td class="alt2 small right">#21</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Campbell</b></td><td class="alt1 body"><div class="message">I think the dimension error is a seperate problem. I don't know if its been resolved but you might wanna search to see if anyone has solved this.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:03</span></td><td class="alt1 small right">#22</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Wompo</b></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon8.gif" alt=""> </div><div class="message">GOATBOY GOATBOY!!!!!!!!!!!!!! IT DOESN'T ****IN WORK!!!!!!!!!!!!!!!!!!!!!!!!!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:08</span></td><td class="alt2 small right">#23</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Wompo</b></td><td class="alt1 body"><div class="message">goatboy can u put ur .txt file to net????? maybe it would then work</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:11</span></td><td class="alt1 small right">#24</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Goatboy</b></td><td class="alt2 body"><div class="message">it does for me!!<br>
+<br>
+you can't choose a dimension but just enter your login/password and click login<br>
+<br>
+are you sure the dimensions.txt file is in the right <br>
+directory and has the right content? <br>
+<br>
+if you changed stuff before maybe you should reinstall... if that doesn't work I don't know <img src="../images/smilies/frown.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:13</span></td><td class="alt2 small right">#25</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Campbell</b></td><td class="alt1 body"><div class="message">The board is formating the url so it won't work - try this one:<br>
+<br>
+<blockquote><pre><span class="small">code:</span><hr>
+
+# This file holds all the timelines available at this time.
+# All lines starting with # is ignored by parser...
+#
+
+STARTINFO
+description     =       US Live Server
+connect         =       lh.d1.funcom.com
+ports           =       7500
+url             =       http://www.anarchy-online.com/community/messages/index.html
+version         =       11.1
+ENDINFO
+
+<hr></pre></blockquote></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:13</span></td><td class="alt1 small right">#26</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Wompo</b></td><td class="alt2 body"><div class="message">NOW IT WORKS YEAH!!!!! btw is there a european server? i live in finland</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:14</span></td><td class="alt2 small right">#27</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Goatboy</b></td><td class="alt1 body"><div class="message">thx campbell for clearing this up <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:16</span></td><td class="alt1 small right">#28</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">xanderelsas</b></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> </div><div class="message">There's only one server now, and after the beta fc's only going to install another one if the one in America is over crowded. That's what fc said at least.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">09:24</span></td><td class="alt2 small right">#29</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Juice</b></td><td class="alt1 body"><div class="message">Cambell, i just tried it and i got the message "Essential game files are corrupted or missing and it is beyond quick repair. Please Reinstall AO".  Dang It!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">11:26</span></td><td class="alt1 small right">#30</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Silver</b></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon10.gif" alt=""> </div><div class="message">OMG THANK YOU!!!!!<br>
+It works perfectly... well, perfectly, I still got the Direct3D error on my GeForce 2 MX, but I downgraded my drivers, and it worked!<br>
+<br>
+Thanks a lot, man!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">12:40</span></td><td class="alt2 small right">#31</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Campbell</b></td><td class="alt1 body"><div class="message">Ack - any possibility your first installation (the one you patched) had got corrupted? Might be worth trying once more seen as its worked for the people who have posted on this thread. <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+If not - sorry it didn't help  you <img src="../images/smilies/frown.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 11th, 2001 <span class="time">12:41</span></td><td class="alt1 small right">#32</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Ken the Feeble</b></td><td class="alt2 body"><div class="small posttitle"><b>WOOHOO!</b></div><div class="message">I love you man.<br>
+<br>
+But you're still not getting my Bud Light.<br>
+<br>
+Wow thank you soooo much it works great now.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 12th, 2001 <span class="time">07:47</span></td><td class="alt2 small right">#33</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Korr</b></td><td class="alt1 body"><div class="message">For those of you still having problems getting to 11.1<br>
+FunCom has released a downloadable patch at:<br>
+<br>
+<a href="https://web.archive.org/web/20010612/http://216.74.158.92/production/beta/">http://216.74.158.92/production/beta/</a><br>
+<br>
+Hope that helps anyone still having problems.</div><div class="sig">__________________<br>Achiever      67%<br>
+Socializer    50%<br>
+Killer           46%<br>
+Explorer      37%</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 12th, 2001 <span class="time">08:19</span></td><td class="alt1 small right">#34</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Fredy</b></td><td class="alt2 body"><div class="message">hey wompo go here they made the patch downloadable because of the problems<br>
+<br>
+<a href="https://web.archive.org/web/20010612/http://download.anarchy-online.com:7013/AnarchyOnlinePatch11.1.exe">http://download.anarchy-online.com:...nePatch11.1.exe</a><br>
+<br>
+good luck</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 12th, 2001 <span class="time">08:29</span></td><td class="alt2 small right">#35</td></tr>
+<tr class="post"><td class="alt1 author"><b class="name">Ken the Feeble</b></td><td class="alt1 body"><div class="small posttitle"><b>When I had the problem...</b></div><div class="message">I had downloaded that file and ran it.  Then when I tried to start AO after that, it gave me the missing or corrupt file nonsense and tried to download, at which point I got that damn error because the file didn't exist!<br>
+<br>
+Anyway, just wanted to say that the file doesn't necessarily fix the problems some people are having with this.  So keep posting this information/files for people who need 'em, like me.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> June 12th, 2001 <span class="time">10:06</span></td><td class="alt1 small right">#36</td></tr>
+<tr class="post"><td class="alt2 author"><b class="name">Tyberius</b></td><td class="alt2 body"><div class="small posttitle"><b>Thanks!!!</b></div><div class="message">It worked great for that problem, now I need to figure out how to get it to recognize my video card.<br>
+    I thought this was supposed to be a stress test of the game not the players.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> June 12th, 2001 <span class="time">12:08</span></td><td class="alt2 small right">#37</td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <a href="l8461.html">&laquo;</a> <a href="l8461.html">1</a> <b>[2]</b> </span></td><td class="right small"><a href="https://web.archive.org/web/20010702075333/http://aoforums.funcom.com:80/printthread.php?threadid=8461">The saved copy</a> (the 2001 launch forum, saved by the Wayback Machine)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

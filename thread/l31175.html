@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Server Monitor Tools</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Tech &gt; <a href="../forum/other-technical-issues.html">Other Technical Issues</a> &gt; Server Monitor Tools</b> <span class="small badge">From the 2001 launch forum</span></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="l32785.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Server Monitor Tools"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Other Technical Issues"></span><span data-pagefind-filter="year:2001"></span></td><td>Thread</td></tr>
+<tr class="post" id="post209684"><td class="alt2 author"><b class="name">Harco</b><br><span class="small usertitle">VP Product Operations</span><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2001<br>Posts: 2</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>Server Monitor Tools</b></div><div class="message">Server Monitor Agent<br>
+<br>
+A lot of people have written their own server monitors, and have been connecting to our game servers directly.<br>
+This has caused a lot of unwanted traffic to our login handlers and game servers.<br>
+<br>
+We can now offer a centralized agent that collects all this information for you, and publishes it in a single XML file.<br>
+<br>
+We encourage server monitor tool developers to connect to this agent instead of polling the servers directly.<br>
+We have been in touch with the developers of some of the most popular server monitors, and we will link to them from this web site as soon as their tools are ready.<br>
+<br>
+If you want to develop your own server monitor tool, look below for documentation.<br>
+<br>
+We hope that our the excellent developers in our community will value this and we will try to provide even more interesting information as time goes by.<br>
+<br>
+<br>
+DOCUMENTATION<br>
+-------------<br>
+<br>
+<br>
+Server Monitor Agent<br>
+<br>
+This is a short description about the xml file published by the server monitor agent: <a href="https://web.archive.org/web/20010710/http://probes.funcom.com/ao.xml">http://probes.funcom.com/ao.xml</a><br>
+<br>
+You can read the syntax from the file. I will comment on it below, but first: Some terminology:<br>
+<br>
+What many refer to as "server" - i.e. the machine farm,  software and additional networking hardware that is required to run one dimension of the game, is what we refer to as an "Anarchy Online Dimension". There are currenlty only two dimensions: The Live dimension and the Beta/Test dimension.<br>
+<br>
+What we call a "Server", is a process that runs one or more<br>
+<br>
+"Playfields". What you will see in this xml file is a list of most of the "Static Playfields" that make up the "static" world in a dimension of AO. One of these playfields, let's say Avalon, can be set up to run on one machine that also runs other playfields, so if Avalon is slow, it might be<br>
+because some other playfield is overloaded. Then we have the "Dynamic Playfields" or "Virtual Playfields". These are shifted from server to server to do load balancing. So it doesn't make sense for you to monitor these. These are<br>
+playfields like shops, dungeons, character creation and the like. Ok, about the file format:<br>
+<br>
+servermanager, status=0 or 1<br>
+<br>
+    0=down, 1=up<br>
+<br>
+The server manager is required for changing playfields ("zoning").<br>
+<br>
+clientmanager, status=0 or 1<br>
+<br>
+    0=down, 1=up. <br>
+<br>
+The client manager(s) are required for the<br>
+initial connection (login).<br>
+<br>
+chatserver, status=0 or 1<br>
+<br>
+    0=down, 1=up<br>
+<br>
+playfield, id, name, status=0 or 1<br>
+<br>
+I'm not sure if you want to use the id. This corresponds to a value that the players can see in the game when they press F9. You will probably want to use the name instead.<br>
+<br>
+Status is 0 or 1. But it doesn't mean "down" or "up"! 1 means that the playfield is running. (And we might add more status' later.) 0 means that the playfield is *not active*, which is different from being down. The way it works is that one physical machine runs one or more game servers.<br>
+<br>
+Each game server is set up to run one or more playfields. If there are no players on a playfield, it will either not be started, or it will eventually time out and go back "to sleep". This list only has static playfields, for the<br>
+reason I mentioned above. Please make sure that you don't refer to status=0 as a playfield being "down", but as "inactive".<br>
+    <br>
+distribution, onlinecharacters, affiliation<br>
+<br>
+This shows the percentage distribution of players that are online: clan, neutral or omni.<br>
+    <br>
+message type="status" or "news"<br>
+<br>
+These are one-liners. A status message could be "Down for server patch", a news message could be "Riot in Tir".<br>
+<br>
+<br>
+Regards,<br>
+Hans Terje Bakke<br>
+Vice President<br>
+Product Operations</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">10:43</span></td><td class="alt2 small right"><a href="#post209684">#1</a></td></tr>
+<tr class="post" id="post209757"><td class="alt1 author"><b class="name">DMM</b><br><span class="small usertitle">Ahyatolla of Rocknrolla</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 262</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon5.gif" alt=""> </div><div class="message">Shouldnt this be over in Technical?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">11:18</span></td><td class="alt1 small right"><a href="#post209757">#2</a></td></tr>
+<tr class="post" id="post209806"><td class="alt2 author"><b class="name">FAB</b><br><span class="small usertitle">Community Member</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2001<br>Posts: 6</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> </div><div class="message">How often will this xml file get updated?  If it doesn't get updated frequently (maybe 60 secs or faster) I think that it will only a supplement to the server monitors already out there.<br>
+<br>
+Edit:<br>
+Reason for saying this is that the xml file you have linked to in the original post was 15 min old when I looked at it.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">11:44</span></td><td class="alt2 small right"><a href="#post209806">#3</a></td></tr>
+<tr class="post" id="post209904"><td class="alt1 author"><b class="name">Lortan</b><br><span class="small usertitle">Community Member</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 1</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> </div><div class="message">Looks like it's now being updated once per minute.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">12:25</span></td><td class="alt1 small right"><a href="#post209904">#4</a></td></tr>
+<tr class="post" id="post209967"><td class="alt2 author"><b class="name">FAB</b><br><span class="small usertitle">Community Member</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2001<br>Posts: 6</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> </div><div class="message">Looked at it for 3 min and it seems it is updated every 1 min.  problem is that it is still 11 min old data.<br>
+<br>
+File has timestamp 13:43 and I have 13:54.   (Yes I am in CEST zone to <img src="../images/smilies/tongue.gif" alt="" class="smilie">).  Maybe they just need to adjust their computer clock?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">12:52</span></td><td class="alt2 small right"><a href="#post209967">#5</a></td></tr>
+<tr class="post" id="post210078"><td class="alt1 author"><b class="name">Astasi</b><br><span class="small usertitle">Community Member</span><br><img class="avatar" src="../images/avatars/opifexmale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: May 2001<br>Posts: 3</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon6.gif" alt=""> </div><div class="message">At what point are you including a playfield / dimension population tag? It'd be good to know how many ppl are online...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">13:37</span></td><td class="alt1 small right"><a href="#post210078">#6</a></td></tr>
+<tr class="post" id="post210204"><td class="alt2 author"><b class="name">RagingQuasar</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2001<br>Posts: 2</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon9.gif" alt=""> <b>Server Status</b></div><div class="message">This is a fine start, but what most if us want to know is where the world is most stable.  How do we determine that?<br>
+<br>
+We want to know ...<br>
+<br>
+a) Is the playfield up and running to down ... not active or inactive (who really cares)<br>
+<br>
+b) How many people are there in a particular playfield.<br>
+<br>
+To most of us, beyond, is the Loginhandler (client manager), up and running, we simply want to know where we can go to have the best chance for success.<br>
+<br>
+Make these two simple changes to the XML file and you will have something that has meaning and value.  As it is right now ... this is fluff and fankly not worth anyones time or effort to work from (imho).</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">14:21</span></td><td class="alt2 small right"><a href="#post210204">#7</a></td></tr>
+<tr class="post" id="post210414"><td class="alt1 author"><b class="name">w1zzard</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 19</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> </div><div class="message">My Server status page has been updated to work with Funcom's XML file. <br>
+Find it at <a href="https://web.archive.org/web/20010710/http://ultima.lightning.net/ao">http://ultima.lightning.net/ao</a>.</div><div class="sig">__________________<br>-<b>Wizzard</b><br>
+<br>
+The AO Server Status Page - <a href="https://web.archive.org/web/20010710/http://ultima.lightning.net/ao">http://ultima.lightning.net/ao</a><br>
+<br>
+The UO Server Status Page - <a href="https://web.archive.org/web/20010710/http://ultima.lightning.net">http://ultima.lightning.net</a></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">15:21</span></td><td class="alt1 small right"><a href="#post210414">#8</a></td></tr>
+<tr class="post" id="post210430"><td class="alt2 author"><b class="name">Gryff</b><br><span class="small usertitle">Agent for hire.</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 80</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon7.gif" alt=""> <b>main benefit</b></div><div class="message">Well it seems to me the main benfit of using this, besides all the extra info that we couldn't get before, is that we will no longer be spamming the servers. Meaning our game performance will get better and it will be easier to login.<br>
+<br>
+I think it is a little harsh moaning about not getting exactly what you wanted as you are being given something more than you had before. <br>
+<br>
+(Grandma gives little Johhny a toy plane... "I WANTED A TANK, AN' A HELICOPTER, AN' A  NUCLEAR MISSILE AN' A ....") <br>
+<br>
+Anyway most developers enjoy making new things for the fun of it so I am sure we will see all the new server monitors quite quickly, probably before I hit 'Submit Reply'<br>
+<br>
+Edit: Lol Kendra <img src="../images/smilies/smile.gif" alt="" class="smilie"></div><p class="small edited"><i>Last edited by Gryff on July 10th, 2001 at 15:40</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">15:24</span></td><td class="alt2 small right"><a href="#post210430">#9</a></td></tr>
+<tr class="post" id="post210461"><td class="alt1 author"><b class="name">Kendra</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 2</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>Client-side Server Monitor</b></div><div class="message">I've written a client-side Server Monitor that can be used with the new Server Agent.<br>
+<br>
+It can be downloaded from the URLs in my sig.<br>
+<br>
+I'm currently looking for alternative download sites also, so if anyone wants to host a download for this file, feel free to make it available and let people know about it.<br>
+<br>
+Enjoy.<br>
+<br>
+Fandaral<br>
+Clan Opifex Fixer<br>
+<a href="https://web.archive.org/web/20010710/http://www.the-unseen.moonfruit.com">The Unseen</a><br>
+<a href="https://web.archive.org/web/20010710/http://www.smartgroups.com/vault/uu-ao/AOMonitor013.zip">AO Server Monitor v0.1.3</a><br>
+<a href="https://web.archive.org/web/20010710/http://www.smartgroups.com/vault/uu-ao/AOMonitor.exe"><br>
+AO Server Monitor v0.2.1</a> (EXE only - requires v0.1.3 to be installed first)</div><p class="small edited"><i>Last edited by Kendra on July 11th, 2001 at 14:33</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">15:34</span></td><td class="alt1 small right"><a href="#post210461">#10</a></td></tr>
+<tr class="post" id="post210799"><td class="alt2 author"><b class="name">Cassius</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 8</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>well</b></div><div class="message">As a monitor author, I'd be grateful if the following was available/changed : <br>
+<br>
+- Timestamp in GMT - everything else is standardises on this! The fact your servers are in the states is pretty irrevelent...<br>
+- No of players on in total. Per zone would be better, but is not essential.<br>
+<br>
+I do wonder a bit about supplying the data in xml. It seems to me it is a less efficient format in terms of bandwidth consumption. In addition, I'm going to have to potentially distribute MSXML with the monitor now - obviously not ideal. I could write a simple xml parser I suppose, but its not an ideal solution.<br>
+<br>
+Anyway, just my thoughts,<br>
+<br>
+Dan</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">17:30</span></td><td class="alt2 small right"><a href="#post210799">#11</a></td></tr>
+<tr class="post" id="post210959"><td class="alt1 author"><b class="name">Freako_Suave</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2001<br>Posts: 8</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> </div><div class="message">Allow me this "uneducated" question: even with this new information, how can I put it to use? When I login I don't seem to get any choices, I simply get logged in at the loginhandler's discretion.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">18:38</span></td><td class="alt1 small right"><a href="#post210959">#12</a></td></tr>
+<tr class="post" id="post210999"><td class="alt2 author"><b class="name">SnackCake</b><br><span class="small usertitle">Community Member</span><br><img class="avatar" src="../images/avatars/opifexfemale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 42</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>Genius</b></div><div class="message">Excellent idea! XML is perfect for this actually, because it is extensible, and quite simple to parse. Most of the work is done client-side, so there really no bandwidth issues where it counts, which is GAMEPLAY!!! Now we'll see less connects from random stuff (I hope) and a bit of an easeup on the servers!<br>
+<br>
+Also, with a little ingenuity, folks can write their own parsers for their home machines, without having to know how to actually program anythinbg rougher than HTML/XML and maybe a hair of java(script) for fun. And while they're doing that, they won't be logged in, and their'll be even MORE bandwidth... I'm beginning to like this<img src="../images/smilies/wink.gif" alt="" class="smilie"></div><div class="sig">__________________<br>Ow.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">18:56</span></td><td class="alt2 small right"><a href="#post210999">#13</a></td></tr>
+<tr class="post" id="post211001"><td class="alt1 author"><b class="name">Mennis</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2001<br>Posts: 10</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>would anyone be interested in...</b></div><div class="message">well, okay first off i work at a flash web dev./software firm.  when i saw this had been created i instantly got the idea to put that info into a slightly more user friendly interface.  i was thinking of putting up a zone connection map, which graphically indicates which playfields are up/down, the percentage alignment of players online, zoning functionality and any/all other stats posted to that xml file.  flash normally doesnt let you load xml data from a domain that the flash file doesnt also currently reside on, however with our software we can work around that.  my question is this:  would anyone actually be interested/use this if me and a couple other avid AO players here at the office made it?  we dont want to have to write a new plugin for our software and spend the time writing the flash xml parser and translating it to the GUI if nobody is going to use it of course, so please, any and all thoughts on it would be appreciated.  thanks.<br>
+<br>
+Mennis</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">19:00</span></td><td class="alt1 small right"><a href="#post211001">#14</a></td></tr>
+<tr class="post" id="post211008"><td class="alt2 author"><b class="name">DMM</b><br><span class="small usertitle">Ahyatolla of Rocknrolla</span><br><img class="avatar" src="../images/avatars/solitusmale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 262</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon3.gif" alt=""> </div><div class="message">Give us a "Population=XXX" field for each of the playfield elements.<br>
+<br>
+IT will help us - and help Funcom.  Its a Win-Win.<br>
+<br>
+If a playfield looks crowded, then people will generally avoid it, saving you from complaints about lag in an overloaded playfield, and saving us from logging into a place that is overpopulated.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">19:03</span></td><td class="alt2 small right"><a href="#post211008">#15</a></td></tr>
+<tr class="post" id="post211020"><td class="alt1 author"><b class="name">Skuppy</b><br><span class="small usertitle">Mostly harmless.</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 21</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>Re: Client-side Server Monitor</b></div><div class="message"><blockquote><span class="small">quote:</span><hr><i>Originally posted by Kendra </i><br>
+<b>I've written a client-side Server Monitor that can be used with the new Server Agent.<br>
+<br>
+It can be downloaded from the Off Planet page of <a href="https://web.archive.org/web/20010710/http://www.the-unseen.moonfruit.com.">www.the-unseen.moonfruit.com.</a><br>
+<br>
+I'm currently looking for alternative download sites also, so if anyone wants to host a download for this file, feel free to make it available and let people know about it.<br>
+<br>
+</b><hr></blockquote><br>
+<br>
+That's great.. could you post instructions for getting past your loading screen? Perhaps a direct link? The option to "skip intro" is always welcome in any Flash webpage. *hint*hint* I've watched those little orbs spin around for about 5 minutes now and the page still won't load. It is very pretty though. <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">19:12</span></td><td class="alt1 small right"><a href="#post211020">#16</a></td></tr>
+<tr class="post" id="post211048"><td class="alt2 author"><b class="name">Azotus</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 10</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon5.gif" alt=""> <b>Down time?</b></div><div class="message">Wizzard,<br>
+<br>
+Glad to see you implemented the new agent so quickly.  Great work!  But I think there is a problem with how you calculate down time.  I was just in the game 30 minutes ago but your monitor says the dimension has been down for 4hrs and 39mins.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">19:26</span></td><td class="alt2 small right"><a href="#post211048">#17</a></td></tr>
+<tr class="post" id="post211051"><td class="alt1 author"><b class="name">SD_Fitz</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 6</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon5.gif" alt=""> </div><div class="message">anyone have any tips or walkthroughs of how to make use of that file?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">19:27</span></td><td class="alt1 small right"><a href="#post211051">#18</a></td></tr>
+<tr class="post" id="post211097"><td class="alt2 author"><b class="name">Seti</b><br><span class="small usertitle">Omni-Tek Loyalist</span><br><img class="avatar" src="../images/avatars/nanomale.gif" alt=""><p class="small userinfo" data-pagefind-ignore>Registered: Jun 2001<br>Posts: 267</p></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> <b>Question about the political distribution</b></div><div class="message">Based on the fact that I'm seeing the political distribution precentages change while all the servers are down except for the chat server, I'm assuming you are counting people logged into chat only in these numbers.<br>
+<br>
+I'd be more interested (my wish item), either by changing the current reported numbers, or adding a second set, of the political distribution of who's actually in-game, and therefore truly participating in the world.<br>
+<br>
+P.S.  Btw, great job on it so far!</div><p class="small edited"><i>Last edited by Seti on July 10th, 2001 at 19:54</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">19:44</span></td><td class="alt2 small right"><a href="#post211097">#19</a></td></tr>
+<tr class="post" id="post211120"><td class="alt1 author"><b class="name">Mennis</b><br><span class="small usertitle">Community Member</span><p class="small userinfo" data-pagefind-ignore>Registered: Jul 2001<br>Posts: 10</p></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon1.gif" alt=""> </div><div class="message">ehehehe<br>
+<br>
+yeah sorry about that.  i actually dont have an intro to my site, after the loading screen it just goes right into the meat of it.  sorry about the loading time... its definately not for the faint of bandwidth...  i am also the music producer at the company, so the site has a whole lot of audio content which as im sure u know takes up a lot of filesize.  rest assured the status checker wouldnt have all those frills, and the end filesize would most likely be more lightweight than a raster(jpg, gif, etc) image of the same size.  im assuming of course your talking about my personal site, <a href="https://web.archive.org/web/20010710/http://www.y-itearp.com">www.y-itearp.com</a> since i dont think i posted the addy in this thread =)<br>
+<br>
+mennis</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 10th, 2001 <span class="time">19:55</span></td><td class="alt1 small right"><a href="#post211120">#20</a></td></tr>
+<tr><td colspan="2" class="gap">The last 2 pages of this thread weren't saved.</td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20010714051309/http://aoforums.funcom.com:80/showthread.php?s=&amp;threadid=31175">The saved copy</a> (the 2001 launch forum, saved by the Wayback Machine)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

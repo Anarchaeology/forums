@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Can&#39;t Connect on Second Computer with Win XP ICS?</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Tech &gt; <a href="../forum/other-technical-issues.html">Other Technical Issues</a> &gt; Can&#39;t Connect on Second Computer with Win XP ICS?</b></div>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <b>[1]</b> <a href="45697-2.html">2</a> <a href="45697-2.html">&raquo;</a> </span></td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="25728.html">Last Thread</a> &nbsp; <a href="39350.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Can&#39;t Connect on Second Computer with Win XP ICS?"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Other Technical Issues"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post633144"><td class="alt2 author"><b class="name">GM-Zixxax</b><br><span class="small usertitle">Customer Service</span></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon3.gif" alt=""> <b>Can&#39;t Connect on Second Computer with Win XP ICS?</b></div><div class="message">After some testing, I've made a Win XP Internet Connection Sharing network work properly. <br>
+<br>
+<b>Problem</b>: &quot;get hosts failed....etc&quot; error message when playing on a 2nd computer while the first is logged into AO. Can play on the other server, but not the same server as the first computer. Host Computer uses WinXP ICS (Internet Connection Sharing) to share the single Internet connection. <br>
+<br>
+<b>Solution</b><br>
+<br>
+On the host computer:<br>
+<br>
+1. Open &quot;network connections&quot; under start -&gt; control panel. <br>
+2. Right click on &quot;Local Area Connection&quot; (or Local Area Connection 2 is the first Local Area Connection is your Internet connection that is sharing the Internet), and double click or push the properties button. <br>
+3. Highlight &quot;Internet Protocol (TCP/IP)&quot; and double click or push the properties button. <br>
+4. Note what IP is listed on under &quot;IP address&quot;. It should be 192.168.0.1 if you didn't change it to something else. <br>
+<br>
+Now use that number on each client like so (client can be any Win OS)<br>
+<br>
+Clients:<br>
+1. Change the default gateway under the TCP/IP settings (this is done either as above on XP or just right click network under Win98/ME) on each client computer (that you want to play AO on) to 192.168.0.1 or whatever that address was we found above. Then reboot the client. <br>
+<br>
+That has worked as I tested it. Let me know your results or questions in this thread.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 19th, 2002 <span class="time">19:51</span></td><td class="alt2 small right"><a href="#post633144">#1</a></td></tr>
+<tr class="post" id="post646692"><td class="alt1 author"><b class="name">Crazie Eddie</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="message">I have been having the same problem.<br>
+<br>
+Followed your steps above but mine says obtain ip automatically <img src="../images/smilies/frown.gif" alt="" class="smilie"> I have at&amp;t cable. Any suggestions?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 26th, 2002 <span class="time">01:45</span></td><td class="alt1 small right"><a href="#post646692">#2</a></td></tr>
+<tr class="post" id="post678159"><td class="alt2 author"><b class="name">lilnymph</b><br><span class="small usertitle">Hug-O-Doom</span><br><img class="avatar" src="../images/avatars/40633.jpg" alt=""></td><td class="alt2 body"><div class="message">the cable the settings on the network card that goes out of your house,  to AT&amp;T needs to be &quot;obtain ip automatically&quot;.  You do what he said on the network card for the connection between the computers in your house.<br>
+<br>
+hope this helps (if not,  sorry,  was read and typed in a hurry between 5 jobs at work hehe)<br>
+<br>
+hugs<br>
+<br>
+lilnymph</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> September 9th, 2002 <span class="time">14:48</span></td><td class="alt2 small right"><a href="#post678159">#3</a></td></tr>
+<tr class="post" id="post684979"><td class="alt1 author"><b class="name">Wrigz</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>My workaround</b></div><div class="message">Thanks for the solution, so far I had only the workaround:<br>
+<br>
+If the slave logs into the anarchy first, master (aka host) can too. <br>
+<br>
+If the master is already logged in, on the slave, disable lan connection from Network Connections (this will remove ICS connection from the list), then enable it.  <br>
+Slave can now login again.<br>
+<br>
+Cheers,<br>
+<br>
+Sasha</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> September 12th, 2002 <span class="time">06:20</span></td><td class="alt1 small right"><a href="#post684979">#4</a></td></tr>
+<tr class="post" id="post705256"><td class="alt2 author"><b class="name">Panav</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0008.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><img src="../images/icons/icon7.gif" alt=""> </div><div class="message">I had above problem plus unable to re-login client despite the gateway set as Zixxax says.<br>
+<br>
+However problem now appears fixed since put XP Service Pack 1 onto Pc running ICS Server yesterday (Thursday).<br>
+<br>
+Can't imagine why I had not put service pack on before then <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> September 20th, 2002 <span class="time">22:20</span></td><td class="alt2 small right"><a href="#post705256">#5</a></td></tr>
+<tr class="post" id="post722586"><td class="alt1 author"><b class="name">AbFab</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Is this related...</b></div><div class="message">Wondering if the issue I've had is related; I run AO in windowed mode... I have WinXP.  Switching to a different user crashes me immediately.<br>
+<br>
+I have just sort of assumed there's no way around that, that's just the way it is... if its a bug tho, just wanted to bring it up... also, if it's *not* a bug, is there any way you could shoot up a little reminder message that says &quot;Hey you big dope, don't switch users with AO running&quot;?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> September 28th, 2002 <span class="time">19:33</span></td><td class="alt1 small right"><a href="#post722586">#6</a></td></tr>
+<tr class="post" id="post725591"><td class="alt2 author"><b class="name">lilnymph</b><br><span class="small usertitle">Hug-O-Doom</span><br><img class="avatar" src="../images/avatars/40633.jpg" alt=""></td><td class="alt2 body"><div class="message">not sure about the changing users problem (I am the only person who uses my computer,  apart from my girlfriend occasionaly when she is staying with me,  so I dont ever change users),  but when you installed AO,  did you tell it to let all users use it,  or just the one you installed it with? If you didn't tell it to let all users use it,  that could be your problem.<br>
+<br>
+Hugs<br>
+<br>
+lilnymph</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> September 30th, 2002 <span class="time">12:28</span></td><td class="alt2 small right"><a href="#post725591">#7</a></td></tr>
+<tr class="post" id="post728910"><td class="alt1 author"><b class="name">Panav</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0008.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>Changing users in WinXP</b></div><div class="message">I do not switch users myself but have you checked that the internet connection is set to be used by all users?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 1st, 2002 <span class="time">16:37</span></td><td class="alt1 small right"><a href="#post728910">#8</a></td></tr>
+<tr class="post" id="post729239"><td class="alt2 author"><b class="name">AbFab</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40659.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Yep...</b></div><div class="message">... all users use the connection.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 1st, 2002 <span class="time">18:51</span></td><td class="alt2 small right"><a href="#post729239">#9</a></td></tr>
+<tr class="post" id="post729264"><td class="alt1 author"><b class="name">Aslayerem</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40694.jpg" alt=""></td><td class="alt1 body"><div class="message">I've been having this same problem for some time now.  I've tried matching up the ip's and it seemed to help.  I almost always end up just resetting the lan and then the client can log in/ in again.  I'll try setting it up again like ur saying, but when I did before it would still do it some.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 1st, 2002 <span class="time">18:58</span></td><td class="alt1 small right"><a href="#post729264">#10</a></td></tr>
+<tr class="post" id="post997223"><td class="alt2 author"><b class="name">Nitefix</b><br><span class="small usertitle">Eleet</span></td><td class="alt2 body"><div class="message">Do what it said in the original post...but additionally you'll need to look just below the gateway info..and specify the DNS servers..if you don't know what the numbers are...call your ISP or check your ISP's website...this has stopped the problem dead in it's tracks.  You'll need to plug in the DNS server numbers..on each client...leave the gateway machine alone cause it will find it regardless.<br>
+<br>
+Did this on my network..and have 3 computers all playing/logging/switching chars...in AO at the same time with no problems...helped a guildmate do this...fixed his machine immediately as well.<br>
+<br>
+Do make sure once you've changed all the numbers on the clients that you bring all machines down..and then reboot gateway first..and then bring up clients.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 2nd, 2003 <span class="time">07:39</span></td><td class="alt2 small right"><a href="#post997223">#11</a></td></tr>
+<tr class="post" id="post1009071"><td class="alt1 author"><b class="name">Panav</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0008.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><img src="../images/icons/icon14.gif" alt=""> </div><div class="message">Wolfenn is right. After setting up the DNS entries on the clients on my LAN everything works great. No longer any need to run &quot;ipconfig /flushdns&quot; on the XP gateway machine before relogs.<br>
+<br>
+Thanks Wolfenn <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> January 6th, 2003 <span class="time">15:25</span></td><td class="alt1 small right"><a href="#post1009071">#12</a></td></tr>
+<tr class="post" id="post1047730"><td class="alt2 author"><b class="name">Bonie</b><br><span class="small usertitle">Leet</span><br><img class="avatar" src="../images/avatars/40154.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>OK a real fix and why</b></div><div class="message">MS Internet Connection Sharing (ICS) for XP includes a cache for Domain Nane Servers (DNS). It keeps track of where you have been and sends you and other users, if they want to, back to the same place you were before without having to ask the internet where the site you want is. This improves performance for frequently visited web sites and servers.<br>
+<br>
+When using AO however it screws up for clients and gives them the wrong site. So in effect they see the 'Test Server' servers rather than the desired.<br>
+<br>
+Rule 1. Write down what any settings are before you change them so you can revert your changes if needed.<br>
+<br>
+Rule 2. Always use rule 1.<br>
+<br>
+The fix requires you do three things.<br>
+<br>
+First you need to identify the name servers IP addresses your ISP uses.<br>
+They are numbers like W.X.Y.Z. They are refered to as PDNS and SDNS. (more are posable but most only use 2). The DNS numbers can be simple to find.  First connect to the internet if you have not already done so. On the ICS main machine (server) do the following. <br>
+<br>
+Click on START &gt; Settings &gt; Network Connections.<br>
+<br>
+Right Click on the Network device used to connect to the internet and select STATUS.<br>
+<br>
+Click on the SUPPORT tab. <br>
+(If used by your setings) Then click on DETAILS.<br>
+<br>
+The two DNS servers will be listed second from the bottom. They are the PDNS and SDNS (if you have 2) If this fails to provide the numbers for your DNSs phone your ISP Im sure they will help.<br>
+<br>
+The ICS workstations will use the ICS main machines IP address (probably 192.168.0.1). Do not confuse it with the ISPs.<br>
+<br>
+You can use another ISPs PDNS and SDNS if you like but its not good practice. (I quite often specify 3, 2 from my ISP and one as a backup from another ISP for when my ISP has trouble, which never happens <img src="../images/smilies/tongue.gif" alt="" class="smilie">  hehe)<br>
+<br>
+The second step is to turn off and disable the DNS Cache.<br>
+<br>
+You must have --&gt;&gt; administrator &lt;&lt;--  user rights on the ICS machine. (If you dont have administrator rights, login as a user who does. If you dont know, it wont hurt but your changes may not be accepted or even accessable).<br>
+<br>
+Navigate to control pannel. START --&gt; Settings --&gt; Controll Pannel.<br>
+<br>
+Select and open 'Administrative Tools' then 'Services'.<br>
+<br>
+Open the 'DNS Client'.<br>
+<br>
+STOP the DNS Client Service and change its 'startup type' from 'automatic' to 'MANUAL'.<br>
+<br>
+The next step is important.<br>
+<br>
+On EVERY other machine that talks through the ICS server to the internet you will need to manualy set the PDNS and SDNS IP addresses for the TCP/IP settings on the network addaptor that talks to the ICS main machine. If you do not they will not be able to translate theings like <a href="https://web.archive.org/web/20030118/http://www.doname.com">www.doname.com</a> to the IP address needed. There is no need to do this for the main ICS machine.<br>
+<br>
+To test restart all machines and web browse and run the game. Have fun.<br>
+<br>
+PS. If you need to run 2 instances of the game (2 accounts) on one XP machine. After getting the first instance running. Minimise it and start the second up to before you logon. Use Ctrl-Alt-Del to open task manager and set the 'Anarchy' tasks priority to 'above normal'. The second instance of AO will now load smothly. DO NOT set the 'client' task to a higher priority or you wont be able to task swap.<br>
+<br>
+Edited to include how to find DNS numbers 27 Jan.</div><p class="small edited"><i>Last edited by Bonie on January 27th, 2003 at 11:39</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> January 18th, 2003 <span class="time">16:22</span></td><td class="alt2 small right"><a href="#post1047730">#13</a></td></tr>
+<tr class="post" id="post1187915"><td class="alt1 author"><b class="name">Beartwo</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40124.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>There is something you can try</b></div><div class="message">WinXP has some weird stuff in its tcp/ip registry settings.<br>
+<br>
+Someone gave me this link when I was having trouble and it sounds like you are having the same problems.<br>
+<br>
+<a href="https://web.archive.org/web/20030310/http://www.annoyances.org/exec/show/article04-107">Annoyances article on MTU settings for TCP/IP in WinXP</a> <br>
+<br>
+<br>
+Good luck!</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> March 10th, 2003 <span class="time">10:05</span></td><td class="alt1 small right"><a href="#post1187915">#14</a></td></tr>
+<tr class="post" id="post1417377"><td class="alt2 author"><b class="name">Satyrika</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40136.jpg" alt=""></td><td class="alt2 body"><div class="message">Tried the fix posted by GM-zixxax, still not working. I can log in using workarounds, but it always requires the main computer to log off and restart the internet connection. If I try to log on without the internet connection being reset one of 3 scenarios appear:<br>
+<br>
+- I'm redirected to test server<br>
+- Login handler shows my server as down<br>
+- login times out<br>
+(- Once in a blue moon I can log in)</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> May 24th, 2003 <span class="time">15:26</span></td><td class="alt2 small right"><a href="#post1417377">#15</a></td></tr>
+<tr class="post" id="post1420366"><td class="alt1 author"><b class="name">Wrigz</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0002.jpg" alt=""></td><td class="alt1 body"><div class="small posttitle"><b>static IPs</b></div><div class="message">Must use static IPs everywhere possible.  WinXP does some dodgy stuff with DNS resolution.<br>
+<br>
+Hardcode all local network IP numbers.  Manually set gateway's IP address.<br>
+<br>
+On other computer(s) set static local IP numbers, _and_  your ISP's DNS numbers.<br>
+<br>
+So, find out your ISP's Primary and Secondary DNS numbers.  (either ring them, email them, find it on their webpages, or once connected do properties on your internet connection and dig it out of there).  I'll assume that your ISP's DNS servers are 10.0.0.1 and 10.0.0.2.<br>
+<br>
+Gateway (computer 1):<br>
+Interface 1 (internet) &quot;Obtain IP number automatically&quot;<br>
+Interface 2 (home lan) &quot;Specify IP number, 192.168.0.1&quot; (no gateway, and no DNS on this one)<br>
+<br>
+Computer 2<br>
+Interface 1 (home lan) &quot;Speficy IP number, 192.168.0.2, Gateway 192.168.0.1, Primary DNS 10.0.0.1, Secondary DNS 10.0.0.2&quot;<br>
+<br>
+Computer 2<br>
+Interface 1 (home lan) &quot;Specify IP number, 192.168.0.3, Gateway 192.168.0.1, Primary DNS 10.0.0.1, Secondary DNS 10.0.0.2&quot;.<br>
+<br>
+... etc ...<br>
+<br>
+This works with WinXP, ICS, SP1 (with all other latest windows updates).  I think it didn't work for me before I did SP1 update.<br>
+<br>
+Not only AO works for other computer, but also any browsing is faster, including logging in.  Name resolution used to take 2-3 seconds, now it's all sub 1sec.<br>
+<br>
+Cheers,<br>
+<br>
+Wrigz</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> May 25th, 2003 <span class="time">23:15</span></td><td class="alt1 small right"><a href="#post1420366">#16</a></td></tr>
+<tr class="post" id="post1587500"><td class="alt2 author"><b class="name">ntrox1</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40100.jpg" alt=""></td><td class="alt2 body"><div class="message">To validate what Wrigz posted: I had an issue where my buddies machine was the gateway machine (with the USB modem to teh internet) and he had ICS running.  I was linked via a hub.  Both my machines would start up ok, but try and patch to 14.9.0.4, where 14.9.0 was the latest version.  It turns out that due to the DNS servers not being queried correctly, I was finding the test servers (which seem to be the default if the resolution fails).  Therefore I only had the option to play on Test.  When I found the correct DNS servers by doing a &quot;ipconfig /all&quot; from my buddies main machine, and entered those DNS entries properly instead of using the IP of the main machine, everything worked fine <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 17th, 2003 <span class="time">15:44</span></td><td class="alt2 small right"><a href="#post1587500">#17</a></td></tr>
+<tr class="post" id="post1599815"><td class="alt1 author"><b class="name">rodier</b><br><span class="small usertitle">Leet</span></td><td class="alt1 body"><div class="message">my 2. computer can't login ..<br>
+I need close AO completely on first computer  and then second computer can login and I can too ...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 22nd, 2003 <span class="time">13:55</span></td><td class="alt1 small right"><a href="#post1599815">#18</a></td></tr>
+<tr class="post" id="post1617677"><td class="alt2 author"><b class="name">leetz</b><br><span class="small usertitle">Eleet</span><br><img class="avatar" src="../images/avatars/Leets_0005.jpg" alt=""></td><td class="alt2 body"><div class="message">test</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> July 30th, 2003 <span class="time">01:52</span></td><td class="alt2 small right"><a href="#post1617677">#19</a></td></tr>
+<tr class="post" id="post1623693"><td class="alt1 author"><b class="name">angelfuzzer</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40663.jpg" alt=""></td><td class="alt1 body"><div class="message">Are those numbers in the main post ok for UK servers or do we have to phone our supplier.<br>
+<br>
+<br>
+another question!<br>
+<br>
+Is this also the effect of Time out couldn`t send info to server?<br>
+<br>
+if so i would love some help <img src="../images/smilies/smile.gif" alt="" class="smilie"><br>
+<br>
+if not i still would love some help <img src="../images/smilies/smile.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> July 31st, 2003 <span class="time">22:30</span></td><td class="alt1 small right"><a href="#post1623693">#20</a></td></tr>
+</table>
+<table class="threadnav"><tr><td><span class="small">Pages (2): <b>[1]</b> <a href="45697-2.html">2</a> <a href="45697-2.html">&raquo;</a> </span></td><td class="right small"><a href="https://web.archive.org/web/20250527170040/https://forums-archive.anarchy-online.com/showthread.php?45697-Can&#39;t-Connect-on-Second-Computer-with-Win-XP-ICS">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

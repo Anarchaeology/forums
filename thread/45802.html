@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Math question about skills</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-10.html">Game Mechanics</a> &gt; Math question about skills</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="46580.html">Last Thread</a> &nbsp; <a href="47262.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Math question about skills"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post634030"><td class="alt2 author"><b class="name">Fletche</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40705.jpg" alt=""></td><td class="alt2 body"><div class="small posttitle"><b>Math question about skills</b></div><div class="message">Ok,  this is gonna sound wierd, but I am sure there are some math wizards out there that can help me.<br>
+<br>
+I am wanting to figure up how a base stat modifies a sub stat.  <br>
+<br>
+For instance:<br>
+<br>
+Matter Metamorphoses is dependent on Intelligence (80%) and Psychic (20%).<br>
+<br>
+Matt Meta:  293<br>
+Intelligence: 183<br>
+Psychic:   174<br>
+<br>
+When I buff my Intel and Psychic with boost (12 pnts to each) my Matt Meta buffs up to  296.<br>
+<br>
+I am wanting to know how this is calculated.<br>
+<br>
+I tried doing something like this:<br>
+<br>
+y=((.80*183)+(.20*174))+293<br>
+<br>
+Now that is obviously wrong.  <br>
+<br>
+Does anyone know what the forumla is for calculating the increase to a sub skill when buffing a base stat?</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">04:29</span></td><td class="alt2 small right"><a href="#post634030">#1</a></td></tr>
+<tr class="post" id="post634123"><td class="alt1 author"><b class="name">Flyhard</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40201.jpg" alt=""></td><td class="alt1 body"><div class="message">First of all, remember that the 293 is not the base skill....it is already increased by int/psy before.<br>
+<br>
+Anyhow, I'd like to know the answer, too.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">06:02</span></td><td class="alt1 small right"><a href="#post634123">#2</a></td></tr>
+<tr class="post" id="post634184"><td class="alt2 author"><b class="name">Kzak</b><br><span class="small usertitle">Supa Leet</span><br><img class="avatar" src="../images/avatars/40701.jpg" alt=""></td><td class="alt2 body"><div class="message">Attributes add one point to a skill for every four points of the attribute.<br>
+<br>
+If you have 100 points in Intelligence, your base CompLit (based 100% on Intelligence) should be 25 points, assuming you haven't put any IPs into it.<br>
+<br>
+Let's say you have 100 pts in Int, and 100 pts in Psy.<br>
+<br>
+MatMet is, as you said, 80% Int and 20% Psy.<br>
+<br>
+Thus, you get ((100 Int * 0,8)/4) + ((100 Psy * 0,2)/4) = 20 + 5 = 25 pts added to MatMet from ability scores.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">06:54</span></td><td class="alt2 small right"><a href="#post634184">#3</a></td></tr>
+<tr class="post" id="post634201"><td class="alt1 author"><b class="name">Flyhard</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40201.jpg" alt=""></td><td class="alt1 body"><div class="message">Ah, that explains it to me....</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">07:07</span></td><td class="alt1 small right"><a href="#post634201">#4</a></td></tr>
+<tr class="post" id="post634263"><td class="alt2 author"><b class="name">Fletche</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40705.jpg" alt=""></td><td class="alt2 body"><div class="message">Excellent.  Thank you.  <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+One thing though,  why the +5 on the end, it is the same as my /65 &quot;guess&quot;.  I just made the equation work, but I would like understanding more than a guess on my part.  hehe.<br>
+<br>
+<br>
+This equation seems to work for me:<br>
+<br>
+y=((int*0.8)+(psy*0.2))/65+MatMetUnbuffed</div><p class="small edited"><i>Last edited by Bhurano on August 20th, 2002 at 08:06</i></p></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 20th, 2002 <span class="time">08:02</span></td><td class="alt2 small right"><a href="#post634263">#5</a></td></tr>
+<tr class="post" id="post649010"><td class="alt1 author"><b class="name">Devis</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message"><blockquote class="quote"><span class="small">quote:</span><hr>
+		
+			
+			
+				<i>Originally posted by CurtisTheGreat </i><br>
+<b>Excellent.  Thank you.  <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+One thing though,  why the +5 on the end, it is the same as my /65 &quot;guess&quot;.  I just made the equation work, but I would like understanding more than a guess on my part.  hehe.<br>
+<br>
+<br>
+This equation seems to work for me:<br>
+<br>
+y=((int*0.8)+(psy*0.2))/65+MatMetUnbuffed </b>
+			
+		
+	<hr></blockquote>
+hehe someone forgot his math lessons<br>
+let me break it down for you <br>
+((100 Int * 0.8)/4) + ((100 Psy * 0.2)/4) = 20 + 5 = 25<br>
+is better looked at like this<br>
+((100 Int * 0.8)/4) = 20<br>
+((100 Psy * 0.2)/4) = 5<br>
+there fore <br>
+20 + 5 = 25 <br>
+and 25 points is the addition to matmet <img src="../images/smilies/wink.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> August 27th, 2002 <span class="time">01:26</span></td><td class="alt1 small right"><a href="#post649010">#6</a></td></tr>
+<tr class="post" id="post649074"><td class="alt2 author"><b class="name">Fletche</b><br><span class="small usertitle">Leetas</span><br><img class="avatar" src="../images/avatars/40705.jpg" alt=""></td><td class="alt2 body"><div class="message">There it is.  <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+I was reading his equation wrong.  I think I made a mistake on math once in '85, bound to have happened again.  LOL  <img src="../images/smilies/biggrin.gif" alt="" class="smilie"><br>
+<br>
+Thanks all for the responses,  makes more sense now.  <img src="../images/smilies/biggrin.gif" alt="" class="smilie"></div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> August 27th, 2002 <span class="time">01:49</span></td><td class="alt2 small right"><a href="#post649074">#7</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250529050043/https://forums-archive.anarchy-online.com/showthread.php?45802-Math-question-about-skills">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>

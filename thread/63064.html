@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy Online Bulletin Board - Creating Help Files</title>
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="../images/vb_bullet.gif">
+</head>
+<body>
+<div class="page">
+<table class="top"><tr>
+<td class="logo"><a href="../index.html"><img src="../images/anarchytheme/logos/aologo.jpg" alt="Anarchy Online Bulletin Board"></a></td>
+<td class="toplinks"><a href="../about.html"><img src="../images/top_faq.gif" alt="About this archive" title="About this archive"></a> <a href="../search.html"><img src="../images/top_search.gif" alt="Search" title="Search"></a> <a href="../index.html"><img src="../images/top_home.gif" alt="Home" title="Home"></a></td>
+</tr></table>
+<div class="content">
+<div class="navbar"><img src="../images/vb_bullet.gif" alt=""> <b><a href="../index.html">Anarchy Online Bulletin Board</a> &gt; Game-Play &gt; <a href="../forum/game-mechanics-6.html">Game Mechanics</a> &gt; Creating Help Files</b></div>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><img src="../images/prev.gif" alt=""> <a href="55289.html">Last Thread</a> &nbsp; <a href="59334.html">Next Thread</a> <img src="../images/next.gif" alt=""></td></tr></table>
+<table class="tborder posts" data-pagefind-body data-pagefind-meta="title:Creating Help Files"><tr class="thead" data-pagefind-ignore><td class="author">Author<span data-pagefind-filter="board:Game Mechanics"></span><span data-pagefind-filter="year:2002"></span></td><td>Thread</td></tr>
+<tr class="post" id="post795965"><td class="alt2 author"><b class="name">Zemkarik</b><br><span class="small usertitle">Soleet</span></td><td class="alt2 body"><div class="small posttitle"><b>Creating Help Files</b></div><div class="message">Ok, I know that you can create your own help file, and display it by typing /showfile &quot;NAME.txt&quot;<br>
+<br>
+And that will show a pop up window with the what ever you put in the help file.<br>
+<br>
+Ok, so I can see my own help files, but what I want to do is be able to send these help files as clickable links over the chat, like you can do with items (you know, how you drag your leet doll in the chat thing, and everyone that is in your channel can see how cool your leet doll is).<br>
+<br>
+I know it can be done, as I have seen someone do it. But they were using a script file created for them, and they did not know how to even look at the script file. So is there anyone that can help me?<br>
+<br>
+Thanks.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2002 <span class="time">06:28</span></td><td class="alt2 small right"><a href="#post795965">#1</a></td></tr>
+<tr class="post" id="post796142"><td class="alt1 author"><b class="name">Zemkarik</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Ok... I found it... sort of.<br>
+<br>
+I found a way to create a refrence of my self then change the text in the refrence to what ever I want. Unfortionitly, this makes it so I can't have links as near as I can tell. (links like in the help files how you can click something and it brings up a new topic).<br>
+<br>
+So... It seems that if I want to have the links, I have to e-mail the people my scripts, and help files, so they can load them with the links. But that makes it harder for me to do updates. (Such as having a link called news that I change the help file for every now and again.)<br>
+<br>
+Or if I don't want to have the links, I can create the reference. Then I can just send the reference like any other link. But still, this creates the problem, of now I have to send all the references that I want them to see, insteed of just a front page that has links to the other windows...<br>
+<br>
+Ok so now, you're most likely confused about what I'm talking about. I'm going to bed, this has all gotten much more confusing than what I was looking to get my self into tonight.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2002 <span class="time">08:25</span></td><td class="alt1 small right"><a href="#post796142">#2</a></td></tr>
+<tr class="post" id="post796683"><td class="alt2 author"><b class="name">Resetgun</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt2 body"><div class="message">Help files are just normal text files - with some special commands - stored under &quot;Anarchy Online\cd_image\text\help&quot; directory. Couple months ago I was playing around idea with own custom made &quot;help files&quot; for our guild (guild member list, news, events, etc), but because of lack of time and our guild died, that project didn't never see sunshine (I did developed simple downloader though).<br>
+<br>
+Major difficulty in the help files is that person need to load files from somewhere and it is very hard to integrate loading to the game (you need to send message to chat list or launch help when pages are loaded, and these are not directly supported by AO). You can launch external program by using &quot;/start&quot; command (try: &quot;/start <a href="https://web.archive.org/web/20021028/http://www.anarchy-online.com/content/support/guides/manual/">http://www.anarchy-online.com/conten...guides/manual/</a>&quot; or &quot;/start explorer.exe&quot;), but you can't return message (normal ways) when program is completed. <br>
+<br>
+Better solution might be to develope own help system with some custom commands (something like &quot;/show grid.myguild.org&quot; would load page &quot;grid.myguild.org&quot; from the Internet and show it for player in normal game window). It is possible to create own command and show windows (check out <a href="https://web.archive.org/web/20021028/http://webpages.charter.net/aofun/">The Dump</a> - AO-DamageDumper Beta4, and try to write &quot;vd&quot; to chat window when dumper is running). It would be still open questions how hard it is link different pages....<br>
+<br>
+Ofcourse developing own commands and hooking it to AO would be violating of the <a href="https://web.archive.org/web/20021028/http://www.anarchy-online.com/content/corporate/rulesofconduct.html">Rules of conduct</a>.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2002 <span class="time">14:01</span></td><td class="alt2 small right"><a href="#post796683">#3</a></td></tr>
+<tr class="post" id="post796777"><td class="alt1 author"><b class="name">Zemkarik</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Actualy I just read over the RoC.<br>
+<br>
+It does say alot about not hacking there client or server, and it also tells you not to exchange pirated software. But what it does not say is that you can't devolope your own comands. (Unless you are hacking the client to do so). If it did say that in one of the rules I missed, then everyone that plays the game will have to delete all there scripts that they have built, as each of them is a new command for AO. (I know it's a bit of a stretch, but I'm trying to make a point).<br>
+<br>
+With what I am tring to do, I have not changed the client of the server any. I have not sent any pirated soft where over there sever to anyone else. I have not changed how the client acts to commands that it is given. I have not changed how the server acts when it gets the comands. And I do not think that this is a bug that I am abusing.<br>
+<br>
+Anyways... as I was going to bed I relised why I can't send a link to a help file that has links over the chat interface. The way the links work in the help files is that you do a #L blah1 blah2<br>
+<br>
+It then shows Blah1 and links to blah2. But you don't say c:\look\here\help.txt you just say help.txt<br>
+<br>
+I think you can see already what I'm getting at.<br>
+If all the help files are on my computer, I can't very well send a file that would try to link to a help file in the help file folder, as the file will not be there for them. I don't know why I didn't relise this earlier.<br>
+<br>
+But I realised, that I could build a bot, that you can chat with and get the help one page at a time. (Just look at gridbot on rk1).<br>
+<br>
+Well off to work with me.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2002 <span class="time">14:41</span></td><td class="alt1 small right"><a href="#post796777">#4</a></td></tr>
+<tr class="post" id="post797832"><td class="alt2 author"><b class="name">Resetgun</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt2 body"><div class="message">It is perfectly legal to use scripts and their &quot;commands&quot; (actually you don't really create new command, you are just calling script).<br>
+<br>
+It is illegal to create own command like what AO damage dumper is doing.  By creating own command I mean basicly following: 1) finding out necessary C++ function(s) from AO DLLs (reverse-engineering) and 2) &quot;hooking&quot; those functions with your own functions (replacing function with your own function when program is running).<br>
+<br>
+Aye... Help files are stored only locally - loading those files to user is biggest problem...</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 28th, 2002 <span class="time">21:26</span></td><td class="alt2 small right"><a href="#post797832">#5</a></td></tr>
+<tr class="post" id="post798295"><td class="alt1 author"><b class="name">Zemkarik</b><br><span class="small usertitle">Soleet</span></td><td class="alt1 body"><div class="message">Ok, so long as we are on the same page. I get a little worried when terms like RoC (Rules of Conduct), or ToS (Turms of Service) or the many other things start to get thrown about.<br>
+<br>
+As for what I am tring to do.<br>
+<br>
+I want to create a chat bot (actualy I have done this already, using the helpbot code) that has information about my org, and other usefull information (such as how to make a personal lockpick). But I want all the information to come up like the information does when you are talking to bots like Gridbot. No offence to the creater of Helpbot, but I find the code for him to be very confusing... all that stuff about cheetos. What I would like to see is a torn down version of helpbot, that all it has is two responces (such as /tell MyBot help, that would create a short help thing in the chat box at, then /tell MyBot Menu, that would create a menu with the exact same information as in the first command.) With it torn down to these componites, I could add features that I want, and not try to find out how to remove half-a-dozen things that I find nifty, but not needed. And as this would be a bot for my guild ran on my computer, if I wanted to update it with news, it would be very easy to change the old news, as I would know where everything is on the bot.<br>
+<br>
+I hope this makes it clear as to what I want to do.<br>
+<br>
+Thanks for any help anyone might be able to provide on this.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt1 small date"><img src="../images/posticon.gif" alt=""> October 29th, 2002 <span class="time">00:29</span></td><td class="alt1 small right"><a href="#post798295">#6</a></td></tr>
+<tr class="post" id="post798898"><td class="alt2 author"><b class="name">Resetgun</b><br><span class="small usertitle">Soleet</span><br><img class="avatar" src="../images/avatars/40700.jpg" alt=""></td><td class="alt2 body"><div class="message">I think that you should check <a href="https://web.archive.org/web/20021029/http://www.hackersquest.org/boards/viewforum.php?f=7">HackersQuest.org - AnarchyOnline::General</a>. You can find more than one bot from there.</div></td></tr>
+<tr class="postfoot" data-pagefind-ignore><td class="alt2 small date"><img src="../images/posticon.gif" alt=""> October 29th, 2002 <span class="time">07:32</span></td><td class="alt2 small right"><a href="#post798898">#7</a></td></tr>
+</table>
+<table class="threadnav"><tr><td>&nbsp;</td><td class="right small"><a href="https://web.archive.org/web/20250527135716/https://forums-archive.anarchy-online.com/showthread.php?63064-Creating-Help-Files">The saved copy</a> (Funcom's forum archive, saved by the Wayback Machine in 2025)</td></tr></table>
+<p class="small tz">All times are GMT.</p>
+</div>
+<p class="footer"><b>&lt; <a href="../about.html">About this archive</a> - <a href="https://anarchaeology.github.io/">Anarchaeology</a> - <a href="https://web.archive.org/">Internet Archive</a> &gt;</b></p>
+<p class="footer small">The Anarchy Online forums of 2001-2003, rebuilt from copies saved by the Internet Archive's Wayback Machine.<br>
+Not affiliated with Funcom. Anarchy Online is a trademark of Funcom. The posts are their writers' own.</p>
+</div>
+</body>
+</html>
