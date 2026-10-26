@@ -64,7 +64,7 @@ Now for my calculations...<br>
 <br>
 MATK =  ATK - (1/600*RI)  OR 1 second, whichever is greater<br>
 <br>
-MREC = REC  (1/600*RI) OR 1 second, whichever is greater<br>
+MREC = REC – (1/600*RI) OR 1 second, whichever is greater<br>
 <br>
 MTT = MATK + MREC<br>
 <br>
@@ -76,11 +76,11 @@ Full Clips Used =( Timeframe specified by user / TPC) rounded down do the neares
 <br>
 Clip Reload Time in Timeframe = Full Clips Used * REC<br>
 <br>
-Bullets Fired in Timeframe = (Timeframe specified by user  Clip Reload Time in Timeframe) / MTT <br>
+Bullets Fired in Timeframe = (Timeframe specified by user – Clip Reload Time in Timeframe) / MTT <br>
 <br>
 NOTE: If, however, the clip recharge time in timeframe is great enough to keep enough bullets from being fired that would be equal to a full clip, then clip reload time must be changed to allow for one LESS clip being used.  The calculation then becomes:<br>
 <br>
-Bullets Fired in Timeframe = (Timeframe specified by user  Clip Reload time in Timeframe + REC) / MTT<br>
+Bullets Fired in Timeframe = (Timeframe specified by user – Clip Reload time in Timeframe + REC) / MTT<br>
 <br>
 This is done using an IF / THEN Function.<br>
 <br>
@@ -91,16 +91,16 @@ AMS = 1+ (ATK Rating / 400)<br>
 <br>
 Damage done in Timeframe = Damage Done by Normal Shots + Damage Done by Critical hits<br>
 <br>
-Normal Damage = (Bullets fired in Timeframe  Number of Critical hits done) * Damage Done by average shot<br>
+Normal Damage = (Bullets fired in Timeframe – Number of Critical hits done) * Damage Done by average shot<br>
 <br>
-Damage done by average shot = {(Max Dmg  Min Dmg) * 0.5 * AMS}  (AC/10)<br>
+Damage done by average shot = {(Max Dmg – Min Dmg) * 0.5 * AMS} – (AC/10)<br>
 <br>
-Damage done by critical hits = Critical hits done in Timeframe * [{(Max Dmg + Crit Dmg) * AMS}  (AC/10)]<br>
+Damage done by critical hits = Critical hits done in Timeframe * [{(Max Dmg + Crit Dmg) * AMS} – (AC/10)]<br>
 <br>
 <br>
-So<br>
+So…<br>
 <br>
-Total Damage done by weapon in Timeframe = |(Bullets fired in Timeframe  Number of Critical hits done) * [{(Max Dmg  Min Dmg) * 0.5 * AMS}  (AC/10)] | + | Critical hits done in Timeframe * [{(Max Dmg + Crit Dmg) * AMS}  (AC/10)]|<br>
+Total Damage done by weapon in Timeframe = |(Bullets fired in Timeframe – Number of Critical hits done) * [{(Max Dmg – Min Dmg) * 0.5 * AMS} – (AC/10)] | + | Critical hits done in Timeframe * [{(Max Dmg + Crit Dmg) * AMS} – (AC/10)]|<br>
 <br>
 <br>
 <br>

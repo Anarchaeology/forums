@@ -38,15 +38,24 @@ var boardByName = boards.ToDictionary(b => b.Category + "\t" + b.Name);
 // ---- Members are their forum accounts. Posts that don't show one (the 2001 launch forum had its own accounts, and
 // some pages saved from the live forum leave the account out) go to the main forum's account with the same name; a
 // name used by two accounts goes to the one with more posts. ----
+// ---- Threads saved twice: a thread whose every post is also in another thread (a moved thread the Wayback Machine
+// saved under both numbers) is left out, and links to it go to the other. The launch forum numbered its posts
+// separately, so its threads are only compared with each other. ----
 var accountByName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+var movedTo = new Dictionary<string, string>();
 {
     var postsByAccount = new Dictionary<(string Name, string Uid), int>();
+    var postIds = new Dictionary<string, (bool Launch, HashSet<long> Ids)>();
     foreach (var line in ReadLines(threadsPath))
     {
         using var doc = JsonDocument.Parse(line);
         var r = doc.RootElement;
-        if (r.GetProperty("src").GetString() == "launch") continue;
-        foreach (var p in r.GetProperty("posts").EnumerateArray())
+        bool launch = r.GetProperty("src").GetString() == "launch";
+        var posts = UniquePosts(r);
+        postIds[r.GetProperty("key").GetString()!] = (launch,
+            posts.Where(p => p.TryGetProperty("pid", out _)).Select(p => p.GetProperty("pid").GetInt64()).ToHashSet());
+        if (launch) continue;
+        foreach (var p in posts)
             if (Str(p, "uid") is var uid && uid != "")
             {
                 var k = (Str(p, "a").ToLowerInvariant(), uid);
@@ -55,6 +64,24 @@ var accountByName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreC
     }
     foreach (var g in postsByAccount.GroupBy(kv => kv.Key.Name))
         accountByName[g.Key] = g.MaxBy(kv => kv.Value).Key.Uid;
+
+    var threadsWithPost = new Dictionary<(bool, long), List<string>>();
+    foreach (var (key, (launch, ids)) in postIds)
+        foreach (long id in ids)
+        {
+            if (!threadsWithPost.TryGetValue((launch, id), out var list)) threadsWithPost[(launch, id)] = list = [];
+            list.Add(key);
+        }
+    foreach (var (key, (launch, ids)) in postIds)
+    {
+        if (ids.Count == 0) continue;
+        string? into = threadsWithPost[(launch, ids.First())]
+            .Where(other => other != key && ids.IsSubsetOf(postIds[other].Ids))
+            .Where(other => postIds[other].Ids.Count > ids.Count || string.CompareOrdinal(other, key) < 0)
+            .FirstOrDefault();
+        if (into != null) movedTo[key] = into;
+    }
+    if (movedTo.Count > 0) Console.WriteLine($"threads saved twice, left out: {string.Join(", ", movedTo.Select(m => $"{m.Key} (in {m.Value})"))}");
 }
 
 // ---- Pass 1: a summary of every thread, and which page each post lands on ----
@@ -72,20 +99,21 @@ foreach (var line in ReadLines(threadsPath))
 {
     using var doc = JsonDocument.Parse(line);
     var r = doc.RootElement;
-    var posts = r.GetProperty("posts");
-    int n = posts.GetArrayLength();
+    if (movedTo.ContainsKey(r.GetProperty("key").GetString()!)) continue;
+    var posts = UniquePosts(r);
+    int n = posts.Count;
     var t = new ThreadInfo
     {
-        Key = r.GetProperty("key").GetString()!, Src = r.GetProperty("src").GetString()!, Title = r.GetProperty("title").GetString()!,
+        Key = r.GetProperty("key").GetString()!, Src = r.GetProperty("src").GetString()!, Title = Str(r, "title"),
         Board = boardByName[r.GetProperty("cat").GetString() + "\t" + r.GetProperty("board").GetString()],
         Posts = n, Pages = Math.Max(1, (n + PostsPerPage - 1) / PostsPerPage),
     };
     if (t.Title == "") t.Title = "(no title)";
     int i = 0;
-    foreach (var p in posts.EnumerateArray())
+    foreach (var p in posts)
     {
         var d = DateTime.Parse(p.GetProperty("d").GetString()!, en);
-        string author = p.GetProperty("a").GetString()!;
+        string author = Str(p, "a");
         if (i == 0) { t.Starter = author; t.First = d; t.Icon = p.TryGetProperty("ic", out var ic) ? ic.GetInt32() : 0; }
         if (d >= t.Last) { t.Last = d; t.LastAuthor = author; }
         if (!t.Key.StartsWith('l') && p.TryGetProperty("pid", out var pid)) postPage[pid.GetInt64()] = (t.Key, i / PostsPerPage + 1);
@@ -240,8 +268,8 @@ foreach (var line in ReadLines(threadsPath))
 {
     using var doc = JsonDocument.Parse(line);
     var r = doc.RootElement;
-    var t = threadByKey[r.GetProperty("key").GetString()!];
-    var posts = r.GetProperty("posts").EnumerateArray().ToList();
+    if (!threadByKey.TryGetValue(r.GetProperty("key").GetString()!, out var t)) continue;   // saved twice
+    var posts = UniquePosts(r);
     int later = r.GetProperty("later").GetInt32(), gapAfter = r.GetProperty("gapAfter").GetInt32();
     string saved = r.TryGetProperty("saved", out var sv) ? sv.GetString() ?? "" : "";
     int index = t.Board.Threads.IndexOf(t);
@@ -365,10 +393,10 @@ Write("search.html", Header("", "Anarchy Online Bulletin Board - Search",
     <div id="search"></div>
     <script src="pagefind/pagefind-ui.js"></script>
     <script>
-    // The index records pages as /thread/...; baseUrl puts them under wherever the site lives (/forums/ on GitHub Pages).
+    // Pagefind places results under wherever its own files are served from (/forums/ on GitHub Pages), so search
+    // works from /forums/search as well as /forums/search.html.
     if (window.PagefindUI)
       new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false, pageSize: 10,
-        baseUrl: location.pathname.replace(/search\.html.*$/, ""),
         translations: { placeholder: "Search posts, titles and names" } });
     else
       document.getElementById("search").innerHTML = "<p>Search isn't available yet: its index hasn't been built.</p>";
@@ -397,7 +425,10 @@ string Resolve(string html) => goneRx.Replace(linkRx.Replace(html, m =>
 {
     if (m.Groups[2].Value == "img/") return $"{m.Groups[1].Value}=\"../images/";
     if (m.Groups[3].Success)
-        return threadByKey.ContainsKey(m.Groups[3].Value) ? $"{m.Groups[1].Value}=\"{m.Groups[3].Value}.html" : $"{m.Groups[1].Value}=\"@gone";
+    {
+        string key = movedTo.GetValueOrDefault(m.Groups[3].Value, m.Groups[3].Value);
+        return threadByKey.ContainsKey(key) ? $"{m.Groups[1].Value}=\"{key}.html" : $"{m.Groups[1].Value}=\"@gone";
+    }
     var pid = long.Parse(m.Groups[4].Value);
     return postPage.TryGetValue(pid, out var at) ? $"{m.Groups[1].Value}=\"{ThreadFile(at.Key, at.Page)}#post{pid}" : $"{m.Groups[1].Value}=\"@gone";
 }), "$1");
@@ -469,7 +500,27 @@ static string LongDate(DateTime d)
     return $"{d.ToString("MMMM", CultureInfo.InvariantCulture)} {day}{suffix}, {d.Year}";
 }
 
-static string Str(JsonElement e, string name) => e.TryGetProperty(name, out var v) ? v.GetString() ?? "" : "";
+static string Str(JsonElement e, string name) => e.TryGetProperty(name, out var v) ? Typed(v.GetString() ?? "") : "";
+
+// Text as its writers typed it. Funcom's archive (and some older pages) kept Windows punctuation (’ “ ” … – — ™) as
+// the control characters U+0080-U+009F, which browsers don't show; they map back exactly. A replacement character
+// between two letters ("won?t", "it?s") is an apostrophe lost before the page was saved.
+static string Typed(string s)
+{
+    const string Windows = "€\u0081‚ƒ„…†‡ˆ‰Š‹Œ\u008DŽ\u008F\u0090‘’“”•–—˜™š›œ\u009DžŸ";
+    if (s.Any(c => c is >= '\u0080' and <= '\u009f'))
+        s = string.Concat(s.Select(c => c is >= '\u0080' and <= '\u009f' ? Windows[c - 0x80] : c));
+    return s.Contains('�') ? Regex.Replace(s, @"(\p{L})�(?=\p{L})", "$1’") : s;
+}
+
+// A thread's posts, each once: the Wayback Machine sometimes saved one page under several page numbers, which
+// repeated its posts (and the note about missing pages in front of them).
+static List<JsonElement> UniquePosts(JsonElement thread)
+{
+    var seen = new HashSet<long>();
+    return thread.GetProperty("posts").EnumerateArray()
+        .Where(p => !p.TryGetProperty("pid", out var pid) || seen.Add(pid.GetInt64())).ToList();
+}
 static string Enc(string s) => WebUtility.HtmlEncode(s);
 
 static IEnumerable<string> ReadLines(string path)

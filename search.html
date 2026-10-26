@@ -19,10 +19,10 @@
 <div id="search"></div>
 <script src="pagefind/pagefind-ui.js"></script>
 <script>
-// The index records pages as /thread/...; baseUrl puts them under wherever the site lives (/forums/ on GitHub Pages).
+// Pagefind places results under wherever its own files are served from (/forums/ on GitHub Pages), so search
+// works from /forums/search as well as /forums/search.html.
 if (window.PagefindUI)
   new PagefindUI({ element: "#search", showSubResults: true, showImages: false, resetStyles: false, pageSize: 10,
-    baseUrl: location.pathname.replace(/search\.html.*$/, ""),
     translations: { placeholder: "Search posts, titles and names" } });
 else
   document.getElementById("search").innerHTML = "<p>Search isn't available yet: its index hasn't been built.</p>";
