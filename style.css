@@ -61,6 +61,8 @@ table { border-collapse: separate; }
 .postfoot td { height: 16px; white-space: nowrap; }
 .postfoot img { vertical-align: middle; }
 .profile .label { width: 175px; white-space: nowrap; }
+.message { margin: 30px 0; }
+.message .thead td { font-size: 13px; }
 .threads .forum { white-space: nowrap; }
 .gap { background: #333333; color: #fff; font-style: italic; }
 .tz { margin-top: 10px; }

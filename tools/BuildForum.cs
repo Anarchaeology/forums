@@ -5,7 +5,7 @@
 //   forum/<board>.html     thread lists, latest activity first, 50 threads a page (<board>-2.html, ...)
 //   thread/<key>.html      threads, 20 posts a page (<key>-2.html, ...); launch-forum threads are l<id>
 //   member/<id>.html       each member's profile, with the threads they started (<id> is their forum number)
-//   about.html, style.css, robots.txt, images/ (the 2002 theme images, from THEMEFOLDER)
+//   about.html, search.html, random.html, 404.html, style.css, robots.txt, images/ (the 2002 theme images, from THEMEFOLDER)
 // Pages left from an earlier build that this build no longer makes are removed (in forum/, thread/ and member/ only).
 //
 // Needs the .NET 10 SDK. Run from this tools folder:
@@ -403,6 +403,18 @@ Write("search.html", Header("", "Anarchy Online Bulletin Board - Search",
     </script>
 
     """ + Footer(""));
+// The page GitHub Pages shows for an address that doesn't exist: the forum's own 2002 error message ("vBulletin
+// Message"). It can be served at any depth, so its links start from the site's path (/forums/ for the forums repo).
+{
+    string site = repo != "" ? "/" + repo.TrimEnd('/').Split('/')[^1] + "/" : "/";
+    string webmaster = repo != "" ? $"<a href=\"{Enc(repo)}/issues\">webmaster</a>" : "webmaster";
+    Write("404.html", Header(site, "Anarchy Online Bulletin Board",
+        $"<a href=\"{site}index.html\">Anarchy Online Bulletin Board</a>", "") + $"""
+        <table class="tborder message"><tr class="thead"><td class="left">vBulletin Message</td></tr>
+        <tr><td class="alt1 left">Invalid thread specified. If you followed a valid link, please notify the {webmaster}</td></tr></table>
+
+        """ + Footer(site));
+}
 
 // Remove pages from earlier builds that weren't written this time
 int removed = 0;
@@ -656,12 +668,26 @@ sealed class ThreadInfo
 partial class Program
 {
     const string Robots = """
-        # Anarchy Online forum archive: search engines welcome. Crawlers that collect AI training data are asked to stay out.
+        # Anarchy Online forum archive: search engines and AI assistants fetching a page for someone are welcome.
+        # Crawlers that collect AI training data are asked to stay out. (Crawlers read the domain's robots.txt, which
+        # the Anarchaeology gallery repository serves; this copy matches it.)
         User-agent: GPTBot
         User-agent: ClaudeBot
+        User-agent: anthropic-ai
         User-agent: CCBot
         User-agent: Google-Extended
+        User-agent: Applebot-Extended
+        User-agent: Meta-ExternalAgent
+        User-agent: FacebookBot
         User-agent: Bytespider
+        User-agent: cohere-ai
+        User-agent: cohere-training-data-crawler
+        User-agent: AI2Bot
+        User-agent: Diffbot
+        User-agent: Omgilibot
+        User-agent: ImagesiftBot
+        User-agent: PanguBot
+        User-agent: Timpibot
         Disallow: /
 
         User-agent: *
@@ -734,6 +760,8 @@ partial class Program
         .postfoot td { height: 16px; white-space: nowrap; }
         .postfoot img { vertical-align: middle; }
         .profile .label { width: 175px; white-space: nowrap; }
+        .message { margin: 30px 0; }
+        .message .thead td { font-size: 13px; }
         .threads .forum { white-space: nowrap; }
         .gap { background: #333333; color: #fff; font-style: italic; }
         .tz { margin-top: 10px; }
